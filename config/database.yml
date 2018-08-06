@@ -51,4 +51,5 @@ production:
   <<: *default
   database: cookpad_production
   username: cookpad
-  password: <%= ENV['COOKPAD_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
