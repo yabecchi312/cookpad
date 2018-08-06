@@ -19,7 +19,7 @@
 - has_many :comments
 - has\_many :like_tsukurepos
 - has_many :kondates
-- has_many :diarys
+- has_many :diaries
 - has\_many :follow_relationships
 - has\_many :users, through: :follow_relationships
 
@@ -217,7 +217,7 @@
 
 ***
 
-### diarys table
+### diaries table
 
 |Column|Type|Options|
 |------|----|-------|
