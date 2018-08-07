@@ -21,5 +21,24 @@ body {
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+.right {
+  text-align: right;
+}
+.recipe_title {
+  color: #889b00;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.box {
+  border-radius: 5px;
+  background: #ffffff;
+  border: 1px solid #ded5c0;
+}
+.clear_both {
+  clear: both;
 }

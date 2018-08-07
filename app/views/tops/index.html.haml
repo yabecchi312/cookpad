@@ -38,26 +38,197 @@
 
         .kitchen_navi
           %ul.kitchen_navi_list
-            %li.kitchen_navi_top
+            %li.kitchen_navi_top.selected
+              %a
+                トップ
             %li.kitchen_navi_recipe
+              %a
+                レシピ
             %li.kitchen_navi_tsukurepo
+              %a
+                つくれぽ
             %li.kitchen_navi_kondate
+              %a
+                献立
             %li.kitchen_navi_blog
+              %a
+                = fa_icon 'link', text: "ブログ"
             %li.kitchen_navi_diary
+              %a
+                ごはん日記
         .container
           .two_columns_wrapper
             #recipe_container.container_inner
+              .recipe_contents_images
+                .title_row
+                  レシピ
+                  %span
+                    (100品)
+                  .link_to_all.right
+                    = link_to 'レシピ一覧 »','#'
+                .main_image
+                  %a
+                .sub_images
+                  .sub_image
+                    %a
+                  .sub_image
+                    %a
+                  .sub_image
+                    %a
+                  .sub_image
+                    %a
+              .search_box
+                %input.recipe_search_keyword{placeholder: "レシピを検索",type: "text"}
+                = fa_icon 'search', class: 'search_icon'
+                %input{type:"submit",value:"検索",id:"recipe_search",class: "button"}
             #activity_container.container_inner
+              .title_row
+                更新情報
+              %ul.activities
+                %li
+                  .activity_date
+                    2018/08/06
+                  .activity_text
+                    レシピを公開しました
+                    %br
+                    = link_to '母親の味♪おかひじきのマヨ…','#',class: "recipe_title"
+                %li
+                  .activity_date
+                    2018/08/05
+                  .activity_text
+                    つくれぽを送りました
+                    %br
+                    = link_to 'さっぱり茄子とししとうの焼…','#',class: "recipe_title"
+                %li
+                  .activity_date
+                    2018/08/04
+                  .activity_text
+                    レシピを公開しました
+                    %br
+                    = link_to '冷凍グレープフルーツサワー…','#',class: "recipe_title"
+                %li
+                  .activity_date
+                    2018/08/04
+                  .activity_text
+                    つくれぽを送りました
+                    %br
+                    = link_to 'イマイチそーなカツオのたた…','#',class: "recipe_title"
+                %li
+                  .activity_date
+                    2018/08/03
+                  .activity_text
+                    ごはん日記を投稿しました
+                    %br
+                    = link_to '☼焼きサバと野菜の甘酢炒め','#'
           #category_container.container_inner
+            .title_row
+              レシピカテゴリ
+            %ul.recipe_categories.clearfix
+              %li
+                %a.category_image
+                  %img
+                = link_to '★つくれぽ100件', '#'
+                .recipe_count
+                  5品
+              %li
+                %a.category_image
+                  %img
+                = link_to '肉祭り', '#'
+                .recipe_count
+                  7品
+              %li
+                %a.category_image
+                  %img
+                = link_to 'つくれぽ10件', '#'
+                .recipe_count
+                  15品
+              %li
+                %a.category_image
+                  %img
+                = link_to '季節の料理', '#'
+                .recipe_count
+                  3品
+              %li
+                %a.category_image
+                  %img
+                = link_to 'ご馳走', '#'
+                .recipe_count
+                  4品
           #tsukurepo_container.container_inner
+            .title_row
+              つくれぽ
+              %span
+                (70件)
+              .link_to_all.right
+                = link_to 'つくれぽ一覧 »','#'
+            .tsukurepo_images
+              .tsukurepo_image
+              .tsukurepo_image
+              .tsukurepo_image
+              .tsukurepo_image
+              .tsukurepo_image
+              .tsukurepo_image
+              .tsukurepo_image
+              .tsukurepo_image
           #diary_container.container_inner
-          #profile_container.container_inner
+            .title_row
+              ごはん日記
+              .link_to_all.right
+                = link_to 'ごはん日記一覧 »','#'
+            .diary_title
+              = link_to '☼焼きサバと野菜の甘酢炒め'
+              %span
+                2018/08/05
+          #profile_container.box.container_inner
+            .user_info
+              .user_icon
+                %img
+              .user_name
+                テストユーザー山田太郎  のプロフィール
+            .profile_text
+              これはプロフィールです。
+              %br
+              あいうえおかきくけこさしすせそ。
+              %br
+              abcdefghigklmn
+              %br
+              %br
+              よろしくお願いします。
+
       #side
         #side_wrapper
           #side_contents
             #side_banner_wrapper
+              広告１
             #side_banner_wrapper
+              広告２
             #side_opinion
+              .box.opinion_box
+                .opinion_title
+                  クックパッドへのご意見をお聞かせください
+                .opinion_content
+                  .opinion_type
+                    %input#opinion_type_default{type:"radio",checked: "checked",name:"opinion_type"}
+                    %label{for:"opinion_type_default"}
+                      サービスへのご意見・ご要望
+                    %br
+                    %input#opinion_type_bug{type:"radio",name:"opinion_type"}
+                    %label{for:"opinion_type_bug"}
+                      機能の不具合
+                    %br
+                    %input#opinion_type_report{type:"radio",name:"opinion_type"}
+                    %label{for:"opinion_type_report"}
+                      レシピやつくれぽで気付いた点の報告
+                  %textarea
+                  .opinion_submit_wrapper
+                    %input{type:"submit",value:"クックパッドに意見を送る"}
             #side_help
+              %p.help_title
+                お困りの方はこちら
+              %p.link_to_help
+                = link_to 'ヘルプ・お問い合わせ'
             #side_banner_wrapper
+              広告３
             #side_banner_wrapper
+              広告４
+      .clear_both
