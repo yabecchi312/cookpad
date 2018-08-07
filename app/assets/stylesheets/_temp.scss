@@ -1,0 +1,25 @@
+body {
+  background-color: $base-background-color;
+  #wrapper {
+    padding-right: 170px;
+    text-align: center;
+    width: 970px;
+    min-width: 970px;
+    margin: 0px auto;
+    background-color: #f7f3e8;
+    #container {
+      text-align: left;
+      width: 970px;
+      margin: 0 auto;
+      padding: 0px;
+      #contents {
+        padding-bottom: 1px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+.hidden {
+    display: none;
+}

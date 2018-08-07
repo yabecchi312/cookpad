@@ -1,1 +1,63 @@
-topページです！
+/ コンテンツ部分の制作
+/ 画像、広告部分は仮置き
+
+
+#wrapper
+  #container
+    #contents
+      #main
+        #kitchen_header
+          #header_image_wrapper
+            ヘッダー画像（仮）
+          .header_bottom
+            .user_icon
+              アイコン（仮）
+            .user_name
+              %a
+                user-name
+                %span
+                  のキッチン
+            .feeder_follow_button
+              %a
+                = fa_icon 'user-plus', text: "フォローする"
+            %ul.follow_status
+              %li
+                %a
+                  フォロー
+                %span
+                  |
+              %li
+                %a
+                  フォロワー
+            .header_profile
+              .short
+                短い、短縮版
+                %a#header_profile_more{href: "#"}...
+              .full.hidden
+                長い、すべて出す版
+
+        .kitchen_navi
+          %ul.kitchen_navi_list
+            %li.kitchen_navi_top
+            %li.kitchen_navi_recipe
+            %li.kitchen_navi_tsukurepo
+            %li.kitchen_navi_kondate
+            %li.kitchen_navi_blog
+            %li.kitchen_navi_diary
+        .container
+          .two_columns_wrapper
+            #recipe_container.container_inner
+            #activity_container.container_inner
+          #category_container.container_inner
+          #tsukurepo_container.container_inner
+          #diary_container.container_inner
+          #profile_container.container_inner
+      #side
+        #side_wrapper
+          #side_contents
+            #side_banner_wrapper
+            #side_banner_wrapper
+            #side_opinion
+            #side_help
+            #side_banner_wrapper
+            #side_banner_wrapper

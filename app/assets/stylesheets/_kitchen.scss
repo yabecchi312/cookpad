@@ -1,0 +1,87 @@
+#wrapper {
+  #container {
+    #contents {
+      #main {
+        width: 650px;
+      }
+    }
+  }
+}
+#kitchen_header {
+  padding: 0;
+  border: 1px solid #e3dcca;
+  border-radius: 5px;
+  background: #ffffff;
+  margin-bottom: 10px;
+  overflow: visible;
+  #header_image_wrapper {
+    height: 200px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px 5px 0 0;
+  }
+  .header_bottom {
+    height: auto;
+    padding: 5px 10px 10px;
+    position: relative;
+    line-height: 35px;
+    min-height: 70px;
+    .user_icon {
+      top: -24px;
+      height: 90px;
+      width: 90px;
+      border-radius: 5px;
+      border: 1px solid #ebe6d0;
+      padding: 4px;
+      position: absolute;
+      background: #ffffff;
+    }
+    .user_name {
+      margin-left: 110px;
+      position: relative;
+      float: none;
+      color: #4d2200;
+      font-size: 20px;
+      span {
+        font-size: 14px;
+      }
+    }
+    .feeder_follow_button {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      > a {
+        display: inline-block;
+        background: transparent;
+        color: #ff9933;
+        border: 1px solid #ff9933;
+        border-radius: 3px;
+        font-size: 12px;
+        line-height: 15px;
+        padding: 4px;
+        text-align: center;
+        text-decoration: none;
+        width: 100px;
+      }
+    }
+    .follow_status {
+      font-size: 86%;
+      margin: 0 0 5px 110px;
+      line-height: 2em;
+      color: #4d2200;
+      li {
+        display: inline-block;
+      }
+      span {
+        color: #999999;
+      }
+    }
+    .header_profile {
+      font-size: 86%;
+      line-height: 150%;
+      margin-left: 110px;
+      color: #666666;
+    }
+  }
+}
+
