@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: "recipes#index"
+  root 'tops#index'
+  resources :recipes, only: [:index]
 end
