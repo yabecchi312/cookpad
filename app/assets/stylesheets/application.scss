@@ -2,4 +2,8 @@
 @import "font-awesome";
 @import "./variables";
 @import "./temp";
-@import "./kitchen";
+@import "kitchen/kitchen";
+@import "kitchen/contents-top";
+@import "kitchen/contents-recipe";
+@import "kitchen/contents-tsukurepo";
+@import "kitchen/contents-kondate";

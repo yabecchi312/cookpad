@@ -153,173 +153,6 @@
     overflow: hidden;
   }
 }
-#recipe_container {
-  float: left;
-  padding-right: 0;
-  width: 300px;
-  .recipe_contents_images {
-    .link_recipe_list {
-      position: absolute;
-      top: auto;
-      right: 0;
-      bottom: 5px;
-      left: auto;
-      font-size: 13px;
-      font-weight: normal;
-      }
-    .main_image {
-      width: 236px;
-      height: 236px;
-      border: 2px solid #ffffff;
-      background: #f5f5f5;
-      float: left;
-    }
-    .sub_images {
-      overflow: hidden;
-      .sub_image {
-        width: 56px;
-        height: 56px;
-        border: 2px solid #ffffff;
-        background: #f5f5f5;
-      }
-    }
-  }
-  .search_box {
-    padding: 10px 5px 0;
-    position: relative;
-    input.recipe_search_keyword {
-      width: 200px;
-      padding: 3px 5px;
-      padding-left: 25px;
-      margin: 0 5px 0 0;
-      box-shadow: inset 1px 1px 4px #e6e6e6;
-      border-radius: 3px;
-      box-sizing: border-box;
-      border: 1px solid #cccccc;
-      vertical-align: middle;
-      display: inline-block;
-      font-weight: normal;
-    }
-    .search_icon {
-      position: absolute;
-      left: 10px;
-      top: 18px;
-      color: #edd04e;
-    }
-    #recipe_search{
-      width: 45px;
-    }
-  }
-}
-
-#activity_container {
-  float: left;
-  padding-right: 0;
-  width: 300px;
-  ul.activities {
-    li {
-      overflow: hidden;
-      line-height: 19px;
-      padding: 9px 6px;
-      border-bottom: 1px solid #ebe6d0;
-      .activity_date {
-        float: left;
-        font-size: 11px;
-        margin-right: 10px;
-        color: #999999;
-      }
-      .activity_text {
-        overflow: hidden;
-        font-size: 13px;
-        a {
-          font-weight: bold;
-        }
-      }
-    }
-  }
-}
-
-#category_container {
-  ul.recipe_categories {
-    li {
-      margin: 5px 0;
-      float: left;
-      width: 203px;
-      line-height: 30px;
-      a.category_image {
-        img {
-          margin-right: 10px;
-          float: left;
-          border: 2px solid #ffffff;
-          height: 52px;
-          width: 52px;
-          background-color:#f5f5f5;
-        }
-      }
-      a {
-        font-weight: bold;
-        font-size: 14px;
-      }
-      .recipe_count {
-        color: #999999;
-        line-height: 18px;
-        font-size: 80%;
-      }
-    }
-  }
-}
-
-#tsukurepo_container {
-  overflow: hidden;
-  position: relative;
-  .tsukurepo_images {
-    .tsukurepo_image {
-      width: 73px;
-      height: 73px;
-      float: left;
-      background: #f5f5f5;
-      border: 2px solid #ffffff;
-    }
-  }
-}
-
-#diary_container {
-  .diary_title {
-    font-size: 14px;
-    span {
-      font-size: 11px;
-      color: #999999;
-    }
-  }
-}
-
-#profile_container {
-  margin: 20px 10px;
-  padding: 10px 15px;
-  background-color: #fefcf9;
-  overflow: hidden;
-  .user_info {
-    margin-bottom: 10px;
-    .user_icon {
-      float: left;
-      margin-right: 10px;
-      img {
-        height: 40px;
-        width: 40px;
-        background-color: #f5f5f5;
-      }
-    }
-    .user_name {
-      font-weight: bold;
-      color: #4d2200;
-      line-height: 44px;
-    }
-  }
-  .profile_text {
-    color: #6b615f
-  }
-}
-
 
 .container_inner {
   padding: 0 10px 15px;
@@ -442,5 +275,40 @@ border-radius: 5px;
       min-width: 100px;
       display: inline-block;
     }
+  }
+}
+
+.side_container {
+  border-radius: 5px;
+  border: 1px solid #e3dcca;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.search_box {
+  padding: 10px 5px 0;
+  position: relative;
+  input.recipe_search_keyword {
+    width: 200px;
+    padding: 3px 5px;
+    padding-left: 25px;
+    margin: 0 5px 0 0;
+    box-shadow: inset 1px 1px 4px #e6e6e6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+  }
+  .search_icon {
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    color: #edd04e;
+  }
+  #recipe_search{
+    width: 45px;
   }
 }

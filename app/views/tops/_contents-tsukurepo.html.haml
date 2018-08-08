@@ -1,0 +1,83 @@
+.container
+  #two_contents_wrapper
+    #kitchen_side
+      .kitchen_side_wrapper.archive
+        %h3.content_title
+          アーカイブ
+        %ul
+          %li.selected
+            =link_to 'すべて','#'
+            %span.item_count
+              (50)
+          %li
+            %span.category_name
+              = link_to '2018年','#'
+            %span.item_count
+              (30)
+          %li
+            %span.category_name
+              = link_to '2017年','#'
+            %span.item_count
+              (20)
+    #kitchen_main
+      .recipe_list_header
+        = render "search-box"
+        .separate_right
+          .paging-top
+            %span
+              1/100 ページ
+            = link_to '次へ »', '#'
+      #tsukurepo_list
+        .tsukurepo_wrapper
+          .tsukurepo
+            .tsukurepo_inner
+              .tsukurepo_info
+                %p.date
+                  18/08/02
+              .image
+              = link_to 'つくれぽタイトルああああああああああああ','#',class: "recipe_title"
+              %span.recipe_author
+                by レシピの著者名
+              %p.message
+                とても美味しかったです。また作りたいです。
+              .clear-both
+        .tsukurepo_wrapper
+          .tsukurepo
+            .tsukurepo_inner
+              .tsukurepo_info
+                %p.date
+                  18/08/02
+              .image
+              = link_to 'つくれぽタイトル','#',class: "recipe_title"
+              %span.recipe_author
+                by レシピの著者名いいいいいいい
+              %p.message
+                とても美味しかったです。また作りたいです。
+              .clear-both
+        .tsukurepo_wrapper
+          .tsukurepo
+            .tsukurepo_inner
+              .tsukurepo_info
+                %p.date
+                  18/08/02
+              .image
+              = link_to 'つくれぽタイトル','#',class: "recipe_title"
+              %span.recipe_author
+                by レシピの著者名
+              %p.message
+                こんなに簡単に作れるなんてすごいです。とても美味しかったです。また作りたいです。
+              .clear-both
+        .tsukurepo_wrapper
+          .tsukurepo
+            .tsukurepo_inner
+              .tsukurepo_info
+                %p.date
+                  18/08/02
+              .image
+              = link_to 'つくれぽタイトル','#',class: "recipe_title"
+              %span.recipe_author
+                by レシピの著者名
+              %p.message
+                こんなに簡単に作れるなんてすごいです。とても美味しかったです。また作りたいです。あああああああああ
+              .clear-both
+    .clear_both
