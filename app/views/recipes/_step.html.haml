@@ -2,12 +2,50 @@
   .step__header
     .step__header__left
       .step-position 1
-      .step_move_higher ←
-      .step_move_lower →
+      .step_move_higher
+        = link_to "←", "#"
+      .step_move_lower
+        = link_to "→", "#"
     .step__header__right
-      削除 追加
+      = link_to "削除", "#"
+      = link_to "追加", "#"
   .step__main
     .step__main_image
-      写真を載せる
+      = image_tag "step_blank.png"
     .step__main_text
+      = image_tag "edit-image.png", class: "edit-image"
+      クリックして作り方を入力
+.step
+  .step__header
+    .step__header__left
+      .step-position 1
+      .step_move_higher
+        = link_to "←", "#"
+      .step_move_lower
+        = link_to "→", "#"
+    .step__header__right
+      = link_to "削除", "#"
+      = link_to "追加", "#"
+  .step__main
+    .step__main_image
+      = image_tag "step_blank.png"
+    .step__main_text
+      = image_tag "edit-image.png", class: "edit-image"
+      クリックして作り方を入力
+.step
+  .step__header
+    .step__header__left
+      .step-position 1
+      .step_move_higher
+        = link_to "←", "#"
+      .step_move_lower
+        = link_to "→", "#"
+    .step__header__right
+      = link_to "削除", "#"
+      = link_to "追加", "#"
+  .step__main
+    .step__main_image
+      = image_tag "step_blank.png"
+    .step__main_text
+      = image_tag "edit-image.png", class: "edit-image"
       クリックして作り方を入力
