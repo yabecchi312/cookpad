@@ -46,9 +46,15 @@ header {
     .search_form_wrapper {
       float: left;
       margin-top: 14px;
+      padding-left: 27px;
       .keyword_input {
-        padding-left: 27px;
-        width: 210px;
+        display: inline-block;
+        }
+      ul.keyword_list li {
+        display: inline-block;
+        height: 23px;
+        font-size: 93%;
+        letter-spacing: -0.3px;
         }
       }
     ul.my_menu li {
@@ -60,6 +66,9 @@ header {
         }
       .my_folder {
         margin: 2px 7px 2px 0;
+        .myfolder__button {
+          color: #330000 !important;
+          }
         }
       }
     }
