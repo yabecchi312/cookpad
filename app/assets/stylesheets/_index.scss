@@ -4,12 +4,12 @@ header {
   position: relative;
   background-color: #f7f3e8;
   .header_container {
+    width: 100vw;
     background-color: white;
     border-bottom: 1px solid #e3dcca;
-    line-height: 34px;
+    height: 34px;
     &.global_menu {
     margin: 0 auto;
-    height: 34px;
     background-color: white;
     width: 970px;
     line-height: 34px;
@@ -51,20 +51,38 @@ header {
         width: 210px;
         }
       }
-    ul.my_menu li {
+    ul.my_menu {
       padding-top: 12px;
       padding-left: 10px;
       float: right;
-      display: inline-block;
-      .new_recipe {
-        }
-      .my_folder {
-        margin: 2px 7px 2px 0;
+      li {
+        display: inline-block;
+        .btn-new-recipe {
+          display: block;
+          width: 123px;
+          border-radius: 4px;
+          box-shadow: none;
+          font-size: 100%;
+          border: none;
+          font-weight: bold;
+          margin: 0 0 7px 0;
+          padding: 0 10px;
+          height: 32px;
+          line-height: 34px;
+          background-color: #aec853;
+          cursor: pointer;
+          font-size: 93%;
+          text-align: center;
+          box-sizing: inherit;
+          color: #f7f3e8;
+          }
+        .my_folder {
+          margin: 2px 7px 2px 0;
+          }
         }
       }
     }
   }
-
 
 
 

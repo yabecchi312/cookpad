@@ -73,3 +73,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
+gem 'devise'
