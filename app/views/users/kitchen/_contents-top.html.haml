@@ -123,13 +123,7 @@
       .user_icon
         %img
       .user_name
-        テストユーザー山田太郎  のプロフィール
+        = @user.name
+        のプロフィール
     .profile_text
-      これはプロフィールです。
-      %br
-      あいうえおかきくけこさしすせそ。
-      %br
-      abcdefghigklmn
-      %br
-      %br
-      よろしくお願いします。
+      = @user.profile
