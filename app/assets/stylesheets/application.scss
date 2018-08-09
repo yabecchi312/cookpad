@@ -1,7 +1,10 @@
 @import "./reset";
+@import "./index";
+@import "bootstrap/bootstrap";
+@import "bootstrap/bootstrap-grid";
 @import "font-awesome";
-@import "./variables";
-@import "./temp";
+@import "common/cookpad";
+@import "config/variables";
 @import "kitchen/kitchen";
 @import "kitchen/contents-top";
 @import "kitchen/contents-recipe";
