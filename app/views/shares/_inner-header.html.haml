@@ -1,11 +1,13 @@
 .header_inner
-  %a.logo
+  %a.logo{href: "/"}
     %img.service_logo.f_left{alt: "クックパッド", height: "54", src: "https://assets.cpcdn.com/assets/global/logo/logo_header@2x.png?aa7929f030ee851c409e8fc66ff4dd7675660eba45f89526bc16d1b6c3bad72b", width: "264"}
+
   .search_form_wrapper
     .keyword_input
       %input.search-field.global_search_keyword
   %ul.my_menu
-    %li.new_recipe
-      %button.btn.btn-success{type: "button"} レシピを書く
-      %span.button.post_recipe.min
     %li.my_folder MYフォルダ
+    %li.new_recipe
+      = link_to "レシピを書く", '#', class: "btn-new-recipe"
+      %span.button.post_recipe.min
+
