@@ -18,39 +18,47 @@
               = f.text_field :title, required: true
               -# 画像
             .recipe-photo
-              = image_tag "image-upload.png"
+              = f.label :image do
+                = image_tag "image-upload.png"
+                = f.file_field :image, class: 'recipe-image'
             -# キャッチコピーと材料
             .catchphrase_and_ingredients
               .catchphrase_recipe_author_top
                 .catchphrase
-                  = image_tag "edit-image.png", class: "edit-image"
-                  このレシピのキャッチコピーを入力 (検索結果にも表示されます)
+                  -# = image_tag "edit-image.png", class: "edit-image"
+                  -# このレシピのキャッチコピーを入力 (検索結果にも表示されます)
+                  = f.text_area :catch_copy
                 .recipe_author_top
                   .recipe_author_top__link
                     = image_tag "profile.png", class: "author_icon"
                     = link_to "クックGB5RQL☆", "#"
               .ingredients
-                = image_tag "cookpad-ingredients.gif"
+                = f.fields_for :ingredients do |i|
+                  = i.text_field :name, placeholder: "材料名"
+                  = i.text_field :amount, placeholder: "分量"
+                  -# = image_tag "cookpad-ingredients.gif"
             .sk-center
             -# 料理ステップ
             #cooking-steps
-              = render "step"
+              = render "step", f: f
               -# コツ、レシピの生い立ち
             .memo_and_history
               .memo_wrapper
                 %h3 コツ・ポイント
                 .text-content
-                  = image_tag "edit-image.png", class: "edit-image"
-                  クリックしてコツやポイントを入力
+                  -# = image_tag "edit-image.png", class: "edit-image"
+                  -# クリックしてコツやポイントを入力
+                  = f.text_area :tips, placeholder: "コツ"
               .history_wrapper
                 %h3 このレシピの生い立ち
                 .text-content
-                  = image_tag "edit-image.png", class: "edit-image"
-                  クリックしてこのレシピをが生まれたきっかけや経験を入力
-                  %br
-                  例）母から教わったレシピを、家族が好む甘めの味付けにアレンジしました
-                  %br
-                  例）〇〇番組で紹介されたレシピを、家にある材料で簡単に作れるように工夫しました
+                  -# = image_tag "edit-image.png", class: "edit-image"
+                  -# クリックしてこのレシピをが生まれたきっかけや経験を入力
+                  -# %br
+                  -# 例）母から教わったレシピを、家族が好む甘めの味付けにアレンジしました
+                  -# %br
+                  -# 例）〇〇番組で紹介されたレシピを、家にある材料で簡単に作れるように工夫しました
+                  = f.text_area :background
             .sk-bottom
             -# レシピID、公開日、更新日
             .meta_data_wrapper

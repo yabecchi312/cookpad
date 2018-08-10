@@ -207,6 +207,9 @@
   display: inline-block;
   margin-right: 10px;
   cursor: pointer;
+  .recipe-image {
+    display: none;
+  }
 }
 // キャッチコピー,材料
 .catchphrase_and_ingredients {
@@ -293,6 +296,9 @@
         height: 27px;
         margin-bottom: 2px;
         cursor: pointer;
+        .step-image {
+          display: none;
+        }
       }
       &_text {
         height: 42px;
