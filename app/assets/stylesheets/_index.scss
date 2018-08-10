@@ -21,6 +21,7 @@ header {
       .global_menu.f_right {
         float: right;
         ul.user_menu.list_inline li {
+          font-size: 93%;
           display: inline-block;
           padding-left: 10px;
           position: relative;
@@ -68,6 +69,8 @@ header {
         margin: 2px 7px 2px 0;
         .myfolder__button {
           color: #330000 !important;
+        }
+      }
       li {
         display: inline-block;
         .btn-new-recipe {
@@ -91,7 +94,94 @@ header {
           }
         .my_folder {
           margin: 2px 7px 2px 0;
+          &_button {
+            font-size: 100%;
+            margin-top: 3px;
+            text-align: center;
+            line-height: 38px;
+          }
+          &_img {
+            float: left;
+          }
+        }
+      }
+    }
+  }
+}
 
+footer {
+  margin-top: 0;
+  box-sizing: border-box;
+  background-color: #f7f3e8;
+  height: 650px;
+  .clearfix:after {
+    content: "";
+    clear:both;
+    display: block;
+  }
+  .mega_footer {
+    font-size: 87.5%;
+    display: block;
+    padding-top: 240px;
+    text-align: center;
+    width: 100vw;
+    height: 500px;
+    .mega_footer_inner {
+      height: 240px;
+      margin: 0 auto;
+      padding: 0 0 20px 0;
+      text-align: left;
+      width: 970px;
+      .grid {
+        float: left;
+        width: 20%;
+        font-size: 85%;
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding: 0 0 3px 0;
+        color: #4d2200;
+        line-height: 1.5;
+        & .title {
+          font-size: 120%;
+          font-weight: bold;
+        }
+        & ul li {
+          padding: 5px 0;
+        }
+      }
+    }
+    .footer_content_wrapper {
+      margin: 0 auto;
+      border-top: 1px solid #e8e2d6;
+      padding-top: 20px;
+      width: 970px;
+      text-align: left;
+      display: block;
+      .footer_links {
+        border-bottom: 0;
+        margin-bottom: 10px;
+        font-size: 93%;
+        .footer_content_title {
+          font-weight: bold;
+          width: 80px;
+          float: left;
+          color: #4d2200;
+        }
+        .footer_content_list li {
+          float: left;
+          padding-right: 10px;
+          font-size: 85%;
+        }
+      }
+      .block20_0 {
+        padding: 20px 0;
+        margin: 0;
+        clear: both;
+        .f_left {
+          font-size: 86%;
+          padding: 5px 0;
+          color: #4d2200;
+          float: left;
         }
       }
     }
