@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180808063101) do
+ActiveRecord::Schema.define(version: 20180810031633) do
+
+  create_table "flows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "recipe_id",                null: false
+    t.text     "image",      limit: 65535
+    t.text     "text",       limit: 65535
+    t.integer  "order"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["recipe_id"], name: "index_flows_on_recipe_id", using: :btree
+  end
+
+  create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "recipe_id",                null: false
+    t.text     "name",       limit: 65535
+    t.text     "amount",     limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id", using: :btree
+  end
+
+  create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "catch_copy", limit: 65535
+    t.text     "image",      limit: 65535
+    t.text     "tips",       limit: 65535
+    t.text     "background", limit: 65535
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                              null: false
@@ -33,4 +64,7 @@ ActiveRecord::Schema.define(version: 20180808063101) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "flows", "recipes"
+  add_foreign_key "ingredients", "recipes"
+  add_foreign_key "recipes", "users"
 end
