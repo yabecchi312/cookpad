@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180810031633) do
+ActiveRecord::Schema.define(version: 20180810063903) do
 
   create_table "flows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "recipe_id",                null: false
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20180810031633) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["recipe_id"], name: "index_flows_on_recipe_id", using: :btree
+  end
+
+  create_table "follows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "followable_type",                 null: false
+    t.integer  "followable_id",                   null: false
+    t.string   "follower_type",                   null: false
+    t.integer  "follower_id",                     null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+    t.index ["follower_id", "follower_type"], name: "fk_follows", using: :btree
   end
 
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
