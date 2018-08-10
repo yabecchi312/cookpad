@@ -1,26 +1,24 @@
-.login_wrapper
-  %h2 新規登録
+.devise_wrapper
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
-    .login_form
+    .devise_form
       .field
-        = f.label :name
         %br/
-        = f.text_field :name,class: "login_form_name", autofocus: true, autocomplete: "name"
+        = f.text_field :name,class: "devise_form_contents", autofocus: true, autocomplete: "name",placeholder: "名前を入力してください"
       .user-image.col-md-2
         %img{ style: "" }
-        = f.file_field :avatar,class: "login_form_name"
+        = f.file_field :avatar,class: "devise_form_contents"
       .field
         %br/
-        = f.email_field :email,class: "login_form_name", autocomplete: "off",placeholder: "メールアドレスを入力してください"
+        = f.email_field :email,class: "devise_form_contents", autocomplete: "off",placeholder: "メールアドレスを入力してください"
       .field
         %br/
-        = f.password_field :password,class: "login_form_name", autocomplete: "off",placeholder: "passwordを入力してください"
+        = f.password_field :password,class: "devise_form_contents", autocomplete: "off",placeholder: "パスワードを入力してください"
       .field
         %br/
-        = f.password_field :password_confirmation,class: "login_form_name", autocomplete: "off",placeholder: "もう一度passwordを入力してください"
+        = f.password_field :password_confirmation,class: "devise_form_contents", autocomplete: "off",placeholder: "もう一度パスワードを入力してください"
       .user-name.col-md-12
         %br/
-        = f.text_area :profile,class: "login_form_name", placeholder: "Profileを入力してください", size:"30×4"
+        = f.text_area :profile,class: "devise_form_contents", placeholder: "ユーザープロフィールを入力してください", size:"30×4"
       .actions
-        = f.submit "Sign up"
+        = f.submit "新規登録する"

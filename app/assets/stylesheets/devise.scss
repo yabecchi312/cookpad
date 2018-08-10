@@ -1,17 +1,18 @@
-.login_wrapper {
+.devise_wrapper {
   width: 100vw;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 40px;
+  padding-bottom: 20px;
   max-width: 660px;
   font-family: "游ゴシック", "YuGothic";
   h2 {
     font-size: 24px;
   }
-  .login_form {
+  .devise_form {
     margin: 20px 0;
     padding: 30px;
     box-shadow: 0 0 10px rgba(41,41,41,0.2);
-    background-color: white;
+    background: #F9F9F5;
     box-sizing: border-box;
     display: block;
     line-height: 1.57;
@@ -20,12 +21,23 @@
     color: #666666;
     .field {
       font-family: "游ゴシック", "YuGothic";
-      input.login_form_name {
-        height: 30px;
-        width: 100%;
-        border: 1px solid #d8d8d8;
-        border-radius: 5px;
-      }
+    }
+    input::placeholder {
+      color: #77550d;
+    }
+    .devise_form_contents {
+      height: 30px;
+      width: 100%;
+      border: 1px solid #cec1a5;
+      border-radius: 5px;
     }
   }
+}
+input.devise_form_contents{
+  border: 1px solid #999;
+  background-color:transparent;
+}
+input.devise_form_contents:focus {
+  border: 1px solid #ff9900;
+  outline: 0;
 }

@@ -1,20 +1,26 @@
-body {
+html {
   background-color: $base-background-color;
-  #wrapper {
-    padding-right: 170px;
-    text-align: center;
-    width: 970px;
-    min-width: 970px;
-    margin: 0px auto;
-    background-color: #f7f3e8;
-    #container {
-      text-align: left;
+}
+
+body {
+  #top-wrapper {
+    background-color: $base-background-color;
+    #wrapper {
+      background-color: $base-background-color;
+      padding-right: 170px;
+      text-align: center;
       width: 970px;
-      margin: 0 auto;
-      padding: 0px;
-      #contents {
-        padding-bottom: 1px;
-        margin-bottom: 24px;
+      min-width: 970px;
+      margin: 0px auto;
+      #container {
+        text-align: left;
+        width: 970px;
+        margin: 0 auto;
+        padding: 0px;
+        #contents {
+          padding-bottom: 1px;
+          margin-bottom: 24px;
+        }
       }
     }
   }
@@ -85,4 +91,3 @@ a.recipe_title:visited {
   color: #ff9933;
   font-size: 16px;
 }
-
