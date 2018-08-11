@@ -13,6 +13,9 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(
