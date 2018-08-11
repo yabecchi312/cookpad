@@ -27,9 +27,11 @@
                     = link_to user_path(id: current_user.id) do
                       = current_user.name
                   %li.notification お知らせ
-                  %li.config.user_function_link
-                    = link_to destroy_user_session_path do
-                      %span ログアウト
+                  %li.config
+                    %a{id: "user_menu_config", href: "#"}
+                      %img{class: "user_function_link", alt: "設定", src: "https://assets.cpcdn.com/assets/global/header_config.png?f63fccfc568cc03db8b0d45072cf9b6550df024e4ef8c36cefbcb0fa3626bc0c"}
+                      #setting_tip{style: "display: none;"} 設定
+                      / = link_to destroy_user_session_path do
                 - else
                   %li.user_name.user_function_link
                     = link_to new_user_registration_path do
