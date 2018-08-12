@@ -78,4 +78,17 @@
       }
     }
   }
+  #myfolder_right {
+    margin-right: 20px;
+    width: 430px;
+    float: right;
+    .tab_button {
+      margin-top: 15px;
+      height: 42px;
+      vertical-align: bottom;
+      .paging_myfolder {
+        float: right;
+      }
+    }
+  }
 }
