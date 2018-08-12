@@ -1,0 +1,33 @@
+#top-wrapper
+  #wrapper
+    #container
+      #contents
+        #main
+          #myfolder_wrapper.clearfix
+            #myfolder_header
+              .top_link
+                = link_to myfolders_path do
+                  = fa_icon 'folder-open-o'
+                  %span MYフォルダ
+              .search_box.description
+                = fa_icon 'search', class: 'search_icon'
+                %input.recipe_search_keyword{type: 'text',placeholder: "MYフォルダ内を検索"}
+                %input#btn_myfolder_search{type: 'submit',value: '検索'}
+            #myfolder_left
+              #myfolder_left_container
+                .navigation
+                  .title
+                    レシピ保存数
+                  #indicator_navi
+                    #indicator_wrapper
+                      #indicator_used{style:"width:5%"}
+                      #indicator_unused{style:"width:95%"}
+                    #percentage
+                      %span.used_amount
+                        3
+                      %span.slash
+                        \/
+                      %span.total_amount
+                        3000
+            #myfolder_right
+          #side
