@@ -55,7 +55,6 @@
       }
     }
     &__right {
-      background-color: #fff7cc;
       height: 1173px;
       width: 300px;
       float: right;
@@ -345,19 +344,19 @@
 }
 
 // contents-rightのリスト
-ul {
+ul.menu_list_example {
   list-style: none;
-}
-li {
-  height: auto;
-  width: auto;
-  display: block;
-  text-align: left;
-  color: #330000;
-  padding: 3px;
-  border: 1px solid #d8d4c5;
-  margin-bottom: -1px;
-  border-width: 1px 0px;
+  li {
+    height: auto;
+    width: auto;
+    display: block;
+    text-align: left;
+    color: #330000;
+    padding: 3px;
+    border: 1px solid #d8d4c5;
+    margin-bottom: -1px;
+    border-width: 1px 0px;
+  }
 }
 
 // contents-rightの例

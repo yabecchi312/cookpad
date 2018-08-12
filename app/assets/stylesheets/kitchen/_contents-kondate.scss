@@ -1,0 +1,59 @@
+#kitchen_main {
+  .list_header {
+    margin-bottom: 20px;
+  }
+  .kondate_list {
+    .kondate {
+      overflow: hidden;
+      margin-bottom: 15px;
+      .image {
+        float: left;
+        margin-right: 10px;
+        padding: 4px;
+        border: 1px solid #cccccc;
+        border-right: 1px solid #999999;
+        border-bottom: 1px solid #999999;
+        width: 150px;
+        height: 150px;
+      }
+      .infos {
+        overflow: hidden;
+        padding: 0 5px;
+        min-height: 185px;
+        .title {
+          font-weight: bold;
+          font-size: 18px;
+          .kondate_recipe_count {
+            font-weight: normal;
+            font-size: 13px;
+            margin-left: 5px;
+            color: #999999;
+          }
+        }
+        .kondate_description {
+          color: #808080;
+          font-size: 14px;
+        }
+        .kondate_recipes {
+           margin-top: 8px;
+           .other_recipe_count {
+            margin-left: 10px;
+            font-size: 12px;
+            color: #999999;
+           }
+        }
+      }
+    }
+  }
+}
+
+.main_recipe_icon {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4f3c13;
+}
+.sub_recipe_icon {
+  font-size: 16px;
+  font-weight: bold;
+  color: #917841;
+}
