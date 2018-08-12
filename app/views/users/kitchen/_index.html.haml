@@ -15,8 +15,7 @@
                   %span
                     のキッチン
               .feeder_follow_button
-                %a
-                  = fa_icon 'user-plus', text: "フォローする"
+                = render partial: 'users/follow', local: { user: @user }
               %ul.follow_status
                 %li
                   %a
