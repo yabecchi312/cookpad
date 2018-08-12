@@ -48,7 +48,9 @@
                       .recipe_description
                         = recipe.catch_copy
                       .recipe_ingredients
-                        材料：おかひじき、マヨネーズ、醤油
+                        %span 材料：
+                        - recipe.ingredients.each do |ingredient|
+                          = ingredient.name
                     .clear_both
         #side
         .clear_both
