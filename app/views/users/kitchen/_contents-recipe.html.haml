@@ -1,0 +1,61 @@
+.container
+  #two_contents_wrapper
+    #kitchen_side
+      .kitchen_side_wrapper.recipe_category
+        %h3.content_title
+          カテゴリ
+        %ul
+          %li.selected
+            =link_to 'すべて','#'
+            %span.item_count
+              (50)
+          %li
+            %span.category_name
+              = link_to 'つくれぽ10件','#'
+            %span.item_count
+              (10)
+          %li
+            %span.category_name
+              = link_to 'つくれぽ100件','#'
+            %span.item_count
+              (1)
+      .kitchen_side_wrapper.archive
+        %h3.content_title
+          アーカイブ
+        %ul
+          %li.selected
+            =link_to 'すべて','#'
+            %span.item_count
+              (50)
+          %li
+            %span.category_name
+              = link_to '2018年','#'
+            %span.item_count
+              (30)
+          %li
+            %span.category_name
+              = link_to '2017年','#'
+            %span.item_count
+              (20)
+    #kitchen_main
+      .recipe_list_header
+        = render "users/kitchen/search-box"
+        .separate_right
+          .paging-top
+            %span
+              1/100 ページ
+            = link_to '次へ »', '#'
+      .recipe_preview
+        .recipe_image
+          %a
+            レシピ画像イメージレシピ画像イメージレシピ画像イメージ
+        .recipe_text
+          %span.title
+            = link_to '母親の味♪おかひじきのマヨ醤油和え','#',class: "recipe_title"
+          .myfolder
+            = fa_icon 'plus-circle'
+          .recipe_description
+            懐かしい味。シャキシャキしていて美味しい！
+          .recipe_ingredients
+            材料：おかひじき、マヨネーズ、醤油
+    .clear_both
