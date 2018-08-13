@@ -36,18 +36,20 @@
         float: left;
         width: 50px;
         margin-right: 10px;
-        margin-bottom: 10px;
         display: block;
       }
       h2#name {
         font-size: 131%;
         color: #2F1C12;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         font-weight: bold;
         #link_to_edit_user_name {
           font-size: 12px;
           font-weight: normal;
         }
+      }
+      p {
+        margin-bottom: 5px;
       }
     }
     #service_info {
