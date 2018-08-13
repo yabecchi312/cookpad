@@ -1,87 +1,141 @@
-.main
-  .contents
-    .contents__left
-      .contents__left__recipe
-        -# contents__left内の削除、印刷のところ
-        .recipe_author
-          .recipe_author__link_author_kitchen
-            = link_to "クックGB5RQL☆のレシピ", "#"
-          .recipe_author__link_setting_delete
-            = link_to "印刷", "#"
-            |
-            = link_to "削除", "#"
-          -# recipe内の入力する部分(画像、材料、キャッチコピー)
-        .recipe-main
-          .recipe-title
-            %h1 しらすとアボカドのごまポン酢丼
-            -# 画像
-          .recipe-photo
-            = image_tag "image-upload.png"
-          -# キャッチコピーと材料
-          .catchphrase_and_ingredients
-            .catchphrase_recipe_author_top
-              .catchphrase
-                = image_tag "edit-image.png", class: "edit-image"
-                このレシピのキャッチコピーを入力 (検索結果にも表示されます)
-              .recipe_author_top
-                .recipe_author_top__link
-                  = image_tag "profile.png", class: "author_icon"
-                  = link_to "クックGB5RQL☆", "#"
-            .ingredients
-              = image_tag "cookpad-ingredients.gif"
-          .sk-center
-            -# 料理ステップ
-          .step
-            .step__header
-              .step-position 1
-            .step__main
-              .step__main_image
-              .step__main_text
-          #cooking-steps
-            -# コツ、レシピの生い立ち
-          .memo_and_history
-            .memo_wrapper
-              %h3 コツ・ポイント
-              .text-content
-                = image_tag "edit-image.png", class: "edit-image"
-                -# クリックしてコツやポイントを入力
-            .history_wrapper
-              %h3 このレシピの生い立ち
-              .text-content
-                -# = image_tag "edit-image.png", class: "edit-image"
-                -# クリックしてこのレシピをが生まれたきっかけや経験を入力
-                -# %br
-                -# 例）母から教わったレシピを、家族が好む甘めの味付けにアレンジしました
-                -# %br
-                -# 例）〇〇番組で紹介されたレシピを、家にある材料で簡単に作れるように工夫しました
-          .sk-bottom
-          -# レシピID、公開日、更新日
-          .meta_data_wrapper
-            .recipe_id_and_published_date
-              %span.recipe_id レシピID : 5198962
-              %span.published_date 公開日 : 未公開
-              %span 更新日 : 18/08/07
-
-    .contents__right
-      = render "side-banner-wrapper"
-      .draft_box
-        .edit_recipe
-          .check_guideline
-            %input{type: "checkbox"}
-            = link_to "掲載するレシピのガイドライン", "#"
-            %br
-              を読んで理解しました
-          .submit-button
-            レシピを公開する
-      .user_icon_setting
-        %h3
-          %span クックGB5RQL☆
-          さんのアイコン設定
-        %p.message
-          あなたらしいレシピにするためにアイコンを設定してみませんか。
-        .set_icon
-          .user-icon-box
-            = image_tag "profile.png", size: '48x48'
-            = link_to "アイコンを設定する", "#"
-        %span.fukidashi
-          = image_tag "fukidashi.png", size: '14x21'
+.main-show
+  .contents.clearfix
+    .contents__left.clearfix
+      -# レシピ詳細部分
+      .recipe-show
+        .recipe__save-button
+          = link_to "レシピを保存", "#"
+        .recipe__title
+          %h1.recipe-title
+            しらすとアボカドのごまポン酢丼
+            -# キャッチコピー、材料、計算
+        #photo-summary-ingredients.clearfix
+          .main-photo
+            画像
+          .desc-and-ingredients
+            -# レシピのキャッチコピー
+            .summary
+              .description_text
+                しらすとアボカドのシンプルな丼です。切って混ぜるだけだから簡単♪ごま油の風味が意外に合います。
+              .recipe_author_info_link
+                = image_tag "#", size: "22x22", class: "author_icon"
+                = link_to "name", class: "recipe_author_name"
+            .ingredients_wrapper
+              .ingredients-title
+                %h3.servings_title
+                  .content
+                    %span
+                      材料
+                    %span.serving_for
+                      （１～２人分）
+              #ingredients_list
+                = render "ingredient"
+              .option-calculation
+                = image_tag "icon_ps_small.png", size: "13x14", class: "ps_icon"
+                = link_to "カロリー・塩分を計算", "#", class: "calculate-nutrition"
+        .sk_product_recipe_promotion
+        #steps.clearfix
+          = render "step-show"
+        #memo_and_history.clearfix
+          .memo_wrapper
+            %h3
+              コツ・ポイント
+            .text_content#advice
+              ☆２００９年１１月「社団法人米穀安定供給確保支援機構 おいしい朝ごはんコンテスト」で準グランプリを頂きました♪
+          .history_wrapper
+            %h3
+              このレシピの生い立ち
+            .text_content#history
+              釜揚げしらすを沢山頂いた時に作ってみました。
+        .sk_product_recipe_regular_user
+        .meta_data_wrapper
+          .recipe_id_and_published_date
+            %span.recipe_id レシピID : 932042
+            %span.published_date 公開日 : 09/10/09
+            %span 更新日 : 12/08/12
+        .recipe_share_tools_wrapper
+          %ul.tools_list.clearfix
+            %li.save-myfolder
+              .myfolder_recipe_link
+                = image_tag "folder_in_symbolfont.png", class: "folder_in_symbolfont"
+                = link_to "レシピを保存", "#"
+            %li.print_icon
+              %i.fa.fa-print
+              = link_to "印刷する", "#"
+            %li.email-icon
+              %i.fa.fa-envelope
+              = link_to "メールする", "#"
+            %li.keitai-icon
+              %i.fa.fa-mobile
+              = link_to "携帯に送る", "#"
+            %li.recipe_share
+              %i.fa.fa-angle-down
+              = link_to "レシピを共有", "#"
+      -# つくれぽ、コメント
+      #tsukurepo-and-comment
+        %ul.menu_tab
+          %li#tsukurepo_tab
+            = link_to "つくれぽ", "#"
+            %span.count
+              (205件)
+          %li#comment_tab
+            = link_to "コメント", "#"
+            %span.count
+              (0件)
+        .tsukurepo_and_comment_wrapper
+          .tsukurepo_container
+            .tsukurepo_title
+              %h2.title
+                みんなのつくりましたフォトレポート「つくれぽ」
+              .matter_right
+                %span.tsukurepo_count 205
+                件
+                %span.tsukurepo_uu_count (189人)
+            #tsukurepo-list.clearfix
+              = render "tsukurepo"
+            #more_tsukurepos.center
+              = link_to "もっと見る(238件)"
+            .tsukurepo-post
+              .tsukurepo_content_for
+                = link_to "", class: "tsukurepo_button" do
+                  = fa_icon "edit"
+                  つくれぽを送る
+        #related_link_wrapper
+          .related
+            .user_kondates_wrapper
+              %h5.title_border
+                このレシピを使った献立
+              #user_kondates.clearfix
+                = render "kondate"
+              %h5.title_border
+                似たレシピをさがす
+              %ul.related_keywords
+                = render "similar-recipe"
+    .contents__right.clearfix
+      .side_banner_wrapper 広告
+      .goiken_section
+        .goiken_box
+          .goiken_title
+            クックパッドへのご意見をお聞かせください
+          .goiken_content
+            .new_goiken
+              %input#opinion_type_default{type:"radio",checked: "checked",name:"opinion_type"}
+              %label{for:"opinion_type_default"}
+                サービスへのご意見・ご要望
+              %br
+              %input#opinion_type_bug{type:"radio",name:"opinion_type"}
+              %label{for:"opinion_type_bug"}
+                機能の不具合
+              %br
+              %input#opinion_type_report{type:"radio",name:"opinion_type"}
+              %label{for:"opinion_type_report"}
+                レシピやつくれぽで気付いた点の報告
+            %textarea
+            .opinion_submit_wrapper
+              %input{type:"submit",value:"クックパッドに意見を送る", }
+        .inq_box
+          %p.inq_title お困りの方はこちら
+          %p.link_to_inq
+            = link_to "ヘルプ・お問い合わせ", "#"
+      .side_banner_wrapper 広告
+      .side_banner_wrapper 広告
