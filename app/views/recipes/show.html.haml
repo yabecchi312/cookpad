@@ -7,16 +7,17 @@
           = link_to "レシピを保存", "#"
         .recipe__title
           %h1.recipe-title
-            しらすとアボカドのごまポン酢丼
+            = @recipe.title
             -# キャッチコピー、材料、計算
         #photo-summary-ingredients.clearfix
           .main-photo
+            = image_tag(@recipe.image)
             画像
           .desc-and-ingredients
             -# レシピのキャッチコピー
             .summary
               .description_text
-                しらすとアボカドのシンプルな丼です。切って混ぜるだけだから簡単♪ごま油の風味が意外に合います。
+                = @recipe.catch_copy
               .recipe_author_info_link
                 = image_tag "#", size: "22x22", class: "author_icon"
                 = link_to "name", class: "recipe_author_name"
@@ -29,30 +30,37 @@
                     %span.serving_for
                       （１～２人分）
               #ingredients_list
-                = render "ingredient"
+                -# 複数投稿してから実装する
+                = render "ingredient", ingredients: @ingredients
               .option-calculation
                 = image_tag "icon_ps_small.png", size: "13x14", class: "ps_icon"
                 = link_to "カロリー・塩分を計算", "#", class: "calculate-nutrition"
         .sk_product_recipe_promotion
         #steps.clearfix
-          = render "step-show"
+          = render "step-show", flows: @flows
         #memo_and_history.clearfix
           .memo_wrapper
             %h3
               コツ・ポイント
             .text_content#advice
-              ☆２００９年１１月「社団法人米穀安定供給確保支援機構 おいしい朝ごはんコンテスト」で準グランプリを頂きました♪
+              = @recipe.tips
           .history_wrapper
             %h3
               このレシピの生い立ち
             .text_content#history
-              釜揚げしらすを沢山頂いた時に作ってみました。
+              = @recipe.background
         .sk_product_recipe_regular_user
         .meta_data_wrapper
           .recipe_id_and_published_date
-            %span.recipe_id レシピID : 932042
-            %span.published_date 公開日 : 09/10/09
-            %span 更新日 : 12/08/12
+            %span.recipe_id
+              レシピID :
+              = @recipe.id
+            %span.published_date
+              公開日 :
+              = simple_time(@recipe.created_at)
+            %span
+              更新日 :
+              = simple_time(@recipe.updated_at)
         .recipe_share_tools_wrapper
           %ul.tools_list.clearfix
             %li.save-myfolder
