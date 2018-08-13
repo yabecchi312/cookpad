@@ -3,6 +3,12 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def follow
     current_user.follow(@user)
     respond_to do |format|

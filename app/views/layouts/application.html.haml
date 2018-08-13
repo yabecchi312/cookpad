@@ -40,10 +40,15 @@
                       %span ログイン
               .config_dropdown_menu{style: "display: none;"}
                 %ul
-                  %li 登録情報
-                  = link_to "edit"
-                  %li ヘルプ
-                  %li ログアウト
+                  %li
+                    = link_to new_user_registration_path do
+                      %span 登録情報
+                  %li
+                    = link_to "/" do
+                      %span ヘルプ
+                  %li
+                    = link_to destroy_user_session_path do
+                      %span ログアウト
         = render 'shares/inner-header.html.haml'
     = yield
 

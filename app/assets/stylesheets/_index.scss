@@ -48,12 +48,15 @@ header {
             padding-left: 10px;
             &.config {
               float: right;
-              margin-top: 7px;
+              margin-top: 0px;
               display: block;
               cursor: pointer;
               margin-right: 0;
               & #user_menu_config {
                 position: relative;
+                .user_function_link {
+                  margin-top: 7px;
+                }
                 #setting_tip {
                   display: block;
                   border-radius: 5px;
