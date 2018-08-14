@@ -241,7 +241,17 @@
   }
   // 材料
   .ingredients {
-    height: 223px;
+    height: auto;
+    .ingredient{
+      .ingredient-name {
+        float: left;
+        width: 150px;
+        margin-right: 10px;
+      }
+      .ingredient-amount {
+        width: 130px;
+      }
+    }
   }
 }
 
