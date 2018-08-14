@@ -33,11 +33,13 @@
                     = image_tag "profile.png", class: "author_icon"
                     = link_to "クックGB5RQL☆", "#"
               .ingredients
-                - 3.times do |num|
-                  = f.fields_for :ingredients do |i|
-                    = i.text_field :name, placeholder: "材料名"
-                    = i.text_field :amount, placeholder: "分量"
-                    -# = image_tag "cookpad-ingredients.gif"
+                = f.fields_for :ingredients do |i|
+                  .ingredient
+                    = i.text_field :name, placeholder: "材料名", class: "ingredient-name", name: "recipe[ingredients_attributes][][name]"
+                    = i.text_field :amount, placeholder: "分量", class: "ingredient-amount", name: "recipe[ingredients_attributes][][amount]"
+              .add
+                = link_to "追加","", id: "add-button"
+                -# = image_tag "cookpad-ingredients.gif"
             .sk-center
             -# 料理ステップ
             #cooking-steps
