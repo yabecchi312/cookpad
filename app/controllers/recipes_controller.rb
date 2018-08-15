@@ -13,6 +13,10 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+  def list
+    @recipes = Recipe.find(current_user.id)
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(

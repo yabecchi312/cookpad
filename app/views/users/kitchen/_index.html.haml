@@ -35,11 +35,9 @@
           .kitchen_navi
             %ul.kitchen_navi_list
               %li.kitchen_navi_top.selected
-                %a
-                  トップ
+                = link_to 'トップ', user_path
               %li.kitchen_navi_recipe
-                %a
-                  レシピ
+                = link_to 'レシピ', "/recipes/list/#{current_user.id}"
               %li.kitchen_navi_tsukurepo
                 %a
                   つくれぽ
