@@ -123,6 +123,28 @@
         padding: 6px;
         font-weight: bold;
       }
+      td {
+        border: 1px solid #e3dcca;
+        padding: 6px;
+        p.count-disp{
+          font-size: 87.5%;
+          color: #999999;
+        }
+        .count-length {
+          width: 300px;
+          font-size: 108%;
+          line-height: 1.5;
+          padding: 3px 5px;
+          margin: 0 5px 0 0;
+          box-shadow: inset 1px 1px 4px #e6e6e6;
+          border-radius: 3px;
+          box-sizing: border-box;
+          border: 1px solid #cccccc;
+          vertical-align: middle;
+          display: inline-block;
+          font-weight: normal;
+        }
+      }
     }
     .actions {
       padding: 5px;
@@ -140,7 +162,6 @@
         background: linear-gradient(to bottom, #ffffff, #ececec);
         border-radius: 5px;
         font-size: 115%;
-
       }
     }
   }
