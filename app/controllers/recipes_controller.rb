@@ -14,7 +14,8 @@ class RecipesController < ApplicationController
   end
 
   def list
-    @recipes = Recipe.find(current_user.id)
+    @user = User.find(params[:id])
+    @recipes = @user.recipes
   end
 
   private

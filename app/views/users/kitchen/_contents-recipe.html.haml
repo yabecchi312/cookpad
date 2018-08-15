@@ -45,17 +45,21 @@
             %span
               1/100 ページ
             = link_to '次へ »', '#'
-      .recipe_preview
-        .recipe_image
-          %a
-            レシピ画像イメージレシピ画像イメージレシピ画像イメージ
-        .recipe_text
-          %span.title
-            = link_to '母親の味♪おかひじきのマヨ醤油和え','#',class: "recipe_title"
-          .myfolder
-            = fa_icon 'plus-circle'
-          .recipe_description
-            懐かしい味。シャキシャキしていて美味しい！
-          .recipe_ingredients
-            材料：おかひじき、マヨネーズ、醤油
+      .recipe_list
+        - @recipes.each do |recipe|
+          .recipe_preview
+            .recipe_image
+              = image_tag recipe.image.to_s
+            .recipe_text
+              %span.title
+                = link_to "#{recipe.title}",'#',class: "recipe_title"
+              .myfolder
+                = fa_icon 'plus-circle'
+              .recipe_description
+                = recipe.catch_copy
+              .recipe_ingredients
+                %span 材料：
+                - recipe.ingredients.each do |ingredient|
+                  = ingredient.name
+              .clear_both
     .clear_both
