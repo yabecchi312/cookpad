@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.update(user_params)
+    render :edit
   end
 
   def follow
@@ -26,6 +28,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:name)
+  end
 
   def set_user
     @user = User.find(params[:id])

@@ -9,5 +9,4 @@ Rails.application.routes.draw do
     end
   end
   resources :recipes, only: [:index, :new, :create]
-  resources :users, only: [:show]
 end
