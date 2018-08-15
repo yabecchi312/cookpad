@@ -6,5 +6,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, ImageUploader
-  has_many :myfolders
+  has_many :myfolders, dependent: :destroy
 end
