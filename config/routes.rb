@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
   resources :recipes, only: [:index, :new, :create]
   resources :users, only: [:show]
-  resources :myfolders, only: [:index]
+  resources :myfolders, only: [:index, :create, :destroy]
 end
