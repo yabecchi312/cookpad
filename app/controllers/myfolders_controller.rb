@@ -1,4 +1,6 @@
 class MyfoldersController < ApplicationController
+  protect_from_forgery except: [:create, :destroy]
+
   def index
     @user = User.find(current_user.id)
     @recipes = []
@@ -13,7 +15,7 @@ class MyfoldersController < ApplicationController
   end
 
   def destroy
-    @recipe = Like.find(params[:id]).recipe
+    @recipe = Myfolder.find(params[:id]).recipe
     @recipe.unregister_from_myfolder(current_user)
   end
 end

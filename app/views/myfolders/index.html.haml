@@ -44,7 +44,7 @@
                       %span.title
                         = link_to recipe.title,'#',class: "recipe_title"
                       .myfolder
-                        = fa_icon 'minus-circle'
+                        = render "myfolder-icon", recipe: recipe
                       .recipe_description
                         = recipe.catch_copy
                       .recipe_ingredients
