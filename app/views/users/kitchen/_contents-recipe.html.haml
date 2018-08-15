@@ -1,5 +1,5 @@
 .container
-  #two_contents_wrapper
+  #two_contents_wrapper.clearfix
     #kitchen_side
       .kitchen_side_wrapper.recipe_category
         %h3.content_title
@@ -50,7 +50,7 @@
           .recipe_preview
             .recipe_image
               = image_tag recipe.image.to_s
-            .recipe_text
+            .recipe_text.clearfix
               %span.title
                 = link_to "#{recipe.title}",'#',class: "recipe_title"
               .myfolder
@@ -61,5 +61,3 @@
                 %span 材料：
                 - recipe.ingredients.each do |ingredient|
                   = ingredient.name
-              .clear_both
-    .clear_both
