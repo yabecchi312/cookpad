@@ -15,7 +15,7 @@ class MyfoldersController < ApplicationController
       @recipe.register_to_myfolder(current_user)
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
-        format.json
+        format.json{@recipe}
       end
     end
   end
@@ -26,7 +26,6 @@ class MyfoldersController < ApplicationController
       @recipe.unregister_from_myfolder(current_user)
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
-        # format.json{ @recipe = Recipe.find(params[:post_id]}
         format.json
       end
     end
