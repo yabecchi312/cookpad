@@ -75,3 +75,4 @@ gem "font-awesome-rails"
 gem 'bootstrap-sass'
 gem 'devise'
 gem "acts_as_follower", github: "tcocca/acts_as_follower", branch: 'master'
+gem "font_awesome5_rails"
