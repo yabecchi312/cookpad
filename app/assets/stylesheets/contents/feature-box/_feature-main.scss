@@ -1,0 +1,115 @@
+.feature-main {
+  float: right;
+  width: 477px;
+  min-height: 580px;
+  border-left: 1px solid $LightBrown;
+  .feature-pickup {
+    padding: 15px;
+    .pickup-image {
+      img {
+        border-radius: 5px;
+        vertical-align: middle;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+    .pickup-title {
+      margin-top: 10px;
+      &__date {
+        float: left;
+        font-size: 86%;
+        border-radius: 4px;
+        background: $Orange;
+        color: $White;
+        font-weight: bold;
+        width: 90px;
+        margin-right: 10px;
+        padding: 5px;
+        text-align: center;
+        span {
+          font-size: 129%;
+        }
+      }
+      &__body {
+        font-size: 129%;
+        margin-bottom: 3px;
+        color: #889b00;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &__user {
+        color: $Gray;
+        padding-left: 4px;
+      }
+    }
+  }
+  .feature-news {
+    .news-title {
+      @include title_bar;
+      @include border-top($LightBrown);
+    }
+    .news-list {
+      padding: 15px 10px 0 15px;
+      .news-top {
+        height: 100px;
+        width: 100%;
+        margin-bottom: 15px;
+        float: none;
+        &__image {
+          float: left;
+          margin-right: 10px;
+          img {
+            border-radius: 5px;
+            vertical-align: middle;
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+        &__article {
+          overflow: hidden;
+          margin-left: 5px;
+          &--title {
+            font-size: 143%;
+            font-weight: bold;
+            color: $DarkBrown;
+            margin-bottom: 10px;
+            &:hover {
+              color: $Bordeaux;
+              text-decoration: underline;
+            }
+          }
+          &--body {
+            font-size: 93%;
+            line-height: 170%;
+            color: $Gray;
+          }
+        }
+      }
+      li.news-topic {
+        font-size: 93%;
+        float: left;
+        width: 50%;
+        margin-bottom: 6px;
+        a {
+          padding-left: 12px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .news-more-link {
+        padding: 2px 15px 10px 15px;
+        font-size: 86%;
+        font-weight: bold;
+        text-align: right;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

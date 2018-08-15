@@ -1,7 +1,7 @@
 @import "./reset";
 // @import "bootstrap/bootstrap";
 // @import "bootstrap/bootstrap-grid";
-@import "font-awesome";
+@import 'font_awesome5';
 @import "config/variables";
 @import "./index";
 @import "common/cookpad";
@@ -12,5 +12,14 @@
 @import "kitchen/contents-kondate";
 @import "./recipes/new";
 @import "devise";
+
+@import "modules/reset";
+@import "modules/color";
+@import "modules/base";
+@import "modules/mixin";
+@import "modules/boxes";
+@import "contents/contents";
+@import "./reset";
+
 @import "user-edit";
 @import "modaal.min";
