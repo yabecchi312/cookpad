@@ -11,18 +11,10 @@ class UsersController < ApplicationController
 
   def follow
     current_user.follow(@user)
-    respond_to do |format|
-      format.html { redirect_to @user }
-      format.js
-    end
   end
 
   def unfollow
     current_user.stop_following(@user)
-    respond_to do |format|
-      format.html { redirect_to @user }
-      format.js
-    end
   end
 
   private
