@@ -5,6 +5,47 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+<<<<<<< HEAD
   %body
     .wrapper
       = yield
+=======
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    - if %w[user_session new_user_registration].any? { |name| current_page?(send("#{name}_path")) }
+      %header
+        .header_container
+          .header_container.global_menu
+            .global_menu.f_left
+            = link_to "/" do
+              %img{alt: "Cookpad", src: "https://app-assets.cpcdn.com/identity/assets/header_logo@2x-da9684baee638528a759cfee19839ba657e6b93ebef3d74b8265eb3b3ab65a6f.png", width: "92", height: "25"}
+    - else
+      %header
+        .header_container
+          .header_container.global_menu
+            .global_menu.f_left サービス一覧
+            .global_menu.f_right
+              %ul.user_menu.list_inline
+                %li.ps_link プレミアムサービス
+                - if user_signed_in?
+                  %li.user_name.user_function_link
+                    = link_to user_path(id: current_user.id) do
+                      = current_user.name
+                  %li.notification お知らせ
+                  %li.config.user_function_link
+                    = link_to destroy_user_session_path do
+                      %span ログアウト
+                - else
+                  %li.user_name.user_function_link
+                    = link_to new_user_registration_path do
+                      %span ユーザー登録
+                  %li.config.user_function_link
+                    = link_to new_user_session_path do
+                      %span ログイン
+        = render 'shares/inner-header.html.haml'
+    = yield
+
+    %footer
+      = render 'shares/mega-footer.html.haml'
+>>>>>>> yabecchi312/master

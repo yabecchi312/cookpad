@@ -1,0 +1,44 @@
+.container
+  #two_contents_wrapper
+    #kitchen_side
+      .kitchen_side_wrapper.archive
+        %h3.content_title
+          アーカイブ
+        %ul
+          %li.selected
+            =link_to 'すべて','#'
+            %span.item_count
+              (50)
+          %li
+            %span.category_name
+              = link_to '2018年','#'
+            %span.item_count
+              (30)
+          %li
+            %span.category_name
+              = link_to '2017年','#'
+            %span.item_count
+              (20)
+    #kitchen_main
+      .list_header
+      .kondate_list
+        .kondate
+          .image
+            = link_to '','#'
+          .infos
+            .title
+              = link_to '献立タイトル','#'
+              %span.kondate_recipe_count
+                (5品)
+            .kondate_description
+              ご馳走です。
+            %ul.kondate_recipes
+              %li
+                %span.main_recipe_icon 主
+                = link_to '主菜レシピ名','#',class: "recipe_title"
+              %li
+                %span.sub_recipe_icon 副
+                = link_to '副菜レシピ名あいうえお','#',class: "recipe_title"
+                %span.other_recipe_count
+                  他3品
+    .clear_both

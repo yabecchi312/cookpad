@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
