@@ -11,13 +11,11 @@
               %li.kitchen_navi_recipe.selected
                 = link_to 'レシピ', "/recipes/list/#{@user.id}"
               %li.kitchen_navi_tsukurepo
-                %a
-                  つくれぽ
+                %a つくれぽ
               %li.kitchen_navi_kondate
                 %a 献立
               %li.kitchen_navi_blog
-                %a
-                  = fa_icon 'link', text: "ブログ"
+                %a = fa_icon 'link', text: "ブログ"
               %li.kitchen_navi_diary
                 %a ごはん日記
           = render "users/kitchen/contents-recipe"
