@@ -1,0 +1,96 @@
+.main650 {
+  display: block;
+  float: left;
+  width: 650px;
+  height: 650px;
+  font-size: 87.5%;
+  background: #fff;
+  #two-col-left {
+    float: left;
+    width: 610px;
+    margin: 10px 20px;
+    .page_title {
+      position: relative;
+      margin-bottom: 15px;
+      h1.page_title_with_line {
+        color: #2F1C12;
+        font-size: 138.5%;
+        padding: 0px;
+        border-bottom: 1px solid #D6D7B9;
+        font-weight: bold;
+      }
+      p {
+        color: #666;
+        font-size: 85%;
+        top: 6px;
+        right: 0px;
+        bottom: 10px;
+        position: absolute;
+      }
+    }
+    #account_info {
+      margin-bottom: 20px;
+      height: 60px;
+      font-size: 85%;
+      #user_icon_wrapper {
+        float: left;
+        width: 50px;
+        margin-right: 10px;
+        display: block;
+      }
+      h2#name {
+        font-size: 131%;
+        color: #2F1C12;
+        margin-bottom: 4px;
+        font-weight: bold;
+        #link_to_edit_user_name {
+          font-size: 12px;
+          font-weight: normal;
+        }
+      }
+      p {
+        margin-bottom: 5px;
+      }
+    }
+    #service_info {
+      h3 {
+        color: #2F1C12;
+        font-size: 108%;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      table.cp_table {
+        width: 100%;
+        margin: 0 0 15px;
+        border-color: gray;
+        border-collapse: collapse;
+        border-spacing: 2px;
+        tbody {
+          display: table-row-group;
+          vertical-align: middle;
+          th {
+            padding: 5px;
+            color: #B09068;
+            border: 1px solid #D6D7B9;
+            background: #EBE4C9;
+            text-align: left;
+            width: 367px;
+            font-weight: bold;
+            &.header.service_title {
+              width: 25%;
+            }
+            &.header {
+              width: 60%;
+            }
+          }
+          td {
+            padding: 5px;
+            border: 1px solid #D6D7B9;
+            &.service_title {
+            }
+          }
+        }
+      }
+    }
+  }
+}
