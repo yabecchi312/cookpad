@@ -1,0 +1,57 @@
+.kitchen
+  .kitchen-menu {
+    margin: 0;
+    .kitchen-menu__title {
+       @include title_bar;
+       border-radius: 0;
+       border-top: 1px solid $LightBrown;
+    }
+    ul {
+      @extend .clearfix;
+      padding: 10px;
+      margin: 0;
+      .kitchen-menu__list{
+        float: left;
+        margin-right: 11px;
+        width: 80px;
+        img {
+          border-radius: 5px;
+        }
+        span {
+        font-size: 93%;
+        font-weight: bold;
+        word-break: break-all;
+      }
+    }
+      .kitchen-menu__last {
+        float: left;
+        margin-right: 0;
+        width: 80px;
+        img {
+          border-radius: 5px;
+        }
+        span {
+        font-size: 93%;
+        font-weight: bold;
+        word-break: break-all;
+      }
+    }
+  }
+    .kitchen-menu__topics
+      ul {
+        border-top: 1px solid #e8e2d6;
+        padding: 15px 15px 0 15px;
+        .kitchen-menu__topics {
+          font-size: 93%;
+          float: left;
+          width: 50%;
+          margin-bottom: 5px;
+        }
+      }
+    .kitchen-menu__more-link {
+      font-size: 86%;
+      font-weight: bold;
+      text-align: right;
+      padding: 2px 10px;
+    }
+  }

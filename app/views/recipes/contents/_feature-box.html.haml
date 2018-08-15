@@ -1,0 +1,102 @@
+.feature-box.box
+  .feature-menu
+    .recipe-menu
+      .recipe-menu__title
+        %a{:href => "/"} レシピ関連サービス
+      %ul.recipe-menu__list
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-utensils
+            %span みんなのレシピ
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-book-open
+            %span プロのレシピ
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-fish
+            %span 献立
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-video
+            %span 料理動画
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-user
+            %span 話題のキッチン
+    .p_service-menu
+      .p_service-menu__title
+        = image_tag("https://assets.cpcdn.com/assets/sara/icon_ps_medium@2x.png?de96e90792e583e6f866187cdd6dfb8a8cc7a89990c31d4b2d7e09a9a0cbcb98")
+        %a{:href => "/"} プレミアムサービス
+      %ul.p_service-menu__list
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-crown
+            %span 人気順検索
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-medal
+            %span レシピランキング
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-trophy
+            %span 殿堂入りレシピ
+        %li
+          %a{:href => "/"}
+            %i.fab.fa-jenkins
+            %span 専門家厳選レシピ
+        %li
+          %a{:href => "/"}
+            %i.far.fa-star
+            %span プレミアム献立
+      .p_service-menu__more
+        %a{:href => "/"} もっと見る
+    .life_service-menu
+      .life_service-menu__title
+        %a{:href => "/"} 生活関連サービス
+      %ul.life_service-menu__list
+        %li
+          %a{:href => "/"}
+            %i.far.fa-newspaper
+            %span 料理ニュース
+        %li
+          %a{:href => "/"}
+            %i.fas.fa-home
+            %span Cookpad DO !
+  .feature-main
+    .feature-pickup
+      %a.pickup-image{:href => "/"}
+        = image_tag("https://img.cpcdn.com/recipes/1080585/447x251c/e233eaeef442525cc505dd0ed7453abe.jpg?u=265488&p=1337952368")
+      .pickup-title
+        .pickup-title__date
+          %span>< 2
+          月
+          %span>< 28
+          日の
+          %br
+          おすすめ
+        %a{:href => "/"}
+          .pickup-title__body ＊薄切りポテトとチーズのグラタン＊
+          .pickup-title__user
+            SHOOKY
+    .feature-news
+      .news-title
+        %a{:href => "/"} ニュース
+      %ul.news-list
+        %li.news-top
+          %a{:href => "/"}
+            .news-top__image
+              = image_tag("https://img.cpcdn.com/news_articles/22672/100x100c/0c2d4793af33ecb4edf495fd41cb72ef.jpg")
+            .news-top__article
+              .news-top__article--title 食材１つ「にんじんだけチヂミ」
+              .news-top__article--body にんじんだけで作れる、甘みがあっておいしい、ボリューム感あるチヂミ。材料を混ぜて焼くだけ♪
+        %li.news-topic
+          %a{:href => "/"} ホワイトデーに
+        %li.news-topic
+          %a{:href => "/"} 人気検索キーワードランキング！
+        %li.news-topic
+          %a{:href => "/"} 新感覚スナック「マヨネー麩」
+        %li.news-topic
+          %a{:href => "/"} きな粉でハマるおやつトースト
+        .news-more-link
+          %a{:href => "/"} もっと見る
