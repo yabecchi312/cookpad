@@ -216,7 +216,6 @@
   width: 309px;
   display: inline-block;
   float: right;
-  cursor: pointer;
   // キャッチコピー
   .catchphrase_recipe_author_top {
     height: 71px;
@@ -245,11 +244,11 @@
     .ingredient{
       .ingredient-name {
         float: left;
-        width: 150px;
+        width: 130px;
         margin-right: 10px;
       }
       .ingredient-amount {
-        width: 130px;
+        width: 100px;
       }
     }
   }
