@@ -3,9 +3,15 @@ $(function(){
   var html = `<div class="ingredient">
                 <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][][name]" >
                 <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][][amount]">
+                <a id="ingredient-delete-button" href="">削除</a>
                 </div>`
-  $("#add-button").on("click", function(){
+  $("#ingredient-add-button").on("click", function(){
     $(".ingredients").append(html);
+    return false;
+  });
+
+  $(document).on("click", "#ingredient-delete-button", function(){
+    $(this).closest(".ingredient").remove();
     return false;
   });
 });
