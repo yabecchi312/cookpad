@@ -386,6 +386,9 @@ ul.menu_list_example {
   font-size: 87.5%;
   .example_arrow_top{
     padding: 3px 3px 3px 28px;
+    a {
+      text-decoration: none;
+    }
     .fa-angle-up {
       height: 8px;
       width: 12px;
