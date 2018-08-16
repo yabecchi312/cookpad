@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
       :background,
       :user_id,
       { :ingredients_attributes => [ :name , :amount ] },
-      flows_attributes: [:image, :text, :order]
+      { :flows_attributes  => [:image, :text, :order] }
       ).merge(user_id: current_user.id)
   end
 end
