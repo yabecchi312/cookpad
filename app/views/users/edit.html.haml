@@ -17,7 +17,25 @@
                     %p 変更する
               %h2#name
                 = @user.name
-                =link_to "(変更する)", '', id:"link_to_edit_user_name"
+                =link_to "(変更する)", '#modal', id:"link_to_edit_user_name", class: "modal"
+                #modal{style: "display:none;"}
+                  #two-col-left.kitchen
+                    %h1.page_title ニックネームの変更
+                    #change_user_name_form
+                    %p.notice ※3〜10文字以内。半角記号・スペース・絵文字は使用できません。
+                    .user-edit-form
+                      = form_for(current_user) do |f|
+                        %table.table_basic
+                          %tbody
+                            %tr
+                              %th
+                                = f.label :ニックネーム
+                              %td
+                                = f.text_field :name, autofocus: true, maxlength: 10, class: "count-length"
+                        .actions
+                          = f.submit "ニックネームを変更する", class: 'btn'
+
+
               %p#kitchen_setting
                 %span あなたのキッチン：
                 = link_to "#{@user.name}のキッチン", user_path
