@@ -258,15 +258,17 @@
 // 料理ステップ
 #cooking-steps {
   min-height: 125px;
+  height: auto;
   width: 608px;
   padding-bottom: 15px;
+  display: block;
   .step {
     height:100px;
     width: 136px;
     display: block;
     float: left;
     font-size: 87.5%;
-    margin-right: 21px;
+    margin-right: 15px;
     margin-bottom: 10px;
     &__header {
       display: block;
@@ -311,6 +313,9 @@
       }
       &_text {
         height: 42px;
+        textarea {
+          width: 136px;
+        }
       }
     }
   }
