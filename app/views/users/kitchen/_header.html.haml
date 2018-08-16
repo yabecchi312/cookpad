@@ -9,7 +9,7 @@
         = @user.name
         %span
           のキッチン
-    .feeder_follow_button
+    .feeder_follow_button{id: "user-#{@user.id}"}
       = render partial: 'users/follow', local: { user: @user }
     %ul.follow_status
       %li
