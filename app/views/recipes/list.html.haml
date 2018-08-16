@@ -15,7 +15,8 @@
               %li.kitchen_navi_kondate
                 %a 献立
               %li.kitchen_navi_blog
-                %a = fa_icon 'link', text: "ブログ"
+                = link_to do
+                  = fa_icon 'link', text: "ブログ"
               %li.kitchen_navi_diary
                 %a ごはん日記
           = render "users/kitchen/contents-recipe"
