@@ -2,9 +2,8 @@ class MyfoldersController < ApplicationController
   protect_from_forgery except: [:create, :destroy]
 
   def index
-    @user = User.find(current_user.id)
     @recipes = []
-    @user.myfolders.each do |myfolder|
+    current_user.myfolders.each do |myfolder|
       @recipes.push(myfolder.recipe)
     end
   end
