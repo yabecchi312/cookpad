@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function(){
 $(function(){
   var html = `<div class="ingredient">
                 <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][][name]" >
@@ -62,11 +63,11 @@ $(function(){
     };
   };
 
-  $(document).on('turbolinks:load', function(){
+  $(function(){
     button();
   });
 
-  $(document).on("click", "#step-add-button", function(e){
+  $("#step-add-button").on("click", function(e){
     step_number = step_number + 1
     step = appendStep(step_number);
     $(this).closest(".step").after(step);
@@ -82,6 +83,5 @@ $(function(){
       return false;
   });
 });
-
-
+});
 
