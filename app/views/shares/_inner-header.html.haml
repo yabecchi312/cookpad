@@ -4,7 +4,8 @@
 
   .search_form_wrapper
     .keyword_input
-      %input.search-field.global_search_keyword
+      = fa_icon 'search', class: 'search_icon'
+      %input.search-field.global_search_keyword{placeholder: "料理名・食材名"}
       %input#submit_button.button.min.global_search_submit_btn{name: "commit", type: "submit", value: "レシピ検索"}
     %ul.keyword_list.clearfix
       %li.up1 ゴーヤチャンプル
@@ -21,8 +22,10 @@
       = link_to '#', class: "my_folder_button" do
         %img{alt: "Icon service menu myfolder@2x", height: "36", src: "https://assets.cpcdn.com/assets/global/icon_service_menu_myfolder@2x.png?28b04d7b1ed2c6ceffd67cf6504e3367f4d533545079d5ec8ea182bc6242c01c", width: "36", class: "my_folder_img"}
         %span MYフォルダ
-    %li.new_recipe
-      = link_to "レシピを書く", new_recipe_path, class: "btn-new-recipe"
+    %li
+      = link_to new_recipe_path, class: "btn-new-recipe" do
+        %i.fa.fa-edit
+        レシピを書く
       %span.button.post_recipe.min
 
 
