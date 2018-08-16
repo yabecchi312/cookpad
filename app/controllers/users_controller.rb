@@ -7,8 +7,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    render :edit
+    if @user.update(user_params)
+      redirect_to edit_user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def follow
