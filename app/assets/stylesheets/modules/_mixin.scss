@@ -1,0 +1,56 @@
+@mixin crown {
+  z-index: 1;
+  background: $White;
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+@mixin title_bar {
+  font-size: 100%;
+  font-weight: bold;
+  background: #f8f6f0;
+  clear: both;
+  color: $LightBlack;
+  padding: 5px 3px 3px 12px;
+  margin: 0;
+  position: relative;
+  a:visited {
+      color: $LightBlack;
+  }
+  a {
+    text-decoration: underline;
+  }
+  span {
+    font-size: 79%;
+    color: $Gray;
+    font-weight: normal;
+    padding-left: 5px;
+  }
+}
+
+@mixin border-top($color) {
+  border-top: 1px solid $color;
+}
+
+@mixin before {
+  content: '';
+  background-color: #e3dcca;
+  width: 1px;
+  height: 30px;
+  position: absolute;
+  left: 33.33%;
+  margin: 10px 0 0 2.5px;
+}
+
+@mixin after {
+  content: '';
+  background-color: #e3dcca;
+  width: 1px;
+  height: 30px;
+  position: absolute;
+  right: 33.33%;
+  margin: 10px 2.5px 0 0;
+}
