@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
-  // モーダルの表示
+  // usernameのモーダルの表示
   $('.modal').modaal({width: 600, height:250});
-
   $(function(){
     //残り文字数を表す要素を無ければ追加する
     function add_count_disp(targetElement){
@@ -34,4 +33,8 @@ $(document).on('turbolinks:load', function() {
       count_length($(this));
     })
   });
+  // useravatarのモーダルを表示
+  $('.colorbox_link').modaal({width: 600, height:250});
+
+
 });
