@@ -109,3 +109,9 @@ a.recipe_title:visited {
   color: #ff9933;
   font-size: 16px;
 }
+
+.clearfix:after {
+  content: "";
+  clear:both;
+  display: block;
+}

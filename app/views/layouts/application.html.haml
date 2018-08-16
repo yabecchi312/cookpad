@@ -1,11 +1,10 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Cookpad
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     - if %w[user_session new_user_registration].any? { |name| current_page?(send("#{name}_path")) }
       %header
@@ -27,9 +26,10 @@
                     = link_to user_path(id: current_user.id) do
                       = current_user.name
                   %li.notification お知らせ
-                  %li.config.user_function_link
-                    = link_to destroy_user_session_path do
-                      %span ログアウト
+                  %li.config
+                    #user_menu_config
+                      %img{class: "user_function_link", alt: "設定", src: "https://assets.cpcdn.com/assets/global/header_config.png?f63fccfc568cc03db8b0d45072cf9b6550df024e4ef8c36cefbcb0fa3626bc0c"}
+                      #setting_tip{style: "display: none;"} 設定
                 - else
                   %li.user_name.user_function_link
                     = link_to new_user_registration_path do
@@ -37,6 +37,18 @@
                   %li.config.user_function_link
                     = link_to new_user_session_path do
                       %span ログイン
+              - if user_signed_in?
+                .config_dropdown_menu{style: "display: none;"}
+                  %ul
+                    %li
+                      = link_to edit_user_path(id: current_user.id) do
+                        %span 登録情報
+                    %li
+                      = link_to "/" do
+                        %span ヘルプ
+                    %li
+                      = link_to destroy_user_session_path do
+                        %span ログアウト
         = render 'shares/inner-header.html.haml'
     = yield
 

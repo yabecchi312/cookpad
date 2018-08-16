@@ -1,0 +1,34 @@
+.wrapper {
+  height: 100%;
+  margin-top: 34px;
+  min-width: 970px;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  text-align: left;
+  width: 970px;
+  @extend .clearfix;
+}
+
+.box {
+  border-radius: 5px;
+  background: $White;
+  border: 1px solid #ded5c0;
+  margin-bottom: 10px;
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 650px;
+  background-color: $White;
+  border: 1px solid $Brown;
+  border-radius: 5px;
+}
+
+.main-wrapper {
+  width: 610px;
+  margin: 14px 20px;
+}

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'tops#index'
   resources :recipes, only: [:index, :new]
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     member do
       get 'follow'
       get 'unfollow'
@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :new, :create]
   resources :users, only: [:show]
   resources :myfolders, only: [:index, :create, :destroy]
+  get '/recipes/list/:id', to: 'recipes#list'
 end

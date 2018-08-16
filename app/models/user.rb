@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, ImageUploader
   has_many :myfolders, dependent: :destroy
+  has_many :recipes
 end
