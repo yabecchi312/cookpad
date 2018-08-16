@@ -14,7 +14,7 @@ header {
       width: 970px;
       padding-right: 170px;
       .global_menu.f_left {
-        font-size: 93%;
+        font-size: 100%;
         float: left;
         margin-top: 7px;
         margin-bottom: 2px;
@@ -34,16 +34,15 @@ header {
           z-index: 300;
           border-radius: 0 0 5px 5px;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-          font-size: 93%;
           background: #ffffff;
           border: 1px solid #e3dcca;
           border-top: 1px solid #ffffff;
           padding: 0 10px;
         }
-        & ul.user_menu.list_inline {
+        ul.user_menu.list_inline {
           line-height: 34px;
-          & li {
-            font-size: 93%;
+          li {
+            font-size: 100%;
             display: inline-block;
             padding-left: 10px;
             &.user_name.user_function_link a {
@@ -118,25 +117,57 @@ header {
       padding-left: 27px;
       .keyword_input {
         display: inline-block;
+        position: relative;
+        .search_icon {
+          position: absolute;
+          overflow: visible;
+          left: 9px;
+          top: 9px;
+        }
+        .search-field.global_search_keyword {
+          background: #ffffff url(/assets/global/icon_header_search.png?7257b35…) 7px 50% no-repeat;
+          margin-right: 0;
+          padding-left: 27px;
+          width: 210px;
+          height: 25px;
+          border-radius: 3px;
+          font-size: 86%;
+          border-color: #d1c6a9;
+        }
+        #submit_button {
+          font-size: 100%;
+          border-color: #d1c6a9;
+          border-radius: 3px;
+          padding: 0px 7px;
+          margin: 0;
+          text-shadow: 0 1px 0 #ffffff;
+          box-shadow: none;
+          outline: none;
+          font-weight: normal;
+          height: 30px;
+        }
       }
       ul.keyword_list li {
         display: inline-block;
         height: 23px;
         font-size: 93%;
         letter-spacing: -0.3px;
+        img {
+          padding-top: 5px;
+        }
       }
     }
     ul.my_menu {
       margin-top: 10px;
       float: right;
       display: inline-block;
-      & li.my_folder {
+      li.my_folder {
         text-align:right;
         padding-right: 10px;
         height:36px;
         width: 132px;
         position: relative;
-        & a {
+        a {
           color: #330000 !important;
           line-height: 36px;
           text-decoration: none;
@@ -147,14 +178,14 @@ header {
         .my_folder_img {
           position: absolute;
           top: 0px;
-          left: 7px;
+          left: 14px;
         }
       }
       li {
         display: inline-block;
         .btn-new-recipe {
           display: block;
-          width: 123px;
+          width: 110px;
           border-radius: 4px;
           box-shadow: none;
           font-size: 100%;
@@ -173,6 +204,7 @@ header {
           text-decoration: none;
           &:hover {
             text-shadow: 0 -1px 0 #6e8129;
+            opacity: 0.9;
           }
         }
         .my_folder {
@@ -219,14 +251,14 @@ footer {
       .grid {
         float: left;
         width: 20%;
-        font-size: 85%;
+        font-size: 100%;
         margin-top: 20px;
         margin-bottom: 0;
         padding: 0 0 3px 0;
         color: #4d2200;
         line-height: 1.5;
         & .title {
-          font-size: 120%;
+          font-size: 122%;
           font-weight: bold;
         }
         & ul li {
@@ -244,7 +276,7 @@ footer {
       .footer_links {
         border-bottom: 0;
         margin-bottom: 10px;
-        font-size: 93%;
+        font-size: 105%;
         .footer_content_title {
           font-weight: bold;
           width: 80px;
@@ -254,7 +286,7 @@ footer {
         .footer_content_list li {
           float: left;
           padding-right: 10px;
-          font-size: 85%;
+          font-size: 95%;
         }
       }
       .block20_0 {
@@ -262,7 +294,7 @@ footer {
         margin: 0;
         clear: both;
         .f_left {
-          font-size: 86%;
+          font-size: 92%;
           padding: 5px 0;
           color: #4d2200;
           float: left;

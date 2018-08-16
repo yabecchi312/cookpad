@@ -37,25 +37,33 @@
         width: 50px;
         margin-right: 10px;
         display: block;
+        p {
+          text-align: center;
+          text-decoration: underline;
+        }
       }
       h2#name {
-        font-size: 131%;
+        font-size: 21px;
         color: #2F1C12;
-        margin-bottom: 4px;
         font-weight: bold;
-        #link_to_edit_user_name {
+        a#link_to_edit_user_name {
           font-size: 12px;
           font-weight: normal;
+          text-decoration: underline;
         }
       }
       p {
-        margin-bottom: 5px;
+        font-size: 12px;
+        margin-bottom: 3px;
+        a {
+          text-decoration: underline;
+        }
       }
     }
     #service_info {
       h3 {
         color: #2F1C12;
-        font-size: 108%;
+        font-size: 18px;
         margin-bottom: 5px;
         font-weight: bold;
       }
@@ -76,6 +84,7 @@
             text-align: left;
             width: 367px;
             font-weight: bold;
+            font-size: 14px;
             &.header.service_title {
               width: 25%;
             }
@@ -84,6 +93,7 @@
             }
           }
           td {
+            font-size: 14px;
             padding: 5px;
             border: 1px solid #D6D7B9;
             &.service_title {
@@ -98,7 +108,7 @@
 .modaal-container {
   h1.page_title {
     color: #4d2200;
-    font-size: 138.5%;
+    font-size: 20px;
     margin: 0px;
     padding: 0px;
     font-weight: bold;
