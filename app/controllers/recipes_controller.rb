@@ -16,10 +16,10 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @ingredients = @recipe.ingredients
-    @flows = @recipe.flows
+    @ingredients = @recipe.ingredients.includes(:recipe)
+    @flows = @recipe.flows.includes(:recipe)
   end
-    
+
 
   def list
     @user = User.find(params[:id])
