@@ -1,6 +1,8 @@
 class Recipe < ApplicationRecord
   has_many :ingredients
   has_many :flows
+  has_many :myfolders, dependent: :destroy
+  has_many :register_users, through: :myfolders, source: :user
   belongs_to :users
   accepts_nested_attributes_for :ingredients
   accepts_nested_attributes_for :flows
@@ -33,5 +35,17 @@ class Recipe < ApplicationRecord
     # logger.debug("SQL: #{Recipe.where(recipes_sel).to_sql}")
 
     Recipe.where(query_string)
+  end
+
+  def register_to_myfolder(user)
+    myfolders.create(user_id: user.id)
+  end
+
+  def unregister_from_myfolder(user)
+    myfolders.find_by(user_id: user.id).destroy
+  end
+
+  def register_to_myfolder?(user)
+    register_users.include?(user)
   end
 end
