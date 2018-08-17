@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
   resources :recipes, only: [:index, :new, :create]
   get '/recipes/list/:id', to: 'recipes#list'
+  resources :diarys, only: [:index, :new, :create]
+  get 'diarys/new/:id', to: 'diarys#new'
 end
