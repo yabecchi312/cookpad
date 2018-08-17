@@ -25,6 +25,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -75,3 +77,4 @@ gem "font-awesome-rails"
 gem 'bootstrap-sass'
 gem 'devise'
 gem "acts_as_follower", github: "tcocca/acts_as_follower", branch: 'master'
+gem "font_awesome5_rails"

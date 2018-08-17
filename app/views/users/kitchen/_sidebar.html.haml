@@ -1,0 +1,36 @@
+#side
+  #side_wrapper
+    #side_contents
+      #side_banner_wrapper
+        広告１
+      #side_banner_wrapper
+        広告２
+      #side_opinion
+        .box.opinion_box
+          .opinion_title
+            クックパッドへのご意見をお聞かせください
+          .opinion_content
+            .opinion_type
+              %input#opinion_type_default{type:"radio",checked: "checked",name:"opinion_type"}
+              %label{for:"opinion_type_default"}
+                サービスへのご意見・ご要望
+              %br
+              %input#opinion_type_bug{type:"radio",name:"opinion_type"}
+              %label{for:"opinion_type_bug"}
+                機能の不具合
+              %br
+              %input#opinion_type_report{type:"radio",name:"opinion_type"}
+              %label{for:"opinion_type_report"}
+                レシピやつくれぽで気付いた点の報告
+            %textarea
+            .opinion_submit_wrapper
+              %input{type:"submit",value:"クックパッドに意見を送る"}
+      #side_help
+        %p.help_title
+          お困りの方はこちら
+        %p.link_to_help
+          = link_to 'ヘルプ・お問い合わせ'
+      #side_banner_wrapper
+        広告３
+      #side_banner_wrapper
+        広告４

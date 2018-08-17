@@ -1,0 +1,28 @@
+.contents {
+  .contents-main {
+    float: left;
+    width: 650px;
+
+    @import "feature-box/feature-box";
+    @import "recipe-box/recipe-box";
+    @import "kondate-box/kondate-box";
+  }
+  .contents-side {
+    float: right;
+    width: 300px;
+    .ad {
+      .ad--link {
+        display: block;
+        background-color: transparent;
+        .ad--link_image {
+          background-position: center;
+          background-size: cover;
+          max-width: 300px;
+          height: 600px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+}

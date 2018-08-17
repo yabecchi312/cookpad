@@ -1,0 +1,43 @@
+.category-list {
+  padding: 10px 0 0 15px;
+  ul {
+    @extend .clearfix;
+    .category__box {
+      float: left;
+      width: 33%;
+      margin-bottom: 25px;
+      .category__icon {
+        float: left;
+        margin-right: 10px;
+        a {
+          display: block;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .category__body {
+        overflow: hidden;
+        .category__title {
+          font-size: 115%;
+          font-weight: bold;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .sub-category-list {
+          font-size: 86%;
+          margin-top: 5px;
+          li {
+            margin-bottom: 2px;
+            a {
+              padding-left: 12px;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

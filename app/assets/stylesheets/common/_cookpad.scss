@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  background-color: $base-background-color;
   #top-wrapper {
     background-color: $base-background-color;
     #wrapper {
@@ -90,4 +91,10 @@ a.recipe_title:visited {
   margin: 0;
   color: #ff9933;
   font-size: 16px;
+}
+
+.clearfix:after {
+  content: "";
+  clear:both;
+  display: block;
 }
