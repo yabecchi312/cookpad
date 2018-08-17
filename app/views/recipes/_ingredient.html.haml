@@ -1,18 +1,7 @@
-.ingredient
-  .ingredient__name
-    %span
-      = @ingredient
-  .ingredient__amount
-    40g
-.ingredient
-  .ingredient__name
-    %span
-      しらす
-  .ingredient__amount
-    40g
-.ingredient
-  .ingredient__name
-    %span
-      しらす
-  .ingredient__amount
-    40g
+- @ingredients.each do |ingredient|
+  .ingredient
+    .ingredient__name
+      %span
+        = ingredient.name
+    .ingredient__amount
+      = ingredient.amount
