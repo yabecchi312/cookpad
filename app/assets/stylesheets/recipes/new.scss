@@ -384,7 +384,7 @@ ul.menu_list_example {
   height: auto;
   border-bottom: 0;
   font-size: 87.5%;
-  .example_arrow_top{
+  .example_arrow_top .example_arrow_bottom{
     padding: 3px 3px 3px 28px;
     a {
       text-decoration: none;
@@ -393,6 +393,9 @@ ul.menu_list_example {
       height: 8px;
       width: 12px;
       color: #330000;
+    }
+    .hidden {
+      display:none;
     }
   }
   .example_box_yellow {
