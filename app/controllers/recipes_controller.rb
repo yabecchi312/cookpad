@@ -27,9 +27,8 @@ class RecipesController < ApplicationController
       :tips,
       :background,
       :user_id,
-      { :ingredient_ids => [] },
-      ingredients_attributes: [:name, :amount],
-      flows_attributes: [:image, :text, :order]
+      { ingredients_attributes: [ :name , :amount ] },
+      { flows_attributes: [:image, :text, :order] }
       ).merge(user_id: current_user.id)
   end
 end

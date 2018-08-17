@@ -14,6 +14,7 @@
   width: 100vw;
   background: #f7f3e8;
   color: #999;
+  font-size: 114.5%;
   .header-box {
     background-color: #fff7cc;
     height: 117px;
@@ -216,7 +217,6 @@
   width: 309px;
   display: inline-block;
   float: right;
-  cursor: pointer;
   // キャッチコピー
   .catchphrase_recipe_author_top {
     height: 71px;
@@ -241,22 +241,34 @@
   }
   // 材料
   .ingredients {
-    height: 223px;
+    height: auto;
+    .ingredient{
+      .ingredient-name {
+        float: left;
+        width: 130px;
+        margin-right: 10px;
+      }
+      .ingredient-amount {
+        width: 100px;
+      }
+    }
   }
 }
 
 // 料理ステップ
 #cooking-steps {
   min-height: 125px;
+  height: auto;
   width: 608px;
   padding-bottom: 15px;
+  display: block;
   .step {
     height:100px;
     width: 136px;
     display: block;
     float: left;
     font-size: 87.5%;
-    margin-right: 21px;
+    margin-right: 15px;
     margin-bottom: 10px;
     &__header {
       display: block;
@@ -301,6 +313,9 @@
       }
       &_text {
         height: 42px;
+        textarea {
+          width: 136px;
+        }
       }
     }
   }
@@ -370,12 +385,18 @@ ul.menu_list_example {
   height: auto;
   border-bottom: 0;
   font-size: 87.5%;
-  .example_arrow_top{
+  .example_arrow_top .example_arrow_bottom{
     padding: 3px 3px 3px 28px;
+    a {
+      text-decoration: none;
+    }
     .fa-angle-up {
       height: 8px;
       width: 12px;
       color: #330000;
+    }
+    .hidden {
+      display:none;
     }
   }
   .example_box_yellow {
