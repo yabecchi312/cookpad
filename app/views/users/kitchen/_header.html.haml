@@ -1,0 +1,26 @@
+#kitchen_header
+  #header_image_wrapper
+    ヘッダー画像（仮）
+  .header_bottom
+    .user_icon
+      アイコン（仮）
+    .user_name
+      = link_to user_path(@user.id) do
+        = @user.name
+        %span
+          のキッチン
+    .feeder_follow_button{id: "user-#{@user.id}"}
+      = render partial: 'users/follow', local: { user: @user }
+    %ul.follow_status
+      %li
+        %a フォロー
+        %span
+          |
+      %li
+        %a フォロワー
+    .header_profile
+      .short
+        短い、短縮版
+        %a#header_profile_more{href: "#"}...
+      .full.hidden
+        長い、すべて出す版

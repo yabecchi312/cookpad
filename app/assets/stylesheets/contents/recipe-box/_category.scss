@@ -1,0 +1,18 @@
+.category {
+  height: 100%;
+  .category-title {
+    @include title_bar;
+    @include border-top($LightBrown);
+  }
+  @import "category-list";
+  .category__more {
+    padding: 2px 10px 10px 0;
+    text-align: right;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 86%;
+    a {
+      color: $DarkBrown;
+    }
+  }
+}

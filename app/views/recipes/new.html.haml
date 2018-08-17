@@ -34,9 +34,15 @@
                     = link_to "クックGB5RQL☆", "#"
               .ingredients
                 = f.fields_for :ingredients do |i|
-                  = i.text_field :name, placeholder: "材料名"
-                  = i.text_field :amount, placeholder: "分量"
-                  -# = image_tag "cookpad-ingredients.gif"
+                  .ingredient-1
+                    .ingredient-field
+                      = i.text_field :name, placeholder: "材料名", name: "ingredient_ids[][name]"
+                      = i.text_field :amount, placeholder: "分量", name: "ingredient_ids[][amount]"
+                  .ingredient-2
+                    .ingredient-field
+                      = i.text_field :name, placeholder: "材料名", name: "ingredient_ids[][name]"
+                      = i.text_field :amount, placeholder: "分量", name: "ingredient_ids[][amount]"
+                      -# = image_tag "cookpad-ingredients.gif"
             .sk-center
             -# 料理ステップ
             #cooking-steps
