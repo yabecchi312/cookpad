@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       get 'unfollow'
     end
   end
+  resources :recipes, only: [:index, :new, :create]
+  resources :users, only: [:show]
+  resources :myfolders, only: [:index, :create, :destroy]
   get '/recipes/list/:id', to: 'recipes#list'
   resources :diarys, only: [:index, :new, :create]
   get 'diarys/new/:id', to: 'diarys#new'
