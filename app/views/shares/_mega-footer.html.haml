@@ -1,63 +1,64 @@
-.mega_footer
-  .mega_footer_inner.clearfix
-    .grid.grid_5_1
-      %h4.title レシピをさがす
-      %ul
-        %li カテゴリ一覧
-        %li 人気のキーワード
-        %li 話題のレシピ
-        %li 新着レシピ
-        %li 新着つくれぽ
-        %li デイリーアクセス数ランキング
-    .grid.grid_5_2
-      %h4.title レシピを書く
-      %ul
-        %li レシピを書く
-    .grid.grid_5_3
-      %h4.title 献立
-      %ul
-        %li みんなの献立
-        %li プレミアム献立
-    .grid.grid_5_4
-      %h4.title おすすめ
-      %ul
-        %li 料理の基本
+.clear_both
+  .mega_footer
+    .mega_footer_inner.clearfix
+      .grid.grid_5_1
+        %h4.title レシピをさがす
+        %ul
+          %li カテゴリ一覧
+          %li 人気のキーワード
+          %li 話題のレシピ
+          %li 新着レシピ
+          %li 新着つくれぽ
+          %li デイリーアクセス数ランキング
+      .grid.grid_5_2
+        %h4.title レシピを書く
+        %ul
+          %li レシピを書く
+      .grid.grid_5_3
+        %h4.title 献立
+        %ul
+          %li みんなの献立
+          %li プレミアム献立
+      .grid.grid_5_4
+        %h4.title おすすめ
+        %ul
+          %li 料理の基本
 
-    .grid.grid_5_5
-      %h4.title あなたのページ
-      %ul
-        - if user_signed_in?
-          %li MYキッチンページ
-          %li MYフォルダ
-          %li 最近見たレシピ
-          %li 登録情報
-        - else
-          %li 新規登録
-          %li ログイン
-  .footer_content_wrapper
-    .footer_links.clearfix
-      .footer_content_title サポート
-      %ul.footer_content_list
-        %li ヘルプ
-        %li 機種変更ガイド
-        %li 料理を楽しむに当たって
-        %li 利用規約
-        %li リンクについて
-    .footer_links.clearfix
-      .footer_content_title 企業情報
-      %ul.footer_content_list
-        %li 運営会社
-        %li 情報セキュリティ基本方針
-        %li プライバシーポリシー
-        %li 広告掲載
-        %li 採用情報
-    .footer_links.clearfix
-      .footer_content_title 日本
-      %ul.footer_content_list
-        %li Espanol
-        %li English
-        %li Indonesia
-        %li Koria
-    .block20_0
-      .f_left.clearfix Copyright© Cookpad Inc. All Rights Reserved
+      .grid.grid_5_5
+        %h4.title あなたのページ
+        %ul
+          - if user_signed_in?
+            %li MYキッチンページ
+            %li MYフォルダ
+            %li 最近見たレシピ
+            %li 登録情報
+          - else
+            %li 新規登録
+            %li ログイン
+    .footer_content_wrapper
+      .footer_links.clearfix
+        .footer_content_title サポート
+        %ul.footer_content_list
+          %li ヘルプ
+          %li 機種変更ガイド
+          %li 料理を楽しむに当たって
+          %li 利用規約
+          %li リンクについて
+      .footer_links.clearfix
+        .footer_content_title 企業情報
+        %ul.footer_content_list
+          %li 運営会社
+          %li 情報セキュリティ基本方針
+          %li プライバシーポリシー
+          %li 広告掲載
+          %li 採用情報
+      .footer_links.clearfix
+        .footer_content_title 日本
+        %ul.footer_content_list
+          %li Espanol
+          %li English
+          %li Indonesia
+          %li Koria
+      .block20_0
+        .f_left.clearfix Copyright© Cookpad Inc. All Rights Reserved
 
