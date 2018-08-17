@@ -18,6 +18,12 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to action: "list", id: current_user.id
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(

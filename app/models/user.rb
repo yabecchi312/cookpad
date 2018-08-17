@@ -7,5 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, ImageUploader
   validates :name, length: {maximum: 10}
-  has_many :recipes
+  has_many :recipes, dependent: :destroy
 end
