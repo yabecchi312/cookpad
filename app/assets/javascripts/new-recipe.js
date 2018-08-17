@@ -1,17 +1,20 @@
-$(function(){
-  var html = `<div class="ingredient">
-                <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][][name]" >
-                <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][][amount]">
-                <a id="ingredient-delete-button" href="">削除</a>
-                </div>`
-  $("#ingredient-add-button").on("click", function(){
-    $(".ingredients").append(html);
-    return false;
-  });
+// レシピ投稿
+$(document).on('turbolinks:load', function(){
+  $(function(){
+    var html = `<div class="ingredient">
+                  <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][][name]" >
+                  <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][][amount]">
+                  <a id="ingredient-delete-button" href="">削除</a>
+                  </div>`
+    $("#ingredient-add-button").on("click", function(){
+      $(".ingredients").append(html);
+      return false;
+    });
 
-  $(document).on("click", "#ingredient-delete-button", function(){
-    $(this).closest(".ingredient").remove();
-    return false;
+    $(document).on("click", "#ingredient-delete-button", function(){
+      $(this).closest(".ingredient").remove();
+      return false;
+    });
   });
 });
 
@@ -84,3 +87,118 @@ $(function(){
   });
 });
 
+
+// レシピ投稿のサイドバー
+$(document).on('turbolinks:load', function(){
+// タイトルについて
+  $(function(){
+    $("#example_title").on("click", function(){
+      $("#example_title .example_arrow_top").hide();
+      $("#example_title .example_arrow_bottom").show();
+      $("#example_title .example_box_yellow").show();
+      return false;
+    });
+    $(".example_arrow_bottom").on("click", function(){
+      $("#example_title .example_box_yellow").hide();
+      $("#example_title .example_arrow_bottom").hide();
+      $("#example_title .example_arrow_top").show();
+      return false;
+    });
+  });
+
+  // 写真について
+  $(function(){
+    $("#example_photo").on("click", function(){
+      $("#example_photo .example_arrow_top").hide();
+      $("#example_photo .example_arrow_bottom").show();
+      $("#example_photo .example_box_yellow").show();
+      return false;
+    });
+    $(".example_arrow_bottom").on("click", function(){
+      $("#example_photo .example_box_yellow").hide();
+      $("#example_photo .example_arrow_bottom").hide();
+      $("#example_photo .example_arrow_top").show();
+      return false;
+    });
+  });
+
+  // レシピの紹介文について
+  $(function(){
+    $(".example_description").on("click", function(){
+      $(".example_description .example_arrow_top").hide();
+      $(".example_description .example_arrow_bottom").show();
+      $(".example_description .example_box_yellow").show();
+      return false;
+    });
+    $(".example_arrow_bottom").on("click", function(){
+      $(".example_description .example_box_yellow").hide();
+      $(".example_description .example_arrow_bottom").hide();
+      $(".example_description .example_arrow_top").show();
+      return false;
+    });
+  });
+
+  // 材料、調味料について
+  $(function(){
+    $(".example_ingredients").on("click", function(){
+      $(".example_ingredients .example_arrow_top").hide();
+      $(".example_ingredients .example_arrow_bottom").show();
+      $(".example_ingredients .example_box_yellow").show();
+      return false;
+    });
+    $(".example_arrow_bottom").on("click", function(){
+      $(".example_ingredients .example_box_yellow").hide();
+      $(".example_ingredients .example_arrow_bottom").hide();
+      $(".example_ingredients .example_arrow_top").show();
+      return false;
+    });
+  });
+
+  // 作り方について
+  $(function(){
+    $(".example_setup").on("click", function(){
+      $(".example_setup .example_arrow_top").hide();
+      $(".example_setup .example_arrow_bottom").show();
+      $(".example_setup .example_box_yellow").show();
+      return false;
+    });
+    $(".example_arrow_bottom").on("click", function(){
+      $(".example_setup .example_box_yellow").hide();
+      $(".example_setup .example_arrow_bottom").hide();
+      $(".example_setup .example_arrow_top").show();
+      return false;
+    });
+  });
+
+  // コツ、ポイントについて
+  $(function(){
+    $(".example_advice").on("click", function(){
+      $(".example_advice .example_arrow_top").hide();
+      $(".example_advice .example_arrow_bottom").show();
+      $(".example_advice .example_box_yellow").show();
+      return false;
+    });
+    $(".example_arrow_bottom").on("click", function(){
+      $(".example_advice .example_box_yellow").hide();
+      $(".example_advice .example_arrow_bottom").hide();
+      $(".example_advice .example_arrow_top").show();
+      return false;
+    });
+  });
+
+  // レシピの生い立ちについて
+  $(function(){
+    $(".example_history").on("click", function(){
+      $(".example_history .example_arrow_top").hide();
+      $(".example_history .example_arrow_bottom").show();
+      $(".example_history .example_box_yellow").show();
+      return false;
+    });
+    $(".example_arrow_bottom").on("click", function(){
+      $(".example_history .example_box_yellow").hide();
+      $(".example_history .example_arrow_bottom").hide();
+      $(".example_history .example_arrow_top").show();
+      return false;
+    });
+  });
+});
