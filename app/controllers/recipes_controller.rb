@@ -13,6 +13,14 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients.includes(:recipe)
+    @flows = @recipe.flows.includes(:recipe)
+  end
+
+
   def list
     @user = User.find(params[:id])
     @recipes = @user.recipes
