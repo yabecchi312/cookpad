@@ -5,6 +5,4 @@ class SearchController < ApplicationController
     @keywords = params[:keyword].gsub(/　/," ").split()
   end
 
-  def show
-  end
 end
