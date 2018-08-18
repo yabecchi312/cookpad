@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
-    @recipes = Recipe.search(params)
+    ids = Recipe.select_target_recipeid(params[:keyword])
+    @recipes = Recipe.find(ids)
   end
 
   def show
