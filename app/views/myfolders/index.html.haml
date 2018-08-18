@@ -1,0 +1,56 @@
+#top-wrapper
+  #wrapper
+    #container
+      #contents
+        #main
+          #myfolder_wrapper.clearfix
+            #myfolder_header
+              .top_link
+                = link_to myfolders_path do
+                  = fa_icon 'folder-open'
+                  %span MYフォルダ
+              .search_box.description
+                = fa_icon 'search', class: 'search_icon'
+                %input.recipe_search_keyword{type: 'text',placeholder: "MYフォルダ内を検索"}
+                %input#btn_myfolder_search{type: 'submit',value: '検索'}
+            #myfolder_left
+              #myfolder_left_container
+                .navigation
+                  .title
+                    レシピ保存数
+                  #indicator_navi
+                    #indicator_wrapper
+                      #indicator_used{style:"width:5%"}
+                      #indicator_unused{style:"width:95%"}
+                    #percentage
+                      %span.used_amount
+                        = @recipes.count
+                      %span.slash
+                        \/
+                      %span.total_amount
+                        100
+            #myfolder_right
+              .tab_button
+                .paging_myfolder
+                  %span
+                    1 / 1
+              #myfolder_recipes
+                - @recipes.each do |recipe|
+                  .recipe_preview
+                    .recipe_image
+                      %a
+                        レシピ画像イメージレシピ画像イメージレシピ画像イメージ
+                    .recipe_text
+                      %span.title
+                        = link_to recipe.title,'#',class: "recipe_title"
+                      .myfolder
+                        = render "myfolder-icon", recipe: recipe
+                      .recipe_description
+                        = recipe.catch_copy
+                      .recipe_ingredients
+                        %span 材料：
+                        - recipe.ingredients.each do |ingredient|
+                          = ingredient.name
+                    .clear_both
+        #side
+        .clear_both

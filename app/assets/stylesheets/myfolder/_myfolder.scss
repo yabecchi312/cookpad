@@ -1,0 +1,102 @@
+#myfolder_wrapper {
+  background: #ffffff;
+  border: 1px solid #e3dcca;
+  border-radius: 5px;
+  #myfolder_header {
+    position: relative;
+    font-size: 19px;
+    padding: 10px 0 15px 20px;
+    margin: 0;
+    border-bottom: 1px solid #e3dcca;
+    .top_link {
+      span {
+        font-weight: bold;
+      }
+    }
+    .search_box {
+      position: absolute;
+      top: 8px;
+      right: 14px;
+    }
+    .description {
+      color: #3c3c3c;
+      font-size: 13px;
+      vertical-align: middle;
+      margin-left: 7px;
+    }
+    .search {
+      width: 270px;
+    }
+  }
+
+  #myfolder_left {
+    margin-left: 20px;
+    float: left;
+    width: 160px;
+    #myfolder_left_container {
+      padding: 20px 0;
+      .navigation {
+        font-size: 12px;
+        margin-bottom: 12px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid #eee;
+        .title {
+          font-size: 100%;
+          font-weight: normal;
+          margin-top: 0;
+          color: #A68974;
+        }
+        #indicator_navi {
+          position: relative;
+          height: 31px;
+          #indicator_wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 160px;
+            #indicator_used {
+              background: #eec400;
+              margin: 0 auto;
+              float: left;
+              height: 31px;
+            }
+            #indicator_unused {
+              background-color: #f5f5f5;
+              margin: 0 auto;
+              float: left;
+              height: 31px;
+            }
+          }
+          #percentage {
+            position: absolute;
+            width: 160px;
+            text-align: center;
+            padding-top: 6px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  #myfolder_right {
+    margin-right: 20px;
+    width: 430px;
+    float: right;
+    .tab_button {
+      margin-top: 15px;
+      height: 42px;
+      vertical-align: bottom;
+      .paging_myfolder {
+        float: right;
+      }
+    }
+  }
+}
+
+.myfolder_btn {
+  border: none;
+  .myfolder_icon {
+    color: #ff9933;
+    font-size: 20px;
+  }
+}

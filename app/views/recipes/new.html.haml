@@ -2,7 +2,7 @@
   .contents
     .contents__left
       = form_for @recipe do |f|
-        .contents__left__recipe
+        .contents__left__recipe.clearfix
           -# contents__left内の削除、印刷のところ
           .recipe_author
             .recipe_author__link_author_kitchen
@@ -34,21 +34,19 @@
                     = link_to "クックGB5RQL☆", "#"
               .ingredients
                 = f.fields_for :ingredients do |i|
-                  .ingredient-1
-                    .ingredient-field
-                      = i.text_field :name, placeholder: "材料名", name: "ingredient_ids[][name]"
-                      = i.text_field :amount, placeholder: "分量", name: "ingredient_ids[][amount]"
-                  .ingredient-2
-                    .ingredient-field
-                      = i.text_field :name, placeholder: "材料名", name: "ingredient_ids[][name]"
-                      = i.text_field :amount, placeholder: "分量", name: "ingredient_ids[][amount]"
-                      -# = image_tag "cookpad-ingredients.gif"
+                  .ingredient
+                    = i.text_field :name, placeholder: "材料名", class: "ingredient-name", name: "recipe[ingredients_attributes][][name]"
+                    = i.text_field :amount, placeholder: "分量", class: "ingredient-amount", name: "recipe[ingredients_attributes][][amount]"
+                    = link_to "削除", "", id: "ingredient-delete-button"
+              .add
+                = link_to "追加","", id: "ingredient-add-button"
+                -# = image_tag "cookpad-ingredients.gif"
             .sk-center
             -# 料理ステップ
-            #cooking-steps
+            #cooking-steps.clearfix
               = render "step", f: f
               -# コツ、レシピの生い立ち
-            .memo_and_history
+            .memo_and_history.clearfix
               .memo_wrapper
                 %h3 コツ・ポイント
                 .text-content
@@ -65,14 +63,14 @@
                   -# %br
                   -# 例）〇〇番組で紹介されたレシピを、家にある材料で簡単に作れるように工夫しました
                   = f.text_area :background
-            .sk-bottom
+            .sk-bottom.clearfix
             -# レシピID、公開日、更新日
             .meta_data_wrapper
               .recipe_id_and_published_date
                 %span.recipe_id レシピID : 5198962
                 %span.published_date 公開日 : 未公開
                 %span 更新日 : 18/08/07
-        .submit-actions
+        .submit-actions.clearfix
           = f.submit "保存する"
 
     .contents__right
