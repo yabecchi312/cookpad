@@ -8,6 +8,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, ImageUploader
   has_many :myfolders, dependent: :destroy
   has_many :recipes
+  has_many :diaries
   validates :name, length: {maximum: 10}
 
 end
