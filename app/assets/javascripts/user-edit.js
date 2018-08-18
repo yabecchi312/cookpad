@@ -41,17 +41,18 @@ $(document).on('turbolinks:load', function() {
   // user_avatarの更新をajax化
   function buildAvatar_top(data){
     var avatar_top = `
-        <img src= ${ data.avatar } class= 'user-avater__image' width= "48" height= "48" data-modaal-scope="modaal_153458640205425d75f82004fc">
+        <img src= ${ data.avatar } class= 'user-avater__image' width= "50" height= "50" data-modaal-scope="modaal_153458640205425d75f82004fc">
         <p>変更する</p>`
     return avatar_top;
   }
 
   function buildAvatar_bottom(data){
     var avatar_bottom = `
-        <img src= ${ data.avatar } class= 'user-avater__image' width= "48" height= "48">`
+        <img src= ${ data.avatar } class= 'user-avater__image' width= "50" height= "50">`
     return avatar_bottom;
   }
-  $('.edit_user').on('submit', function(e){
+  $('.edit_user_avatar').on('submit', function(e){
+    $('.colorbox_link').modaal('close');
     e.preventDefault();
     var formData = new FormData(this);
     var id = $(this).find('.form_userid').val()
@@ -72,7 +73,6 @@ $(document).on('turbolinks:load', function() {
         $(".user_icon").empty();
         $(".user_icon").append(Avatar2);
         $('.form__submit').prop('disabled', false);
-        $('.colorbox_link').modaal('close');
       }
       else {
         alert('error');
