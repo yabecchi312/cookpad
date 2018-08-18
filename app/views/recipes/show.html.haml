@@ -3,8 +3,8 @@
     .contents__left.clearfix
       -# レシピ詳細部分
       .recipe-show
-        .recipe__save-button
-          = link_to "レシピを保存", "#"
+        .recipe__save-button.myfolder
+          = render "myfolder-button", recipe: @recipe
         .recipe__title
           %h1.recipe-title
             = @recipe.title
