@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'tops#index'
-  resources :recipes, only: [:index, :new,:create]
+  resources :recipes, except: [:edit, :update]
   resources :users, only: [:show, :edit, :update] do
     member do
       get 'follow'
