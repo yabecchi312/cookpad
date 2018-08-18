@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-// = require turbolinks
+//= require turbolinks
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery
 //= require_tree .
 //= require font_awesome5
 //= require jquery.remotipart
