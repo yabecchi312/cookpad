@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :new, :create, :destroy]
   resources :myfolders, only: [:index, :create, :destroy]
   get '/recipes/list/:id', to: 'recipes#list'
+  resources :search, only: [:index]
 end
