@@ -14,7 +14,6 @@
 #   #}
 
 
-
 #   config.fog_directory  = 'cookpad-yabecchi312'
 #   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/cookpad-yabecchi312'
 # end

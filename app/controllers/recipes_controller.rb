@@ -28,6 +28,8 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to action: "list", id: current_user.id
     if @recipe.destroy
       redirect_to action: "list", id: current_user.id
     else
