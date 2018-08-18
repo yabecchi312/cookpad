@@ -37,16 +37,24 @@ $(document).on('turbolinks:load', function() {
     });
   // useravatarのモーダルを表示
   $('.colorbox_link').modaal({width: 600, height:250,});
-  $(".form__submit").click(function(){
-    $('.colorbox_link').modaal('close');
-  });
+
+  // user_avatarの更新をajax化
+  function buildAvatar_top(data){
+    var avatar_top = `
+        <img src= ${ data.avatar } class= 'user-avater__image' width= "48" height= "48" data-modaal-scope="modaal_153458640205425d75f82004fc">
+        <p>変更する</p>`
+    return avatar_top;
+  }
+
+  function buildAvatar_bottom(data){
+    var avatar_bottom = `
+        <img src= ${ data.avatar } class= 'user-avater__image' width= "48" height= "48">`
+    return avatar_bottom;
+  }
   $('.edit_user').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var id = $(this).find('.form_userid').val()
-    // var id =
-    console.log($(this));
-
     $.ajax({
       url: "/users/" + id,
       type: "PATCH",
@@ -56,18 +64,24 @@ $(document).on('turbolinks:load', function() {
       contentType: false
     })
     .done(function(data){
-      console.log("aaa")
       if (data.length !== 0) {
-      $('#user').reload
-      $('.form__submit').prop('disabled', false);
+        var Avatar1 = buildAvatar_top(data);
+        var Avatar2 = buildAvatar_bottom(data);
+        $(".colorbox_link").empty();
+        $(".colorbox_link").append(Avatar1);
+        $(".user_icon").empty();
+        $(".user_icon").append(Avatar2);
+        $('.form__submit').prop('disabled', false);
+        $('.colorbox_link').modaal('close');
       }
       else {
-        alert('メッセージを入力してください');
+        alert('error');
         $('.form__submit').prop('disabled', false);
       }
     })
     .fail(function(){
-      alert('error');
+      alert('写真を選択してください');
+      $('.form__submit').prop('disabled', false);
     })
   });
 });
