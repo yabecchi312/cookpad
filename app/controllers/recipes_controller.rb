@@ -20,8 +20,12 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    @recipe.destroy
-    redirect_to action: "list", id: current_user.id
+    if @recipe.destroy
+      redirect_to action: "list", id: current_user.id
+    else
+      flash.now[:error] = "レシピの削除に失敗しました"
+      render action: "list", id: current_user.id
+    end
   end
 
   private
@@ -33,9 +37,8 @@ class RecipesController < ApplicationController
       :tips,
       :background,
       :user_id,
-      { :ingredient_ids => [] },
-      ingredients_attributes: [:name, :amount],
-      flows_attributes: [:image, :text, :order]
+      { ingredients_attributes: [ :name , :amount ] },
+      { flows_attributes: [:image, :text, :order] }
       ).merge(user_id: current_user.id)
   end
 end
