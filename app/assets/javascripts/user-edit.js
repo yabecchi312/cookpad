@@ -1,40 +1,77 @@
 $(document).on('turbolinks:load', function() {
   // usernameのモーダルの表示
-  $('.modal').modaal({width: 600, height:250});
-  $(function(){
-    //残り文字数を表す要素を無ければ追加する
-    function add_count_disp(targetElement){
-        if(!targetElement.prev().hasClass("count-disp")){
-        targetElement.before('<p class="count-disp"></p>');
+
+
+    $('.modal').modaal({width: 600, height:250});
+    $(function(){
+      //残り文字数を表す要素を無ければ追加する
+      function add_count_disp(targetElement){
+          if(!targetElement.prev().hasClass("count-disp")){
+          targetElement.before('<p class="count-disp"></p>');
+        }
       }
-    }
-    //指定した要素の残り入力可能文字数を表示する
-    function count_length(targetElement){
-      var inputlength = targetElement.val().length;
-      var maxlength = targetElement.attr("maxlength");
+      //指定した要素の残り入力可能文字数を表示する
+      function count_length(targetElement){
+        var inputlength = targetElement.val().length;
+        var maxlength = targetElement.attr("maxlength");
 
-      if(!maxlength) return;
+        if(!maxlength) return;
 
-      var count = (maxlength - inputlength);
-      var count_message = 'あと' + count + '文字';
+        var count = (maxlength - inputlength);
+        var count_message = 'あと' + count + '文字';
 
-      if(targetElement.prev().hasClass("count-disp")){
-          targetElement.prev().html(count_message);
+        if(targetElement.prev().hasClass("count-disp")){
+            targetElement.prev().html(count_message);
+        }
       }
-    }
-    //クラス:count-lengthの要素に入力があるたびに呼び出す
-    $(".count-length").keyup(function(){
-      add_count_disp($(this));
-      count_length($(this));
+      //クラス:count-lengthの要素に入力があるたびに呼び出す
+      $(".count-length").keyup(function(){
+        add_count_disp($(this));
+        count_length($(this));
+      })
+      //ページ読み込み時、クラス：count-lengthのすべての要素の入力文字数をカウント
+      $(".count-length").each(function(){
+        add_count_disp($(this));
+        count_length($(this));
+      })
+    });
+  // useravatarのモーダルを表示
+  $('.colorbox_link').modaal({width: 600, height:250,});
+  $(".form__submit").click(function(){
+    $('.colorbox_link').modaal('close');
+  });
+  $('.edit_user').on('submit', function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    var id = $(this).find('.form_userid').val()
+    // var id =
+    console.log($(this));
+
+    $.ajax({
+      url: "/users/" + id,
+      type: "PATCH",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
-    //ページ読み込み時、クラス：count-lengthのすべての要素の入力文字数をカウント
-    $(".count-length").each(function(){
-      add_count_disp($(this));
-      count_length($(this));
+    .done(function(data){
+      console.log("aaa")
+      if (data.length !== 0) {
+      $('#user').reload
+      $('.form__submit').prop('disabled', false);
+      }
+      else {
+        alert('メッセージを入力してください');
+        $('.form__submit').prop('disabled', false);
+      }
+    })
+    .fail(function(){
+      alert('error');
     })
   });
-  // useravatarのモーダルを表示
-  $('.colorbox_link').modaal({width: 600, height:250});
-
-
 });
+
+
+
+
