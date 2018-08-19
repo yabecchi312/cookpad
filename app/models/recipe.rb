@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
   has_many :myfolders, dependent: :destroy
   has_many :register_users, through: :myfolders, source: :user
 
+  has_many :comments, dependent: :destroy
+
   belongs_to :users
   accepts_nested_attributes_for :ingredients
   accepts_nested_attributes_for :flows
