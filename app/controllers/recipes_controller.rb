@@ -1,6 +1,4 @@
 class RecipesController < ApplicationController
-  def index
-  end
 
   def new
     @recipe = Recipe.new
@@ -12,7 +10,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.create(recipe_params)
     redirect_to root_path
   end
-
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -34,6 +31,12 @@ class RecipesController < ApplicationController
       flash.now[:error] = "レシピの削除に失敗しました"
       render action: "list", id: current_user.id
     end
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
