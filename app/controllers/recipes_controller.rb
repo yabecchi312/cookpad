@@ -1,6 +1,4 @@
 class RecipesController < ApplicationController
-  def index
-  end
 
   def new
     @recipe = Recipe.new
@@ -34,6 +32,12 @@ class RecipesController < ApplicationController
       flash.now[:error] = "レシピの削除に失敗しました"
       render action: "list", id: current_user.id
     end
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
