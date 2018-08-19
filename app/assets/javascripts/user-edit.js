@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function() {
     $(function(){
       //残り文字数を表す要素を無ければ追加する
       function add_count_disp(targetElement){
-          if(!targetElement.prev().hasClass("count-disp")){
+        if(!targetElement.prev().hasClass("count-disp")){
           targetElement.before('<p class="count-disp"></p>');
         }
       }
