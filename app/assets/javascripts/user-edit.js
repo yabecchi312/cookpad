@@ -55,7 +55,7 @@ $(document).on('turbolinks:load', function() {
     $('.colorbox_link').modaal('close');
     e.preventDefault();
     var formData = new FormData(this);
-    var id = $(this).find('.form_userid').val()
+    var id = $(this).find('.form_userid').val();
     $.ajax({
       url: "/users/" + id,
       type: "PATCH",

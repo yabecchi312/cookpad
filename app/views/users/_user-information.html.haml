@@ -30,7 +30,7 @@
         #change_user_name_form
         %p 掲載したい写真を選んで、決定ボタンを押してください。
         .user-edit-form#edit-form
-          = form_for(current_user, class: "edit_user_avatar") do |f|
+          = form_for(current_user, class: "edit_user_avatar", remote: true) do |f|
             = f.file_field :avatar, class: "form__file"
             %br
             = hidden_field_tag :user_id, current_user.id, class: "form_userid"
@@ -44,7 +44,7 @@
         #change_user_name_form
         %p.notice ※3〜10文字以内。半角記号・スペース・絵文字は使用できません。
         .user-edit-form
-          = form_for(current_user, url: user_path(@user), html: {method: "patch"}) do |f|
+          = form_for(current_user, class: "edit_user_name") do |f|
             %table.table_basic
               %tbody
                 %tr
