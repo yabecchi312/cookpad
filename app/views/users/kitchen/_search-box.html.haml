@@ -1,5 +1,5 @@
 .search_box
   = form_tag "/recipes/list/#{@user.id}", method: :get do
     = fa_icon 'search', class: "search_icon"
-    = text_field_tag :keyword, "", class: "recipe_search_keyword", placeholder: "レシピを検索"
+    = text_field_tag :keyword, "", class: "recipe_search_keyword", placeholder: "自分のレシピを検索"
     = submit_tag "検索", id: "recipe_search"
