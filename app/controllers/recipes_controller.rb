@@ -23,7 +23,10 @@ class RecipesController < ApplicationController
 
   def list
     @user = User.find(params[:id])
-    @recipes = @user.recipes
+    @recipes = @user.recipes.includes(:ingredients)
+    if params[:keyword].present?
+      @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
+    end
   end
 
   def destroy
