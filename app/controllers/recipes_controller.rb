@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
     @user = User.find(params[:id])
     @recipes = @user.recipes.includes(:ingredients)
     if params[:keyword].present?
-      @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword]) & @recipes.map{|recipe| recipe.id})
+      @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
     end
   end
 
