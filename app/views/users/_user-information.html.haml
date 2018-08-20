@@ -125,3 +125,8 @@
         のプロフィール
     .profile_text
       = @user.profile
+    .profile_text_edit{style: "display:none;"}
+      = form_for(current_user, class: "edit_user_avatar", remote: true) do |f|
+        = f.text_area :profile, size: "77x4", class: "form-profile"
+        = f.submit '保存', class: "form_profile_submit"
+        .delete_profile 取消
