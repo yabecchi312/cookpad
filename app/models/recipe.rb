@@ -16,15 +16,19 @@ class Recipe < ApplicationRecord
     target_recipe_ids = []
     keyword_arrays = keywords.gsub(/　/," ").split()
     keyword_arrays.each do |keyword|
-      sql_string = ""
-      sql_string = 'select distinct recipes.id from recipes left join ingredients on ingredients.recipe_id = recipes.id left join flows on flows.recipe_id = recipes.id'
-
-      where_string = "where title LIKE '%#{keyword}%' or catch_copy LIKE '%#{keyword}%' or ingredients.name LIKE '%#{keyword}%' or flows.text LIKE '%#{keyword}%'"
-
-      sql_string = sql_string + ' ' + where_string
+      sql_string = self.make_sql_string(keyword)
       target_recipe_ids.push(Recipe.find_by_sql(sql_string).map{|obj| obj[:id]})
     end
     target_recipe_ids.flatten.uniq.sort
+  end
+
+  def self.make_sql_string(keyword)
+    sql_string = ""
+    sql_string = 'select distinct recipes.id from recipes left join ingredients on ingredients.recipe_id = recipes.id left join flows on flows.recipe_id = recipes.id'
+
+    where_string = "where title LIKE '%#{keyword}%' or catch_copy LIKE '%#{keyword}%' or ingredients.name LIKE '%#{keyword}%' or flows.text LIKE '%#{keyword}%'"
+
+    sql_string = sql_string + ' ' + where_string
   end
 
   def register_to_myfolder(user)
@@ -38,4 +42,5 @@ class Recipe < ApplicationRecord
   def register_to_myfolder?(user)
     register_users.include?(user)
   end
+
 end
