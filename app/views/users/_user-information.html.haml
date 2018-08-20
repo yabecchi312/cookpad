@@ -32,7 +32,6 @@
         #change_user_name_form
         %p 掲載したい写真を選んで、決定ボタンを押してください。
         .user-edit-form#edit-form
-          = form_for(current_user, class: "edit_user_avatar") do |f|
           = form_for(current_user) do |f|
             = f.file_field :avatar, class: "form__file"
             %br

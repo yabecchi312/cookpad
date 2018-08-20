@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def avatar_destroy
-    if @user.destroy
+    if @user.update(avatar: nil)
       redirect_to edit_user_path(@user)
     else
       flash.now[:error] = "写真の削除に失敗しました"
