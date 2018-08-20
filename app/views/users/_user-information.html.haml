@@ -11,7 +11,10 @@
         #two-col-left.kitchen
         %h1.page_title 写真を変更する
         #change_user_name_form
-        %p 掲載したい写真を選んで、決定ボタンを押してください。
+          %p
+            掲載したい写真を選んで、決定ボタンを押してください。
+            %span>
+              = link_to "(削除する)", avatar_destroy_user_path(@user),class: "delete_avatar", method: :delete, data: {confirm: "本当に削除しますか？"}
         .user-edit-form#edit-form
           = form_for(current_user, class: "edit_user_avatar", remote: true) do |f|
             = f.file_field :avatar, class: "form__file"
