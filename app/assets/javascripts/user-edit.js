@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
   // usernameのモーダルの表示
-
-
     $('.modal').modaal({width: 600, height:250});
     $(function(){
       //残り文字数を表す要素を無ければ追加する
@@ -51,11 +49,11 @@ $(document).on('turbolinks:load', function() {
         <img src= ${ data.avatar } class= 'user-avater__image' width= "50" height= "50">`
     return avatar_bottom;
   }
-  $('.edit_user_avatar').on('submit', function(e){
+  $('.edit_user').on('submit', function(e){
     $('.colorbox_link').modaal('close');
     e.preventDefault();
     var formData = new FormData(this);
-    var id = $(this).find('.form_userid').val()
+    var id = $(this).find('.form_userid').val();
     $.ajax({
       url: "/users/" + id,
       type: "PATCH",
