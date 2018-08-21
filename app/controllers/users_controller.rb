@@ -17,6 +17,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      redirect_to edit_user_path(@user)
+    else
+      flash.now[:error] = "削除に失敗しました"
+      render :edit
+    end
+  end
+
+  def avatar_destroy
+    if @user.update(avatar: nil)
+      respond_to do |format|
+        format.html { redirect_to edit_user_path(@user) }
+        format.json
+      end
+    else
+      flash.now[:error] = "写真の削除に失敗しました"
+      render :edit
+    end
+  end
+
   def follow
     current_user.follow(@user)
   end

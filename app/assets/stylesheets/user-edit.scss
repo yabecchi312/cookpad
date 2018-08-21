@@ -118,6 +118,9 @@
     font-size: 11px;
     color: #666;
   }
+  span a.delete_avatar {
+    text-decoration: underline;
+  }
   .user-edit-form {
     table.table_basic {
       border: 1px solid #e3dcca;
