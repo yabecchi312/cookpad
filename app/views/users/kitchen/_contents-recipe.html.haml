@@ -53,8 +53,9 @@
             .recipe_text.clearfix
               %span.title
                 = link_to "#{recipe.title}",'#',class: "recipe_title"
+                = link_to "[×]", recipe_path(recipe.id), method: :delete, data: {confirm: 'このレシピを削除してよろしいですか?'}
               .myfolder
-                = fa_icon 'plus-circle'
+                = render "myfolders/myfolder-icon", recipe: recipe
               .recipe_description
                 = recipe.catch_copy
               .recipe_ingredients

@@ -6,32 +6,35 @@
           #myfolder_wrapper.clearfix
             #myfolder_header
               .top_link
-                = link_to myfolders_path do
-                  = fa_icon 'folder-open'
-                  %span MYフォルダ
-              .search_box.description
-                = form_tag "/myfolders/", method: :get do
-                  = fa_icon 'search', class: 'search_icon'
-                  = text_field_tag :keyword,"",class: "recipe_search_keyword", placeholder: "MYフォルダ内を検索"
-                  = submit_tag "レシピ検索", id: "#btn_myfolder_search"
+                = fa_icon 'search'
+                - @keywords.each do |keyword|
+                  %span.keyword
+                    = keyword
+                %span.keyword_recipe のレシピ
+                %span.recipe_count
+                  = "#{@recipes.count}品"
             #myfolder_left
               #myfolder_left_container
-                .navigation
-                  .title
-                    レシピ保存数
-                  #indicator_navi
-                    #indicator_wrapper
-                      #indicator_used{style:"width:5%"}
-                      #indicator_unused{style:"width:95%"}
-                    #percentage
-                      %span.used_amount
-                        = Myfolder.where(user_id: current_user.id).count()
-                      %span.slash
-                        \/
-                      %span.total_amount
-                        100
+                %h2.title_row.refine
+                  = fa_icon 'filter'
+                  レシピを絞り込む
+                .search_menu_tsukurepo_count.search_section
+                  .title_row.filter_search.search_menu_sort
+                    つくれぽ数
+                  %ul.facet.active.clearfix
+                    %li
+                      =link_to '10人以上','#'
+                    %li
+                      =link_to '100人以上','#'
+                    %li
+                      =link_to '1000人以上','#'
             #myfolder_right
               .tab_button
+                %ul.switch
+                  %li.order_date.selected
+                    %span 新着順
+                  %li.popularity
+                    %span 人気順
                 .paging_myfolder
                   %span
                     1 / 1
@@ -45,7 +48,7 @@
                       %span.title
                         = link_to recipe.title,'#',class: "recipe_title"
                       .myfolder
-                        = render "myfolder-icon", recipe: recipe
+                        = render "myfolders/myfolder-icon", recipe: recipe
                       .recipe_description
                         = recipe.catch_copy
                       .recipe_ingredients

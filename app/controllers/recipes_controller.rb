@@ -13,9 +13,30 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients.includes(:recipe)
+    @flows = @recipe.flows.includes(:recipe)
+  end
+
+
   def list
     @user = User.find(params[:id])
-    @recipes = @user.recipes
+    @recipes = @user.recipes.includes(:ingredients)
+    if params[:keyword].present?
+      @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
+    end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    if @recipe.destroy
+      redirect_to action: "list", id: current_user.id
+    else
+      flash.now[:error] = "レシピの削除に失敗しました"
+      render action: "list", id: current_user.id
+    end
   end
 
   private

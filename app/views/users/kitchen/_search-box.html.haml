@@ -1,4 +1,5 @@
 .search_box
-  %input.recipe_search_keyword{placeholder: "レシピを検索",type: "text"}
-  = fa_icon 'search', class: 'search_icon'
-  %input{type:"submit",value:"検索",id:"recipe_search",class: "button"}
+  = form_tag "/recipes/list/#{@user.id}", method: :get do
+    = fa_icon 'search', class: "search_icon"
+    = text_field_tag :keyword, "", class: "recipe_search_keyword", placeholder: "自分のレシピを検索"
+    = submit_tag "検索", id: "recipe_search"
