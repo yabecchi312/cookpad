@@ -54,12 +54,13 @@ $(document).on('turbolinks:load', function() {
     var avatar_delete = `
       <span>
         <input type="hidden" name="user_id" id="user_id" value="1" class="form_userid">
-        <a class="delete_avatar" data-confirm="本当に削除しますか？" rel="nofollow" data-method="delete" href="/users/1/avatar_destroy">(削除する)</a>
+        <a class="delete_avatar" data-method="delete" href="/users/1/avatar_destroy" data-remote="true">(削除する)</a>
       </span>`
     return avatar_delete;
   }
 
   $('.edit_user').on('submit', function(e){
+    $('.colorbox_link').modaal('close');
     e.preventDefault();
     var formData = new FormData(this);
     var id = $(this).find('.form_userid').val();
@@ -83,7 +84,6 @@ $(document).on('turbolinks:load', function() {
         if (!$("#change_user_name_form span a").hasClass("delete_avatar")) {
           $("#change_user_name_form p").append(buildAvatar_delete());
         }
-        $('.colorbox_link').modaal('close');
       }
       else {
         alert('error');

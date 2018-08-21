@@ -28,7 +28,10 @@ class UsersController < ApplicationController
 
   def avatar_destroy
     if @user.update(avatar: nil)
-      redirect_to edit_user_path(@user)
+      respond_to do |format|
+        format.html { redirect_to edit_user_path(@user) }
+        format.json
+      end
     else
       flash.now[:error] = "写真の削除に失敗しました"
       render :edit
