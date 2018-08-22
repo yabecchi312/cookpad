@@ -51,7 +51,10 @@
                     %li
                       = link_to destroy_user_session_path do
                         %span ログアウト
-        = render 'shares/inner-header.html.haml'
+        - if controller.controller_name == "kondates"
+          = render 'shares/kondates-inner-header.html.haml'
+        - else
+          = render 'shares/inner-header.html.haml'
     = yield
 
     %footer

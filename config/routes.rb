@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :myfolders, only: [:index, :create, :destroy]
   get '/recipes/list/:id', to: 'recipes#list'
   resources :search, only: [:index]
+  resources :kondates, only: [:index]
 end
