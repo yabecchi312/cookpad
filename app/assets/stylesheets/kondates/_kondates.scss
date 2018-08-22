@@ -3,7 +3,6 @@
   padding-left: 50px;
 }
 
-
 .kondate_header {
   .kondate_header_left {
     height: 100%;
@@ -20,9 +19,99 @@
   margin-left: 100px;
 }
 
-
 .clear_fix:after {
   display:block;
   clear: both;
   content: "";
+}
+
+#main {
+  #kondate_wrapper {
+    background: #ffffff;
+    border: 1px solid #e3dcca;
+    border-radius: 5px;
+    #kondate_index_contents {
+      margin: 0 20px 10px;
+    }
+  }
+}
+
+.kondate_pickup_view {
+  float: left;
+  width: 190px;
+  margin-right: 10px;
+  .kondate_image {
+    height: 180px;
+    width: 180px;
+    padding: 4px;
+    border: 1px solid #cccccc;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+  .kondate_title {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #845f4b;
+    text-decoration: underline;
+  }
+  .kondate_recipe_count {
+    font-weight: normal;
+    font-size: 12px;
+    color: #999999;
+  }
+  .kondate_recipes {
+    margin: 5px 0;
+  }
+  .kondate_other_recipes {
+    font-size: 12px;
+    color: #999999;
+  }
+}
+
+
+
+.kondate_status_icon {
+  float: left;
+  height: 20px;
+  width: 20px;
+  background-color: #845f4b;
+  color: #f4f4f9;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.show_more_kondates_btn {
+  margin-top: 10px;
+  float: right;
+  a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #845f4b;
+    text-decoration: underline;
+  }
+}
+
+.write_kondate_btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.category_segment {
+  .three_column {
+    font-size: 15px;
+    width: 33%;
+    float: left;
+  }
+}
+
+.premium_kondate {
+  padding-top: 0;
+  margin-bottom: 10px;
+  a {
+      position: absolute;
+      right: 10px;
+      font-weight: normal;
+      text-decoration: underline;
+  }
 }
