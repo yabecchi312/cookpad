@@ -33,6 +33,36 @@
     #kondate_index_contents {
       margin: 0 20px 10px;
     }
+    #recent_kondate {
+      h2.title {
+        margin: 20px 20px 0;
+        padding: 0;
+        font-size: 14px;
+      }
+      .kondate_previews {
+        padding: 20px;
+        margin: 0;
+        .kondate_list_view {
+          overflow: hidden;
+          margin-bottom: 15px;
+          .kondate_image {
+            float: left;
+            margin-right: 10px;
+            padding: 4px;
+            border: 1px solid #cccccc;
+            border-right: 1px solid #999999;
+            border-bottom: 1px solid #999999;
+            width: 150px;
+            height: 150px;
+          }
+          .kondate_infos {
+            overflow: hidden;
+            padding: 0 5px;
+            min-height: 185px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -48,26 +78,31 @@
     border-right: 1px solid #999999;
     border-bottom: 1px solid #999999;
   }
-  .kondate_title {
-    margin-top: 5px;
+}
+
+.kondate_title {
+  margin-top: 5px;
+  a {
     font-weight: bold;
     color: #845f4b;
     text-decoration: underline;
   }
-  .kondate_recipe_count {
-    font-weight: normal;
-    font-size: 12px;
-    color: #999999;
-  }
-  .kondate_recipes {
-    margin: 5px 0;
-  }
-  .kondate_other_recipes {
-    font-size: 12px;
-    color: #999999;
-  }
 }
-
+.kondate_recipe_count {
+  font-weight: normal;
+  font-size: 12px;
+  color: #999999;
+}
+.kondate_recipes {
+  margin: 5px 0;
+}
+.kondate_other_recipes {
+  font-size: 12px;
+  color: #999999;
+}
+.kondate_description {
+  color: #808080;
+}
 
 
 .kondate_status_icon {

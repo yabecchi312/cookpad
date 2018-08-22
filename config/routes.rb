@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/recipes/list/:id', to: 'recipes#list'
   resources :search, only: [:index]
   resources :kondates, only: [:index]
+  get '/kondates/recent', to: 'kondates#recent'
 end
