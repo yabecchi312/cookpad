@@ -1,0 +1,28 @@
+#kondate_search_wrapper {
+  margin-top: 25px;
+  padding-left: 50px;
+}
+
+
+.kondate_header {
+  .kondate_header_left {
+    height: 100%;
+    float: left;
+  }
+  .kondate_header_right {
+    height: 100%;
+    padding-top: 15px;
+  }
+}
+
+.kondate_keyword {
+  margin-top: 5px;
+  margin-left: 100px;
+}
+
+
+.clear_fix:after {
+  display:block;
+  clear: both;
+  content: "";
+}
