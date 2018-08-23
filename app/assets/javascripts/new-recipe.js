@@ -1,23 +1,64 @@
 // レシピ投稿
 $(document).on('turbolinks:load', function(){
   $(function(){
-    var html = `<div class="ingredient">
-                  <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][][name]" >
-                  <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][][amount]">
-                  <a id="ingredient-delete-button" href="">削除</a>
-                  </div>`
+    var ingredient_number = $(".ingredient").length - 1;
+
+// 新規投稿
+    function newAppendIngredient(ingredient_num){
+      var newHtml = `<div class="ingredient">
+                    <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][${ingredient_num}][name]" >
+                    <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][${ingredient_num}][amount]">
+                    <a id="ingredient-delete-button" href="">削除</a>
+                    </div>`
+                    return newHtml;
+                  };
+
+// 編集
+    function editAppendIngredient(ingredient_num){
+      var editHtml = `<div class="ingredient">
+                    <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][${ingredient_num}][name]" >
+                    <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][${ingredient_num}][amount]">
+                    <a id="ingredient-delete-button" href="">削除</a>
+                  </div>
+                  <input type="hidden" value="" name="recipe[ingredients_attributes][${ingredient_num}][id]" id="recipe_ingredients_attributes_${ingredient_num}_id">`
+                    return editHtml;
+                  };
+
+
+// 新規投稿
     $("#ingredient-add-button").on("click", function(){
-      $(".ingredients").append(html);
+      ingredient_number = ingredient_number + 1
+      newHtml = newAppendIngredient(ingredient_number)
+      $(".ingredients").append(newHtml);
       return false;
     });
 
+// 編集
+    $("#ingredient-add-button-edit").on("click", function(){
+      ingredient_number = ingredient_number + 1
+      editHtml = editAppendIngredient(ingredient_number)
+      $(".ingredients").append(editHtml);
+      return false;
+    });
+
+
+// 新規投稿 削除
     $(document).on("click", "#ingredient-delete-button", function(){
       $(this).closest(".ingredient").remove();
+      return false;
+    });
+
+// 編集 削除
+    $(document).on("click", "#ingredient-delete-button-edit", function(){
+      $(this).nextAll("input").prop("checked", true);
+      $(this).closest(".ingredient").hide();
       return false;
     });
   });
 });
 
+
+// 料理手順
 $(function(){
   var step_number = $(".step").length;
 
