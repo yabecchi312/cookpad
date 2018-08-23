@@ -62,6 +62,7 @@
       .side_banner_wrapper {
         height: auto;
         margin-bottom: 20px;
+        border-radius: 5px;
         &__recipe_help {
           height: auto;
           border: 1px solid #ded5c0;
@@ -250,6 +251,9 @@
       }
       .ingredient-amount {
         width: 100px;
+      }
+      #update_destroy {
+        // visibility: hidden;
       }
     }
   }
