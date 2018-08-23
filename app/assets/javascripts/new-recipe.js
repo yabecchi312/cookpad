@@ -16,11 +16,13 @@ $(document).on('turbolinks:load', function(){
 // 編集
     function editAppendIngredient(ingredient_num){
       var editHtml = `<div class="ingredient">
-                    <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][${ingredient_num}][name]" >
-                    <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][${ingredient_num}][amount]">
-                    <a id="ingredient-delete-button" href="">削除</a>
-                  </div>
-                  <input type="hidden" value="" name="recipe[ingredients_attributes][${ingredient_num}][id]" id="recipe_ingredients_attributes_${ingredient_num}_id">`
+                        <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][${ingredient_num}][name]" >
+                        <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][${ingredient_num}][amount]">
+                        <a id="ingredient-delete-button" href="">削除</a>
+                        <input name="recipe[ingredients_attributes][${ingredient_num}][_destroy]" type="hidden", value="">
+                        <input id="update_destroy" type="checkbox" value="" name="recipe[ingredients_attributes][${ingredient_num}][_destroy]">
+                      </div>
+                      `
                     return editHtml;
                   };
 
