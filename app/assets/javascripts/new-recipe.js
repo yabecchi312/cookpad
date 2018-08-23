@@ -27,7 +27,7 @@ $(document).on('turbolinks:load', function(){
                   };
 
 
-// 新規投稿
+// 新規投稿 追加
     $("#ingredient-add-button").on("click", function(){
       ingredient_number = ingredient_number + 1
       newHtml = newAppendIngredient(ingredient_number)
@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function(){
       return false;
     });
 
-// 編集
+// 編集 追加
     $("#ingredient-add-button-edit").on("click", function(){
       ingredient_number = ingredient_number + 1
       editHtml = editAppendIngredient(ingredient_number)
@@ -97,6 +97,7 @@ $(function(){
               return step;
               };
 
+// 番号振り直し
   function addNumber(){
     $("#cooking-steps .step-position").each(function(i){
       var i = i + 1;
@@ -104,6 +105,7 @@ $(function(){
     })
   };
 
+// 最後の一つになったら削除ボタンを隠す
   function button(){
     if ($(".step").length == 1) {
       $("#step-remove-button").hide();
@@ -113,6 +115,7 @@ $(function(){
     };
   };
 
+// 新規 追加
   $(document).on("click", "#step-add-button", function(){
     step_number = step_number + 1
     step = appendStep(step_number);
@@ -122,6 +125,7 @@ $(function(){
     return false;
   });
 
+// 新規投稿 削除
   $(document).on("click", "#step-remove-button", function(){
       $(this).closest(".step").remove();
       addNumber();
