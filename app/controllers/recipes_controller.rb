@@ -11,6 +11,19 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    binding.pry
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+      redirect_to root_path, notice: "レシピを編集しました"
+    else
+      render :edit
+    end
+  end
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -34,10 +47,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
+  def save
   end
 
   private
@@ -49,8 +59,8 @@ class RecipesController < ApplicationController
       :tips,
       :background,
       :user_id,
-      { ingredients_attributes: [ :name , :amount ] },
-      { flows_attributes: [:image, :text, :order] }
+      { ingredients_attributes: [:id, :recipe_id, :name , :amount, :_destroy ] },
+      { flows_attributes: [:id, :recipe_id, :image, :text, :order, :_destroy ] }
       ).merge(user_id: current_user.id)
   end
 end
