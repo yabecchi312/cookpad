@@ -150,3 +150,119 @@
       text-decoration: underline;
   }
 }
+
+#kondate_user_show {
+  margin: 15px 19px;
+}
+
+.kondate_title_wrapper {
+  padding: 20px 8px;
+  margin: 0;
+  .kondate_title {
+    line-height: 30px;
+    margin: 5px 0 0;
+    .kondate_title_input {
+      float:left;
+      font-size: 20px;
+      height: 40px;
+      width: 100%;
+      margin: 0;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      box-shadow: inset 1px 1px 4px #e6e6e6;
+    }
+    .author_name {
+      float: right;
+    }
+  }
+}
+
+.kondate_photo_wrapper {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  img#kondate_photo {
+    padding: 6px;
+    border: 1px solid #cccccc;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+}
+
+.kondate_under_infos {
+  padding: 10px;
+  margin: 0;
+  .point_cooking_time_wrapper {
+    padding: 10px 0 20px;
+    .point {
+      width: 50%;
+      padding-right: 5px;
+      box-sizing: border-box;
+    }
+    .cooking_time {
+      width: 50%;
+      padding-left: 5px;
+      box-sizing: border-box;
+      .cooking_time_select {
+        font-size: 14px;
+        height: 25px;
+        width: 120px;
+        border-color: #cccccc;
+        color: #3c3c3c;
+        vertical-align: top;
+      }
+    }
+  }
+  .kondate_edit_form {
+    font-size: 14px;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 4px #e6e6e6;
+  }
+  #kondate_recipes_wrapper {
+    margin-top: 20px;
+    .kondate_recipe_wrapper.first {
+      margin-left: 0;
+      clear: both;
+    }
+    .kondate_recipe_wrapper {
+      margin-top: 10px;
+      width: 137px;
+      float: left;
+      margin-left: 14px;
+      .kondate_status_label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #7c6012;
+        min-height: 18px;
+      }
+      .kondate_recipe {
+        position: relative;
+        word-wrap: break-word;
+        .kondate_recipe_image {
+          min-height: 30px;
+          .kondate_recipe_blank {
+            text-decoration: none;
+            color: #999999;
+            display: block;
+            width: 117px;
+            height: 38px;
+            background-color: #f5f5f5;
+            padding: 30px 10px;
+          }
+        }
+      }
+      .add_side_dish_btn {
+        color: #889b00;
+      }
+    }
+  }
+}
+.kondate_submit_btn {
+  margin-top: 40px;
+  width: 100px;
+  height: 30px;
+}
