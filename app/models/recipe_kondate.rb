@@ -1,0 +1,2 @@
+class RecipeKondate < ApplicationRecord
+end
