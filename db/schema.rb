@@ -66,12 +66,12 @@ ActiveRecord::Schema.define(version: 20180823060824) do
 
   create_table "recipe_kondates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "kondate_id", null: false
-    t.integer  "user_id",    null: false
+    t.integer  "recipe_id",  null: false
     t.integer  "status",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kondate_id"], name: "index_recipe_kondates_on_kondate_id", using: :btree
-    t.index ["user_id"], name: "index_recipe_kondates_on_user_id", using: :btree
+    t.index ["recipe_id"], name: "index_recipe_kondates_on_recipe_id", using: :btree
   end
 
   create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -113,6 +113,6 @@ ActiveRecord::Schema.define(version: 20180823060824) do
   add_foreign_key "myfolders", "recipes"
   add_foreign_key "myfolders", "users"
   add_foreign_key "recipe_kondates", "kondates"
-  add_foreign_key "recipe_kondates", "users"
+  add_foreign_key "recipe_kondates", "recipes"
   add_foreign_key "recipes", "users"
 end
