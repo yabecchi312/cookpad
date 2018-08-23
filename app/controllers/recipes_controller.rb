@@ -16,7 +16,6 @@ class RecipesController < ApplicationController
   end
 
   def update
-    binding.pry
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
       redirect_to root_path, notice: "レシピを編集しました"
