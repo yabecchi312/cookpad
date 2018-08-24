@@ -1,0 +1,24 @@
+= f.fields_for :flows do |fl|
+  .step
+    .step__header
+      .step__header__left
+        .step-position
+          = fl.index + 1
+        .step_move_higher
+          = link_to "←", "#"
+        .step_move_lower
+          = link_to "→", "#"
+      .step__header__right
+        = link_to "削除", "#", id: "step-remove-button-edit"
+        = link_to "追加", "#", id: "step-add-button-edit"
+    .step__main
+      .step__main_image
+        = fl.label :image do
+          = image_tag "step_blank.png"
+          = fl.file_field :image, class: "step-image"
+      .step__main_text
+        -# = image_tag "edit-image.png", class: "edit-image"
+        -# クリックして作り方を入力
+        = fl.text_area :text
+    = fl.check_box :_destroy, id: "update_destroy_flows"
+    = fl.hidden_field :order
