@@ -1,0 +1,13 @@
+.side_history
+  %h2 最近見たレシピ
+  - @ranking.each.with_index(1) do |recipe, i|
+    = image_tag("https://img.cpcdn.com/recipes/3899525/94x94c/2dd4066c0ff4afcde79476ed191ca70a.jpg?u=1350567&p=1465025048")
+    %i.fas.fa-crown.fa-lg.my-orange.fa-pull-left
+    %span.index
+      = "#{i}"
+    %span.ranking-box__list--title
+      = recipe.title
+
+
+
+

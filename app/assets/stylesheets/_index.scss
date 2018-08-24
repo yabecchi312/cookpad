@@ -226,8 +226,19 @@ header {
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
+  float: right;
   z-index: 1;
+}
+
+.side_history {
+  width: 200px;
+  height: 1000px;
+  position: relative;
+  margin-left: auto;
+  float: right;
+  background: white;
+  padding-top: 35px;
 }
 
 
