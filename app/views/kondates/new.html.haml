@@ -6,58 +6,61 @@
           #kondate_wrapper
             #kondate_index_contents
               #kondate_user_show
-                .kondate_header.clearfix
-                  .f_left
-                    = link_to '« userの献立','#'
-                    %span.gray.font12 (3)
-                  .f_right
-                    = link_to 'user名', '#'
-                .kondate_title_wrapper
-                  献立のタイトル
-                  .kondate_title.clearfix
-                    %input.kondate_title_input
-                    .author_name
-                      = link_to '','#'
-                .kondate_photo_wrapper
-                  = image_tag 'kondate/blank_kondate_550', id: "kondate_photo"
-                .kondate_under_infos
-                  .point_cooking_time_wrapper.clearfix
-                    .point.f_left
+                = form_for @kondate do |f|
+                  .kondate_header.clearfix
+                    .f_left
+                      = link_to '« userの献立','#'
+                      %span.gray.font12 (3)
+                    .f_right
+                      = link_to 'user名', '#'
+                  .kondate_title_wrapper
+                    献立のタイトル
+                    .kondate_title.clearfix
+                      = f.text_field :title, required: true,class: "kondate_title_input"
+                      .author_name
+                        = link_to '','#'
+                  .kondate_photo_wrapper
+                    = f.label :image do
+                      = image_tag 'kondate/blank_kondate_550', id: "kondate_photo"
+                      = f.file_field :image, class: "kondate_image_hidden"
+                  .kondate_under_infos
+                    .point_cooking_time_wrapper.clearfix
+                      .point.f_left
+                        .recipe_sub_title
+                          この献立のポイント
+                        = f.text_area :point,class: "kondate_edit_form"
+                      .cooking_time.f_right
+                        .recipe_sub_title
+                          調理時間
+                        = f.select :cooking_time, options_for_select([['選択する',''],['10分以内',10],['20分',20],['30分',30],['40分',40],['50分',50],['60分',60],['90分',90],['120分以上',120]], class: 'select_action cooking_time_select')
+                    .setup_tips
                       .recipe_sub_title
-                        この献立のポイント
-                      %textarea.kondate_edit_form
-                    .cooking_time.f_right
-                      .recipe_sub_title
-                        調理時間
-                      = select_tag :selected_value, options_for_select([['選択する',''],['10分以内',10],['20分',20],['30分',30],['40分',40],['50分',50],['60分',60],['90分',90],['120分以上',120]], class: 'select_action cooking_time_select')
-                  .setup_tips
-                    .recipe_sub_title
-                      段取りのコツ
-                    %textarea.kondate_edit_form
-                  #kondate_recipes_wrapper.clearfix
-                    .kondate_recipe_wrapper.first
-                      .kondate_status_label
-                        主菜
-                      .kondate_recipe
-                        .kondate_recipe_image
-                          = link_to '#',class: "kondate_recipe_blank" do
-                            = fa_icon 'file'
-                            クリックして
-                            %br
-                            レシピを選択
-                    .kondate_recipe_wrapper
-                      .kondate_status_label
-                        副菜
-                      .kondate_recipe
-                        .kondate_recipe_image
-                          = link_to '#',class: "kondate_recipe_blank" do
-                            = fa_icon 'file'
-                            クリックして
-                            %br
-                            レシピを選択
-                    .kondate_recipe_wrapper
-                      .kondate_status_label
-                      .add_side_dish_link
-                        = fa_icon 'plus-circle',class: "add_side_dish_btn"
-                        = link_to '追加する','#'
-                  = button_tag '保存する',class: "kondate_submit_btn"
+                        段取りのコツ
+                      = f.text_area :tips,class: "kondate_edit_form"
+                    #kondate_recipes_wrapper.clearfix
+                      .kondate_recipe_wrapper.first
+                        .kondate_status_label
+                          主菜
+                        .kondate_recipe
+                          .kondate_recipe_image
+                            = link_to '#',class: "kondate_recipe_blank" do
+                              = fa_icon 'file'
+                              クリックして
+                              %br
+                              レシピを選択
+                      .kondate_recipe_wrapper
+                        .kondate_status_label
+                          副菜
+                        .kondate_recipe
+                          .kondate_recipe_image
+                            = link_to '#',class: "kondate_recipe_blank" do
+                              = fa_icon 'file'
+                              クリックして
+                              %br
+                              レシピを選択
+                      .kondate_recipe_wrapper
+                        .kondate_status_label
+                        .add_side_dish_link
+                          = fa_icon 'plus-circle',class: "add_side_dish_btn"
+                          = link_to '追加する','#'
+                    = f.submit '保存する',class: "kondate_submit_btn"
