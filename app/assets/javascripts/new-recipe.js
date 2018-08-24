@@ -1,4 +1,4 @@
-// レシピ投稿
+// レシピ投稿 材料
 $(document).on('turbolinks:load', function(){
   $(function(){
     var ingredient_number = $(".ingredient").length - 1;
@@ -6,9 +6,9 @@ $(document).on('turbolinks:load', function(){
 // 新規投稿
     function newAppendIngredient(ingredient_num){
       var newHtml = `<div class="ingredient">
-                    <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][${ingredient_num}][name]" >
-                    <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][${ingredient_num}][amount]">
-                    <a id="ingredient-delete-button" href="">削除</a>
+                       <input placeholder="材料名" class="ingredient-name" type="text" name="recipe[ingredients_attributes][${ingredient_num}][name]" >
+                       <input placeholder="分量" class="ingredient-amount" type="text" name="recipe[ingredients_attributes][${ingredient_num}][amount]">
+                       <a id="ingredient-delete-button" href="">削除</a>
                     </div>`
                     return newHtml;
                   };
@@ -64,45 +64,91 @@ $(document).on('turbolinks:load', function(){
 $(function(){
   var step_number = $(".step").length;
 
-  function appendStep(step_num){
-  var step = `<div class="step">
-                <div class="step__header">
-                  <div class="step__header__left">
-                    <div class="step-position">${step_num}</div>
-                    <div class="step_move_higher">
-                      <a href="#">←</a>
+// 新規レシピ
+  function newAppendStep(step_num){
+    var newStep = `<div class="step">
+                  <div class="step__header">
+                    <div class="step__header__left">
+                      <div class="step-position">${step_num}</div>
+                      <div class="step_move_higher">
+                        <a href="#">←</a>
+                      </div>
+                      <div class="step_move_lower">
+                        <a href="#">→</a>
+                      </div>
                     </div>
-                    <div class="step_move_lower">
-                      <a href="#">→</a>
+                    <div class="step__header__right">
+                      <a id="step-remove-button" href="#">削除</a>
+                      <a id="step-add-button" href="#">追加</a>
                     </div>
                   </div>
-                  <div class="step__header__right">
-                    <a id="step-remove-button" href="#">削除</a>
-                    <a id="step-add-button" href="#">追加</a>
+                  <div class="step__main">
+                    <div class="step__main_image">
+                      <label for="recipe_flows_attributes_0_image">
+                        <img src="/assets/step_blank-c36c8efecb31bebf8f7ef53a7fc4f24034c74677b0fdb521996e77d54b2962fa.png" alt="Step blank">
+                        <input class="step-image" type="file" name="recipe[flows_attributes][][image]">
+                      </label>
+                    </div>
+                    <div class="step__main_text">
+                      <textarea name="recipe[flows_attributes][][text]">
+                      </textarea>
+                    </div>
                   </div>
-                </div>
-                <div class="step__main">
-                  <div class="step__main_image">
-                    <label for="recipe_flows_attributes_0_image">
-                      <img src="/assets/step_blank-c36c8efecb31bebf8f7ef53a7fc4f24034c74677b0fdb521996e77d54b2962fa.png" alt="Step blank">
-                      <input class="step-image" type="file" name="recipe[flows_attributes][][image]">
-                    </label>
-                  </div>
-                  <div class="step__main_text">
-                    <textarea name="recipe[flows_attributes][][text]">
-                    </textarea>
-                  </div>
-                </div>
-              </div>`
-              return step;
-              };
+                </div>`
+                return newStep;
+                };
 
-// 番号振り直し
+// レシピ編集ページ
+  function editAppendStep(add_step_num, array_step){
+    var editStep = `<div class="step">
+                      <div class="step__header">
+                        <div class="step__header__left">
+                          <div class="step-position">${add_step_num}
+                          </div>
+                          <div class="step_move_higher">
+                            <a href="#">←</a>
+                          </div>
+                          <div class="step_move_lower">
+                            <a href="#">→</a>
+                          </div>
+                        </div>
+                        <div class="step__header__right">
+                          <a id="step-remove-button-edit" href="#">削除</a>
+                          <a id="step-add-button-edit" href="#">追加</a>
+                        </div>
+                      </div>
+                      <div class="step__main">
+                        <div class="step__main_image">
+                          <label for="recipe_flows_attributes_${array_step}_image">
+                            <img src="/assets/step_blank-c36c8efecb31bebf8f7ef53a7fc4f24034c74677b0fdb521996e77d54b2962fa.png" alt="Step blank">
+                            <input class="step-image" type="file" name="recipe[flows_attributes][${array_step}][image]">
+                          </label>
+                        </div>
+                        <div class="step__main_text">
+                          <textarea name="recipe[flows_attributes][${array_step}][text]">
+                          </textarea>
+                        </div>
+                      </div>
+                      <input name="recipe[flows_attributes][${array_step}][_destroy]" type="hidden" value="">
+                      <input id="update_destroy_flows" type="checkbox" value="" name="recipe[flows_attributes][${array_step}][_destroy]>"
+                    </div>`
+                return editStep;
+                };
+
+// 新規 編集 番号振り直し
   function addNumber(){
     $("#cooking-steps .step-position").each(function(i){
       var i = i + 1;
       $(this).html( i );
-    })
+    });
+  };
+
+// 編集 配列振り直し
+  function addArrayEdit(){
+    $("#cooking-steps .step-main").each(function(array_step){
+      var array_step = array_step + 1;
+      $(this).children(".step__main_image").attr("for", "recipe_flows_attributes_${array_step}_image");
+    });
   };
 
 // 最後の一つになったら削除ボタンを隠す
@@ -118,8 +164,8 @@ $(function(){
 // 新規 追加
   $(document).on("click", "#step-add-button", function(){
     step_number = step_number + 1
-    step = appendStep(step_number);
-    $(this).closest(".step").after(step);
+    newStep = newAppendStep(step_number);
+    $(this).closest(".step").after(newStep);
     addNumber();
     button();
     return false;
@@ -132,7 +178,78 @@ $(function(){
       button();
       return false;
   });
+
+// 編集 追加
+  $(document).on("click", "#step-add-button-edit", function(){
+    var now_step_number = Number($(this).parent().prev().children(".step-position").html());
+    var add_step_number = now_step_number + 1
+    var array_step = now_step_number
+      editStep = editAppendStep(add_step_number, array_step);
+    $(this).closest(".step").next("input").after(editStep);
+    addNumber();
+    addArrayEdit();
+    button();
+    return false;
+  });
+
+  // 編集 削除
+  // $(document).on("click", "#step-remove-button-edit", function(){
+  //     $(this).closest(".step").remove();
+  //     addNumber();
+  //     button();
+  //     return false;
+  // });
 });
+
+
+// $(function(){
+//   function editAppendStep(add_step_num, array_step){
+//     var editStep = `<div class="step">
+//                   <div class="step__header">
+//                     <div class="step__header__left">
+//                       <div class="step-position">${add_step_num}</div>
+//                       <div class="step_move_higher">
+//                         <a href="#">←</a>
+//                       </div>
+//                       <div class="step_move_lower">
+//                         <a href="#">→</a>
+//                       </div>
+//                     </div>
+//                     <div class="step__header__right">
+//                       <a id="step-remove-button" href="#">削除</a>
+//                       <a id="step-add-button" href="#">追加</a>
+//                     </div>
+//                   </div>
+//                   <div class="step__main">
+//                     <div class="step__main_image">
+//                       <label for="recipe_flows_attributes_${array_step}_image">
+//                         <img src="/assets/step_blank-c36c8efecb31bebf8f7ef53a7fc4f24034c74677b0fdb521996e77d54b2962fa.png" alt="Step blank">
+//                         <input class="step-image" type="file" name="recipe[flows_attributes][${array_step}][image]">
+//                       </label>
+//                     </div>
+//                     <div class="step__main_text">
+//                       <textarea name="recipe[flows_attributes][${array_step}][text]">
+//                       </textarea>
+//                       <input name="recipe[flows_attributes][${array_step}][_destroy]" type="hidden" value="">
+//                       <input id="update_destroy_flows" type="checkbox" value="" name="recipe[flows_attributes][${array_step}][_destroy]>"
+//                     </div>
+//                   </div>
+//                 </div>`
+//                 return editStep;
+//                 };
+
+//   $(document).on("click", "#step-add-button-edit", function(){
+//     var now_step_number = Number($(this).parent().prev().children(".step-position").html());
+//     console.log()
+//     var add_step_number = now_step_number + 1
+//     var array_step = now_step_number
+//       editStep = editAppendStep(add_step_number, array_step);
+//     $(this).closest(".step").after(editStep);
+//     // addNumber();
+//     // button();
+//     return false;
+//   });
+// });
 
 
 // レシピ投稿のサイドバー
