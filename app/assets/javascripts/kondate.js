@@ -163,8 +163,6 @@ function makeSelectRecipeModal() {
                 <input type="hidden" name="page" id="page" value="1">
                 <input type="hidden" name="size" id="size" value="4">
                 <input type="hidden" name="from" id="from" value="mykitchen">
-                <input type="hidden" name="next_url" id="next_url" value="/user_kondates/182528/confirm_add_recipe">
-                <input type="hidden" name="add_params" id="add_params" value="kondate_recipe_id=822255">
                 <input type="hidden" name="remote" id="remote" value="1">
                 <input type="submit" name="commit" value="検索" id="kondate_my_recipe_search" class="search_submit_button small">
               </form>
