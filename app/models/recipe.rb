@@ -8,7 +8,7 @@ class Recipe < ApplicationRecord
   has_many :kondates, through: :recipe_kondates
   has_many :recipe_kondates
 
-  belongs_to :users
+  belongs_to :user
   accepts_nested_attributes_for :ingredients
   accepts_nested_attributes_for :flows
   mount_uploader :image, ImageUploader

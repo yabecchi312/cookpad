@@ -18,6 +18,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients.includes(:recipe)
     @flows = @recipe.flows.includes(:recipe)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
 

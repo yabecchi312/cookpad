@@ -242,6 +242,12 @@
       .kondate_recipe {
         position: relative;
         word-wrap: break-word;
+        .icon_kondate_recipe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
         .kondate_recipe_image {
           min-height: 30px;
           .kondate_recipe_blank {

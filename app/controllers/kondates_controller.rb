@@ -4,6 +4,7 @@ class KondatesController < ApplicationController
 
   def new
     @kondate = Kondate.new
+    @kondate.recipe_kondates.build
     @user = User.find(current_user.id)
   end
 
@@ -29,6 +30,7 @@ class KondatesController < ApplicationController
       :point,
       :tips,
       :cooking_time,
+      recipe_kondates_attributes: [ :recipe_id , :status ],
       ).merge(user_id: current_user.id)
   end
 end
