@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :history
 
   def history
-    recipe_ids = History.group(:recipe_id).order('id ASC').limit(5).count(:recipe_id).keys
+    ids = History.select("recipe_id").order(id: :DESC).uniq.limit(20)
+    recipe_ids = ids.map{|e| e.recipe_id}
     @histories = recipe_ids.map { |id| Recipe.find(id) }
   end
 
