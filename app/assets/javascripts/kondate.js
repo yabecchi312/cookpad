@@ -3,10 +3,11 @@ $(document).on('click','#kondate-modal-open',function(e){
   $(this).blur() ;
   if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;
   $("body").append('<div id="modal-overlay"></div>');
-  $("#modal-overlay").append(makeKondateModalContents());
+  $("#modal-overlay").append(makeSelectRecipeModal());
   centeringModalSyncer();
   $("#modal-overlay").fadeIn("slow");
   $("#modal-content").fadeIn("slow");
+  makeInitialMyRecipeLists();
 });
 
 $(document).on("click","#modal-close",function(){
@@ -32,6 +33,48 @@ $(document).on("click",".menu_list",function(e){
   }
 });
 
+
+function makeInitialMyRecipeLists(){
+  var userId = $('#user_id_for_search').val();
+  $.ajax({
+    url: location.origin + '/recipes/list/' + userId,
+    type: 'GET',
+    data: {"id": userId},
+    dataType: 'json',
+  })
+  .done(function(recipes){
+    if(recipes.length !== 0){
+      var tagAddedfor = $('#from_mykitchen').find('.selectable_recipes');
+      recipes.forEach(function(recipe){
+        var html = buildKondateRecipePreview(recipe);
+        tagAddedfor.append(html);
+      })
+    }
+  })
+  .fail(function(){
+    alert('MYレシピ取得に失敗しました')
+  })
+}
+
+function buildKondateRecipePreview(recipe){
+  var html =
+  `
+  <div class="recipe">
+    <a href="#" class="image_back_80x80">
+      <img alt="${recipe.title}" src="${recipe.image}">
+    </a>
+    <div class="title_block">
+      <a class="recipe_title" href="/recipe/${recipe.recipe_id}">${recipe.title}</a>
+      <span class="author">
+        by
+        <a href="/kitchen/${recipe.user_id}">${recipe.user_name}</a>
+      </span>
+    </div>
+    <button class="search_submit_button small">選択する</button>
+  </div>
+  `
+  return html;
+}
 
 
 function centeringModalSyncer(){
@@ -63,7 +106,7 @@ function centeringModalSyncer(){
 }
 
 
-function makeKondateModalContents() {
+function makeSelectRecipeModal() {
   html =
   `
   <div id="modal-content">

@@ -12,7 +12,7 @@
                       = link_to '« userの献立','#'
                       %span.gray.font12 (3)
                     .f_right
-                      = link_to 'user名', '#'
+                      = @user.name
                   .kondate_title_wrapper
                     献立のタイトル
                     .kondate_title.clearfix
@@ -64,3 +64,4 @@
                           = fa_icon 'plus-circle',class: "add_side_dish_btn"
                           = link_to '追加する','#'
                     = f.submit '保存する',class: "kondate_submit_btn"
+              = hidden_field_tag :user_id_for_search, @user.id

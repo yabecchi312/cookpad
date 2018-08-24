@@ -4,6 +4,7 @@ class KondatesController < ApplicationController
 
   def new
     @kondate = Kondate.new
+    @user = User.find(current_user.id)
   end
 
   def create

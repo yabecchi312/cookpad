@@ -90,3 +90,31 @@ button#modal-close.button-link.search_submit_button {
     display: none;
   }
 }
+
+.recipe_selector {
+  .selectable_recipes {
+    .recipe {
+      width: 50%;
+      float: left;
+      margin-bottom: 10px;
+      img {
+      }
+      .title_block {
+        display: block;
+        margin-bottom: 5px;
+        margin-right: 15px;
+      }
+      .author {
+        font-size: 0.8em;
+        color: #999999;
+      }
+      .image_back_80x80 {
+        float: left;
+        height: 80px;
+        width: 80px;
+        background-color:#999;
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -27,6 +27,10 @@ class RecipesController < ApplicationController
     if params[:keyword].present?
       @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
     end
+    respond_to do |format|
+      format.html
+      format.json{@recipes}
+    end
   end
 
   def destroy
