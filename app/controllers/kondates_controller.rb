@@ -1,6 +1,6 @@
 class KondatesController < ApplicationController
   def index
-    @kondates = Kondate.limit(3)
+    @kondates = Kondate.limit(3).includes([:user,:recipes])
   end
 
   def new
@@ -19,10 +19,11 @@ class KondatesController < ApplicationController
   end
 
   def show
+    @kondate = Kondate.find(params[:id]).includes([:user,:recipes])
   end
 
   def recent
-    @kondates = Kondate.all
+    @kondates = Kondate.includes([:user,:recipes])
   end
 
 
