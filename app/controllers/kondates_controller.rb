@@ -19,7 +19,7 @@ class KondatesController < ApplicationController
   end
 
   def show
-    @kondate = Kondate.find(params[:id]).includes([:user,:recipes])
+    @kondate = Kondate.includes([:user,:recipes]).find(params[:id])
   end
 
   def recent

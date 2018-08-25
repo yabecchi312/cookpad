@@ -260,6 +260,11 @@
             padding: 30px 10px;
           }
         }
+        .ingredients {
+          color: #cfaa80;
+          line-height: 1.3em;
+          margin-top: 5px;
+        }
       }
       .add_side_dish_btn {
         color: #889b00;
@@ -275,4 +280,10 @@
 
 .kondate_image_hidden {
   display: none;
+}
+
+.kondate_recipe_image_blank {
+  height: 98px;
+  width: 137px;
+  background-color: #999;
 }
