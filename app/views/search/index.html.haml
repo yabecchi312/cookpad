@@ -46,7 +46,7 @@
                         レシピ画像イメージレシピ画像イメージレシピ画像イメージ
                     .recipe_text
                       %span.title
-                        = link_to recipe.title,'#',class: "recipe_title"
+                        = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
                       .myfolder
                         = render "myfolders/myfolder-icon", recipe: recipe
                       .recipe_description
