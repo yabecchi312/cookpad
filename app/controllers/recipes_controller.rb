@@ -18,6 +18,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients.includes(:recipe)
     @flows = @recipe.flows.includes(:recipe)
+    @comment = Comment.new
+    @comments = @recipe.comments.includes(:user)
   end
 
 
