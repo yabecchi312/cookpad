@@ -9,11 +9,8 @@
                 = form_for @kondate do |f|
                   .kondate_header.clearfix
                     .f_left
-                      = link_to '« userの献立','#'
-                      %span.gray.font12 (3)
-                    .f_right
-                      = @user.name
-                  .kondate_title_wrapper
+                      = link_to "« #{@user.name}の献立",user_path(id:@user.id)
+                  .kondate_title_wrapper.recipe_sub_title
                     献立のタイトル
                     .kondate_title.clearfix
                       = f.text_field :title, required: true,class: "kondate_title_input"
