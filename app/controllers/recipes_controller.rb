@@ -47,6 +47,8 @@ class RecipesController < ApplicationController
       render action: "list", id: current_user.id
     end
   end
+  def recipe_rankings
+  end
 
   private
   def recipe_params
