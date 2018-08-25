@@ -2,18 +2,18 @@
   .ranking-box
     .ranking-box__title
       = image_tag("https://assets.cpcdn.com/assets/sara/icon_ps_medium@2x.png?de96e90792e583e6f866187cdd6dfb8a8cc7a89990c31d4b2d7e09a9a0cbcb98")
-      %a{:href => "/"} デイリーアクセス数ランキング
-    %a{:href => "/"}
+      = link_to "デイリーアクセス数ランキング",recipe_rankings_recipes_path
+    = link_to "",recipe_rankings_recipes_path
     .ranking-box-container
       %ul
         - @most_viewed.each.with_index(1) do |rank, i|
           - if i == 1
             %li.ranking-box__list
-              %a{:href => "/"}
+              = link_to recipe_path(rank), class: "recipe_show" do
                 - if rank.image.present?
                   = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
                 - else
-                  %img.user-avatar__image{ src: "https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8",height: "50", width: "50", class: "side_image"}
+                  %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50", class: "side_image"}
                 %i.fas.fa-crown.fa-lg.my-orange.fa-pull-left
                 %span.index
                   = "#{i}"
@@ -26,7 +26,7 @@
                     = rank.user.name
           - elsif i == 2
             %li.ranking-box__list
-              %a{:href => "/"}
+              = link_to recipe_path(rank), class: "recipe_show" do
                 - if rank.image.present?
                   = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
                 - else
@@ -43,7 +43,7 @@
                     = rank.user.name
           - else
             %li.ranking-box__list
-              %a{:href => "/"}
+              = link_to recipe_path(rank), class: "recipe_show" do
                 - if rank.image.present?
                   = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
                 - else
@@ -60,7 +60,7 @@
                     = rank.user.name
       .clear_both
         .ranking-box__more-link
-          %a{:href => "/"} もっと見る
+          = link_to "もっと見る", recipe_rankings_recipes_path
   .trend-recipe-box
     .trend-recipe-box__title
       %a{:href => "/"}
@@ -90,4 +90,4 @@
             %span.trend-recipe__list--user-name
               by SHOOKY
       .trend-recipe__more-link
-        %a{:href => "/"} もっと見る
+        = link_to "もっと見る", recipe_rankings_recipes_path
