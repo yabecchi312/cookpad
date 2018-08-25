@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
     impressionist(@recipe, nil, unique: [:session_hash])
     @pv = @recipe.impressionist_count
     @today = @recipe.impressionist_count(start_date: Date.today)
+    @history = @recipe.register_to_history(current_user)
   end
 
 

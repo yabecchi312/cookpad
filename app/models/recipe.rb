@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
 
   has_many :myfolders, dependent: :destroy
   has_many :register_users, through: :myfolders, source: :user
+  has_many :histories, dependent: :destroy
 
   belongs_to :user
   accepts_nested_attributes_for :ingredients
@@ -54,6 +55,10 @@ class Recipe < ApplicationRecord
 
   def register_to_myfolder?(user)
     register_users.include?(user)
+  end
+
+  def register_to_history(user)
+    histories.create(user_id: user.id)
   end
 
 end
