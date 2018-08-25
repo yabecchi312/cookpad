@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :recipes, except: [:edit, :update] do
     resources :comments, only: [:create]
   end
-  resources :users, only: [:show, :edit, :update] do
   resources :recipes, except: [:edit, :update]
   resources :recipes, only: [:index, :new, :create, :show]
   resources :users, only: [:show, :edit, :update, :destroy] do
