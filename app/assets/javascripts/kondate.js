@@ -10,6 +10,7 @@ $(document).on('click','#kondate-modal-open',function(e){
   $("#modal-overlay").fadeIn("slow");
   $("#modal-content").fadeIn("slow");
   makeInitialMyRecipeLists();
+  makeInitialMyFolderRecipeLists();
 });
 
 // 閉じるボタンでモーダルを閉じる
@@ -60,6 +61,29 @@ function makeInitialMyRecipeLists(){
   })
 }
 
+// 自身のMYフォルダに登録されているレシピを非同期で取得し、一覧化
+function makeInitialMyFolderRecipeLists(){
+  var userId = $('#user_id_for_search').val();
+  $.ajax({
+    url: location.origin + '/myfolders',
+    type: 'GET',
+    data: {"id": userId},
+    dataType: 'json',
+  })
+  .done(function(recipes){
+    if(recipes.length !== 0){
+      var tagAddedfor = $('#from_myfolder').find('.selectable_recipes');
+      recipes.forEach(function(recipe){
+        var html = buildKondateRecipeModalPreview(recipe);
+        tagAddedfor.append(html);
+      })
+    }
+  })
+  .fail(function(){
+    alert('MYフォルダ内レシピ取得に失敗しました')
+  })
+};
+
 // 自身のレシピ内で検索、および結果の反映
 $(document).on("click","#kondate_my_recipe_search",function(e){
   var userId = $('#user_id_for_search').val();
@@ -72,6 +96,31 @@ $(document).on("click","#kondate_my_recipe_search",function(e){
   })
    .done(function(recipes){
     var tagAddedfor = $('#from_mykitchen').find('.selectable_recipes');
+    tagAddedfor.find('.recipe').remove();
+    if(recipes.length !== 0){
+      recipes.forEach(function(recipe){
+        var html = buildKondateRecipeModalPreview(recipe);
+        tagAddedfor.append(html);
+      })
+    }
+  })
+  .fail(function(){
+    alert('MYレシピ取得に失敗しました')
+  })
+});
+
+// 自身のMYフォルダ内で検索、および結果の反映
+$(document).on("click","#kondate_my_folder_recipe_search",function(e){
+  var userId = $('#user_id_for_search').val();
+  var keyword = $('#my_folder_recipe_keyword').val();
+  $.ajax({
+    url: location.origin + '/myfolders',
+    type: 'GET',
+    data: {"id": userId, "keyword": keyword},
+    dataType: 'json',
+  })
+   .done(function(recipes){
+    var tagAddedfor = $('#from_myfolder').find('.selectable_recipes');
     tagAddedfor.find('.recipe').remove();
     if(recipes.length !== 0){
       recipes.forEach(function(recipe){
@@ -243,6 +292,24 @@ function makeSelectRecipeModal(recipeIndex) {
       <div class="tab tab_hide" id="from_history">
       </div>
       <div class="tab tab_hide" id="from_myfolder">
+        <div class="recipe_selector">
+          <div class="selectable_recipes">
+            <div class="search_box">
+              <form action="/recipe/select" accept-charset="UTF-8" data-remote="true" method="get">
+                <input name="utf8" type="hidden" value="✓">
+                <i class="fas fa-search"></i>
+                <input type="text" name="my_recipe_keyword" id="my_folder_recipe_keyword" placeholder="MYフォルダから検索">
+                <input type="hidden" name="page" id="page" value="1">
+                <input type="hidden" name="size" id="size" value="4">
+                <input type="hidden" name="from" id="from" value="mykitchen">
+                <input type="hidden" name="remote" id="remote" value="1">
+                <input type="submit" name="commit" value="検索" id="kondate_my_folder_recipe_search" class="search_submit_button small">
+              </form>
+            </div>
+            <div class="center paginate">
+            </div>
+          </div>
+        </div>
       </div>
       <div class="tab tab_hide" id="from_recipe_id">
       </div>
