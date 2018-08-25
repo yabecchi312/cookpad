@@ -21,6 +21,8 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @ingredients = @recipe.ingredients.includes(:recipe)
     @flows = @recipe.flows.includes(:recipe)
+    @comment = Comment.new
+    @comments = @recipe.comments.includes(:user)
     impressionist(@recipe, nil, unique: [:session_hash])
     @pv = @recipe.impressionist_count
     @today = @recipe.impressionist_count(start_date: Date.today)
