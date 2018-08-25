@@ -9,67 +9,31 @@
                 %h3.title_row
                   新着献立
                 .clearfix
-                  .kondate_pickup_view
-                    .kondate_image
-                      = link_to 'イメージ画像','#'
-                    .kondate_title
-                      = link_to 'チーズタッカルビで夜ごはん','#'
-                    %span.kondate_recipe_count
-                      (3品)
-                    .kondate_author.gray
-                      by
-                      = link_to '献立太郎','#'
-                    %ul.kondate_recipes
-                      %li
-                        .kondate_status_icon 主
-                        = link_to 'チーズタッカルビ！','#',class: "recipe_title"
-                      %li
-                        .kondate_status_icon 副
-                        = link_to '菜っ葉の付け合わせ','#',class: "recipe_title"
-                    .kondate_other_recipes
-                      他1品
-                  .kondate_pickup_view
-                    .kondate_image
-                      = link_to 'イメージ画像','#'
-                    .kondate_title
-                      = link_to 'チーズタッカルビで夜ごはん','#'
-                    %span.kondate_recipe_count
-                      (3品)
-                    .kondate_author.gray
-                      by
-                      = link_to '献立太郎','#'
-                    %ul.kondate_recipes
-                      %li
-                        .kondate_status_icon 主
-                        = link_to 'チーズタッカルビ！','#',class: "recipe_title"
-                      %li
-                        .kondate_status_icon 副
-                        = link_to '菜っ葉の付け合わせ','#',class: "recipe_title"
-                    .kondate_other_recipes
-                      他1品
-                  .kondate_pickup_view
-                    .kondate_image
-                      = link_to 'イメージ画像','#'
-                    .kondate_title
-                      = link_to 'チーズタッカルビで夜ごはん','#'
-                    %span.kondate_recipe_count
-                      (3品)
-                    .kondate_author.gray
-                      by
-                      = link_to '献立太郎','#'
-                    %ul.kondate_recipes
-                      %li
-                        .kondate_status_icon 主
-                        = link_to 'チーズタッカルビ！','#',class: "recipe_title"
-                      %li
-                        .kondate_status_icon 副
-                        = link_to '菜っ葉の付け合わせ','#',class: "recipe_title"
-                    .kondate_other_recipes
-                      他1品
+                  - @kondates.each do |kondate|
+                    .kondate_pickup_view
+                      .kondate_image
+                        = link_to '',kondate_path(kondate)
+                      .kondate_title
+                        = link_to "#{kondate.title}",kondate_path(kondate)
+                      %span.kondate_recipe_count
+                        (
+                        = kondate.recipes.count
+                        品)
+                      .kondate_author.gray
+                        by
+                        = link_to "#{kondate.user.name}",user_path(id: kondate.user_id)
+                      %ul.kondate_recipes
+                        - kondate.recipes.each_with_index do |recipe,i|
+                          %li
+                            - if i == 0
+                              .kondate_status_icon 主
+                            - else
+                              .kondate_status_icon 副
+                            = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
                 .show_more_kondates_btn
-                  = link_to '→もっと見る', '#'
+                  = link_to '→もっと見る', recent_kondates_path
               .write_kondate_btn
-                = link_to '#' do
+                = link_to new_kondate_path do
                   = fa_icon 'edit'
                   %span 献立を書く
               .kondate_category_navi

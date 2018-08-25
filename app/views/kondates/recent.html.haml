@@ -8,27 +8,28 @@
               %h2.title
                 新着献立
               .kondate_previews
-                - 5.times do
+                - @kondates.each do |kondate|
                   .kondate_list_view
                     .kondate_image
-                      = link_to '献立画像','#'
+                      = link_to '',kondate_path(kondate)
                     .kondate_infos
                       .kondate_title.font18
-                        = link_to '豆腐で焼きそばチャンプルー','#'
+                        = link_to "#{kondate.title}",kondate_path(kondate)
                         %span.kondate_recipe_count
-                        (3品)
+                          (
+                          = kondate.recipes.count
+                          品)
                       .kondate_author.gray
                         by
-                        = link_to '献立太郎','#'
+                        = link_to "#{kondate.user.name}",user_path(id: kondate.user_id)
                       .kondate_description
-                        豆腐、蒟蒻、野菜たっぷりのヘルシーメニュー♪暑さ戻り過酷な毎日ですが、しっかり食べて頑張りまっしよい☆٩(ˊᗜˋ*)و
+                        = kondate.point
                       %ul.kondate_recipes
-                        %li
-                          .kondate_status_icon 主
-                          = link_to '豆腐チャンプルチャンプル','#',class: "recipe_title"
-                        %li
-                          .kondate_status_icon 副
-                          = link_to '菜っ葉の付け合わせ','#',class: "recipe_title"
-                      .kondate_other_recipes
-                        他1品
+                        - kondate.recipes.each_with_index do |recipe,i|
+                          %li
+                            - if i == 0
+                              .kondate_status_icon 主
+                            - else
+                              .kondate_status_icon 副
+                            = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
 

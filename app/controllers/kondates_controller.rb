@@ -1,5 +1,6 @@
 class KondatesController < ApplicationController
   def index
+    @kondates = Kondate.limit(3)
   end
 
   def new
@@ -17,7 +18,11 @@ class KondatesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def recent
+    @kondates = Kondate.all
   end
 
 

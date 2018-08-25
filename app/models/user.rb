@@ -13,5 +13,6 @@ class User < ApplicationRecord
 
   has_many :myfolders, dependent: :destroy
   has_many :recipes
+  has_many :kondates
   validates :name, length: {maximum: 10}
 end
