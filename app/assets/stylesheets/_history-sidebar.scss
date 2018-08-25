@@ -1,6 +1,6 @@
 #large_screen_side_bar_out_wrapper {
   position: relative;
-  .side_history {
+  #side_history {
     position: fixed;
     border: 1px solid #e3dcca;
     right: 0;
@@ -46,4 +46,10 @@
       }
     }
   }
+}
+
+body.is-fixed .side_history {
+  position: fixed;
+  top: 0;
+  right: 0;
 }
