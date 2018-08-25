@@ -19,5 +19,4 @@ Rails.application.routes.draw do
       get :recent
     end
   end
-  # get '/kondates/recent', to: 'kondates#recent'
 end
