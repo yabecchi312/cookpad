@@ -1,6 +1,6 @@
 class KondatesController < ApplicationController
   def index
-    @kondates = Kondate.limit(3).includes([:user,:recipes])
+    @kondates = Kondate.limit(3).includes([:user,:recipes]).order("id DESC")
   end
 
   def new

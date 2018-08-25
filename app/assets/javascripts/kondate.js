@@ -86,6 +86,7 @@ function makeInitialMyFolderRecipeLists(){
 
 // 自身のレシピ内で検索、および結果の反映
 $(document).on("click","#kondate_my_recipe_search",function(e){
+  e.preventDefault();
   var userId = $('#user_id_for_search').val();
   var keyword = $('#my_recipe_keyword').val();
   $.ajax({
@@ -111,6 +112,7 @@ $(document).on("click","#kondate_my_recipe_search",function(e){
 
 // 自身のMYフォルダ内で検索、および結果の反映
 $(document).on("click","#kondate_my_folder_recipe_search",function(e){
+  e.preventDefault();
   var userId = $('#user_id_for_search').val();
   var keyword = $('#my_folder_recipe_keyword').val();
   $.ajax({
@@ -131,6 +133,29 @@ $(document).on("click","#kondate_my_folder_recipe_search",function(e){
   })
   .fail(function(){
     alert('MYレシピ取得に失敗しました')
+  })
+});
+
+// レシピIDで検索、および結果の反映
+$(document).on("click","#kondate_recipe_id_search",function(e){
+  e.preventDefault();
+  var recipe_id = $('#recipe_id_keyword').val();
+  $.ajax({
+    url: location.origin + '/recipes/' + recipe_id,
+    type: 'GET',
+    data: {"id": recipe_id},
+    dataType: 'json',
+  })
+   .done(function(recipe){
+    var tagAddedfor = $('#from_recipe_id').find('.selectable_recipes');
+    tagAddedfor.find('.recipe').remove();
+    if(recipe){
+      var html = buildKondateRecipeModalPreview(recipe);
+      tagAddedfor.append(html);
+    }
+  })
+  .fail(function(){
+    alert('レシピ取得に失敗しました')
   })
 });
 
@@ -190,7 +215,7 @@ $(document).on('click','#select_this_recipe',function(){
 function buildKondateRecipeCreatePreview(recipe,recipeIndex,status_text){
   html =
   `
-  <input type="hidden" name="kondate[recipe_kondates_attributes][][recipe_id]" id="kondate_recipe_condates_recipe_id" value="${recipe.id}">
+  <input type="hidden" name="kondate[recipe_kondates_attributes][][recipe_id]" id="kondate_recipe_condates_recipe_id" value="${recipe.recipe_id}">
   <input type="hidden" name="kondate[recipe_kondates_attributes][][status]" id="kondate_recipe_condates_status" value="${recipeIndex}">
   <div class="operation_links right">
     <span class="update_recipe_link font12">
@@ -208,7 +233,7 @@ function buildKondateRecipeCreatePreview(recipe,recipeIndex,status_text){
       </a>
     </div>
     <div class="block5_0">
-      <a class="recipe_title" href="/recipe/${recipe.id}">${recipe.title}</a>
+      <a class="recipe_title" href="/recipe/${recipe.recipe_id}">${recipe.title}</a>
       <div class="gray font12">
         by ${recipe.user_name}
       </div>
@@ -312,6 +337,24 @@ function makeSelectRecipeModal(recipeIndex) {
         </div>
       </div>
       <div class="tab tab_hide" id="from_recipe_id">
+        <div class="recipe_selector">
+          <div class="selectable_recipes">
+            <div class="search_box">
+              <form action="/recipe/select" accept-charset="UTF-8" data-remote="true" method="get">
+                <input name="utf8" type="hidden" value="✓">
+                <i class="fas fa-search"></i>
+                <input type="text" name="recipe_id_keyword" id="recipe_id_keyword" placeholder="レシピIDで検索">
+                <input type="hidden" name="page" id="page" value="1">
+                <input type="hidden" name="size" id="size" value="4">
+                <input type="hidden" name="from" id="from" value="mykitchen">
+                <input type="hidden" name="remote" id="remote" value="1">
+                <input type="submit" name="commit" value="検索" id="kondate_recipe_id_search" class="search_submit_button small">
+              </form>
+            </div>
+            <div class="center paginate">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <button id="modal-close" class="button-link search_submit_button">閉じる</button>
