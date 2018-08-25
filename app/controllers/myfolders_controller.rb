@@ -3,8 +3,11 @@ class MyfoldersController < ApplicationController
 
   def index
     @recipes = []
-    current_user.myfolders.each do |myfolder|
+    current_user.myfolders.includes(recipe: :ingredients).each do |myfolder|
       @recipes.push(myfolder.recipe)
+    end
+    if params[:keyword].present?
+      @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword]) & @recipes.map{|recipe| recipe.id})
     end
   end
 

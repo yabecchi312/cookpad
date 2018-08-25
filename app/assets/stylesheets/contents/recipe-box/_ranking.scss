@@ -15,14 +15,29 @@
     .ranking-box-container {
       height: 246px;
       ul {
-        padding: 10px 10px 0 10px;
-        .ranking-box__list {
+        padding: 10px 0 0 10px;
+        li.ranking-box__list {
           float: left;
           width: 94px;
           height: 206px;
           margin-right: 10px;
           a {
             text-decoration-color: #889b00;
+            float: left;
+            text-align: left;
+            .fsvg-inline--fa {
+              float: left;
+            }
+            span.index {
+              position: relative;
+              top: 4px;
+              right: 22px;
+              font-weight: bold;
+              font-size: 12px;
+              color: #FFFFFF;
+              z-index: 10;
+              float: left;
+            }
           }
           img {
             border-radius: 5px;
@@ -34,6 +49,7 @@
             font-size: 93%;
             color: #889b00;
             font-weight: bold;
+            overflow: hidden;
             &:hover {
               text-decoration: underline;
             }
@@ -118,3 +134,5 @@
     }
   }
 }
+.my-orange {color: #CC9900}
+.my-silver {color: gray}

@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+   impressionist :actions=> [:show]
+
   def index
   end
 
@@ -16,16 +18,24 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @recipes = Recipe.all
     @ingredients = @recipe.ingredients.includes(:recipe)
     @flows = @recipe.flows.includes(:recipe)
     @comment = Comment.new
     @comments = @recipe.comments.includes(:user)
+    impressionist(@recipe, nil, unique: [:session_hash])
+    @pv = @recipe.impressionist_count
+    @today = @recipe.impressionist_count(start_date: Date.today)
+    @history = @recipe.register_to_history(current_user)
   end
 
 
   def list
     @user = User.find(params[:id])
-    @recipes = @user.recipes
+    @recipes = @user.recipes.includes(:ingredients)
+    if params[:keyword].present?
+      @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
+    end
   end
 
   def destroy

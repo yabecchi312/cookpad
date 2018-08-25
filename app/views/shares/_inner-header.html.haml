@@ -4,9 +4,11 @@
 
   .search_form_wrapper
     .keyword_input
-      = fa_icon 'search', class: 'search_icon'
-      %input.search-field.global_search_keyword{placeholder: "料理名・食材名"}
-      %input#submit_button.button.min.global_search_submit_btn{name: "commit", type: "submit", value: "レシピ検索"}
+      = form_tag "/search/", method: :get do
+        = fa_icon 'search', class: 'search_icon'
+        = text_field_tag :keyword,"",class: "search-field global_search_keyword",placeholder: "料理名・食材名"
+        = submit_tag "レシピ検索", id: "submit_button", class: "button min global_search_submit_btn"
+
     %ul.keyword_list.clearfix
       %li.up1 ゴーヤチャンプル
       %li.up2 人参
