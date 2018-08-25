@@ -29,13 +29,18 @@
     min-height: 70px;
     .user_icon {
       top: -24px;
-      height: 90px;
-      width: 90px;
-      border-radius: 5px;
-      border: 1px solid #ebe6d0;
-      padding: 4px;
       position: absolute;
       background: #ffffff;
+      .user-avatar__image {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+        border: 1px solid #ebe6d0;
+        height: 98px;
+        width: 98px;
+      }
     }
     .user_name {
       margin-left: 110px;

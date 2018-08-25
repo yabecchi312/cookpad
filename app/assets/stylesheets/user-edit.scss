@@ -118,6 +118,9 @@
     font-size: 11px;
     color: #666;
   }
+  span a.delete_avatar {
+    text-decoration: underline;
+  }
   .user-edit-form {
     table.table_basic {
       border: 1px solid #e3dcca;
@@ -155,6 +158,10 @@
           font-weight: normal;
         }
       }
+    }
+    .actions_avatar {
+      width: 100%;
+      text-align: center;
     }
     .actions {
       padding: 5px;

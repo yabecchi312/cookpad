@@ -6,32 +6,61 @@
     %a{:href => "/"}
     .ranking-box-container
       %ul
-        %li.ranking-box__list
-          %a{:href => "/"}
-            = image_tag("https://img.cpcdn.com/recipes/3899525/94x94c/2dd4066c0ff4afcde79476ed191ca70a.jpg?u=1350567&p=1465025048")
-            = image_tag("https://assets.cpcdn.com/assets/sara/rank1.png?f4a52cf48ed21b892e9d2720d8b06adf23125e809400a9dda58a9534b75716db")
-            %span.ranking-box__list--title
-              簡単ランチに♪さっぱり梅ごぼうチャーハン
-            %span.ranking-box__list--user-name
-              by SHOOKY
-        %li.ranking-box__list
-          %a{:href => "/"}
-            = image_tag("https://img.cpcdn.com/recipes/3656183/94x94c/797f79f0c0764656c65a57dfc87e1ebb.jpg?u=6279574&p=1454202752")
-            = image_tag("https://assets.cpcdn.com/assets/sara/rank2.png?c790154b1cac55ef867a13d55c335c2456c1ac078fc92e00f72c057668de2996")
-            %span.ranking-box__list--title
-              HM＆バナナだけ！簡単スコーン風蒸しパン
-            %span.ranking-box__list--user-name
-              by SHOOKY
-        %li.ranking-box__last
-          %a{:href => "/"}
-            = image_tag("https://img.cpcdn.com/recipes/3070123/94x94c/903bf161d63f115244ec737a047cb826.jpg?u=7561728&p=1449475883")
-            = image_tag("https://assets.cpcdn.com/assets/sara/rank3.png?8ce0ad17ff2fb3be4fc374cc287baa6072d8843504f9159a7faf573924c69f93")
-            %span.ranking-box__list--title
-              お家で鯛茶漬け♫
-            %span.ranking-box__list--user-name
-              by SHOOKY
-      .ranking-box__more-link
-        %a{:href => "/"} もっと見る
+        - @most_viewed.each.with_index(1) do |rank, i|
+          - if i == 1
+            %li.ranking-box__list
+              %a{:href => "/"}
+                - if rank.image.present?
+                  = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
+                - else
+                  %img.user-avatar__image{ src: "https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8",height: "50", width: "50", class: "side_image"}
+                %i.fas.fa-crown.fa-lg.my-orange.fa-pull-left
+                %span.index
+                  = "#{i}"
+                %span.ranking-box__list--title
+                  = rank.title
+                %br
+                %span.ranking-box__list--user-name
+                  by
+                  %span.ranking-box__list--user-name>
+                    = rank.user.name
+          - elsif i == 2
+            %li.ranking-box__list
+              %a{:href => "/"}
+                - if rank.image.present?
+                  = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
+                - else
+                  %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50", class: "side_image"}
+                %i.fas.fa-crown.fa-lg.my-silver.fa-pull-left
+                %span.index
+                  = "#{i}"
+                %span.ranking-box__list--title
+                  = rank.title
+                %br
+                %span.ranking-box__list--user-name
+                  by
+                  %span.ranking-box__list--user-name>
+                    = rank.user.name
+          - else
+            %li.ranking-box__list
+              %a{:href => "/"}
+                - if rank.image.present?
+                  = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
+                - else
+                  %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50", class: "side_image"}
+                %i.fas.fa-crown.fa-lg.fa-pull-left
+                %span.index
+                  = "#{i}"
+                %span.ranking-box__list--title
+                  = rank.title
+                %br
+                %span.ranking-box__list--user-name
+                  by
+                  %span.ranking-box__list--user-name>
+                    = rank.user.name
+      .clear_both
+        .ranking-box__more-link
+          %a{:href => "/"} もっと見る
   .trend-recipe-box
     .trend-recipe-box__title
       %a{:href => "/"}
