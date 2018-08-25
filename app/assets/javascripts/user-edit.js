@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
   // usernameのモーダルの表示
-
-
     $('.modal').modaal({width: 600, height:250});
     $(function(){
       //残り文字数を表す要素を無ければ追加する
@@ -51,11 +49,21 @@ $(document).on('turbolinks:load', function() {
         <img src= ${ data.avatar } class= 'user-avater__image' width= "50" height= "50">`
     return avatar_bottom;
   }
-  $('.edit_user_avatar').on('submit', function(e){
+
+  function buildAvatar_delete(){
+    var avatar_delete = `
+      <span>
+        <input type="hidden" name="user_id" id="user_id" value="1" class="form_userid">
+        <a class="delete_avatar" data-method="delete" href="/users/1/avatar_destroy" data-remote="true">(削除する)</a>
+      </span>`
+    return avatar_delete;
+  }
+
+  $('.edit_user').on('submit', function(e){
     $('.colorbox_link').modaal('close');
     e.preventDefault();
     var formData = new FormData(this);
-    var id = $(this).find('.form_userid').val()
+    var id = $(this).find('.form_userid').val();
     $.ajax({
       url: "/users/" + id,
       type: "PATCH",
@@ -73,6 +81,9 @@ $(document).on('turbolinks:load', function() {
         $(".user_icon").empty();
         $(".user_icon").append(Avatar2);
         $('.form__submit').prop('disabled', false);
+        if (!$("#change_user_name_form span a").hasClass("delete_avatar")) {
+          $("#change_user_name_form p").append(buildAvatar_delete());
+        }
       }
       else {
         alert('error');
