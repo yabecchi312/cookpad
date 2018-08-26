@@ -130,7 +130,7 @@ $(function(){
                         </div>
                       </div>
                       <input value="${add_step_num}" id="step_order" type="hidden" name="recipe[flows_attributes][${array_step}][order]">
-                      <input name="recipe[flows_attributes][${array_step}][_destroy]" type="hidden" value="">
+                      <input name="recipe[flows_attributes][${array_step}][_destroy]" type="hidden" value="0">
                       <input id="update_destroy_flows" type="checkbox" value="" name="recipe[flows_attributes][${array_step}][_destroy]>"
 
                     </div>`
@@ -139,7 +139,7 @@ $(function(){
 
 // 新規 編集 番号振り直し
   function addNumber(){
-    $("#cooking-steps .step-position").each(function(i){
+    $("#cooking-steps .step-position").filter(":visible").each(function(i){
       var i = i + 1;
       $(this).html( i );
     });
@@ -152,6 +152,13 @@ $(function(){
       $(this).val(n);
     });
   };
+// 編集 display:noneは数えたくない
+  // function deleteArrayEdit(){
+  //   $("#cooking-steps #step_order").filter("visible").each(function(n){
+  //     var n = n + 1;
+  //     $(this).val(n);
+  //   });
+  // };
 
 // 最後の一つになったら削除ボタンを隠す
   function button(){
@@ -196,13 +203,17 @@ $(function(){
   });
 
   // 編集 削除
-  // $(document).on("click", "#step-remove-button-edit", function(){
-  //     $(this).closest(".step").remove();
-  //     addNumber();
-  //     button();
-  //     return false;
-  // });
+  $(document).on("click", "#step-remove-button-edit", function(){
+    $(this).parents(".step__header").next(".step__main").children(".step__main_text").children("#update_destroy_flows").prop("checked", true);
+    $(this).closest(".step").hide();
+      addNumber();
+      // 再び編集画面に入る時番号をまた振り直してくれるので、下記の記述はいらないかな
+      // deleteArrayEdit();
+      button();
+      return false;
+  });
 });
+
 
 
 // $(function(){
