@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       get 'follow'
       get 'unfollow'
     end
+    resources :diaries, only: [:index, :new, :create, :destroy]
+    # get '/diaries/post', to: 'diaries#post'
   end
   resources :myfolders, only: [:index, :create, :destroy]
   get '/recipes/list/:id', to: 'recipes#list'
-  resources :diaries, only: [:index, :new, :create]
 end
