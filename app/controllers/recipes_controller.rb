@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients.includes(:recipe)
-    @flows = @recipe.flows.includes(:recipe)
+    @flows = @recipe.flows.order(order: "ASC").includes(:recipe)
   end
 
 
