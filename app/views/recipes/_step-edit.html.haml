@@ -20,5 +20,5 @@
         -# = image_tag "edit-image.png", class: "edit-image"
         -# クリックして作り方を入力
         = fl.text_area :text
+    = fl.hidden_field :order, value: "#{fl.index + 1}", id:"step_order"
     = fl.check_box :_destroy, id: "update_destroy_flows"
-    = fl.hidden_field :order
