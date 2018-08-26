@@ -129,8 +129,10 @@ $(function(){
                           </textarea>
                         </div>
                       </div>
+                      <input value="${add_step_num}" id="step_order" type="hidden" name="recipe[flows_attributes][${array_step}][order]">
                       <input name="recipe[flows_attributes][${array_step}][_destroy]" type="hidden" value="">
                       <input id="update_destroy_flows" type="checkbox" value="" name="recipe[flows_attributes][${array_step}][_destroy]>"
+
                     </div>`
                 return editStep;
                 };
@@ -143,11 +145,11 @@ $(function(){
     });
   };
 
-// 編集 配列振り直し
+// 編集 hidden_fieldのvalueを振り直し
   function addArrayEdit(){
-    $("#cooking-steps .step-main").each(function(array_step){
-      var array_step = array_step + 1;
-      $(this).children(".step__main_image").attr("for", "recipe_flows_attributes_${array_step}_image");
+    $("#cooking-steps #step_order").each(function(n){
+      var n = n + 1;
+      $(this).val(n);
     });
   };
 
@@ -182,8 +184,9 @@ $(function(){
 // 編集 追加
   $(document).on("click", "#step-add-button-edit", function(){
     var now_step_number = Number($(this).parent().prev().children(".step-position").html());
-    var add_step_number = now_step_number + 1
-    var array_step = now_step_number
+    var how_many_steps = $(".step").length - 1;
+    var add_step_number = now_step_number + 1;
+    var array_step = how_many_steps + 1;
       editStep = editAppendStep(add_step_number, array_step);
     $(this).closest(".step").next("input").after(editStep);
     addNumber();
