@@ -5,7 +5,7 @@
 
     #kondate_search_wrapper.search_form_wrapper
       .keyword_input.kondate_keyword
-        = form_tag "/search/", method: :get do
+        = form_tag search_kondates_path, method: :get do
           = fa_icon 'search', class: 'search_icon'
           = text_field_tag :keyword,"",class: "search-field global_search_keyword",placeholder: "献立を検索"
           = submit_tag "献立を検索", id: "submit_button", class: "button min global_search_submit_btn"

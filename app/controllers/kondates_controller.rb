@@ -26,6 +26,11 @@ class KondatesController < ApplicationController
     @kondates = Kondate.includes([:user,:recipes])
   end
 
+  def search
+    @kondates = Kondate.find(Kondate.select_target_kondate_id(params[:keyword]))
+    @keywords = params[:keyword].gsub(/　/," ").split()
+  end
+
 
   private
 

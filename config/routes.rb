@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :kondates, only: [:index,:new,:create,:show] do
     collection do
       get :recent
+      get :search
     end
   end
 end
