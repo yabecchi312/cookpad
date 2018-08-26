@@ -215,7 +215,6 @@ $(function(){
 });
 
 
-
 // レシピ投稿のサイドバー
 $(document).on('turbolinks:load', function(){
 // タイトルについて
