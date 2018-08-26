@@ -199,6 +199,9 @@ $(document).on('click','#select_this_recipe',function(){
       var status_text = "副";
     }
     var html = buildKondateRecipeCreatePreview(recipe,recipeIndex,status_text);
+    if($('.kondate_recipe_wrapper').eq(recipeIndex).hasClass('add_kondate_recipe')){
+      $('.kondate_recipe_wrapper').eq(recipeIndex).before('<div class="kondate_recipe_wrapper"></div>');
+    }
     var target = $('.kondate_recipe_wrapper').eq(recipeIndex);
     target.empty();
     target.append(html);
@@ -213,6 +216,21 @@ $(document).on('click','#select_this_recipe',function(){
 
 // 作成ページに反映するhtmlの作成
 function buildKondateRecipeCreatePreview(recipe,recipeIndex,status_text){
+  if(recipe.image){
+    var recipe_image =
+    `
+      <a id="kondate-modal-open" class="kondate_recipe_index" href="#">
+        <img alt="${recipe.title}" src="${recipe.image}">
+      </a>
+    `
+  }
+  else{
+    var recipe_image =
+    `
+      <a id="kondate-modal-open" class="kondate_recipe_index kondate_recipe_blank" href="#">
+      </a>
+    `
+  }
   html =
   `
   <input type="hidden" name="kondate[recipe_kondates_attributes][][recipe_id]" id="kondate_recipe_condates_recipe_id" value="${recipe.recipe_id}">
@@ -228,9 +246,7 @@ function buildKondateRecipeCreatePreview(recipe,recipeIndex,status_text){
       </div>
     </div>
     <div class="kondate_recipe_image">
-      <a id="kondate-modal-open" class="kondate_recipe_index" href="#">
-        <img alt="${recipe.title}" src="${recipe.image}">
-      </a>
+      ${recipe_image}
     </div>
     <div class="block5_0">
       <a class="recipe_title" href="/recipe/${recipe.recipe_id}">${recipe.title}</a>

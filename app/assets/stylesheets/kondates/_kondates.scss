@@ -152,7 +152,7 @@
 }
 
 #kondate_user_show {
-  margin: 15px 19px;
+  margin: 15px 0px;
 }
 
 .kondate_title_wrapper {
@@ -190,8 +190,11 @@
 }
 
 .kondate_under_infos {
-  padding: 10px;
+  padding: 10px 0;
   margin: 0;
+  .setup_tips {
+    padding-right: 10px;
+  }
   .point_cooking_time_wrapper {
     padding: 10px 0 20px;
     .point {
@@ -201,7 +204,7 @@
     }
     .cooking_time {
       width: 50%;
-      padding-left: 5px;
+      padding-left: 30px;
       box-sizing: border-box;
       .cooking_time_select {
         font-size: 14px;
@@ -225,14 +228,14 @@
   #kondate_recipes_wrapper {
     margin-top: 20px;
     .kondate_recipe_wrapper.first {
-      margin-left: 0;
-      clear: both;
+      // margin-left: 0;
+      // clear: both;
     }
     .kondate_recipe_wrapper {
       margin-top: 10px;
       width: 137px;
       float: left;
-      margin-left: 14px;
+      margin-right: 14px;
       .kondate_status_label {
         font-size: 16px;
         margin-bottom: 8px;
@@ -274,8 +277,24 @@
 }
 .kondate_submit_btn {
   margin-top: 40px;
-  width: 100px;
-  height: 30px;
+  // width: 100px;
+  height: 50px;
+  display: block;
+  color: #f4ecdc;
+  font-weight: bold;
+  padding: 10px 20px 5px;
+  background-color: #6a5538;
+  border-radius: 5px;
+  border-bottom: solid 4px #3d2e0f;
+  text-align: center;
+}
+
+.kondate_submit_btn:active{
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
 }
 
 .kondate_image_hidden {

@@ -39,8 +39,6 @@
                         = f.fields_for :recipe_kondates do |ff|
                           = ff.hidden_field :recipe_id,name: "recipe[recipe_kondates_attributes][][recipe_id]"
                           = ff.hidden_field :status,name: "recipe[recipe_kondates_attributes][][status]"
-                          .kondate_status_label
-                            主菜
                           .kondate_recipe
                             .icon_kondate_recipe
                               .kondate_status_icon
@@ -55,8 +53,6 @@
                         = f.fields_for :recipe_kondates do |ff|
                           = ff.hidden_field :recipe_id,name: "recipe[recipe_kondates_attributes][][recipe_id]"
                           = ff.hidden_field :status,name: "recipe[recipe_kondates_attributes][][status]"
-                          .kondate_status_label
-                            副菜
                           .kondate_recipe
                             .icon_kondate_recipe
                               .kondate_status_icon
@@ -67,10 +63,9 @@
                                 クリックして
                                 %br
                                 レシピを選択
-                      .kondate_recipe_wrapper
-                        .kondate_status_label
+                      .kondate_recipe_wrapper.add_kondate_recipe
                         .add_side_dish_link
                           = fa_icon 'plus-circle',class: "add_side_dish_btn"
-                          = link_to '追加する','#'
+                          = link_to '追加する','#',id: "kondate-modal-open",class: "kondate_recipe_index"
                     = f.submit '保存する',class: "kondate_submit_btn"
               = hidden_field_tag :user_id_for_search, @user.id
