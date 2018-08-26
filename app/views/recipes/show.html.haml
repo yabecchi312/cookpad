@@ -11,8 +11,12 @@
             -# キャッチコピー、材料、計算
         #photo-summary-ingredients.clearfix
           .main-photo
+<<<<<<< HEAD
             = image_tag(@recipe.image)
             画像
+=======
+
+>>>>>>> yabecchi312/master
           .desc-and-ingredients
             -# レシピのキャッチコピー
             .summary
@@ -35,6 +39,17 @@
               .option-calculation
                 = image_tag "icon_ps_small.png", size: "13x14", class: "ps_icon"
                 = link_to "カロリー・塩分を計算", "#", class: "calculate-nutrition"
+<<<<<<< HEAD
+=======
+              .viewed
+                %span
+                  総閲覧数：
+                  = @pv
+                %br
+                %span
+                  今日の閲覧数：
+                  = @today
+>>>>>>> yabecchi312/master
         .sk_product_recipe_promotion
         #steps.clearfix
           = render "step-show", flows: @flows

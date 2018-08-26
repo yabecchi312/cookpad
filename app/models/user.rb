@@ -10,8 +10,15 @@ class User < ApplicationRecord
   validates :name, length: {maximum: 10}
   has_many :recipes, dependent: :destroy
 
+<<<<<<< HEAD
   has_many :myfolders, dependent: :destroy
   has_many :recipes
   has_many :diaries
+=======
+
+  has_many :myfolders, dependent: :destroy
+  has_many :recipes
+  has_many :histories, dependent: :destroy
+>>>>>>> yabecchi312/master
   validates :name, length: {maximum: 10}
 end

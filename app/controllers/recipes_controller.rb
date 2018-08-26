@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+   impressionist :actions=> [:show]
+
   def index
   end
 
@@ -16,14 +18,37 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+<<<<<<< HEAD
     @ingredients = @recipe.ingredients.includes(:recipe)
     @flows = @recipe.flows.includes(:recipe)
+=======
+    @recipes = Recipe.all
+    @ingredients = @recipe.ingredients.includes(:recipe)
+    @flows = @recipe.flows.includes(:recipe)
+    impressionist(@recipe, nil, unique: [:session_hash])
+    @pv = @recipe.impressionist_count
+    @today = @recipe.impressionist_count(start_date: Date.today)
+    @history = @recipe.register_to_history(current_user)
+>>>>>>> yabecchi312/master
   end
 
 
   def list
     @user = User.find(params[:id])
-    @recipes = @user.recipes
+    @recipes = @user.recipes.includes(:ingredients)
+    if params[:keyword].present?
+      @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
+    end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    if @recipe.destroy
+      redirect_to action: "list", id: current_user.id
+    else
+      flash.now[:error] = "レシピの削除に失敗しました"
+      render action: "list", id: current_user.id
+    end
   end
 
   def destroy

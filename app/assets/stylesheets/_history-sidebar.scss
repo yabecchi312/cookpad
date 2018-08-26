@@ -1,0 +1,55 @@
+#large_screen_side_bar_out_wrapper {
+  position: relative;
+  #side_history {
+    position: fixed;
+    border: 1px solid #e3dcca;
+    right: 0;
+    width: 180px;
+    z-index: 100px;
+    padding-bottom: 35px;
+    .title_bar {
+      font-weight: bold;
+      padding: 3px 5px 0px;
+      border-bottom: 1px solid #e3dcca;
+      margin: 0;
+      color: #4d2200;
+      background: #efe1be;
+      h2 {
+        font-weight: bold;
+        font-size: 93%;
+      }
+    }
+    ul li {
+      padding: 6px;
+      min-height: 62px;
+      box-sizing: border-box;
+      &:nth-child(odd) {
+        background: #FFFFFF;
+      }
+      a.recipe_show {
+        &:hover {
+          text-decoration: underline;
+        }
+        .side_image {
+          float: left;
+        }
+        .history--title {
+          color: #889b00;
+          font-size: 92%;
+          line-height: 1.3;
+          font-weight: bold;
+        }
+        .history--user-name {
+          font-size: 78%;
+          color: #999999;
+        }
+      }
+    }
+  }
+}
+
+body.is-fixed .side_history {
+  position: fixed;
+  top: 0;
+  right: 0;
+}

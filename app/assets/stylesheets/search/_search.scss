@@ -1,0 +1,94 @@
+.top_link {
+  span.keyword {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+    color: #a68974;
+  }
+  span.keyword_recipe {
+    font-size: 16px;
+    font-weight: normal;
+    color: #a68974;
+  }
+  span.recipe_count {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+}
+
+h2.title_row.refine {
+  color: #a68974;
+}
+.search_menu_sort {
+  width: 100%;
+  color: #4d2200;
+  font-size: 14px;
+  font-weight: normal;
+  border: none;
+}
+
+.search_section {
+  li {
+    width: 80%;
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 3px;
+    background: transparent;
+    float: left;
+    margin: 0 0 5px 10px;
+    a {
+      display: block;
+      text-align: center;
+      line-height: 1;
+      background: #f9f7f0;
+      text-decoration: none;
+      padding: 6px 0;
+      margin: 0 3px 0 0;
+      border-radius: 3px;
+      background: #f9f7f0;
+      box-shadow: inset -1px -1px 1px #ece8dc;
+      font-size: 13px;
+    }
+  }
+}
+
+ul.facet.active {
+  display: block;
+  padding-bottom: 12px;
+}
+
+.tab_button {
+  ul.switch {
+    font-size: 93%;
+    display: inline;
+    position: relative;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 0 #ffffff;
+    li {
+      box-sizing: border-box;
+      float: left;
+      display: inline;
+      position: relative;
+      line-height: 28px;
+      height: 28px;
+      border: 1px solid #cccccc;
+      padding: 0;
+    }
+    li.order_date {
+      border-radius: 4px 0 0 4px;
+      border-right: none;
+    }
+    li.selected {
+      background: linear-gradient(to bottom, #6a5538, #816844);
+      color: #fcfbf5;
+      font-weight: bold;
+    }
+    span {
+      padding: 0 20px;
+    }
+    li.popularity {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+

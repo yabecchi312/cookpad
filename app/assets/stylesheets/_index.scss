@@ -226,10 +226,10 @@ header {
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
+  float: right;
   z-index: 1;
 }
-
 
 footer {
   margin-top: 0;
