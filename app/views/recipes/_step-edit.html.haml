@@ -1,4 +1,4 @@
-= f.fields_for :flows do |fl|
+= f.fields_for :flows, @recipe.flows.sort_by{|a| a[:order] } do |fl|
   .step
     .step__header
       .step__header__left
