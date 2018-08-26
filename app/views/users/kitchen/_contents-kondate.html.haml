@@ -32,6 +32,7 @@
                 = link_to "#{kondate.title}",kondate_path(id: kondate.id)
                 %span.kondate_recipe_count
                   (#{kondate.recipes.count}品)
+                = link_to "[×]", kondate_path(kondate.id), method: :delete,class: "kondate_delete_btn", data: {confirm: 'この献立を削除してよろしいですか?'}
               .kondate_description
                 = kondate.point
               %ul.kondate_recipes

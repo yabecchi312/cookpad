@@ -22,6 +22,16 @@ class KondatesController < ApplicationController
     @kondate = Kondate.includes([:user,:recipes]).find(params[:id])
   end
 
+  def destroy
+    @kondate = Kondate.find(params[:id])
+    if @kondate.destroy
+      redirect_to action: "list", id: current_user.id
+    else
+      flash.now[:error] = "献立の削除に失敗しました"
+      render action: "list", id: current_user.id
+    end
+  end
+
   def recent
     @kondates = Kondate.includes([:user,:recipes])
   end
