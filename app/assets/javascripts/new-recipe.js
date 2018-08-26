@@ -206,6 +206,23 @@ $(function(){
     button();
     return false;
   });
+
+// 新規 左に行くボタン
+  $(document).on("click",".step_move_higher" , function(){
+    var theStep = $(this).parents(".step");
+    var beforeStep = theStep.prev(".step");
+    $(theStep).insertBefore(beforeStep);
+    addNumber();
+    return false;
+  });
+// 新規 右に行くボタン
+  $(document).on("click",".step_move_lower" , function(){
+    var theStep = $(this).parents(".step");
+    var afterStep = theStep.next(".step");
+    $(theStep).insertAfter(afterStep);
+    addNumber();
+    return false;
+  });
 });
 
 
