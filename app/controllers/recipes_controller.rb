@@ -18,18 +18,15 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-<<<<<<< HEAD
-    @ingredients = @recipe.ingredients.includes(:recipe)
-    @flows = @recipe.flows.includes(:recipe)
-=======
     @recipes = Recipe.all
     @ingredients = @recipe.ingredients.includes(:recipe)
     @flows = @recipe.flows.includes(:recipe)
+    @comment = Comment.new
+    @comments = @recipe.comments.includes(:user)
     impressionist(@recipe, nil, unique: [:session_hash])
     @pv = @recipe.impressionist_count
     @today = @recipe.impressionist_count(start_date: Date.today)
     @history = @recipe.register_to_history(current_user)
->>>>>>> yabecchi312/master
   end
 
 
@@ -49,6 +46,8 @@ class RecipesController < ApplicationController
       flash.now[:error] = "レシピの削除に失敗しました"
       render action: "list", id: current_user.id
     end
+  end
+  def recipe_rankings
   end
 
   def destroy
