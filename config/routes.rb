@@ -20,4 +20,5 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  get '/kondates/list/:id', to: 'kondates#list'
 end

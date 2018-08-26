@@ -31,6 +31,11 @@ class KondatesController < ApplicationController
     @keywords = params[:keyword].gsub(/　/," ").split()
   end
 
+  def list
+    @user = User.find(params[:id])
+    @kondates = @user.kondates.includes(:recipes)
+  end
+
 
   private
 
