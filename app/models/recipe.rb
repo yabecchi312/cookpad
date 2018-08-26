@@ -6,7 +6,12 @@ class Recipe < ApplicationRecord
   has_many :register_users, through: :myfolders, source: :user
   has_many :histories, dependent: :destroy
 
+
+  has_many :comments, dependent: :destroy
+
+  belongs_to :users
   belongs_to :user
+  
   accepts_nested_attributes_for :ingredients
   accepts_nested_attributes_for :flows
   mount_uploader :image, ImageUploader
