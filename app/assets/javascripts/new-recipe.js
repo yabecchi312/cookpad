@@ -216,56 +216,6 @@ $(function(){
 
 
 
-// $(function(){
-//   function editAppendStep(add_step_num, array_step){
-//     var editStep = `<div class="step">
-//                   <div class="step__header">
-//                     <div class="step__header__left">
-//                       <div class="step-position">${add_step_num}</div>
-//                       <div class="step_move_higher">
-//                         <a href="#">←</a>
-//                       </div>
-//                       <div class="step_move_lower">
-//                         <a href="#">→</a>
-//                       </div>
-//                     </div>
-//                     <div class="step__header__right">
-//                       <a id="step-remove-button" href="#">削除</a>
-//                       <a id="step-add-button" href="#">追加</a>
-//                     </div>
-//                   </div>
-//                   <div class="step__main">
-//                     <div class="step__main_image">
-//                       <label for="recipe_flows_attributes_${array_step}_image">
-//                         <img src="/assets/step_blank-c36c8efecb31bebf8f7ef53a7fc4f24034c74677b0fdb521996e77d54b2962fa.png" alt="Step blank">
-//                         <input class="step-image" type="file" name="recipe[flows_attributes][${array_step}][image]">
-//                       </label>
-//                     </div>
-//                     <div class="step__main_text">
-//                       <textarea name="recipe[flows_attributes][${array_step}][text]">
-//                       </textarea>
-//                       <input name="recipe[flows_attributes][${array_step}][_destroy]" type="hidden" value="">
-//                       <input id="update_destroy_flows" type="checkbox" value="" name="recipe[flows_attributes][${array_step}][_destroy]>"
-//                     </div>
-//                   </div>
-//                 </div>`
-//                 return editStep;
-//                 };
-
-//   $(document).on("click", "#step-add-button-edit", function(){
-//     var now_step_number = Number($(this).parent().prev().children(".step-position").html());
-//     console.log()
-//     var add_step_number = now_step_number + 1
-//     var array_step = now_step_number
-//       editStep = editAppendStep(add_step_number, array_step);
-//     $(this).closest(".step").after(editStep);
-//     // addNumber();
-//     // button();
-//     return false;
-//   });
-// });
-
-
 // レシピ投稿のサイドバー
 $(document).on('turbolinks:load', function(){
 // タイトルについて
