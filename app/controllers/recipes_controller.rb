@@ -49,8 +49,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_rankings
-    @recipe = Recipe.find(params[:id])
-    @recipes = Recipe.all
   end
 
   private

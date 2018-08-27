@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'tops#index'
-  resources :recipes, except: [:edit, :update] do
-    resources :comments, only: [:create]
-  end
   resources :recipes, only: [:index, :new, :create, :show] do
+    resources :comments, only: [:create]
     collection do
       get 'recipe_rankings'
     end
