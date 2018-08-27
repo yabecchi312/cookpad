@@ -1,8 +1,8 @@
 // モーダルの起動
 $(document).on('click','#kondate-modal-open',function(e){
   e.preventDefault();
-  $(this).blur() ;
-  if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;
+  $(this).blur();
+  if($("#modal-overlay")[0]) $("#modal-overlay").remove();
   $("body").append('<div id="modal-overlay"></div>');
   var recipeIndex = $('.kondate_recipe_index').index(this);
   $("#modal-overlay").append(makeSelectRecipeModal(recipeIndex));
