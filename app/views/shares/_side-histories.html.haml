@@ -1,0 +1,23 @@
+- if user_signed_in?
+  #side_history{style:"top: 35px;"}
+    .title_bar
+      %h2 最近見たレシピ
+    %ul
+      - @histories.each do |recipe|
+        %li.recipe
+          = link_to recipe_path(recipe), class: "recipe_show" do
+            - if recipe.image.present?
+              = image_tag(recipe.image ,width: 50, height: 50, class: "side_image")
+            - else
+              %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50", class: "side_image"}
+            %span.history--title
+              = recipe.title
+            %br
+            %p.history--user-name
+              by
+              %span.history--user-name>
+                = recipe.user.name
+
+
+
+

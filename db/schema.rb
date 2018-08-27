@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180822192121) do
+ActiveRecord::Schema.define(version: 20180824094314) do
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                  null: false
+    t.integer  "recipe_id",                null: false
+    t.text     "text",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["recipe_id"], name: "index_comments_on_recipe_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
 
   create_table "flows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "recipe_id",                null: false
@@ -32,6 +42,15 @@ ActiveRecord::Schema.define(version: 20180822192121) do
     t.datetime "updated_at"
     t.index ["followable_id", "followable_type"], name: "fk_followables", using: :btree
     t.index ["follower_id", "follower_type"], name: "fk_follows", using: :btree
+  end
+
+  create_table "histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "recipe_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_histories_on_recipe_id", using: :btree
+    t.index ["user_id"], name: "index_histories_on_user_id", using: :btree
   end
 
   create_table "impressions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -112,7 +131,11 @@ ActiveRecord::Schema.define(version: 20180822192121) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "comments", "recipes"
+  add_foreign_key "comments", "users"
   add_foreign_key "flows", "recipes"
+  add_foreign_key "histories", "recipes"
+  add_foreign_key "histories", "users"
   add_foreign_key "ingredients", "recipes"
   add_foreign_key "myfolders", "recipes"
   add_foreign_key "myfolders", "users"
