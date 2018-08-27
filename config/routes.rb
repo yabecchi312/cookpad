@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'tops#index'
-  resources :recipes, only: [:index] do
+  resources :recipes, except: [:index] do
     collection do
       get 'recipe_rankings'
     end
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       delete 'avatar_destroy'
     end
     resources :diaries, only: [:index, :new, :create, :destroy]
-    # get '/diaries/post', to: 'diaries#post'
   end
   resources :myfolders, only: [:index, :create, :destroy]
   get '/recipes/list/:id', to: 'recipes#list'
