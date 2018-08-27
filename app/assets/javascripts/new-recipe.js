@@ -105,10 +105,10 @@ $(function(){
                         <div class="step__header__left">
                           <div class="step-position">${add_step_num}
                           </div>
-                          <div class="step_move_higher">
+                          <div class="step_move_higher-edit">
                             <a href="#">←</a>
                           </div>
-                          <div class="step_move_lower">
+                          <div class="step_move_lower-edit">
                             <a href="#">→</a>
                           </div>
                         </div>
@@ -215,6 +215,7 @@ $(function(){
     addNumber();
     return false;
   });
+
 // 新規 右に行くボタン
   $(document).on("click",".step_move_lower" , function(){
     var theStep = $(this).parents(".step");
@@ -223,6 +224,54 @@ $(function(){
     addNumber();
     return false;
   });
+
+  // 編集 左に行くボタン
+  $(document).on("click",".step_move_higher-edit" , function(){
+    var theStep = $(this).parents(".step");
+    // 前の.stepにinputあるかないか
+    if($(theStep).prev("input").length){
+      var beforeStep = theStep.prev("input").prev(".step");
+      var theInput = theStep.next("input");
+    }else{
+      var beforeStep = theStep.prev(".step");
+    }
+    $(theStep).insertBefore(beforeStep);
+    $(theInput).insertBefore(beforeStep);
+    addNumber();
+    addArrayEdit();
+    return false;
+  });
+
+// 編集 右に行くボタン
+  $(document).on("click",".step_move_lower-edit" , function(){
+    var theStep = $(this).parents(".step");
+    // .stepの下にinputがある
+    if($(theStep).next("input").length){
+      var theInput = theStep.next("input");
+      // 次の.stepの下にinputがある
+      if($(theStep).next("input").next(".step").next("input").length){
+        var afterStep = theStep.next("input").next(".step").next("input");
+      // 次の.stepの下にinputがない
+      }else{
+        var afterStep = theStep.next("input").next(".step");
+      }
+    // .stepの次にinputがない
+    }else{
+      // 次の.stepの下にinputがある
+      if($(theStep).next(".step").next("input").length){
+        var afterStep = theStep.next(".step").next("input");
+      // 次の.stepの下にinputがない
+      }else{
+        var afterStep = theStep.next(".step");
+      }
+    }
+    $(theInput).insertAfter(afterStep);
+    $(theStep).insertAfter(afterStep);
+    addNumber();
+    addArrayEdit();
+    return false;
+  });
+
 });
 
 
