@@ -164,6 +164,18 @@ a.recipe_title:visited {
   font-size: 86%;
 }
 
+.return_top {
+  color: #4d2200;
+  font-weight: bold;
+  padding-left: 17px;
+}
+
+.return_top:after {
+  color: #eee;
+  content: "|";
+  padding: 0 5px 0 5px;
+}
+
 .image_width_550 {
   width: 550px;
 }
