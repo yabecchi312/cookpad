@@ -15,8 +15,15 @@
         .header_container
           .header_container.global_menu
             .global_menu.f_left
-            = link_to "/" do
-              %img{alt: "Cookpad", src: "https://app-assets.cpcdn.com/identity/assets/header_logo@2x-da9684baee638528a759cfee19839ba657e6b93ebef3d74b8265eb3b3ab65a6f.png", width: "92", height: "25"}
+              = link_to root_path,class: "logo" do
+                = image_tag 'cookpad_logo_header',class: "service_logo f_left image_wh_264x54"
+                .header_recipe_count
+                  %span.recipe_count_body
+                    100
+                    %span.small 万
+                  %span.recipe_count_body
+                    %span.small レシピ!
+
     - else
       %header
         .header_container

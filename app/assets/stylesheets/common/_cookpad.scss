@@ -176,6 +176,27 @@ a.recipe_title:visited {
   padding: 0 5px 0 5px;
 }
 
+.header_recipe_count {
+  position: absolute;
+  top: 29px;
+  right: 20px;
+  bottom: auto;
+  text-align: center;
+  width: 50px;
+  letter-spacing: -1px;
+  .recipe_count_body {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff9933;
+    line-height: 0.8;
+    .small {
+      font-size: 10px;
+      letter-spacing: 0;
+    }
+  }
+}
+
 .image_width_550 {
   width: 550px;
 }
@@ -198,4 +219,9 @@ a.recipe_title:visited {
 .image_wh_180x180 {
   width: 180px;
   height: 180px;
+}
+
+.image_wh_264x54 {
+  width: 264px;
+  height: 54px;
 }
