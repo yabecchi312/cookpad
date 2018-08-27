@@ -1,0 +1,86 @@
+#top-wrapper
+  #wrapper
+    #container
+      #contents.clearfix
+        #main
+          #kondate_wrapper
+            #kondate_index_contents
+              #kondate_user_show
+                .kondate_header.clearfix
+                  .f_left
+                    = link_to "« #{@kondate.user.name}の献立",user_path(id: @kondate.user_id)
+                    %span.gray.font12
+                      (#{@kondate.recipes.count}件)
+                .kondate_title_wrapper
+                  .kondate_title.clearfix
+                    = @kondate.title
+                    .author_name
+                      = link_to "#{@kondate.user.name}",user_path(id: @kondate.user_id)
+                .kondate_photo_wrapper
+                  - if @kondate.image.present?
+                    = image_tag @kondate.image.to_s
+                  - else
+                    = image_tag 'kondate/blank_kondate_550', id: "kondate_photo"
+                .kondate_under_infos
+                  .point_cooking_time_wrapper.clearfix
+                    .point.f_left
+                      .recipe_sub_title
+                        この献立のポイント
+                      = @kondate.point
+                    .cooking_time.f_right
+                      .recipe_sub_title
+                        調理時間
+                      .kondate_cooking_time_show
+                        約
+                        = @kondate.cooking_time
+                        分
+                    .setup_tips
+                      .recipe_sub_title
+                        段取りのコツ
+                      = @kondate.tips
+                    #kondate_recipes_wrapper.clearfix
+                      - @kondate.recipes.each_with_index do |recipe,i|
+                        - if i == 0
+                          .kondate_recipe_wrapper.first
+                            .kondate_status_label
+                              主菜
+                            .kondate_recipe
+                              .icon_kondate_recipe
+                                .kondate_status_icon
+                                  主
+                              .kondate_recipe_image
+                                - if recipe.image.present?
+                                  = recipe.image.to_s
+                                - else
+                                  .kondate_recipe_image_blank
+                              .block5_0
+                                = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
+                                .gray.font12
+                                  by
+                                  = recipe.user.name
+                                %ul.ingredients.font12
+                                  - recipe.ingredients.each do |ingredient|
+                                    %li
+                                      = ingredient.name
+                        - else
+                          .kondate_recipe_wrapper
+                            .kondate_status_label
+                              副菜
+                            .kondate_recipe
+                              .icon_kondate_recipe
+                                .kondate_status_icon
+                                  副
+                              .kondate_recipe_image
+                                - if recipe.image.present?
+                                  = recipe.image.to_s
+                                - else
+                                  .kondate_recipe_image_blank
+                              .block5_0
+                                = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
+                                .gray.font12
+                                  by
+                                  = recipe.user.name
+                                %ul.ingredients.font12
+                                  - recipe.ingredients.each do |ingredient|
+                                    %li
+                                      = ingredient.name

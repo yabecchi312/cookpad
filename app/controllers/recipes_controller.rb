@@ -27,6 +27,10 @@ class RecipesController < ApplicationController
     @pv = @recipe.impressionist_count
     @today = @recipe.impressionist_count(start_date: Date.today)
     @history = @recipe.register_to_history(current_user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
 
@@ -35,6 +39,10 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes.includes(:ingredients)
     if params[:keyword].present?
       @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
+    end
+    respond_to do |format|
+      format.html
+      format.json{@recipes}
     end
   end
 

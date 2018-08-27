@@ -9,6 +9,10 @@ class MyfoldersController < ApplicationController
     if params[:keyword].present?
       @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword]) & @recipes.map{|recipe| recipe.id})
     end
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create

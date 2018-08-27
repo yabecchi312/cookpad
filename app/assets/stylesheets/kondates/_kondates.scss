@@ -1,0 +1,321 @@
+#kondate_search_wrapper {
+  margin-top: 25px;
+  padding-left: 50px;
+}
+
+.kondate_header {
+  .kondate_header_left {
+    height: 100%;
+    float: left;
+  }
+  .kondate_header_right {
+    height: 100%;
+    padding-top: 15px;
+  }
+}
+
+.kondate_keyword {
+  margin-top: 5px;
+  margin-left: 100px;
+}
+
+.clear_fix:after {
+  display:block;
+  clear: both;
+  content: "";
+}
+
+#main {
+  #kondate_wrapper {
+    background: #ffffff;
+    border: 1px solid #e3dcca;
+    border-radius: 5px;
+    #kondate_index_contents {
+      margin: 0 20px 10px;
+    }
+    #recent_kondate {
+      h2.title {
+        margin: 20px 20px 0;
+        padding: 0;
+        font-size: 14px;
+      }
+      .kondate_previews {
+        padding: 20px;
+        margin: 0;
+        .kondate_list_view {
+          overflow: hidden;
+          margin-bottom: 15px;
+          .kondate_image {
+            float: left;
+            margin-right: 10px;
+            padding: 4px;
+            border: 1px solid #cccccc;
+            border-right: 1px solid #999999;
+            border-bottom: 1px solid #999999;
+            width: 150px;
+            height: 150px;
+          }
+          .kondate_infos {
+            overflow: hidden;
+            padding: 0 5px;
+            min-height: 185px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.kondate_pickup_view {
+  float: left;
+  width: 190px;
+  margin-right: 10px;
+  .kondate_image {
+    height: 180px;
+    width: 180px;
+    padding: 4px;
+    border: 1px solid #cccccc;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+}
+
+.kondate_title {
+  margin-top: 5px;
+  a {
+    font-weight: bold;
+    color: #845f4b;
+    text-decoration: underline;
+  }
+}
+.kondate_recipe_count {
+  font-weight: normal;
+  font-size: 12px;
+  color: #999999;
+}
+.kondate_recipes {
+  margin: 5px 0;
+}
+.kondate_other_recipes {
+  font-size: 12px;
+  color: #999999;
+}
+.kondate_description {
+  color: #808080;
+}
+
+
+.kondate_status_icon {
+  float: left;
+  height: 20px;
+  width: 20px;
+  background-color: #845f4b;
+  color: #f4f4f9;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.show_more_kondates_btn {
+  margin-top: 10px;
+  float: right;
+  a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #845f4b;
+    text-decoration: underline;
+  }
+}
+
+.kondate_delete_btn {
+  color: #000;
+}
+
+.write_kondate_btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.category_segment {
+  .three_column {
+    font-size: 15px;
+    width: 33%;
+    float: left;
+  }
+}
+
+.premium_kondate {
+  padding-top: 0;
+  margin-bottom: 10px;
+  a {
+      position: absolute;
+      right: 10px;
+      font-weight: normal;
+      text-decoration: underline;
+  }
+}
+
+#kondate_user_show {
+  margin: 15px 0px;
+}
+
+.kondate_title_wrapper {
+  padding: 20px 8px;
+  margin: 0;
+  .kondate_title {
+    line-height: 30px;
+    margin: 5px 0 0;
+    .kondate_title_input {
+      float:left;
+      font-size: 20px;
+      height: 40px;
+      width: 100%;
+      margin: 0;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      box-shadow: inset 1px 1px 4px #e6e6e6;
+    }
+    .author_name {
+      float: right;
+    }
+  }
+}
+
+.kondate_photo_wrapper {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  img#kondate_photo {
+    padding: 6px;
+    border: 1px solid #cccccc;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+}
+
+.kondate_under_infos {
+  padding: 10px 0;
+  margin: 0;
+  .setup_tips {
+    padding-right: 10px;
+  }
+  .point_cooking_time_wrapper {
+    padding: 10px 0 20px;
+    .point {
+      width: 50%;
+      padding-right: 5px;
+      box-sizing: border-box;
+    }
+    .cooking_time {
+      width: 50%;
+      padding-left: 30px;
+      box-sizing: border-box;
+      .cooking_time_select {
+        font-size: 14px;
+        height: 25px;
+        width: 120px;
+        border-color: #cccccc;
+        color: #3c3c3c;
+        vertical-align: top;
+      }
+    }
+  }
+  .kondate_edit_form {
+    font-size: 14px;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 4px #e6e6e6;
+  }
+  #kondate_recipes_wrapper {
+    margin-top: 20px;
+    .kondate_recipe_wrapper.first {
+      // margin-left: 0;
+      // clear: both;
+    }
+    .kondate_recipe_wrapper {
+      margin-top: 10px;
+      width: 137px;
+      float: left;
+      margin-right: 14px;
+      .kondate_status_label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #7c6012;
+        min-height: 18px;
+      }
+      .kondate_recipe {
+        position: relative;
+        word-wrap: break-word;
+        .icon_kondate_recipe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        .kondate_recipe_image {
+          min-height: 30px;
+          .kondate_recipe_blank {
+            text-decoration: none;
+            color: #999999;
+            display: block;
+            width: 117px;
+            height: 38px;
+            background-color: #f5f5f5;
+            padding: 30px 10px;
+          }
+        }
+        .ingredients {
+          color: #cfaa80;
+          line-height: 1.3em;
+          margin-top: 5px;
+        }
+      }
+      .add_side_dish_btn {
+        color: #889b00;
+      }
+    }
+  }
+}
+.kondate_submit_btn {
+  margin-top: 40px;
+  height: 50px;
+  display: block;
+  color: #f4ecdc;
+  font-weight: bold;
+  padding: 10px 20px 5px;
+  background-color: #6a5538;
+  border-radius: 5px;
+  border-bottom: solid 4px #3d2e0f;
+  text-align: center;
+}
+
+.kondate_submit_btn:active{
+  -ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.kondate_image_hidden {
+  display: none;
+}
+
+.kondate_recipe_image_blank {
+  height: 98px;
+  width: 137px;
+  background-color: #999;
+}
+
+span.kondate_search_keyword {
+  font-size: 30px;
+  font-weight: bold;
+}
+span.kondate_count {
+  font-size: 14px;
+  font-weight: normal;
+}
+
