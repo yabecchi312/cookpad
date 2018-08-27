@@ -1,6 +1,6 @@
 class KondatesController < ApplicationController
   def index
-    @kondates = Kondate.limit(3).includes([:user,:recipes]).order(id: :desk)
+    @kondates = Kondate.limit(3).includes([:user,:recipes]).order(id: :desc)
   end
 
   def new
@@ -33,7 +33,7 @@ class KondatesController < ApplicationController
   end
 
   def recent
-    @kondates = Kondate.includes([:user,:recipes]).order(id: :desk)
+    @kondates = Kondate.includes([:user,:recipes]).order(id: :desc)
   end
 
   def search
