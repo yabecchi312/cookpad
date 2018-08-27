@@ -165,7 +165,7 @@ function buildKondateRecipeModalPreview(recipe){
   `
   <div class="recipe">
     <a href="#" class="image_back_80x80">
-      <img alt="${recipe.title}" src="${recipe.image}">
+      <img alt="${recipe.title}" src="${recipe.image.url}" class="image_wh_80x80">
     </a>
     <div class="title_block">
       <a class="pickup_title recipe_title" href="/recipe/${recipe.recipe_id}">${recipe.title}</a>
@@ -220,7 +220,7 @@ function buildKondateRecipeCreatePreview(recipe,recipeIndex,status_text){
     var recipe_image =
     `
       <a id="kondate-modal-open" class="kondate_recipe_index" href="#">
-        <img alt="${recipe.title}" src="${recipe.image}">
+        <img alt="${recipe.title}" src="${recipe.image.url}" class="image_wh_137x98">
       </a>
     `
   }

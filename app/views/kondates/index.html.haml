@@ -12,7 +12,8 @@
                   - @kondates.each do |kondate|
                     .kondate_pickup_view
                       .kondate_image
-                        = link_to '',kondate_path(kondate)
+                        = link_to kondate_path(kondate) do
+                          = image_tag kondate.image.to_s ,class: "image_wh_180x180"
                       .kondate_title
                         = link_to "#{kondate.title}",kondate_path(kondate)
                       %span.kondate_recipe_count
