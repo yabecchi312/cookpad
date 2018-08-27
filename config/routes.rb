@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'tops#index'
-  resources :recipes, except: [:index]
-  resources :users, only: [:show, :edit, :update] do
+  resources :recipes
+  resources :users, only: [:show, :edit, :update, :destroy] do
     member do
       get 'follow'
       get 'unfollow'
+      delete 'avatar_destroy'
     end
   end
   resources :myfolders, only: [:index, :create, :destroy]

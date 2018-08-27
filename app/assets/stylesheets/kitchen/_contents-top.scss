@@ -135,6 +135,24 @@
     }
   }
   .profile_text {
-    color: #6b615f
+    color: #6b615f;
+    &:hover {
+      background: yellow;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+  .profile_text_edit {
+    .edit_user_profile {
+      input.form_profile_submit {
+        float: left;
+        margin-right: 10px;
+      }
+      .delete_profile {
+        color: #4d2200;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
   }
 }

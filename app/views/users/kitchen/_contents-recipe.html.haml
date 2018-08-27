@@ -56,6 +56,8 @@
               .myfolder
                 = fa_icon 'plus-circle'
                 = link_to "[×]", recipe_path(recipe.id), method: :delete, data: {confirm: 'このレシピを削除してよろしいですか?'}
+              .myfolder
+                = render "myfolders/myfolder-icon", recipe: recipe
               .recipe_description
                 = recipe.catch_copy
               .recipe_ingredients

@@ -10,9 +10,10 @@
                   = fa_icon 'folder-open'
                   %span MYフォルダ
               .search_box.description
-                = fa_icon 'search', class: 'search_icon'
-                %input.recipe_search_keyword{type: 'text',placeholder: "MYフォルダ内を検索"}
-                %input#btn_myfolder_search{type: 'submit',value: '検索'}
+                = form_tag "/myfolders/", method: :get do
+                  = fa_icon 'search', class: 'search_icon'
+                  = text_field_tag :keyword,"",class: "recipe_search_keyword", placeholder: "MYフォルダ内を検索"
+                  = submit_tag "レシピ検索", id: "#btn_myfolder_search"
             #myfolder_left
               #myfolder_left_container
                 .navigation
@@ -24,7 +25,7 @@
                       #indicator_unused{style:"width:95%"}
                     #percentage
                       %span.used_amount
-                        = @recipes.count
+                        = Myfolder.where(user_id: current_user.id).count()
                       %span.slash
                         \/
                       %span.total_amount
