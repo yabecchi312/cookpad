@@ -25,7 +25,7 @@
             = f.submit '決定', class: "form__submit"
     - else
       = link_to '#colorbox_link', class: "colorbox_link" do
-        %img.user-avatar__image{ src: "https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8",height: "50", width: "50"}
+        %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50"}
         %p 変更する
       #colorbox_link{style: "display:none;"}
         #two-col-left.kitchen
@@ -122,7 +122,7 @@
         - if @user.avatar.present?
           = image_tag @user.avatar, class: 'user-avater__image',width: "48", height: "48"
         - else
-          %img.user-avatar__image{ src: "https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8",height: "48", width: "48"}
+          %img.user-avatar__image{ src: "/assets/icon_default.png",height: "48", width: "48"}
       .user_name
         = @user.name
         のプロフィール

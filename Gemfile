@@ -80,3 +80,4 @@ gem "acts_as_follower", github: "tcocca/acts_as_follower", branch: 'master'
 gem 'jquery-rails'
 gem "font_awesome5_rails"
 gem 'remotipart', '~> 1.2'
+gem 'impressionist'
