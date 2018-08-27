@@ -18,7 +18,7 @@
                       = link_to "#{@kondate.user.name}",user_path(id: @kondate.user_id)
                 .kondate_photo_wrapper
                   - if @kondate.image.present?
-                    = image_tag @kondate.image.to_s
+                    = image_tag @kondate.image.to_s, class: "image_width_550", id: "kondate_photo"
                   - else
                     = image_tag 'kondate/blank_kondate_550', id: "kondate_photo"
                 .kondate_under_infos
@@ -50,7 +50,7 @@
                                   主
                               .kondate_recipe_image
                                 - if recipe.image.present?
-                                  = recipe.image.to_s
+                                  = image_tag recipe.image.to_s,class: "image_wh_137x98"
                                 - else
                                   .kondate_recipe_image_blank
                               .block5_0
@@ -72,7 +72,7 @@
                                   副
                               .kondate_recipe_image
                                 - if recipe.image.present?
-                                  = recipe.image.to_s
+                                  = image_tag recipe.image.to_s,class: "image_wh_137x98"
                                 - else
                                   .kondate_recipe_image_blank
                               .block5_0
