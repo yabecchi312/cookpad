@@ -33,7 +33,7 @@ class KondatesController < ApplicationController
   end
 
   def recent
-    @kondates = Kondate.includes([:user,:recipes])
+    @kondates = Kondate.includes([:user,:recipes]).order("id DESC")
   end
 
   def search
