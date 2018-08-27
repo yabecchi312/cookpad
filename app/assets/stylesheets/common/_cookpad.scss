@@ -116,3 +116,50 @@ a.recipe_title:visited {
   clear:both;
   display: block;
 }
+
+.gray {
+  color: #999999;
+}
+.font12 {
+  font-size: 12px;
+}
+.font18 {
+  font-size: 18px;
+}
+
+.recipe_sub_title {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #e0d7c1;
+  font-weight: bold;
+}
+
+
+.search_submit_button {
+  padding: 8px 10px;
+  margin: 10px 0;
+  border: 1px solid #cccccc;
+  background: #ececec;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  font-family: inherit;
+  font-weight: bold;
+  min-width: 160px;
+  color: #3c3c3c;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 #fff;
+  cursor: pointer;
+}
+
+.search_submit_button.small {
+  padding: 3px 9px;
+  margin: 3px 0;
+  min-width: 60px;
+  border-radius: 3px;
+  font-weight: normal;
+  font-size: 86%;
+}

@@ -1,5 +1,5 @@
-.container
-  #two_contents_wrapper
+#kitchen_container.kitchen_recipe_container
+  #two_contents_wrapper.clearfix
     #kitchen_side
       .kitchen_side_wrapper.archive
         %h3.content_title
@@ -22,23 +22,25 @@
     #kitchen_main
       .list_header
       .kondate_list
-        .kondate
-          .image
-            = link_to '','#'
-          .infos
-            .title
-              = link_to '献立タイトル','#'
-              %span.kondate_recipe_count
-                (5品)
-            .kondate_description
-              ご馳走です。
-            %ul.kondate_recipes
-              %li
-                %span.main_recipe_icon 主
-                = link_to '主菜レシピ名','#',class: "recipe_title"
-              %li
-                %span.sub_recipe_icon 副
-                = link_to '副菜レシピ名あいうえお','#',class: "recipe_title"
-                %span.other_recipe_count
-                  他3品
+        - @kondates.each do |kondate|
+          .kondate
+            .image
+              = link_to '#' do
+                = image_tag kondate.image.to_s
+            .infos
+              .title
+                = link_to "#{kondate.title}",kondate_path(id: kondate.id)
+                %span.kondate_recipe_count
+                  (#{kondate.recipes.count}品)
+                = link_to "[×]", kondate_path(kondate.id), method: :delete,class: "kondate_delete_btn", data: {confirm: 'この献立を削除してよろしいですか?'}
+              .kondate_description
+                = kondate.point
+              %ul.kondate_recipes
+                - kondate.recipes.each_with_index do |recipe,i|
+                  %li
+                    - if i == 0
+                      %span.kondate_status_icon 主
+                    - else
+                      %span.kondate_status_icon 副
+                    = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
     .clear_both

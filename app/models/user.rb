@@ -12,5 +12,9 @@ class User < ApplicationRecord
   has_many :recipes, dependent: :destroy
   has_many :myfolders, dependent: :destroy
   has_many :comments, dependent: :destroy
+
   has_many :histories, dependent: :destroy
+
+  has_many :kondates
+
 end

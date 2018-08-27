@@ -1,0 +1,33 @@
+#top-wrapper
+  #wrapper
+    #container
+      #contents.clearfix
+        #main
+          #kondate_wrapper
+            #recent_kondate
+              %h2.title
+                新着献立
+              .kondate_previews
+                - @kondates.each do |kondate|
+                  .kondate_list_view
+                    .kondate_image
+                      = link_to '',kondate_path(kondate)
+                    .kondate_infos
+                      .kondate_title.font18
+                        = link_to "#{kondate.title}",kondate_path(kondate)
+                        %span.kondate_recipe_count
+                          (#{kondate.recipes.count}品)
+                      .kondate_author.gray
+                        by
+                        = link_to "#{kondate.user.name}",user_path(id: kondate.user_id)
+                      .kondate_description
+                        = kondate.point
+                      %ul.kondate_recipes
+                        - kondate.recipes.each_with_index do |recipe,i|
+                          %li
+                            - if i == 0
+                              .kondate_status_icon 主
+                            - else
+                              .kondate_status_icon 副
+                            = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
+

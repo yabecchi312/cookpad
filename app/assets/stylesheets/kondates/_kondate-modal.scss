@@ -1,0 +1,120 @@
+#modal-overlay{
+  z-index:1;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:120%;
+  background-color:rgba(0,0,0,0.75);
+}
+
+#modal-content{
+  width: 570px;
+  margin:1.5em auto 0;
+  padding:10px 20px;
+  border: 5px solid #e3dcca;
+  border-radius: 5px;
+  background: #fff;
+  z-index:2;
+  .button-link{
+    float: right;
+  }
+  .button-link:hover{
+    cursor:pointer;
+    color:#f00;
+  }
+}
+
+button#modal-close.button-link.search_submit_button {
+  padding: 3px 9px;
+  margin: 3px 0;
+  min-width: 60px;
+  border-radius: 3px;
+  font-weight: normal;
+  font-size: 12px;
+  color:#845f4b;
+}
+
+
+#recipe_selector {
+  padding-bottom: 15px;
+  .menu_tab {
+    margin-top: 20px;
+    height: 29px;
+    padding-left: 10px;
+    border-bottom: 1px solid #d8d4c5;
+    li {
+      min-width: 120px;
+      border-radius: 5px 5px 0 0;
+      border: 1px solid #d8d4c5;
+      background: #f3f0e2;
+      width: 100px;
+      height: 28px;
+      float: left;
+      text-align: center;
+      margin-right: 10px;
+      display: inline-block;
+      zoom: 1;
+      p {
+        display: block;
+        line-height: 30px;
+        text-decoration: none;
+        color: #3c3c3c;
+        cursor: pointer;
+      }
+    }
+    li.selected {
+      background: #ffffff;
+      border-bottom: 1px solid #ffffff;
+      font-weight: bold;
+    }
+  }
+  .search_box {
+    margin: 20px auto 25px auto;
+    text-align: center;
+    input#keyword {
+      width: 240px !important;
+      padding: 3px 5px;
+      margin: 0 5px 0 0;
+      box-shadow: inset 1px 1px 4px #e6e6e6;
+      border-radius: 3px;
+      box-sizing: border-box;
+      border: 1px solid #cccccc;
+      vertical-align: middle;
+      display: inline-block;
+      font-weight: normal;
+    }
+  }
+  .tab_hide {
+    display: none;
+  }
+}
+
+.recipe_selector {
+  .selectable_recipes {
+    .recipe {
+      width: 50%;
+      float: left;
+      margin-bottom: 10px;
+      img {
+      }
+      .title_block {
+        display: block;
+        margin-bottom: 5px;
+        margin-right: 15px;
+      }
+      .author {
+        font-size: 0.8em;
+        color: #999999;
+      }
+      .image_back_80x80 {
+        float: left;
+        height: 80px;
+        width: 80px;
+        background-color:#999;
+        margin-right: 10px;
+      }
+    }
+  }
+}
