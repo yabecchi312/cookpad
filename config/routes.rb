@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :recipes, except: [:edit, :update] do
     resources :comments, only: [:create]
   end
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update]
   resources :recipes, except: [:edit, :update]
   resources :recipes, only: [:index, :new, :create, :show]
   resources :users, only: [:show, :edit, :update, :destroy] do
@@ -26,4 +26,11 @@ Rails.application.routes.draw do
   resources :myfolders, only: [:index, :create, :destroy]
   get '/recipes/list/:id', to: 'recipes#list'
   resources :search, only: [:index]
+  resources :kondates, only: [:index,:new,:create,:show,:destroy] do
+    collection do
+      get :recent
+      get :search
+    end
+  end
+  get '/kondates/list/:id', to: 'kondates#list'
 end
