@@ -255,11 +255,16 @@
 // つくれぽ、コメント
 #tsukurepo-and-comment {
   padding-top: 15px;
-  .menu_tab {
+  #menu_tab {
     padding-left: 20px;
     height: 29px;
     border-bottom: 1px solid #d8d4c5;
+    .selected {
+      background: #fffdef;
+      border-bottom: 1px solid #fffdef;
+    }
     li {
+      background: #f3f0e2;
       border-bottom: 1px solid #fffdef;
       width: 150px;
       font-weight: bold;
@@ -270,12 +275,6 @@
       margin-right: 10px;
       border-radius: 5px 5px 0 0;
       cursor: pointer;
-    }
-    li#tsukurepo_tab {
-      background-color: #fffdef;
-    }
-    li#comment_tab {
-      background-color: #f3f0e2;
     }
     a {
       text-decoration: none;
@@ -404,8 +403,70 @@
         }
       }
     }
-  }
-}
+    #comments.show {
+      display: none;
+      background: none;
+      padding: 10px;
+      padding-top: 5px;
+      .comment {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #F5F1E1;
+        .info {
+          color: #999999;
+          margin-bottom: 10px;
+          span {
+            font-size: 85%;
+            padding-left: 10px;
+          }
+        }
+        .comment-text {
+          padding-left: 24px;
+          line-height: 170%;
+          font-size: 93%;
+          }
+        }
+      }
+      .paging-paginate {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 131%;
+        text-align: center;
+      }
+      #text-area {
+        width: 420px;
+        margin: 0px auto;
+        #comment-count {
+          font-size: 11px;
+          color: #666;
+          span {
+            color: rgb(153, 153, 153);
+            font-size: 11px;
+          }
+        }
+        .comment-form {
+          margin: 0;
+          padding: 0;
+          display: block;
+          textarea {
+            width: 420px;
+            height: 120px;
+            font-size: 98%;
+            line-height: 1.5;
+          }
+        }
+      }
+          .submit {
+            margin-top: 10px;
+            text-align: center;
+            input {
+              height: 120px;
+              font-size: 108%;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
 
 // このレシピを作った献立、似たレシピを探す
 #related_link_wrapper {
@@ -556,3 +617,6 @@
   }
 }
 
+.viewed {
+  margin-top: 8px;
+}

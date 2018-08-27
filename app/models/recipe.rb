@@ -4,12 +4,18 @@ class Recipe < ApplicationRecord
 
   has_many :myfolders, dependent: :destroy
   has_many :register_users, through: :myfolders, source: :user
+  has_many :histories, dependent: :destroy
+
+
+  has_many :comments, dependent: :destroy
 
   belongs_to :users
+  belongs_to :user
+  
   accepts_nested_attributes_for :ingredients
   accepts_nested_attributes_for :flows
   mount_uploader :image, ImageUploader
-
+  is_impressionable counter_cache: true
 
   #各条件で検索し、かかったrecipeのidを重複排除して配列で返す
   def self.select_target_recipe_id(keywords,user_id=0)
@@ -54,6 +60,10 @@ class Recipe < ApplicationRecord
 
   def register_to_myfolder?(user)
     register_users.include?(user)
+  end
+
+  def register_to_history(user)
+    histories.create(user_id: user.id)
   end
 
 end

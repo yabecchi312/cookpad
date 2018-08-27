@@ -11,8 +11,7 @@
             -# キャッチコピー、材料、計算
         #photo-summary-ingredients.clearfix
           .main-photo
-            = image_tag(@recipe.image)
-            画像
+
           .desc-and-ingredients
             -# レシピのキャッチコピー
             .summary
@@ -35,6 +34,14 @@
               .option-calculation
                 = image_tag "icon_ps_small.png", size: "13x14", class: "ps_icon"
                 = link_to "カロリー・塩分を計算", "#", class: "calculate-nutrition"
+              .viewed
+                %span
+                  総閲覧数：
+                  = @pv
+                %br
+                %span
+                  今日の閲覧数：
+                  = @today
         .sk_product_recipe_promotion
         #steps.clearfix
           = render "step-show", flows: @flows
@@ -81,7 +88,7 @@
               = link_to "レシピを共有", "#"
       -# つくれぽ、コメント
       #tsukurepo-and-comment
-        %ul.menu_tab
+        %ul#menu_tab.selected
           %li#tsukurepo_tab
             = link_to "つくれぽ", "#"
             %span.count
@@ -89,9 +96,9 @@
           %li#comment_tab
             = link_to "コメント", "#"
             %span.count
-              (0件)
+              (1件)
         .tsukurepo_and_comment_wrapper
-          .tsukurepo_container
+          #tsukurepo
             .tsukurepo_title
               %h2.title
                 みんなのつくりましたフォトレポート「つくれぽ」
@@ -108,6 +115,29 @@
                 = link_to "", class: "tsukurepo_button" do
                   = fa_icon "edit"
                   つくれぽを送る
+          #comments.show
+            #comment-list
+              .comment
+                .info
+                  =image_tag("https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8", size: "20x20")
+                  = link_to "まいまいキッチン:Dさん","#"
+                  %span.comment-update
+                    2018年8月24日 21:00
+                .comment-text
+                  美味しそう
+              .paging-paginate
+            #text-area
+              %span#comment_header
+              .login_user
+                #comment-count
+                  .user
+                    まいまいキッチン:Dさん あと
+                    %span#comment-char-count 500
+                    文字です
+              .comment-form{:method => "post"}
+                %textarea#comment-field{"data-counter_id" => "comment-count", "data-form_id" => "comment-form", "data-limit" => "500", "data-submit_class" => "comment_submit", :name => "comment"}
+                .submit
+                  %input{:disabled => "disabled", :name => "commit", :type => "submit", :value => "コメントを書く"}/
         #related_link_wrapper
           .related
             .user_kondates_wrapper
