@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180819095116) do
+ActiveRecord::Schema.define(version: 20180824094314) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                  null: false
@@ -22,9 +21,6 @@ ActiveRecord::Schema.define(version: 20180819095116) do
     t.index ["recipe_id"], name: "index_comments_on_recipe_id", using: :btree
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
-
-ActiveRecord::Schema.define(version: 20180824094314) do
-ActiveRecord::Schema.define(version: 20180823060824) do
 
   create_table "flows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "recipe_id",                null: false
