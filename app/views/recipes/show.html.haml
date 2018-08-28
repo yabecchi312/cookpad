@@ -11,7 +11,8 @@
             -# キャッチコピー、材料、計算
         #photo-summary-ingredients.clearfix
           .main-photo
-
+            = image_tag(@recipe.image.to_s, size: "280x280")
+            画像
           .desc-and-ingredients
             -# レシピのキャッチコピー
             .summary

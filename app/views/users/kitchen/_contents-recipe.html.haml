@@ -52,7 +52,9 @@
               = image_tag recipe.image.to_s
             .recipe_text.clearfix
               %span.title
-                = link_to "#{recipe.title}",'#',class: "recipe_title"
+                = link_to "#{recipe.title}", edit_recipe_path(recipe),class: "recipe_title"
+              .myfolder
+                = fa_icon 'plus-circle'
                 = link_to "[×]", recipe_path(recipe.id), method: :delete, data: {confirm: 'このレシピを削除してよろしいですか?'}
               .myfolder
                 = render "myfolders/myfolder-icon", recipe: recipe

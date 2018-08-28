@@ -1,22 +1,19 @@
 class Recipe < ApplicationRecord
   has_many :ingredients, dependent: :destroy
   has_many :flows, dependent: :destroy
+  accepts_nested_attributes_for :ingredients, allow_destroy: true
+  accepts_nested_attributes_for :flows, allow_destroy: true
 
   has_many :myfolders, dependent: :destroy
   has_many :register_users, through: :myfolders, source: :user
   has_many :histories, dependent: :destroy
 
-
   has_many :comments, dependent: :destroy
+
+  belongs_to :user
 
   has_many :kondates, through: :recipe_kondates
   has_many :recipe_kondates
-
-  belongs_to :users
-  belongs_to :user
-
-  accepts_nested_attributes_for :ingredients
-  accepts_nested_attributes_for :flows
   mount_uploader :image, ImageUploader
   is_impressionable counter_cache: true
 
