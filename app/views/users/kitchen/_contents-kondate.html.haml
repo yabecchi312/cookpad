@@ -26,7 +26,7 @@
           .kondate
             .image
               = link_to '#' do
-                = image_tag kondate.image.to_s
+                = image_tag kondate.image.to_s,class: "image_wh_150x150"
             .infos
               .title
                 = link_to "#{kondate.title}",kondate_path(id: kondate.id)

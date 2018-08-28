@@ -11,7 +11,8 @@
                 - @kondates.each do |kondate|
                   .kondate_list_view
                     .kondate_image
-                      = link_to '',kondate_path(kondate)
+                      = link_to kondate_path(kondate) do
+                        = image_tag kondate.image.to_s, class: "image_wh_150x150"
                     .kondate_infos
                       .kondate_title.font18
                         = link_to "#{kondate.title}",kondate_path(kondate)
