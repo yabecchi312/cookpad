@@ -8,9 +8,13 @@ class User < ApplicationRecord
   mount_uploader :avatar, ImageUploader
 
   validates :name, length: {maximum: 10}
-  has_many :recipes, dependent: :destroy
 
+  has_many :recipes, dependent: :destroy
   has_many :myfolders, dependent: :destroy
-  has_many :recipes
-  validates :name, length: {maximum: 10}
+  has_many :comments, dependent: :destroy
+
+  has_many :histories, dependent: :destroy
+
+  has_many :kondates
+
 end

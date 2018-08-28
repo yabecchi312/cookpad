@@ -104,6 +104,7 @@ header {
     a.logo {
       width: 264px;
       height: 54px;
+      position: relative;
       img.service_logo.f_left {
         margin-top: 14px;
         margin-right: 12px;
@@ -226,10 +227,10 @@ header {
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
+  float: right;
   z-index: 1;
 }
-
 
 footer {
   margin-top: 0;

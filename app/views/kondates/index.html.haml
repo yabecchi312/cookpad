@@ -1,0 +1,62 @@
+#top-wrapper
+  #wrapper
+    #container
+      #contents.clearfix
+        #main
+          #kondate_wrapper
+            #kondate_index_contents
+              #kondate_recent.clearfix
+                %h3.title_row
+                  新着献立
+                .clearfix
+                  - @kondates.each do |kondate|
+                    .kondate_pickup_view
+                      .kondate_image
+                        = link_to kondate_path(kondate) do
+                          = image_tag kondate.image.to_s ,class: "image_wh_180x180"
+                      .kondate_title
+                        = link_to "#{kondate.title}",kondate_path(kondate)
+                      %span.kondate_recipe_count
+                        (
+                        = kondate.recipes.count
+                        品)
+                      .kondate_author.gray
+                        by
+                        = link_to "#{kondate.user.name}",user_path(id: kondate.user_id)
+                      %ul.kondate_recipes
+                        - kondate.recipes.each_with_index do |recipe,i|
+                          %li
+                            - if i == 0
+                              .kondate_status_icon 主
+                            - else
+                              .kondate_status_icon 副
+                            = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
+                .show_more_kondates_btn
+                  = link_to '→もっと見る', recent_kondates_path
+              .write_kondate_btn
+                = link_to new_kondate_path do
+                  = fa_icon 'edit'
+                  %span 献立を書く
+              .kondate_category_navi
+                %h3.title_row
+                  主な食材から探す
+                .category_segment.clearfix
+                  - 8.times do
+                    .three_column
+                      = link_to '#' do
+                        %span 鳥肉
+                %h3.title_row
+                  ジャンルから探す
+                .category_segment.clearfix
+                  - 3.times do
+                    .three_column
+                      = link_to '#' do
+                        %span 和食
+                %h3.title_row
+                  シーンから探す
+                .category_segment.clearfix
+                  - 5.times do
+                    .three_column
+                      = link_to '#' do
+                        %span 朝食
+        #side

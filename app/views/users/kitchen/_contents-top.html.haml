@@ -121,9 +121,18 @@
   #profile_container.box.container_inner
     .user_info
       .user_icon
-        %img
+        - if @user.avatar.present?
+          = image_tag @user.avatar, class: 'user-avater__image',width: "50", height: "50"
+        - else
+          %img.user-avatar__image{ src: "https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8",height: "50", width: "50"}
       .user_name
         = @user.name
         のプロフィール
     .profile_text
       = @user.profile
+    .profile_text_edit{style: "display:none;"}
+      = form_for(current_user, html: {class: "edit_user_profile"}) do |f|
+        = f.text_area :profile, size: "77x4", class: "count-length", autofocus: true, maxlength: 200
+        = hidden_field_tag :user_id, current_user.id, class: "form_userid"
+        = f.submit '保存', class: "form_profile_submit"
+        .delete_profile 取消

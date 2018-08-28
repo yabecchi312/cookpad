@@ -36,8 +36,8 @@
               .ingredients
                 = f.fields_for :ingredients do |i|
                   .ingredient
-                    = i.text_field :name, placeholder: "材料名", class: "ingredient-name", name: "recipe[ingredients_attributes][][name]"
-                    = i.text_field :amount, placeholder: "分量", class: "ingredient-amount", name: "recipe[ingredients_attributes][][amount]"
+                    = i.text_field :name, placeholder: "材料名", class: "ingredient-name"
+                    = i.text_field :amount, placeholder: "分量", class: "ingredient-amount"
                     = link_to "削除", "", id: "ingredient-delete-button"
               .add
                 = link_to "追加","", id: "ingredient-add-button"

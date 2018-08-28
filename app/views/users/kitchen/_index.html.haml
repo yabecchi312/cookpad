@@ -14,8 +14,7 @@
                 %a
                   つくれぽ
               %li.kitchen_navi_kondate
-                %a
-                  献立
+                = link_to '献立', "/kondates/list/#{@user.id}"
               %li.kitchen_navi_blog
                 = link_to do
                   = fa_icon 'link', text: "ブログ"

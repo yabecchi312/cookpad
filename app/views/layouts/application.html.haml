@@ -8,17 +8,29 @@
     %script{crossorigin: "anonymous", defer: "defer",integrity: "sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9", src: "https://use.fontawesome.com/releases/v5.1.0/js/all.js"}
 
   %body
+    #large_screen_side_bar_out_wrapper
+      = render 'shares/side-histories.html.haml'
     - if %w[user_session new_user_registration].any? { |name| current_page?(send("#{name}_path")) }
       %header
         .header_container
           .header_container.global_menu
             .global_menu.f_left
-            = link_to "/" do
-              %img{alt: "Cookpad", src: "https://app-assets.cpcdn.com/identity/assets/header_logo@2x-da9684baee638528a759cfee19839ba657e6b93ebef3d74b8265eb3b3ab65a6f.png", width: "92", height: "25"}
+              = link_to root_path,class: "logo" do
+                = image_tag 'cookpad_logo_header',class: "service_logo f_left image_wh_264x54"
+                .header_recipe_count
+                  %span.recipe_count_body
+                    100
+                    %span.small 万
+                  %span.recipe_count_body
+                    %span.small レシピ!
+
     - else
       %header
         .header_container
           .header_container.global_menu
+            - if controller.controller_name == "kondates"
+              .global_menu.f_left.return_top
+                = link_to '<< トップへ戻る',root_path
             .global_menu.f_left サービス一覧
             .global_menu.f_right
               %ul.user_menu.list_inline
@@ -51,7 +63,10 @@
                     %li
                       = link_to destroy_user_session_path do
                         %span ログアウト
-        = render 'shares/inner-header.html.haml'
+        - if controller.controller_name == "kondates"
+          = render 'shares/kondates-inner-header.html.haml'
+        - else
+          = render 'shares/inner-header.html.haml'
     = yield
 
     %footer

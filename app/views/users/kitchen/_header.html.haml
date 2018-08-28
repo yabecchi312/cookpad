@@ -3,7 +3,10 @@
     ヘッダー画像（仮）
   .header_bottom
     .user_icon
-      アイコン（仮）
+      - if @user.avatar.present?
+        = image_tag @user.avatar, width: "100", height: "100", class: "user-avatar__image"
+      - else
+        %img.user-avatar__image{ src: "https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8",height: "100", width: "100"}
     .user_name
       = link_to user_path(@user.id) do
         = @user.name

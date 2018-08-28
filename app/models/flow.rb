@@ -1,4 +1,4 @@
 class Flow < ApplicationRecord
-  belongs_to :recipe, dependent: :destroy
+  belongs_to :recipe, optional: true
   mount_uploader :image, ImageUploader
 end
