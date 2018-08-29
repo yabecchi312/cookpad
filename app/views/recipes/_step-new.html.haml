@@ -1,17 +1,11 @@
--# new.html.hamlのrenderの記述を書き変えて
--# =f.fields_for :flows do |fl|
--#   -fl.each.with_index(1) do |fl, i|
 .step
   .step__header
     .step__header__left
       .step-position 1
-      -# orderに数字をどうやって与えればいいんかな
-        -# .step-position i
-          -# = fl.hidden_field :order, name: "recipe[flows_attributes][][order]" とかできたりするかも
       .step_move_higher
-        = link_to "←", "#"
+        = link_to "←", ""
       .step_move_lower
-        = link_to "→", "#"
+        = link_to "→", ""
     .step__header__right
       = link_to "削除", "#", id: "step-remove-button"
       = link_to "追加", "#", id: "step-add-button"

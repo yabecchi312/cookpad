@@ -15,18 +15,36 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+      redirect_to root_path, notice: "レシピを編集しました"
+    else
+      render :edit
+    end
+  end
 
   def show
     @recipe = Recipe.find(params[:id])
     @recipes = Recipe.all
     @ingredients = @recipe.ingredients.includes(:recipe)
-    @flows = @recipe.flows.includes(:recipe)
+    @flows = @recipe.flows.order(order: "ASC").includes(:recipe)
+
     @comment = Comment.new
     @comments = @recipe.comments.includes(:user)
+
     impressionist(@recipe, nil, unique: [:session_hash])
     @pv = @recipe.impressionist_count
     @today = @recipe.impressionist_count(start_date: Date.today)
     @history = @recipe.register_to_history(current_user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
 
@@ -35,6 +53,10 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes.includes(:ingredients)
     if params[:keyword].present?
       @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
+    end
+    respond_to do |format|
+      format.html
+      format.json{@recipes}
     end
   end
 
@@ -50,6 +72,9 @@ class RecipesController < ApplicationController
   def recipe_rankings
   end
 
+  def save
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(
@@ -59,8 +84,8 @@ class RecipesController < ApplicationController
       :tips,
       :background,
       :user_id,
-      { ingredients_attributes: [ :name , :amount ] },
-      { flows_attributes: [:image, :text, :order] }
+      { ingredients_attributes: [:id, :recipe_id, :name , :amount, :_destroy ] },
+      { flows_attributes: [:id, :recipe_id, :image, :text, :order, :_destroy ] }
       ).merge(user_id: current_user.id)
   end
 end

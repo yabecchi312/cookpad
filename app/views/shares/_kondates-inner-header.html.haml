@@ -1,0 +1,21 @@
+.header_inner.kondate_header
+  .kondate_header_left.clear_fix
+    = link_to '/kondates/', class: "logo" do
+      = image_tag 'logo_header_kondate', alt: "献立", class: "service_logo f_left"
+
+    #kondate_search_wrapper.search_form_wrapper
+      .keyword_input.kondate_keyword
+        = form_tag search_kondates_path, method: :get do
+          = fa_icon 'search', class: 'search_icon'
+          = text_field_tag :keyword,"",class: "search-field global_search_keyword",placeholder: "献立を検索"
+          = submit_tag "献立を検索", id: "submit_button", class: "button min global_search_submit_btn"
+
+  .kondate_header_right
+    %ul.my_menu
+      %li
+        = link_to new_kondate_path, class: "btn-new-recipe" do
+          %i.fa.fa-edit
+          献立を書く
+        %span.button.post_recipe.min
+
+
