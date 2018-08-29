@@ -1,10 +1,7 @@
 class DiariesController < ApplicationController
   def index
     @user = User.find(current_user.id)
-    @diaries = @user.diaries
-  end
-
-  def post
+    @diaries = @user.diaries.order(id: :desc)
   end
 
   def new
@@ -13,12 +10,16 @@ class DiariesController < ApplicationController
   end
 
   def create
-    @diary = Diary.create(diary_params)
-    redirect_to action: "index", id: current_user.id
+    @diary = Diary.new(diary_params)
+    if @diary.save
+      redirect_to diaries_path
+    else
+      render :new
+    end
   end
 
   def destroy
-    @diary = Diary.find(:user_id)
+    @diary = Diary.find(params[:id])
     @diary.destroy
     redirect_to action: "index", id: current_user.id
   end

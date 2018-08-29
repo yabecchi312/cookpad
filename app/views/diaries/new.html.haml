@@ -52,7 +52,7 @@
                   タイトル
                   %h1.diary_title
                     = f.text_area :title, maxlength:"20", size: "15x1"
-                %a.diary_delete_link{"data-confirm" => "この日記を削除しますか？", "data-method" => "get", href: " /diaries/new", rel: "nofollow"} 削除
+                %a.diary_delete_link{"data-confirm" => "この日記を削除しますか？", "data-method" => "get", /diaries/:id, rel: "nofollow"} 削除
                 #date_field.diary_date
                   %a.date
                     = f.date_select :date, use_month_numbers: true

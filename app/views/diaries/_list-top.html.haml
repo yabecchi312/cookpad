@@ -49,6 +49,7 @@
           .diary
             .title
               = diary.title
+              = link_to "削除", diary_path(id:diary.id), method: :delete, class: "diary_delete_btn pull-right", data: {confirm: 'この ごはん日記 を削除してよろしいですか?'}
             .date
               = diary.date
             .diary_content
