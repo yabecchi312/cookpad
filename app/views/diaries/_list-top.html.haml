@@ -42,6 +42,8 @@
                 %span.item_count
                   (2)
     .main_cont.kitchen_cont
+      .blank_message
+        = link_to "ごはん日記を書く", new_diary_path
       #diary.list
         - @diaries.each do |diary|
           .diary
