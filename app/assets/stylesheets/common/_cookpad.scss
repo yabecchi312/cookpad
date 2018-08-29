@@ -103,16 +103,6 @@ a.recipe_title:visited {
   display: block;
 }
 
-.gray {
-  color: #999999;
-}
-.font12 {
-  font-size: 12px;
-}
-.font18 {
-  font-size: 18px;
-}
-
 .recipe_sub_title {
   font-size: 16px;
   margin-bottom: 8px;
@@ -200,6 +190,11 @@ a.recipe_title:visited {
   height: 80px;
 }
 
+.image_wh_94x94 {
+  width: 94px;
+  height: 94px;
+}
+
 .image_wh_137x98 {
   width: 137px;
   height: 98px;
@@ -218,4 +213,52 @@ a.recipe_title:visited {
 .image_wh_264x54 {
   width: 264px;
   height: 54px;
+}
+
+.font12 {
+  font-size: 12px;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.gray {
+  color: #999999;
+}
+
+.deep_green {
+  color: #8b9d06;
+}
+
+.light-blue {
+  color: #34b0b1;
+}
+
+.light-green {
+  color: #9cc536;
+}
+
+.pink {
+  color: #fda1b1;
+}
+
+.deep_yellow {
+  color: #dcd77d;
+}
+
+.orange {
+  color: #fd9940;
+}
+
+.light_purple {
+  color: #c38bac;
+}
+
+.bronze {
+  color: #845f4b;
 }
