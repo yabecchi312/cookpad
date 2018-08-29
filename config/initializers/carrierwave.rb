@@ -1,6 +1,6 @@
-# require 'carrierwave/storage/abstract'
-# require 'carrierwave/storage/file'
-# # require 'carrierwave/storage/fog'
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 
 # CarrierWave.configure do |config|
 #   # config.storage = :fog
@@ -15,4 +15,4 @@
 
 #   config.fog_directory  = 'cookpad-yabecchi312'
 #   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/cookpad-yabecchi312'
-# end
+
