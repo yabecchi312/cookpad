@@ -24,7 +24,10 @@
           width: 55%;
           a {
             display: block;
-            padding: 10px 0 10px 36px;
+            padding: 10px 0 10px 3px;
+            line-height: 29px;
+            height: 29px;
+            display: flex;
           }
         }
         .pro-menu__list--odd {
@@ -32,7 +35,10 @@
           width: 45%;
           a {
             display: block;
-            padding: 10px 0 10px 36px;
+            padding: 10px 0 10px 3px;
+            line-height: 29px;
+            height: 29px;
+            display: flex;
           }
         }
       }
