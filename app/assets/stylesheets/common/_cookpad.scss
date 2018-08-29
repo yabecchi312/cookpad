@@ -25,20 +25,6 @@ body {
             float: left;
             width: 650px;
           }
-          // #side {
-          //   float: right;
-          //   width: 300px;
-          //   #side_contents {
-          //     position: static;
-          //     width: 300px;
-          //     #side_banner_wrapper {
-          //       position: relative;
-          //       margin-bottom: 20px;
-          //       height: 250px;
-          //       background-color: #90b8ed;
-          //     }
-          //   }
-          // }
         }
       }
     }
@@ -195,6 +181,10 @@ a.recipe_title:visited {
       letter-spacing: 0;
     }
   }
+}
+
+.image_width_100 {
+  width: 100px;
 }
 
 .image_width_550 {
