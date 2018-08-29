@@ -11,6 +11,7 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   belongs_to :user
+
   has_many :kondates, through: :recipe_kondates
   has_many :recipe_kondates
   mount_uploader :image, ImageUploader
@@ -19,7 +20,7 @@ class Recipe < ApplicationRecord
   #各条件で検索し、かかったrecipeのidを重複排除して配列で返す
   def self.select_target_recipe_id(keywords,user_id=0)
     target_recipe_ids = []
-    keyword_arrays = keywords.gsub(//," ").split()
+    keyword_arrays = keywords.gsub(/ /," ").split()
     keyword_arrays.each do |keyword|
       if user_id == 0
         sql_string = self.make_sql_string(keyword)
