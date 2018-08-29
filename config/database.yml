@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: cookpad_production
-  username: cookpad
+  username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock

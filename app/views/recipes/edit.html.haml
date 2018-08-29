@@ -1,7 +1,7 @@
 .main
   .contents
     .contents__left
-      = form_for @recipe do |f|
+      = form_for@recipe do |f|
         .contents__left__recipe.clearfix
           -# contents__left内の削除、印刷のところ
           .recipe_author
@@ -33,18 +33,20 @@
                     = image_tag "profile.png", class: "author_icon"
                     = link_to "クックGB5RQL☆", "#"
               .ingredients
+                -# - @recipe.ingredients.each do |ingredient|
                 = f.fields_for :ingredients do |i|
                   .ingredient
                     = i.text_field :name, placeholder: "材料名", class: "ingredient-name"
                     = i.text_field :amount, placeholder: "分量", class: "ingredient-amount"
-                    = link_to "削除", "", id: "ingredient-delete-button"
+                    = link_to "削除", "", id: "ingredient-delete-button-edit"
+                    = i.check_box :_destroy, id: "update_destroy"
               .add
-                = link_to "追加","", id: "ingredient-add-button"
+                = link_to "追加","", id: "ingredient-add-button-edit"
                 -# = image_tag "cookpad-ingredients.gif"
             .sk-center
             -# 料理ステップ
             #cooking-steps.clearfix
-              = render "step-new", f: f
+              = render "step-edit", f: f
               -# コツ、レシピの生い立ち
             .memo_and_history.clearfix
               .memo_wrapper
