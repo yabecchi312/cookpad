@@ -13,7 +13,7 @@
     = f.fields_for :flows do |fl|
       .step__main_image
         = fl.label :image do
-          = image_tag "step_blank.png"
+          = image_tag "step_blank.png", id: "step_example", width: "136px"
           = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][][image]"
       .step__main_text
         -# = image_tag "edit-image.png", class: "edit-image"
@@ -34,7 +34,7 @@
     = f.fields_for :flows do |fl|
       .step__main_image
         = fl.label :image do
-          = image_tag "step_blank.png"
+          = image_tag "step_blank.png", id: "step_example", width: "136px"
           = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][][image]"
       .step__main_text
         -# = image_tag "edit-image.png", class: "edit-image"
