@@ -16,7 +16,7 @@
         = f.password_field :password_confirmation,class: "devise_form_contents", autocomplete: "off",placeholder: "もう一度パスワードを入力してください"
       .user-name.col-md-12
         %br/
-        = f.text_area :profile,class: "devise_form_contents profile", placeholder: "ユーザープロフィールを入力してください", size:"30×4"
+        = f.text_area :profile,class: "devise_form_contents profile", placeholder: "ユーザープロフィールを入力できます", size:"30×4"
       .user-image.col-md-2
         %img{ style: "" }
         = f.label :avatar,class: "devise_form_file_label" do
