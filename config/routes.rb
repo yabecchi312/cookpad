@@ -25,4 +25,5 @@ Rails.application.routes.draw do
     end
   end
   get '/kondates/list/:id', to: 'kondates#list'
+  get '/recipes/list/:id', to: 'recipes#list'
 end

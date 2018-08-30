@@ -28,5 +28,16 @@ $(function(){
     reader.onload = function() {
       $("#kondate_photo").attr("src", reader.result)
     };
-  })
+  });
+
+  // 日記のメイン画像
+  $(".diary_id").on("change", function(){
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function() {
+      $(".dairy-main-image").attr("src", reader.result)
+    };
+  });
 });
