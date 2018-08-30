@@ -6,6 +6,6 @@
     .instruction
       .instruction__photo
         .image
-          = flow.image.to_s
+          = image_tag(flow.image.to_s, width: "136px")
       .instruction__text
         = flow.text
