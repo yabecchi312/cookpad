@@ -6,23 +6,23 @@
       %ul.recipe-menu__list
         %li
           %a{:href => "/"}
-            = fa_icon "utensils"
+            = fa_icon "utensils",class: "deep_green font18"
             %span みんなのレシピ
         %li
           %a{:href => "/"}
-            = fa_icon "book-open"
+            = fa_icon "book-open",class: "light-blue font18"
             %span プロのレシピ
         %li
           = link_to "/kondates" do
-            = fa_icon "fish"
+            = fa_icon "fish",class: "light-green font18"
             %span 献立
         %li
           %a{:href => "/"}
-            %i.fas.fa-video
+            %i.fas.fa-video.pink.font18
             %span 料理動画
         %li
           %a{:href => "/"}
-            %i.fas.fa-user
+            %i.fas.fa-user.deep_yellow.font18
             %span 話題のキッチン
     .p_service-menu
       .p_service-menu__title
@@ -31,23 +31,23 @@
       %ul.p_service-menu__list
         %li
           %a{:href => "/"}
-            %i.fas.fa-crown
+            %i.fas.fa-crown.orange.font18
             %span 人気順検索
         %li
           %a{:href => "/"}
-            %i.fas.fa-medal
+            %i.fas.fa-medal.orange.font18
             %span レシピランキング
         %li
           %a{:href => "/"}
-            %i.fas.fa-trophy
+            %i.fas.fa-trophy.orange.font18
             %span 殿堂入りレシピ
         %li
           %a{:href => "/"}
-            %i.fab.fa-jenkins
+            %i.fab.fa-jenkins.orange.font18
             %span 専門家厳選レシピ
         %li
           %a{:href => "/"}
-            %i.far.fa-star
+            %i.far.fa-star.orange.font18
             %span プレミアム献立
       .p_service-menu__more
         %a{:href => "/"} もっと見る
@@ -57,26 +57,26 @@
       %ul.life_service-menu__list
         %li
           %a{:href => "/"}
-            %i.far.fa-newspaper
+            %i.far.fa-newspaper.orange.font18
             %span 料理ニュース
         %li
           %a{:href => "/"}
-            %i.fas.fa-home
+            %i.fas.fa-home.light_purple.font18
             %span Cookpad DO !
   .feature-main
     .feature-pickup
       %a.pickup-image{:href => "/"}
-        = image_tag("https://img.cpcdn.com/recipes/1080585/447x251c/e233eaeef442525cc505dd0ed7453abe.jpg?u=265488&p=1337952368")
+        = image_tag("dummy_recipes/salad.jpg",class: "image_wh_447x251")
       .pickup-title
         .pickup-title__date
-          %span>< 2
+          %span>< 8
           月
-          %span>< 28
+          %span>< 31
           日の
           %br
           おすすめ
         %a{:href => "/"}
-          .pickup-title__body ＊薄切りポテトとチーズのグラタン＊
+          .pickup-title__body ＊グリーングリーンサラダ＊
           .pickup-title__user
             SHOOKY
     .feature-news
@@ -86,17 +86,17 @@
         %li.news-top
           %a{:href => "/"}
             .news-top__image
-              = image_tag("https://img.cpcdn.com/news_articles/22672/100x100c/0c2d4793af33ecb4edf495fd41cb72ef.jpg")
+              = image_tag("dummy_recipes/kakigori.jpg")
             .news-top__article
-              .news-top__article--title 食材１つ「にんじんだけチヂミ」
-              .news-top__article--body にんじんだけで作れる、甘みがあっておいしい、ボリューム感あるチヂミ。材料を混ぜて焼くだけ♪
+              .news-top__article--title かき氷シロップで涼感おやつ♪
+              .news-top__article--body 夏に使ったかき氷シロップ。余っていたら、涼感おやつを作ってみませんか。カラフルな色に子どもも大喜び！
         %li.news-topic
-          %a{:href => "/"} ホワイトデーに
+          %a{:href => "/"} 5分で完成！トマト＆豆腐の副菜
         %li.news-topic
           %a{:href => "/"} 人気検索キーワードランキング！
         %li.news-topic
           %a{:href => "/"} 新感覚スナック「マヨネー麩」
         %li.news-topic
-          %a{:href => "/"} きな粉でハマるおやつトースト
+          %a{:href => "/"} 食欲ソソる！カレーチーズおかず
         .news-more-link
           %a{:href => "/"} もっと見る

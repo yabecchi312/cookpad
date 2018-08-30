@@ -42,8 +42,11 @@
                 - @recipes.each do |recipe|
                   .recipe_preview
                     .recipe_image
-                      %a
-                        レシピ画像イメージレシピ画像イメージレシピ画像イメージ
+                      = link_to recipe_path(id:recipe.id) do
+                        - if recipe.image?
+                          = image_tag recipe.image.to_s,class: "image_width_100"
+                        - else
+                          = image_tag 'blank_recipe.png',class: "image_width_100"
                     .recipe_text
                       %span.title
                         = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
@@ -56,5 +59,5 @@
                         - recipe.ingredients.each do |ingredient|
                           = ingredient.name
                     .clear_both
-        #side
+        = render '/shares/sidebar'
         .clear_both

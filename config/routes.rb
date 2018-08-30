@@ -15,9 +15,8 @@ Rails.application.routes.draw do
       delete 'avatar_destroy'
     end
   end
-
+  resources :diaries, only: [:index, :new, :create, :destroy]
   resources :myfolders, only: [:index, :create, :destroy]
-  get '/recipes/list/:id', to: 'recipes#list'
   resources :search, only: [:index]
   resources :kondates, only: [:index,:new,:create,:show,:destroy] do
     collection do

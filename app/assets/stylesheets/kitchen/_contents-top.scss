@@ -110,6 +110,14 @@
       color: #999999;
     }
   }
+  .blank_message {
+    text-align: center;
+    color: #999999;
+    a {
+      color: #845f4b;
+      text-decoration: underline;
+    }
+  }
 }
 
 #profile_container {

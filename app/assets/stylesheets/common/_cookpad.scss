@@ -25,20 +25,6 @@ body {
             float: left;
             width: 650px;
           }
-          #side {
-            float: right;
-            width: 300px;
-            #side_contents {
-              position: static;
-              width: 300px;
-              #side_banner_wrapper {
-                position: relative;
-                margin-bottom: 20px;
-                height: 250px;
-                background-color: #90b8ed;
-              }
-            }
-          }
         }
       }
     }
@@ -117,16 +103,6 @@ a.recipe_title:visited {
   display: block;
 }
 
-.gray {
-  color: #999999;
-}
-.font12 {
-  font-size: 12px;
-}
-.font18 {
-  font-size: 18px;
-}
-
 .recipe_sub_title {
   font-size: 16px;
   margin-bottom: 8px;
@@ -164,6 +140,15 @@ a.recipe_title:visited {
   font-size: 86%;
 }
 
+.search_submit_button.new_recipe {
+  padding: 3px 9px;
+  margin: 3px 20px;
+  min-width: 100px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 86%;
+}
+
 .return_top {
   color: #4d2200;
   font-weight: bold;
@@ -197,13 +182,31 @@ a.recipe_title:visited {
   }
 }
 
+.image_width_92 {
+  width: 92px;
+}
+
+.image_width_100 {
+  width: 100px;
+}
+
 .image_width_550 {
   width: 550px;
+}
+
+.image_wh_56x56 {
+  width: 56px;
+  height: 56px;
 }
 
 .image_wh_80x80 {
   width: 80px;
   height: 80px;
+}
+
+.image_wh_94x94 {
+  width: 94px;
+  height: 94px;
 }
 
 .image_wh_137x98 {
@@ -221,7 +224,65 @@ a.recipe_title:visited {
   height: 180px;
 }
 
+.image_wh_236x236 {
+  width: 236px;
+  height: 236px;
+}
+
 .image_wh_264x54 {
   width: 264px;
   height: 54px;
+}
+
+.image_wh_447x251 {
+  width: 447px;
+  height: 251px;
+}
+
+.font12 {
+  font-size: 12px;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.gray {
+  color: #999999;
+}
+
+.deep_green {
+  color: #8b9d06;
+}
+
+.light-blue {
+  color: #34b0b1;
+}
+
+.light-green {
+  color: #9cc536;
+}
+
+.pink {
+  color: #fda1b1;
+}
+
+.deep_yellow {
+  color: #dcd77d;
+}
+
+.orange {
+  color: #fd9940;
+}
+
+.light_purple {
+  color: #c38bac;
+}
+
+.bronze {
+  color: #845f4b;
 }

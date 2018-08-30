@@ -2,4 +2,4 @@
   = form_tag "/recipes/list/#{@user.id}", method: :get do
     = fa_icon 'search', class: "search_icon"
     = text_field_tag :keyword, "", class: "recipe_search_keyword", placeholder: "自分のレシピを検索"
-    = submit_tag "検索", id: "recipe_search"
+    = submit_tag "検索", id: "recipe_search",class: "search_submit_button small"
