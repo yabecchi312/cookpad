@@ -73,9 +73,9 @@ $(function(){
     $('.user-comment-form').on('submit', function(e){
       e.preventDefault();
       var formData = new FormData(this);
-      var href = window.location.href + '/comments'
+      var id = $(this).find('.form_recipeid').val() + '/comments'
       $.ajax({
-        url: href,
+        url: id,
         type: "POST",
         data: formData,
         dataType: 'json',

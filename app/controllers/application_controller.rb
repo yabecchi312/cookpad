@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   def history
     if user_signed_in?
-      ids = History.where(user_id: current_user.id).order(id: :DESC).uniq.limit(10)
-      recipe_ids = ids.map{|e| e.recipe_id}
+      ids = History.where(user_id: current_user.id).order(id: :DESC).limit(10)
+      recipe_ids = ids.map{|e| e.recipe_id}.uniq
       @histories = recipe_ids.map { |id| Recipe.find(id) }
     end
   end
