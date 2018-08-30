@@ -128,6 +128,8 @@
         のプロフィール
     .profile_text
       = @user.profile
+      - unless @user.profile.present?
+        %br
     .profile_text_edit{style: "display:none;"}
       = form_for(current_user, html: {class: "edit_user_profile"}) do |f|
         = f.text_area :profile, size: "77x4", class: "count-length", autofocus: true, maxlength: 200

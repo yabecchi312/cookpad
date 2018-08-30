@@ -22,6 +22,12 @@
         = f.label :avatar,class: "devise_form_file_label" do
           = fa_icon 'file-image-o', class: 'fa fa-image'
           %span ユーザーアイコンを設定できます
-          = f.file_field :avatar,class: "devise_form_file"
+          = f.file_field :avatar, class: "devise_form_file"
+      .user-image.col-md-2
+        %img{ style: "" }
+        = f.label :background_image, class: "devise_form_file_label" do
+          = fa_icon 'file-image-o', class: 'fa fa-image'
+          %span 背景画面を設定できます
+          = f.file_field :background_image, class: "devise_form_file"
       .actions
         = f.submit "新規登録する",class: "deivse_form_submit"
