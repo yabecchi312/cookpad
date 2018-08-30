@@ -99,7 +99,7 @@
       %span
         (#{@user.tsukurepos.count}件)
       .link_to_all.right
-        = link_to 'つくれぽ一覧 »','#'
+        = link_to 'つくれぽ一覧 »',"/tsukurepos/list/#{@user.id}"
     .tsukurepo_images
       - @tsukurepos.each do|tsukurepo|
         .tsukurepo_image
