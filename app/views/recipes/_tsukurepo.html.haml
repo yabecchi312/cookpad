@@ -10,6 +10,5 @@
         %p.message
           = tsukurepo.text
         %p.tsukurepo-author
-          -# = link_to "#{tsukurepo.user.name}", "#"
           = image_tag tsukurepo.user.avatar.to_s, class: "author_icon"
           = link_to "#{tsukurepo.user.name}", class: "author"

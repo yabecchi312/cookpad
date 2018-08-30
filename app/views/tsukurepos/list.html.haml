@@ -10,15 +10,15 @@
                 = link_to 'トップ', user_path
               %li.kitchen_navi_recipe
                 = link_to 'レシピ', "/recipes/list/#{@user.id}"
-              %li.kitchen_navi_tsukurepo
+              %li.kitchen_navi_tsukurepo.selected
                 = link_to 'つくれぽ', "/tsukurepos/list/#{@user.id}"
-              %li.kitchen_navi_kondate.selected
+              %li.kitchen_navi_kondate
                 = link_to '献立', "/kondates/list/#{@user.id}"
               %li.kitchen_navi_blog
                 = link_to do
                   = fa_icon 'link', text: "ブログ"
               %li.kitchen_navi_diary
                 %a ごはん日記
-          = render "users/kitchen/contents-kondate"
+          = render "users/kitchen/contents-tsukurepo"
 
         = render "shares/sidebar"

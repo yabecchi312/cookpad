@@ -9,6 +9,21 @@ class TsukureposController < ApplicationController
     end
   end
 
+  def destroy
+    @tsukurepo = Tsukurepo.find(params[:id])
+    if @tsukurepo.destroy
+      redirect_to action: "list", id: current_user.id
+    else
+      flash.now[:error] = "つくれぽの削除に失敗しました"
+      render action: "list", id: current_user.id
+    end
+  end
+
+  def list
+    @user = User.find(params[:id])
+    @tsukurepos = @user.tsukurepos
+  end
+
 
   private
   def tsukurepo_params

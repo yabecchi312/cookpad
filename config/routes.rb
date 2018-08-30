@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create]
   end
+  get '/recipes/list/:id', to: 'recipes#list'
 
   resources :tsukurepos, only: [:create,:destroy]
+  get '/tsukurepos/list/:id', to: 'tsukurepos#list'
 
   resources :users, only: [:show, :edit, :update, :destroy] do
     member do

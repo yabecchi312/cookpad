@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user
   def show
+    @tsukurepos = @user.tsukurepos.limit(8)
   end
 
   def edit
