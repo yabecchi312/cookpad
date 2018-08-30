@@ -22,7 +22,7 @@
                 - if @recipe.image.present?
                   = image_tag @recipe.image.to_s, id: "image_example", width: "280px"
                 - else
-                  = image_tag "image-upload.png"
+                  = image_tag "image-upload.png", id: "image_example", width: "280px"
                 = f.file_field :image, class: 'recipe-image'
             -# キャッチコピーと材料
             .catchphrase_and_ingredients
