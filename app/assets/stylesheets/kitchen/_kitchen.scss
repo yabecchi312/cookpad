@@ -74,6 +74,10 @@
         text-decoration: none;
         width: 100px;
       }
+      > a.following_color {
+        background: #ff9933;
+        color: #ffffff;
+      }
     }
     .follow_status {
       font-size: 86%;

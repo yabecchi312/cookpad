@@ -26,4 +26,5 @@
   .comment-form
     = form_for [@recipe,@comment],html: {class: "user-comment-form"} do |f|
       = f.text_area :text, id: "comment-field"
+      = hidden_field_tag :recipe_id, @recipe.id, class: "form_recipeid"
       = f.submit "コメントを書く", name: "commit", class: "submit", id: "new_comment"

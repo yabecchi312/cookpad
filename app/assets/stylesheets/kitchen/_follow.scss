@@ -34,7 +34,7 @@
       }
       .user_follow_button {
         float: right;
-        a {
+        > a {
           display: inline-block;
           float: right;
           background: #ff9933;
@@ -44,6 +44,12 @@
           font-size: 12px;
           padding: 4px;
           text-align: center;
+          display: inline-block;
+          width: 100px;
+        }
+        > a.unfollow_color {
+          background: transparent;
+          color: #ff9933;
         }
       }
     }
