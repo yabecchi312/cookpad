@@ -1,0 +1,303 @@
+.diaries-wrapper {
+  text-align: center;
+  width: 970px;
+  min-width: 970px;
+  margin: 0px auto;
+  background: transparent;
+  padding: 0px 10px;
+  height: 100%;
+  .dia_container {
+    text-align: left;
+    width: 970px;
+    margin: 0 auto;
+    padding-bottom: 1px;
+    margin-bottom: 24px;
+    #dia_new_main {
+      float: left;
+      width: 650px;
+    }
+  }
+}
+#dia_kitchen_header{
+  padding: 0;
+  border: 1px solid #e3dcca;
+  border-radius: 5px;
+  background: #ffffff;
+  margin-bottom: 10px;
+  overflow: visible;
+  #header_image_wrapper {
+    position: relative;
+    background: url(https://assets.cpcdn.com/assets/themes/kitchen/kitchen_header.png?cd2df83cb086c0ec3f0bb80e0ebc17a265a2c0c1d7571d3c21f9f6f24d0602a3) no-repeat;
+    height: 120px;
+    padding: 0;
+    border: none;
+    width: auto;
+    margin-bottom: 0;
+    border-radius: 5px 5px 0 0;
+  }
+  .header_bottom {
+    height: auto;
+    padding: 5px 10px 10px;
+    position: relative;
+    line-height: 35px;
+    min-height: 70px;
+  }
+    .user_icon {
+      top: -24px;
+      height: 90px;
+      width: 90px;
+      border-radius: 5px;
+      border: 1px solid #ebe6d0;
+      padding: 4px;
+      position: absolute;
+      background: #ffffff;
+      img {
+        width: 90px;
+        height: 90px;
+        border-radius: 4px;
+        vertical-align: middle;
+      }
+    .setting_link {
+      width: 90px;
+      bottom: 4px;
+      left: 4px;
+      border-radius: 0 0 4px 4px;
+      display: none;
+      font-size: 13px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      line-height: 20px;
+    }
+      .icon_camera_light {
+        background: url(https://assets.cpcdn.com/assets/sara/camera_light.png?0f9309a3602bae8cd15653b3c741190389f13e0539e2db3f5a4562def0bf892d);
+      }
+    }
+    .user_name {
+      margin-left: 110px;
+      position: relative;
+      float: none;
+      color: #4d2200;
+      font-size: 20px;
+      a {
+        text-decoration: none;
+        color: #4d2200;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+    .follow_status {
+      font-size: 86%;
+      margin: 0 0 5px 110px;
+      line-height: 2em;
+      color: #999999;
+      li {
+        display: inline-block;
+        a {
+         text-decoration: none;
+        }
+      }
+    }
+}
+.dia_kitchen_navi {
+  ul.kit_navi_list {
+    height: 44px;
+    border-bottom: 1px solid #e3dcca;
+    background-color: #f3f0e2;
+    padding-right: 5px;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #e3dcca;
+    text-align: center;
+    li {
+      float: left;
+      text-align: center;
+      background-color: #f3f0e2;
+      border-bottom: 1px solid #e3dcca;
+      border-right: 1px solid #e3dcca;
+      border-left: none !important;
+      a {
+        width: 85px;
+        height: 39px;
+        line-height: 18px;
+        padding-top: 5px;
+        display: block;
+        text-decoration: none;
+        font-size: 12px;
+        color: #4d2200;
+      }
+    }
+    .dia_navi_to_blog {
+      float: right;
+      border: none;
+      a {
+        height: 23px;
+        border: 1px solid #4d2200;
+        margin: 7px 2px 7px 7px;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.diary_container {
+  background: #ffffff;
+  border: 1px solid #e3dcca;
+  border-top: none;
+  margin-bottom: 6px;
+  padding: 4px;
+  border-radius: 0 0 5px 5px;
+  width: 640px;
+  #one_col.diary {
+    overflow: hidden;
+    margin: 10px 15px;
+  }
+}
+.main_cont.kitchen_cont {
+  padding-left: 15px;
+  width: 436px;
+  border-left: 1px solid #D6D7B9;
+  float: right;
+  padding-left: 13px;
+  width: 438px;
+  margin-right: 0;
+  #diary_header {
+    position: relative;
+    margin-bottom: 5px;
+    img.draft_icon {
+      vertical-align: middle;
+    }
+    .title_wrapper {
+      font-size: 143%;
+        color: #4d2200;
+        font-weight: bold;
+        margin: 10px 0 6px 0;
+        width: 400px;
+    }
+    .diary_delete_link {
+      font-size: 93%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      color: #999999;
+      text-decoration: underline;
+    }
+    #date_field.diary_date {
+      margin-bottom: 15px;
+      .date {
+        font-size: 93%;
+        color: #999999;
+        text-decoration: none;
+        display: block;
+      }
+    }
+  }
+  #diary_content.diary_content {
+    overflow: hidden;
+    margin-bottom: 10px;
+    .diary_image {
+      width: 180px;
+      float: left;
+      margin-bottom: 15px;
+      margin-right: 10px;
+      .diary_id {
+        display: none;
+      }
+      img {
+        width: 180px;
+      }
+    }
+    .diary_text {
+      float: right;
+      width: 246px;
+      line-height: 180%;
+      word-break: break-all;
+      .inplaceeditor-empty {
+        color: #999;
+        font-size: 12px;
+        img {
+          // vertical-align: middle;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+  #diary_info.link {
+    text-align: right;
+    text-decoration: underline;
+    a {
+      color: #845f4b;
+    }
+  }
+  #publish.submit {
+    border: 1px solid #e5e5e5;
+    background: #f5f5f5;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  #diary_navi {
+    margin: 10px 0 20px 0;
+    .pager_border {
+      padding: 10px 0;
+      margin: 0;
+      text-align: center;
+      clear: both;
+      overflow: hidden;
+      a.prev {
+        float: left;
+        width: 80px;
+        margin: 0;
+        padding: 7px 12px;
+        border: 1px solid #d9d9d9;
+        text-decoration: none;
+        img {
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+  h3.title_border {
+    font-size: 16px;
+    margin-top: 5px;
+    border-bottom: 1px solid #e3dcca;
+    padding: 0 0 3px 0;
+    margin: 10px 0;
+    font-weight: bold;
+    position: relative;
+    color: #4d2200;
+  }
+  .diary_recipes_form {
+    margin-top: 20px;
+    input#diary_recipe_id {
+      width: 140px;
+      font-size: 108%;
+      line-height: 1.5;
+      padding: 3px 5px;
+      margin: 0 5px 0 0;
+      box-shadow: inset 1px 1px 4px #e6e6e6;
+      border-radius: 3px;
+      box-sizing: border-box;
+      border: 1px solid #cccccc;
+      vertical-align: middle;
+      display: inline-block;
+      font-weight: normal;
+    }
+    .button.small {
+      padding: 3px 9px;
+      margin: 3px 0;
+      min-width: 60px;
+      border-radius: 3px;
+      font-weight: normal;
+      font-size: 86%;
+    }
+    #diary_recipes {
+    margin: 20px 0 30px 0;
+    }
+  }
+  #diary_recipes {
+    margin: 20px 0 30px 0;
+  }
+}
+
