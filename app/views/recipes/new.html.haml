@@ -66,12 +66,8 @@
             .sk-bottom.clearfix
             -# レシピID、公開日、更新日
             .meta_data_wrapper
-              .recipe_id_and_published_date
-                %span.recipe_id レシピID : 5198962
-                %span.published_date 公開日 : 未公開
-                %span 更新日 : 18/08/07
         .submit-actions.clearfix
-          = f.submit "保存する"
+          = f.submit "保存する",class: "search_submit_button new_recipe "
 
     .contents__right
       = render "side-banner-wrapper"

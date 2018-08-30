@@ -13,7 +13,7 @@
                 = form_tag "/myfolders/", method: :get do
                   = fa_icon 'search', class: 'search_icon'
                   = text_field_tag :keyword,"",class: "recipe_search_keyword", placeholder: "MYフォルダ内を検索"
-                  = submit_tag "レシピ検索", id: "#btn_myfolder_search"
+                  = submit_tag "レシピ検索", id: "#btn_myfolder_search",class: "search_submit_button small"
             #myfolder_left
               #myfolder_left_container
                 .navigation
@@ -39,8 +39,11 @@
                 - @recipes.each do |recipe|
                   .recipe_preview
                     .recipe_image
-                      %a
-                        レシピ画像イメージレシピ画像イメージレシピ画像イメージ
+                      = link_to recipe_path(id:recipe.id) do
+                        - if recipe.image?
+                          = image_tag recipe.image.to_s,class: "image_width_100"
+                        - else
+                          = image_tag 'blank_recipe.png',class: "image_width_100"
                     .recipe_text
                       %span.title
                         = link_to recipe.title,'#',class: "recipe_title"
@@ -53,5 +56,5 @@
                         - recipe.ingredients.each do |ingredient|
                           = ingredient.name
                     .clear_both
-        #side
+        = render '/shares/sidebar-short'
         .clear_both
