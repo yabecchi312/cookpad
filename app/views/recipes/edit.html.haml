@@ -1,7 +1,7 @@
 .main
   .contents
     .contents__left
-      = form_for@recipe do |f|
+      = form_for @recipe do |f|
         .contents__left__recipe.clearfix
           -# contents__left内の削除、印刷のところ
           .recipe_author
@@ -19,7 +19,10 @@
               -# 画像
             .recipe-photo
               = f.label :image do
-                = image_tag "image-upload.png"
+                - if @recipe.image.present?
+                  = image_tag @recipe.image.to_s, id: "image_example", width: "280px"
+                - else
+                  = image_tag "image-upload.png", id: "image_example", width: "280px"
                 = f.file_field :image, class: 'recipe-image'
             -# キャッチコピーと材料
             .catchphrase_and_ingredients
@@ -73,7 +76,7 @@
                 %span.published_date 公開日 : 未公開
                 %span 更新日 : 18/08/07
         .submit-actions.clearfix
-          = f.submit "保存する"
+          = f.submit "保存する",class: "search_submit_button new_recipe"
 
     .contents__right
       = render "side-banner-wrapper"

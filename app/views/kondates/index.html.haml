@@ -40,23 +40,59 @@
               .kondate_category_navi
                 %h3.title_row
                   主な食材から探す
-                .category_segment.clearfix
-                  - 8.times do
-                    .three_column
-                      = link_to '#' do
-                        %span 鳥肉
+                .category_segment.ingredient.clearfix
+                  .three_column
+                    = link_to '#',class: "category_0" do
+                      %span.category_name 鳥肉
+                  .three_column
+                    = link_to '#',class: "category_1" do
+                      %span.category_name 豚肉
+                  .three_column
+                    = link_to '#',class: "category_2" do
+                      %span.category_name 牛肉
+                  .three_column
+                    = link_to '#',class: "category_3" do
+                      %span.category_name 魚介
+                  .three_column
+                    = link_to '#',class: "category_4" do
+                      %span.category_name 卵
+                  .three_column
+                    = link_to '#',class: "category_5" do
+                      %span.category_name 大豆
+                  .three_column
+                    = link_to '#',class: "category_6" do
+                      %span.category_name ごはんもの
+                  .three_column
+                    = link_to '#',class: "category_7" do
+                      %span.category_name パスタ
                 %h3.title_row
                   ジャンルから探す
-                .category_segment.clearfix
-                  - 3.times do
-                    .three_column
-                      = link_to '#' do
-                        %span 和食
+                .category_segment.genre.clearfix
+                  .three_column
+                    = link_to '#',class: "category_0" do
+                      %span.category_name 和風
+                  .three_column
+                    = link_to '#',class: "category_1" do
+                      %span.category_name 洋風
+                  .three_column
+                    = link_to '#',class: "category_2" do
+                      %span.category_name 中華風
                 %h3.title_row
                   シーンから探す
-                .category_segment.clearfix
-                  - 5.times do
-                    .three_column
-                      = link_to '#' do
-                        %span 朝食
-        #side
+                .category_segment.scene.clearfix
+                  .three_column
+                    = link_to '#',class: "category_0" do
+                      %span.category_name 朝ごはん
+                  .three_column
+                    = link_to '#',class: "category_1" do
+                      %span.category_name 昼ごはん
+                  .three_column
+                    = link_to '#',class: "category_2" do
+                      %span.category_name 晩ごはん
+                  .three_column
+                    = link_to '#',class: "category_3" do
+                      %span.category_name お弁当
+                  .three_column
+                    = link_to '#',class: "category_4" do
+                      %span.category_name パーティー
+        = render 'shares/sidebar'

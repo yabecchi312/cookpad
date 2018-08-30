@@ -203,9 +203,124 @@
     #side_banner_wrapper {
       position: relative;
       margin-bottom: 20px;
-      height: 250px;
-      background-color: #90b8ed;
     }
+  }
+}
+
+#new_next_tieup_wrapper {
+  border: 1px solid #ded5c0;
+  border-radius: 5px;
+  width: 300px;
+  position: relative;
+  display: block;
+  .nt_content_title {
+    color: #4E2100;
+    font-size: 85%;
+    font-weight: bold;
+    padding: 5px 3px 3px 5px;
+    border-bottom: none;
+    position: relative;
+    background-color:#efe1be;
+    span.badge_pr {
+      background: #cca180;
+      padding: 3px 5px;
+      margin: 0 0 3px 7px;
+      border-radius: 3px;
+      display: inline-block;
+      vertical-align: middle;
+      color: #ffffff;
+      line-height: 1;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+    }
+    .link_to_list {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+  .tieup_list {
+    background-color: #fff;
+    border-radius: 0px 0px 5px 5px;
+    li {
+      display: block;
+      border-top: 1px solid #F5F1E1;
+    }
+    .left_col {
+      width: 265px;
+      float: left;
+      .head_text {
+        display: block;
+        margin-bottom: 0px;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 6px 10px;
+      }
+    }
+    .right_col {
+      display: block;
+      float: right;
+      cursor: pointer;
+      padding-top: 8px;
+      padding-right: 10px;
+      .arrow_right_icon {
+        color: #fd9940;
+      }
+    }
+  }
+}
+
+.ad_image_and_text {
+  .image_of_add {
+    padding: 5px;
+    float: left;
+  }
+  .title_image_and_text {
+    .title_text {
+      padding-left: 5px;
+      overflow: hidden;
+      display: block;
+      font-size: 15px;
+      color: #330000;
+      font-weight: bold;
+      text-decoration: underline;
+      display: block;
+    }
+  }
+  .description_image_and_text {
+    font-size: 85%;
+    padding: 3px 5px;
+    overflow: hidden;
+    line-height: 20px;
+    p {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  .right_arrow {
+    display: block;
+    float: right;
+    cursor: pointer;
+    padding-top: 2px;
+    padding-right: 10px;
+    .arrow_right_icon {
+      color: #fd9940;
+    }
+  }
+}
+.link_to_event {
+  font-size: 85%;
+  padding: 5px 10px;
+  border-top: 1px solid #F5F1E1;
+  text-align: right;
+  .link_to_event_text {
+    padding-left: 11px;
+    font-weight: normal;
+    display: inline;
+    text-decoration:underline;
   }
 }
 

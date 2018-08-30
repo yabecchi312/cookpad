@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20180830081847) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
+  create_table "diaries", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "title",      limit: 65535
+    t.date     "date"
+    t.text     "image",      limit: 65535
+    t.text     "text",       limit: 65535
+    t.string   "type"
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_diaries_on_user_id", using: :btree
+  end
+
   create_table "flows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "recipe_id",                null: false
     t.text     "image",      limit: 65535
@@ -167,6 +179,7 @@ ActiveRecord::Schema.define(version: 20180830081847) do
 
   add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
+  add_foreign_key "diaries", "users"
   add_foreign_key "flows", "recipes"
   add_foreign_key "histories", "recipes"
   add_foreign_key "histories", "users"

@@ -9,16 +9,16 @@
           .link_to_all.right
             = link_to 'レシピ一覧 »','#'
         .main_image
-          %a
+          = image_tag 'dummy_recipes/caesarsalad.jpg',class: "image_wh_236x236"
         .sub_images
           .sub_image
-            %a
+            = image_tag 'dummy_recipes/egg.jpeg',class: "image_wh_56x56"
           .sub_image
-            %a
+            = image_tag 'dummy_recipes/omrice.jpg',class: "image_wh_56x56"
           .sub_image
-            %a
+            = image_tag 'dummy_recipes/oyakodon.jpg',class: "image_wh_56x56"
           .sub_image
-            %a
+            = image_tag 'dummy_recipes/sanma.jpeg',class: "image_wh_56x56"
       = render "users/kitchen/search-box"
     #activity_container.container_inner
       .title_row
@@ -65,31 +65,31 @@
     %ul.recipe_categories.clearfix
       %li
         %a.category_image
-          %img
+          = image_tag 'dummy_recipes/oyakodon.jpg',class: "image_wh_56x56"
         = link_to '★つくれぽ100件', '#'
         .recipe_count
           5品
       %li
         %a.category_image
-          %img
+          = image_tag 'dummy_recipes/karaage.JPG',class: "image_wh_56x56"
         = link_to '肉祭り', '#'
         .recipe_count
           7品
       %li
         %a.category_image
-          %img
+          = image_tag 'dummy_recipes/sanma.jpeg',class: "image_wh_56x56"
         = link_to 'つくれぽ10件', '#'
         .recipe_count
           15品
       %li
         %a.category_image
-          %img
+          = image_tag 'dummy_recipes/chikuzenni.jpg',class: "image_wh_56x56"
         = link_to '季節の料理', '#'
         .recipe_count
           3品
       %li
         %a.category_image
-          %img
+          = image_tag 'dummy_recipes/beafst.jpg',class: "image_wh_56x56"
         = link_to 'ご馳走', '#'
         .recipe_count
           4品
@@ -113,11 +113,13 @@
     .title_row
       ごはん日記
       .link_to_all.right
-        = link_to 'ごはん日記一覧 »','#'
+        = link_to 'ごはん日記一覧 »','/diaries'
     .diary_title
       = link_to '☼焼きサバと野菜の甘酢炒め'
       %span
         2018/08/05
+    .blank_message
+      = link_to "ごはん日記を書く", new_diary_path
   #profile_container.box.container_inner
     .user_info
       .user_icon

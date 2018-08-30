@@ -11,13 +11,13 @@
             %li.ranking-box__list
               = link_to recipe_path(rank), class: "recipe_show" do
                 - if rank.image.present?
-                  = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
+                  = image_tag(rank.image , class: "side_image image_wh_94x94")
                 - else
-                  %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50", class: "side_image"}
-                %i.fas.fa-crown.fa-lg.my-orange.fa-pull-left
-                %span.index
-                  = "#{i}"
+                  %img.user-avatar__image{ src: "/assets/icon_default.png", class: "side_image image_wh_94x94"}
                 %span.ranking-box__list--title
+                  %i.fas.fa-crown.fa-lg.my-orange
+                  %span.index
+                    = "#{i}"
                   = rank.title
                 %br
                 %span.ranking-box__list--user-name
@@ -28,13 +28,13 @@
             %li.ranking-box__list
               = link_to recipe_path(rank), class: "recipe_show" do
                 - if rank.image.present?
-                  = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
+                  = image_tag(rank.image, class: "side_image image_wh_94x94")
                 - else
-                  %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50", class: "side_image"}
-                %i.fas.fa-crown.fa-lg.my-silver.fa-pull-left
-                %span.index
-                  = "#{i}"
+                  %img.user-avatar__image{ src: "/assets/icon_default.png", class: "side_image image_wh_94x94"}
                 %span.ranking-box__list--title
+                  %i.fas.fa-crown.fa-lg.my-silver
+                  %span.index
+                    = "#{i}"
                   = rank.title
                 %br
                 %span.ranking-box__list--user-name
@@ -45,13 +45,13 @@
             %li.ranking-box__list
               = link_to recipe_path(rank), class: "recipe_show" do
                 - if rank.image.present?
-                  = image_tag(rank.image ,width: 50, height: 50, class: "side_image")
+                  = image_tag(rank.image , class: "side_image image_wh_94x94")
                 - else
-                  %img.user-avatar__image{ src: "/assets/icon_default.png",height: "50", width: "50", class: "side_image"}
-                %i.fas.fa-crown.fa-lg.fa-pull-left
-                %span.index
-                  = "#{i}"
+                  %img.user-avatar__image{ src: "/assets/icon_default.png", class: "side_image image_wh_94x94"}
                 %span.ranking-box__list--title
+                  %i.fas.fa-crown.fa-lg.bronze
+                  %span.index
+                    = "#{i}"
                   = rank.title
                 %br
                 %span.ranking-box__list--user-name

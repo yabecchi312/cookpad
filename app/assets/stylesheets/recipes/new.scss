@@ -267,7 +267,6 @@
   padding-bottom: 15px;
   display: block;
   .step {
-    height:100px;
     width: 136px;
     display: block;
     float: left;
@@ -314,9 +313,7 @@
     }
     &__main {
       font-size: 87.5%;
-      height: 71px;
       &_image {
-        height: 27px;
         margin-bottom: 2px;
         cursor: pointer;
         .step-image {
