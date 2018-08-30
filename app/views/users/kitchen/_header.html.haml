@@ -47,7 +47,7 @@
         %span
           |
       %li
-        = link_to "フォロワー", followers_user_path
+        = link_to "フォロワー", followers_user_path(@user.id)
     .header_profile
       .short
         = @user.profile
