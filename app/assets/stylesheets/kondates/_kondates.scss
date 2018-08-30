@@ -141,9 +141,90 @@
     font-size: 15px;
     width: 33%;
     float: left;
+    .category_name {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    a {
+      text-decoration: none;
+      padding: 15px 0 15px 62px;
+      line-height: 50px;
+      color: #330000;
+    }
   }
 }
 
+.category_segment.ingredient {
+  @mixin group1_column($background-position){
+    background-image:image-url("category_icons/category_icons_1.png");
+    background-repeat: no-repeat;
+    background-position: $background-position;
+  }
+  .category_0 {
+    @include group1_column(6px 0px);
+  }
+  .category_1 {
+    @include group1_column(6px -60px);
+  }
+  .category_2 {
+    @include group1_column(6px -120px);
+  }
+  .category_3 {
+    @include group1_column(6px -180px);
+  }
+  .category_4 {
+    @include group1_column(6px -240px);
+  }
+  .category_5 {
+    @include group1_column(6px -300px);
+  }
+  .category_6 {
+    @include group1_column(6px -360px);
+  }
+  .category_7 {
+    @include group1_column(6px -420px);
+  }
+}
+
+.category_segment.genre {
+  @mixin group2_column($background-position){
+    background-image:image-url("category_icons/category_icons_2.png");
+    background-repeat: no-repeat;
+    background-position: $background-position;
+  }
+  .category_0 {
+    @include group2_column(6px 0px);
+  }
+  .category_1 {
+    @include group2_column(6px -60px);
+  }
+  .category_2 {
+    @include group2_column(6px -120px);
+  }
+}
+
+.category_segment.scene {
+  @mixin group3_column($background-position){
+    background-image:image-url("category_icons/category_icons_3.png");
+    background-repeat: no-repeat;
+    background-position: $background-position;
+  }
+  .category_0 {
+    @include group3_column(6px 0px);
+  }
+  .category_1 {
+    @include group3_column(6px -60px);
+  }
+  .category_2 {
+    @include group3_column(6px -120px);
+  }
+  .category_3 {
+    @include group3_column(6px -180px);
+  }
+  .category_4 {
+    @include group3_column(6px -240px);
+  }
+}
 .premium_kondate {
   padding-top: 0;
   margin-bottom: 10px;
