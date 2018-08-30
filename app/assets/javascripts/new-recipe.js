@@ -64,7 +64,7 @@ $(document).on('turbolinks:load', function(){
 $(function(){
   var step_number = $(".step").length;
 
-// 新規レシピ
+// 新規レシピ step_numに +1してあるのは、ターボリンクスの影響でうまく作動しない時があるからです。
   function newAppendStep(step_num){
     var newStep = `<div class="step">
                   <div class="step__header">
@@ -84,13 +84,13 @@ $(function(){
                   </div>
                   <div class="step__main">
                     <div class="step__main_image">
-                      <label for="recipe_flows_attributes_0_image">
-                        <img src="/assets/step_blank-c36c8efecb31bebf8f7ef53a7fc4f24034c74677b0fdb521996e77d54b2962fa.png" alt="Step blank">
-                        <input class="step-image" type="file" name="recipe[flows_attributes][][image]">
+                      <label for="recipe_flows_attributes_${step_num + 1}_image">
+                        <img class="step_example" width="136px" src="/assets/step_blank-c36c8efecb31bebf8f7ef53a7fc4f24034c74677b0fdb521996e77d54b2962fa.png" alt="Step blank">
+                        <input class="step-image" type="file" name="recipe[flows_attributes][${step_num + 1}][image]" id="recipe_flows_attributes_${step_num + 1}_image">
                       </label>
                     </div>
                     <div class="step__main_text">
-                      <textarea name="recipe[flows_attributes][][text]"></textarea>
+                      <textarea name="recipe[flows_attributes][${step_num + 1}][text]"></textarea>
                     </div>
                   </div>
                 </div>`
