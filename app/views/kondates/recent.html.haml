@@ -31,4 +31,6 @@
                             - else
                               .kondate_status_icon 副
                             = link_to "#{recipe.title}",recipe_path(id:recipe.id),class: "recipe_title"
+                = paginate @kondates
+
 
