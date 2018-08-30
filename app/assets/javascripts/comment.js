@@ -74,7 +74,6 @@ $(function(){
       e.preventDefault();
       var formData = new FormData(this);
       var href = window.location.href + '/comments'
-      console.log(this);
       $.ajax({
         url: href,
         type: "POST",
@@ -85,7 +84,7 @@ $(function(){
       })
       .done(function(data){
         var html = buildHTML(data);
-        $('#comment-list').append(html)
+        $('#comments-list').append(html)
         $('#comment-field').val('')
         $('.submit').prop('disabled', false);
       })
