@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       get 'follow'
       get 'unfollow'
       delete 'avatar_destroy'
+      get 'followings'
+      get 'followers'
     end
   end
   resources :diaries, only: [:index, :new, :create, :destroy]
