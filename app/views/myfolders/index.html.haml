@@ -13,7 +13,7 @@
                 = form_tag "/myfolders/", method: :get do
                   = fa_icon 'search', class: 'search_icon'
                   = text_field_tag :keyword,"",class: "recipe_search_keyword", placeholder: "MYフォルダ内を検索"
-                  = submit_tag "レシピ検索", id: "#btn_myfolder_search"
+                  = submit_tag "レシピ検索", id: "#btn_myfolder_search",class: "search_submit_button small"
             #myfolder_left
               #myfolder_left_container
                 .navigation
