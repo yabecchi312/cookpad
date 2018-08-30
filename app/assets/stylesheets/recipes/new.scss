@@ -8,6 +8,21 @@
   margin-top: 10px;
 }
 
+.recipe_submit_button {
+  width: 138px;
+  background-color: #f06000;
+  background: linear-gradient(to bottom, #ff8a24, #f06000);
+  text-shadow: 0 -1px 0 #bd4b00;
+  border: 1px solid #cc5200;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  min-width: 160px;
+  cursor: pointer;
+  font-size: 115%;
+  margin-left: 10px;
+}
 
 .main {
   height: 1481px;
