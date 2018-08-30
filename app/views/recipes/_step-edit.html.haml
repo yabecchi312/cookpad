@@ -14,7 +14,10 @@
     .step__main
       .step__main_image
         = fl.label :image do
-          = image_tag "step_blank.png"
+          - if @recipe.flows[fl.index].image.present?
+            = image_tag @recipe.flows[fl.index].image, class: "step_example", width: "136px"
+          - else
+            = image_tag "step_blank.png", class: "step_example", width: "136px"
           = fl.file_field :image, class: "step-image"
       .step__main_text
         -# = image_tag "edit-image.png", class: "edit-image"

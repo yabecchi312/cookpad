@@ -18,9 +18,10 @@
               = f.text_field :title, required: true
               -# 画像
             .recipe-photo
-              = f.label :image do
-                = image_tag "image-upload.png"
-                = f.file_field :image, class: 'recipe-image'
+              #recipe-main-photo
+                = f.label :image do
+                  = image_tag "image-upload.png", id: "image_example", width: "280px"
+                  = f.file_field :image, class: 'recipe-image'
             -# キャッチコピーと材料
             .catchphrase_and_ingredients
               .catchphrase_recipe_author_top

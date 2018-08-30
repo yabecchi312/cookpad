@@ -13,12 +13,12 @@
     = f.fields_for :flows do |fl|
       .step__main_image
         = fl.label :image do
-          = image_tag "step_blank.png"
-          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][][image]"
+          = image_tag "step_blank.png", class: "step_example", width: "136px"
+          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][#{fl.index}][image]"
       .step__main_text
         -# = image_tag "edit-image.png", class: "edit-image"
         -# クリックして作り方を入力
-        = fl.text_area :text, name: "recipe[flows_attributes][][text]"
+        = fl.text_area :text, name: "recipe[flows_attributes][#{fl.index}][text]"
 .step
   .step__header
     .step__header__left
@@ -34,9 +34,9 @@
     = f.fields_for :flows do |fl|
       .step__main_image
         = fl.label :image do
-          = image_tag "step_blank.png"
-          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][][image]"
+          = image_tag "step_blank.png", class: "step_example", width: "136px"
+          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][#{fl.index}][image]"
       .step__main_text
         -# = image_tag "edit-image.png", class: "edit-image"
         -# クリックして作り方を入力
-        = fl.text_area :text, name: "recipe[flows_attributes][][text]"
+        = fl.text_area :text, name: "recipe[flows_attributes][#{fl.index}][text]"
