@@ -113,7 +113,9 @@
               = link_to "もっと見る(238件)"
             .tsukurepo-post
               .tsukurepo_content_for
-                = link_to "", class: "tsukurepo_button" do
+                = hidden_field_tag :recipe_id,@recipe.id
+                = hidden_field_tag :user_id,current_user.id
+                = link_to "", class: "tsukurepo_button",id: "js_tsukurepo_modal_button" do
                   = fa_icon "edit"
                   つくれぽを送る
           #comments.show

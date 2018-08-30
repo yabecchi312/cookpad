@@ -1,0 +1,27 @@
+#tsukurepo-modal-content
+  #tsukurepost_header
+    #post_header
+      #posted-user-name
+        %span.recipe-title
+          夏は冷製で！黄金比率♡濃厚かぼちゃスープ
+      %h2.content_title
+        「つくれぽ」を送る
+  #tsukurepo_post_navi
+    .info_msg#tsukurepo_info_msg
+      あなたが作った料理の写真とメッセージで
+      %br
+      あやぴよこさんに「おいしかった！」を伝えよう。
+    .tab#tsukurepo_post
+      .tsukurepo
+        .tsukurepo-inner
+          .tsukurepo_info
+            %p.date 18/08/30
+          .image.image_wrapper
+            = form_for @tsukurepo do |f|
+              = f.hidden_field :recipe_id,value:10
+              = f.hidden_field :user_id,value:2
+              = f.label :image do
+                = image_tag "https://assets.cpcdn.com/assets/shared/tsukurepo_photo_blank.png?4a966ee051b533c75acabd178e0945eb3a9a4c495c832278fbface07682a94db"
+                = f.file_field :image, class: "tsukurepo_photo_wrapper_hidden"
+              = f.text_area :text,class: "tsukurepo_textarea"
+              = f.submit '送信する',id: "tsukurepo_submit_btn"
