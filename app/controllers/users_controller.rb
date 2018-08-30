@@ -47,10 +47,24 @@ class UsersController < ApplicationController
     current_user.stop_following(@user)
   end
 
+  def followings
+    @following_users = Follow.where(follower_id: @user.id)
+    @following_count = @following_users.count
+    user_ids = @following_users.map {|e| e.followable_id}
+    @users = user_ids.map { |id| User.find(id) }
+  end
+
+  def followers
+    @follower_users = Follow.where(followable_id: @user.id)
+    @follower_count = @follower_users.count
+    user_ids = @follower_users.map {|e| e.follower_id}
+    @users = user_ids.map { |id| User.find(id) }
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :avatar, :profile)
+    params.require(:user).permit(:name, :avatar, :profile, :background_image)
   end
 
   def set_user
