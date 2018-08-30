@@ -17,4 +17,6 @@ class User < ApplicationRecord
 
   has_many :kondates
 
+  has_many :tsukurepos
+
 end
