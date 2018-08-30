@@ -66,6 +66,16 @@
             line-height: 30px;
             padding-left: 40px;
           }
+          a.morning {
+            background-image:image-url("user_kondate_icons.png");
+            background-repeat: no-repeat;
+            background-position: 3px -5px;
+          }
+          a.lunch {
+            background-image:image-url("user_kondate_icons.png");
+            background-repeat: no-repeat;
+            background-position: 3px -46px;
+          }
         }
         .kondate_categories_last {
           float: left;
@@ -75,6 +85,11 @@
             display: block;
             line-height: 30px;
             padding-left: 40px;
+          }
+          a.dinner {
+            background-image:image-url("user_kondate_icons.png");
+            background-repeat: no-repeat;
+            background-position: 3px -90px;
           }
         }
       }
