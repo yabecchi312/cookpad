@@ -1,0 +1,2 @@
+class TsukureposController < ApplicationController
+end

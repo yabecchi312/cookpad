@@ -1,0 +1,2 @@
+class Tsukurepo < ApplicationRecord
+end
