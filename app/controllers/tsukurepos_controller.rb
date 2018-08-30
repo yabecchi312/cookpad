@@ -1,14 +1,11 @@
 class TsukureposController < ApplicationController
-  def index
-    @tsukurepo = Tsukurepo.new
-  end
 
   def create
     @tsukurepo = Tsukurepo.new(tsukurepo_params)
     if @tsukurepo.save
-      redirect_to root_path
+      redirect_to controller: :recipes, action: :show, id: params.require(:tsukurepo)[:recipe_id]
     else
-      render :index
+      redirect_to root_path
     end
   end
 

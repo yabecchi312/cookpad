@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-  resources :tsukurepos, only: [:index,:show,:create,:destroy]
+  resources :tsukurepos, only: [:create,:destroy]
 
   resources :users, only: [:show, :edit, :update, :destroy] do
     member do

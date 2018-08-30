@@ -5,10 +5,11 @@ $(document).on('click','#js_tsukurepo_modal_button',function(e){
   if($("#modal-overlay")[0]) $("#modal-overlay").remove();
   $("body").append('<div id="modal-overlay"></div>');
   centeringModalSyncer();
-  var user_id = $(this).prevAll()[0].value
-  var recipe_title = $(this).prevAll()[1].value
-  var recipe_id = $(this).prevAll()[2].value
-  $("#modal-overlay").append(makeTsukurepoModal(recipe_id,recipe_title,user_id));
+  var user_id = $(this).siblings()[0].value
+  var user_name = $(this).siblings()[1].value
+  var recipe_title = $(this).siblings()[2].value
+  var recipe_id = $(this).siblings()[3].value
+  $("#modal-overlay").append(makeTsukurepoModal(recipe_id,recipe_title,user_id,user_name));
   $("#modal-overlay").fadeIn("slow");
   $("#tsukurepo-modal-content").fadeIn("slow");
 });
@@ -23,7 +24,7 @@ $(document).on("click","#modal-close",function(){
 
 
 // モーダルのhtml
-function makeTsukurepoModal(recipe_id,recipe_title,user_id) {
+function makeTsukurepoModal(recipe_id,recipe_title,user_id,user_name) {
   html =
   `
 <div id="tsukurepo-modal-content">
@@ -44,7 +45,7 @@ function makeTsukurepoModal(recipe_id,recipe_title,user_id) {
     <div class="info_msg" id="tsukurepo_info_msg">
       あなたが作った料理の写真とメッセージで
       <br>
-      あやぴよこさんに「おいしかった！」を伝えよう。
+      ${user_name}さんに「おいしかった！」を伝えよう。
     </div>
     <div class="tab" id="tsukurepo_post">
       <div class="tsukurepo">
