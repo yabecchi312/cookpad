@@ -290,7 +290,7 @@
   .tsukurepo_and_comment_wrapper {
     background: #fffdef;
     height: auto;
-    padding: 24px;
+    padding: 16px;
     padding-top: 15px;
     border-bottom: 1px solid #e3dcca;
     .tsukurepo_title {
@@ -320,7 +320,8 @@
         margin-bottom: 12px;
         margin-right: 14px;
         width: 136px;
-        float: left;
+        display: inline-block;
+        vertical-align: top;
         .tsukurepo {
           border-radius: 3px;
           border: 1px solid #e3dcca;
