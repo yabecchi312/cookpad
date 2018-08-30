@@ -15,4 +15,5 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :histories, dependent: :destroy
   has_many :kondates
+  has_many :tsukurepos
 end

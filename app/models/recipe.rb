@@ -11,9 +11,14 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   belongs_to :user
-  has_many :categories, through: :recipe_categories
+
   has_many :kondates, through: :recipe_kondates
   has_many :recipe_kondates
+  has_many :kondates, through: :recipe_kondates
+  has_many :recipe_kondates
+  has_many :tsukurepos, dependent: :destroy
+  has_many :categories, through: :recipe_categories
+
   mount_uploader :image, ImageUploader
   is_impressionable counter_cache: true
 

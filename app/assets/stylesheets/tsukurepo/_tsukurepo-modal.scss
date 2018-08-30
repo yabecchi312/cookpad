@@ -1,0 +1,119 @@
+#tsukurepo-modal-content {
+  margin:1.5em auto 0;
+  padding:10px 20px;
+  border: 5px solid #e3dcca;
+  border-radius: 5px;
+  background: #fff;
+  z-index:2;
+  width: 510px;
+  overflow: auto;
+  .button-link{
+    float: right;
+  }
+  .button-link:hover{
+    cursor:pointer;
+    color:#f00;
+  }
+  #tsukurepost_header {
+    #post_header {
+      padding: 8px 8px 0;
+      #posted-user-name {
+        margin-bottom: 2px;
+        display: inline;
+        .recipe-title {
+          font-size: 113%;
+          color: #889b00;
+          font-weight: bold;
+        }
+      }
+      .content_title {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #2F1C12;
+        font-weight: bold;
+      }
+    }
+  }
+  #tsukurepo_post_navi {
+    #tsukurepo_info_msg {
+      margin: 5px 10px 10px 10px;
+      overflow: hidden;
+      clear: both;
+      text-align: center;
+      padding: 10px;
+      background: #fffdef;
+      border: 1px solid #f0ebca;
+    }
+    .tab {
+      padding: 15px;
+      text-align: center;
+    }
+    .tsukurepo {
+      margin: 0 auto !important;
+      border-radius: 3px;
+      border: 1px solid #e3dcca;
+      box-shadow: 0 1px 1px #cccccc;
+      width: 136px;
+      background: #fff;
+      font: 14px / 1.4 "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "Osaka", "MS PGothic", "ＭＳ Ｐゴシック", arial, helvetica, clean, sans-serif;
+      color: #3c3c3c;
+      .tsukurepo-inner {
+        margin: 3px 5px 8px;
+        .tsukurepo_info {
+          position: relative;
+          width: 124px;
+          margin-bottom: 3px;
+          text-align: left;
+          p.date {
+            margin-bottom: 0;
+            color: #999999;
+            font-size: 10px;
+          }
+        }
+        .image_wrapper {
+          position: relative;
+          cursor: pointer;
+          overflow: hidden;
+        }
+        .image {
+          width: 130px;
+          margin: 0 -2px 8px;
+          img {
+            // display: block;
+          }
+        }
+        .tsukurepo_photo_wrapper_hidden {
+          display: none;
+        }
+        #tsukurepo_uploaded_photo_wrapper {
+        }
+        .tsukurepo_textarea {
+          width: 120px;
+          height: 80px;
+          border: 1px solid #afafaf;
+          overflow: hidden;
+          margin: 15px 0 0 0;
+          box-shadow: inset 1px 1px 4px #e6e6e6;
+          border-radius: 3px;
+          box-sizing: border-box;
+          vertical-align: middle;
+          display: inline-block;
+        }
+        #tsukurepo_submit_btn {
+          padding: 3px 9px;
+          margin: 15px 0 6px;
+          min-width: 60px;
+          border-radius: 3px;
+          font-weight: normal;
+          box-shadow: none;
+          cursor: pointer;
+          background-image: none;
+          background-color: #ececec;
+          color: #330000;
+          border: 1px solid lightgray;
+          font-size: 86%;
+        }
+      }
+    }
+  }
+}
