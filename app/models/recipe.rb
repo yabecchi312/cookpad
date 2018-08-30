@@ -14,6 +14,9 @@ class Recipe < ApplicationRecord
 
   has_many :kondates, through: :recipe_kondates
   has_many :recipe_kondates
+
+  has_many :tsukurepos, dependent: :destroy
+
   mount_uploader :image, ImageUploader
   is_impressionable counter_cache: true
 
