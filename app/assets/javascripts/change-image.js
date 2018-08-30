@@ -19,4 +19,14 @@ $(function(){
       $(StepImage).attr("src", reader.result)
     };
   });
+  // 新規献立のメイン画像置き換え
+  $(".kondate_image_hidden").on("change", function(){
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function() {
+      $("#kondate_photo").attr("src", reader.result)
+    };
+  })
 });
