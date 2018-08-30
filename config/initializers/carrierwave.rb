@@ -21,8 +21,8 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'cookpad-yabecchi312'
+  config.fog_directory  = 'cookpad-s3'
   if Rails.env.production?
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/cookpad-yabecchi312'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/cookpad-s3'
   end
 end

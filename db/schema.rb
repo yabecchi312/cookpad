@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180826130230) do
+ActiveRecord::Schema.define(version: 20180829042536) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20180826130230) do
     t.datetime "updated_at",               null: false
     t.index ["recipe_id"], name: "index_comments_on_recipe_id", using: :btree
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "diaries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "title",      limit: 65535
+    t.date     "date"
+    t.text     "image",      limit: 65535
+    t.text     "text",       limit: 65535
+    t.string   "type"
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_diaries_on_user_id", using: :btree
   end
 
   create_table "flows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -96,6 +108,18 @@ ActiveRecord::Schema.define(version: 20180826130230) do
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id", using: :btree
   end
 
+  create_table "kondates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                    null: false
+    t.string   "title"
+    t.text     "image",        limit: 65535
+    t.text     "point",        limit: 65535
+    t.text     "tips",         limit: 65535
+    t.integer  "cooking_time"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["user_id"], name: "index_kondates_on_user_id", using: :btree
+  end
+
   create_table "myfolders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "recipe_id",  null: false
@@ -112,6 +136,16 @@ ActiveRecord::Schema.define(version: 20180826130230) do
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_recipe_categories_on_category_id", using: :btree
     t.index ["recipe_id"], name: "index_recipe_categories_on_recipe_id", using: :btree
+  end
+
+  create_table "recipe_kondates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "kondate_id", null: false
+    t.integer  "recipe_id",  null: false
+    t.integer  "status",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kondate_id"], name: "index_recipe_kondates_on_kondate_id", using: :btree
+    t.index ["recipe_id"], name: "index_recipe_kondates_on_recipe_id", using: :btree
   end
 
   create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -150,13 +184,17 @@ ActiveRecord::Schema.define(version: 20180826130230) do
 
   add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
+  add_foreign_key "diaries", "users"
   add_foreign_key "flows", "recipes"
   add_foreign_key "histories", "recipes"
   add_foreign_key "histories", "users"
   add_foreign_key "ingredients", "recipes"
+  add_foreign_key "kondates", "users"
   add_foreign_key "myfolders", "recipes"
   add_foreign_key "myfolders", "users"
   add_foreign_key "recipe_categories", "categories"
   add_foreign_key "recipe_categories", "recipes"
+  add_foreign_key "recipe_kondates", "kondates"
+  add_foreign_key "recipe_kondates", "recipes"
   add_foreign_key "recipes", "users"
 end

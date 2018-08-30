@@ -14,14 +14,12 @@
                 %a
                   つくれぽ
               %li.kitchen_navi_kondate
-                %a
-                  献立
+                = link_to '献立', "/kondates/list/#{@user.id}"
               %li.kitchen_navi_blog
                 = link_to do
                   = fa_icon 'link', text: "ブログ"
               %li.kitchen_navi_diary
-                %a
-                  ごはん日記
+                = link_to 'ごはん日記', "/diaries"
           = render "users/kitchen/contents-top"
 
-        = render "users/kitchen/sidebar"
+        = render "shares/sidebar"

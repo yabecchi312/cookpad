@@ -1,17 +1,11 @@
--# new.html.hamlのrenderの記述を書き変えて
--# =f.fields_for :flows do |fl|
--#   -fl.each.with_index(1) do |fl, i|
 .step
   .step__header
     .step__header__left
       .step-position 1
-      -# orderに数字をどうやって与えればいいんかな
-        -# .step-position i
-          -# = fl.hidden_field :order, name: "recipe[flows_attributes][][order]" とかできたりするかも
       .step_move_higher
-        = link_to "←", "#"
+        = link_to "←", ""
       .step_move_lower
-        = link_to "→", "#"
+        = link_to "→", ""
     .step__header__right
       = link_to "削除", "#", id: "step-remove-button"
       = link_to "追加", "#", id: "step-add-button"
@@ -19,12 +13,12 @@
     = f.fields_for :flows do |fl|
       .step__main_image
         = fl.label :image do
-          = image_tag "step_blank.png"
-          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][][image]"
+          = image_tag "step_blank.png", class: "step_example", width: "136px"
+          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][#{fl.index}][image]"
       .step__main_text
         -# = image_tag "edit-image.png", class: "edit-image"
         -# クリックして作り方を入力
-        = fl.text_area :text, name: "recipe[flows_attributes][][text]"
+        = fl.text_area :text, name: "recipe[flows_attributes][#{fl.index}][text]"
 .step
   .step__header
     .step__header__left
@@ -40,9 +34,9 @@
     = f.fields_for :flows do |fl|
       .step__main_image
         = fl.label :image do
-          = image_tag "step_blank.png"
-          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][][image]"
+          = image_tag "step_blank.png", class: "step_example", width: "136px"
+          = fl.file_field :image, class: "step-image", name: "recipe[flows_attributes][#{fl.index}][image]"
       .step__main_text
         -# = image_tag "edit-image.png", class: "edit-image"
         -# クリックして作り方を入力
-        = fl.text_area :text, name: "recipe[flows_attributes][][text]"
+        = fl.text_area :text, name: "recipe[flows_attributes][#{fl.index}][text]"

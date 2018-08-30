@@ -20,7 +20,7 @@ $(function($){
 $(function(){
 
     var text_max = 500; // 最大入力値
-    $("#comment-char-count").text(text_max - $("#comment-field").val().length);
+    // $("#comment-char-count").text(text_max - $("#comment-field").val().length);
 
     $("#comment-field").on("keydown keyup keypress change",function(){
         var text_length = $(this).val().length;

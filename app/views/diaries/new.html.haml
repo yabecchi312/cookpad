@@ -1,0 +1,86 @@
+.diaries-wrapper
+  .dia_container
+    #dia_new_main
+      #dia_kitchen_header
+        #header_image_wrapper
+        .header_bottom
+          .user_icon
+            %img#user-icon.official_kitchen_user_icon{src: "https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8"}/
+          .setting_link{style: "display: none;"}
+            %a.colorbox_link
+              %i.icon_common.icon_camera_light
+                設定
+          .user_name
+            %a
+              = @user.name
+            %span のキッチン
+          %ul.follow_status
+            %li
+              %i.fas.fa-user-friends
+              %a.icon_font_with_text.icf_users
+              フォロー
+              %span
+                |
+            %li
+              %i.fas.fa-user-friends
+              %a.icon_font_with_text.icf_users
+              フォロワー
+      .dia_kitchen_navi
+        %ul.kit_navi_list
+          %li.dia_navi_kitchen_top
+            %a
+              トップ
+          %li.dia_navi_recipe
+            %a
+              レシピ
+          %li.dia_navi_tsukurepo_list
+            %a
+              つくれぽ
+          %li.dia_navi_kondate_list
+            %a
+              献立
+          %li.dia_navi_to_blog
+            = link_to do
+              = fa_icon 'link', text: "ブログ"
+      .diary_container
+        #one_col.diary
+          .main_cont.kitchen_cont
+            = form_for @diary do |f|
+              #diary_header
+                %img.draft_icon{alt: "Draft icon", src: "https://assets.cpcdn.com/assets/shared/draft_icon.png?a62e5f5644c81a1b2afdb68616ae442af836c11545c9a2ed99da19d20c88bcee"}/
+                .title_wrapper
+                  タイトル
+                  %h1.diary_title
+                    = f.text_area :title, maxlength:"20", size: "15x1"
+                %a.diary_delete_link{"data-confirm" => "この日記を削除しますか？", "data-method" => "get", href: " /diaries/new", rel: "nofollow"} 削除
+                #date_field.diary_date
+                  %a.date
+                    = f.date_select :date, use_month_numbers: true
+              #diary_content.diary_content
+                .diary_image
+                  = f.label :image do
+                    = image_tag "image-upload.png"
+                    = f.file_field :image, class: 'diary_id'
+                #diary_text.diary_text
+                  #diary_content_2884342_in_place_editor.in_place_editor_field{style: "background-color: transparent;"}
+                    %span.inplaceeditor-empty
+                      %img{src: "https://cookpad.com/assets/edit.gif"}
+                      = f.text_area :text, maxlength:"3000", style: 'width: 240px; height: 190px;'
+              #diary_info.link
+                = f.select :type, [["今日のごはん", "今日のごはん"], ["お弁当", "お弁当"], ["おいしいもの", "おいしいもの"], ["おいしい出来事", "おいしい出来事"], ["普通な日記", "普通な日記"]], prompt: "ごはん日記の種類を選ぶ"
+              #publish.submit
+                = f.submit "この日記を公開する"
+              #diary_navi
+                .pager_border
+                  %a.prev
+                    %img
+                      前の日記
+              %h3.title_border
+                引用レシピ
+              .diary_recipes_form
+                %input#diary_recipe_id
+                %a#add_diary_recipe.button.small
+                  レシピを引用する
+                .spinner.indicator.hidden
+              #diary_recipes
+    = render "users/kitchen/sidebar"

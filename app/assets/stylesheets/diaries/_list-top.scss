@@ -1,0 +1,124 @@
+.diary_container {
+  background: #ffffff;
+  border: 1px solid #e3dcca;
+  border-top: none;
+  margin-bottom: 6px;
+  padding: 4px;
+  border-radius: 0 0 5px 5px;
+  width: 640px;
+  #one_col.diary {
+    overflow: hidden;
+    margin: 10px 15px;
+    #kitchen_side {
+      float: left;
+      width: 157px;
+      border-right: 1px solid #D6D7B9;
+      position: relative;
+      left: 1px;
+      .cont-wrapper {
+        margin-bottom: 20px;
+        h3.content_title_with_line {
+          border-bottom: 1px solid #D6D7B9;
+          color: #C1C1A6;
+          font-size: 108%;
+          font-weight: normal;
+          margin-bottom: 6px;
+          padding-bottom: 1px;
+        }
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          li.font13.selected {
+            background-color: #EFEFE4;
+            padding: 2px 0;
+            font-weight: bold;
+            font-size: 93%;
+            a {
+              text-decoration: none;
+              color: #845f4b;
+            }
+          }
+          li.font13 {
+            a {
+              color: #845f4b;
+              text-decoration: underline;
+            }
+            span.item_count {
+              font-weight: normal;
+              color: #999;
+              font-size: 86%;
+            }
+          }
+          li.last {
+            margin: 2px 0;
+            margin-left: 27px;
+          }
+        }
+      }
+    }
+    .main_cont.kitchen_cont {
+      padding-left: 15px;
+      width: 436px;
+      border-left: 1px solid #D6D7B9;
+      float: right;
+      padding-left: 13px;
+      width: 438px;
+      margin-right: 0;
+      .blank_message {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        text-decoration: underline;
+      }
+      #diary.list {
+        .diary {
+          clear: both;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #e3dcca;
+          .title {
+            font-size: 150%;
+            padding: 0px 0px 5px 0px;
+            margin-bottom: 5px;
+            color: #330000;
+            text-decoration: underline;
+            .diary_delete_btn {
+              font-weight: normal;
+              color: #999999;
+              font-size: 68%;
+              text-decoration: underline;
+            }
+          }
+          .date {
+            font-size: 86%;
+            color: #999999;
+            margin-bottom: 10px;
+          }
+          .diary_content {
+            margin-bottom: 20px;
+            overflow: hidden;
+            .diary-image {
+              float: left;
+              width: 180px;
+              margin-right: 10px;
+              margin-bottom: 15px;
+              img {
+                width: 180px;
+              }
+            }
+            .diary-text {
+              line-height: 180%;
+            }
+          }
+          .links {
+            text-align: right;
+            a {
+              color: #845f4b;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

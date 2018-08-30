@@ -104,6 +104,7 @@ header {
     a.logo {
       width: 264px;
       height: 54px;
+      position: relative;
       img.service_logo.f_left {
         margin-top: 14px;
         margin-right: 12px;
@@ -235,6 +236,9 @@ footer {
   margin-top: 0;
   box-sizing: border-box;
   background-color: #f7f3e8;
+  background-image: image-url("mega_footer_bg.png");
+  background-position: top center;
+  background-repeat: repeat-x;
   .mega_footer {
     font-size: 87.5%;
     display: block;

@@ -2,9 +2,9 @@
   #side_wrapper
     #side_contents
       #side_banner_wrapper
-        広告１
-      #side_banner_wrapper
-        広告２
+        = image_tag 'ad_cookpad_present.jpg'
+      = render 'shares/sidebar-tieup'
+
       #side_opinion
         .box.opinion_box
           .opinion_title
@@ -30,7 +30,3 @@
           お困りの方はこちら
         %p.link_to_help
           = link_to 'ヘルプ・お問い合わせ'
-      #side_banner_wrapper
-        広告３
-      #side_banner_wrapper
-        広告４
