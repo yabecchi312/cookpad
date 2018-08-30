@@ -5,7 +5,10 @@ $(document).on('click','#js_tsukurepo_modal_button',function(e){
   if($("#modal-overlay")[0]) $("#modal-overlay").remove();
   $("body").append('<div id="modal-overlay"></div>');
   centeringModalSyncer();
-  $("#modal-overlay").append(makeTsukurepoModal());
+  var user_id = $(this).prevAll()[0].value
+  var recipe_title = $(this).prevAll()[1].value
+  var recipe_id = $(this).prevAll()[2].value
+  $("#modal-overlay").append(makeTsukurepoModal(recipe_id,recipe_title,user_id));
   $("#modal-overlay").fadeIn("slow");
   $("#tsukurepo-modal-content").fadeIn("slow");
 });
@@ -19,9 +22,8 @@ $(document).on("click","#modal-close",function(){
 });
 
 
-
 // モーダルのhtml
-function makeTsukurepoModal() {
+function makeTsukurepoModal(recipe_id,recipe_title,user_id) {
   html =
   `
 <div id="tsukurepo-modal-content">
@@ -29,8 +31,9 @@ function makeTsukurepoModal() {
     <div id="post_header">
       <div id="posted-user-name">
         <span class="recipe-title">
-          夏は冷製で！黄金比率♡濃厚かぼちゃスープ
+          ${recipe_title}
         </span>
+        に
       </div>
       <h2 class="content_title">
         「つくれぽ」を送る
@@ -50,8 +53,8 @@ function makeTsukurepoModal() {
             <p class="date">18/08/30</p>
           </div>
           <div class="image image_wrapper">
-            <form class="new_tsukurepo" id="new_tsukurepo" enctype="multipart/form-data" action="/tsukurepos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Y8g9fnttqx+910GDzabsE5CvqhOyVSazWPnBVYBODoV26dqwJ8zAHTpbZgyc/9MpMPNHJSYY+OzJ2o0ElpRT0A=="><input value="10" type="hidden" name="tsukurepo[recipe_id]" id="tsukurepo_recipe_id">
-              <input value="2" type="hidden" name="tsukurepo[user_id]" id="tsukurepo_user_id">
+            <form class="new_tsukurepo" id="new_tsukurepo" enctype="multipart/form-data" action="/tsukurepos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Y8g9fnttqx+910GDzabsE5CvqhOyVSazWPnBVYBODoV26dqwJ8zAHTpbZgyc/9MpMPNHJSYY+OzJ2o0ElpRT0A=="><input value="${recipe_id}" type="hidden" name="tsukurepo[recipe_id]" id="tsukurepo_recipe_id">
+              <input value="${user_id}" type="hidden" name="tsukurepo[user_id]" id="tsukurepo_user_id">
               <label for="tsukurepo_image"><img src="https://assets.cpcdn.com/assets/shared/tsukurepo_photo_blank.png?4a966ee051b533c75acabd178e0945eb3a9a4c495c832278fbface07682a94db" alt="Tsukurepo photo blank">
                 <input class="tsukurepo_photo_wrapper_hidden" type="file" name="tsukurepo[image]" id="tsukurepo_image">
               </label><textarea class="tsukurepo_textarea" name="tsukurepo[text]" id="tsukurepo_text"></textarea>
