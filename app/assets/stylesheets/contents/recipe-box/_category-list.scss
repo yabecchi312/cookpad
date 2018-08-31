@@ -39,5 +39,47 @@
         }
       }
     }
+    @mixin category_icon_format($background-position) {
+      background-image: image-url('recipe_category_icons.png');
+      background-repeat: no-repeat;
+      background-position: $background-position;
+    }
+
+    .category__icon--vege {
+      @include category_icon_format(0px 0px);
+    }
+    .category__icon--meat {
+      @include category_icon_format(0px -46px);
+    }
+    .category__icon--fish {
+      @include category_icon_format(0px -83px);
+    }
+    .category__icon--rice {
+      @include category_icon_format(0px -126px);
+    }
+    .category__icon--pasta {
+      @include category_icon_format(0px -170px);
+    }
+    .category__icon--noodle {
+      @include category_icon_format(0px -210px);
+    }
+    .category__icon--salada {
+      @include category_icon_format(0px -253px);
+    }
+    .category__icon--soup {
+      @include category_icon_format(0px -296px);
+    }
+    .category__icon--bento {
+      @include category_icon_format(0px -335px);
+    }
+    .category__icon--hospitality {
+      @include category_icon_format(0px -375px);
+    }
+    .category__icon--sweets {
+      @include category_icon_format(0px -461px);
+    }
+    .category__icon--bread {
+      @include category_icon_format(0px -420px);
+    }
   }
 }
