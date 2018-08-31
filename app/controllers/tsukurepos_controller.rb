@@ -23,7 +23,6 @@ class TsukureposController < ApplicationController
   def list
     @user = User.find(params[:id])
     @tsukurepos = @user.tsukurepos
-    @tsukurepos = Kaminari.paginate_array(@tsukurepos).page(params[:page]).per(5)
   end
 
 
