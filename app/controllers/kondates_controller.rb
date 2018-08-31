@@ -34,16 +34,19 @@ class KondatesController < ApplicationController
 
   def recent
     @kondates = Kondate.includes([:user,:recipes]).order(id: :desc)
+    @kondates = Kaminari.paginate_array(@kondates).page(params[:page]).per(5)
   end
 
   def search
     @kondates = Kondate.find(Kondate.select_target_kondate_id(params[:keyword]))
     @keywords = params[:keyword].gsub(/　/," ").split()
+    @kondates = Kaminari.paginate_array(@kondates).page(params[:page]).per(5)
   end
 
   def list
     @user = User.find(params[:id])
     @kondates = @user.kondates.includes(:recipes)
+    @kondates = Kaminari.paginate_array(@kondates).page(params[:page]).per(5)
   end
 
 
