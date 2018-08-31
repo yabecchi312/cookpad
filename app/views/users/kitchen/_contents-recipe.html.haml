@@ -40,23 +40,16 @@
     #kitchen_main
       .recipe_list_header
         = render "users/kitchen/search-box"
-        .separate_right
-          .paging-top
-            %span
-              1/100 ページ
-            = link_to '次へ »', '#'
       .recipe_list
         - @recipes.each do |recipe|
           .recipe_preview
             .recipe_image
-              = link_to recipe_path(id:recipe.id) do
-                - if recipe.image?
-                  = image_tag recipe.image.to_s,class: "image_width_100"
-                - else
-                  = image_tag 'blank_recipe.png',class: "image_width_100"
+              = image_tag recipe.image.to_s
             .recipe_text.clearfix
               %span.title
                 = link_to "#{recipe.title}", edit_recipe_path(recipe),class: "recipe_title"
+              .myfolder
+                = fa_icon 'plus-circle'
                 = link_to "[×]", recipe_path(recipe.id), method: :delete, data: {confirm: 'このレシピを削除してよろしいですか?'}
               .myfolder
                 = render "myfolders/myfolder-icon", recipe: recipe
@@ -66,3 +59,4 @@
                 %span 材料：
                 - recipe.ingredients.each do |ingredient|
                   = ingredient.name
+        = paginate @recipes
