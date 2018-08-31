@@ -1,14 +1,15 @@
-- @tsukurepos.each do |tsukurepo|
-  .tsukurepo-wrapper
-    .tsukurepo
-      .tsukurepo-inner
-        .tsukurepo_info
-          %p.date
-            = simple_time(tsukurepo.created_at)
-        .image
-          = image_tag tsukurepo.image.to_s,class: "image_wh_130x130"
-        %p.message
-          = tsukurepo.text
-        %p.tsukurepo-author
-          = image_tag tsukurepo.user.avatar.to_s, class: "author_icon"
-          = link_to "#{tsukurepo.user.name}", class: "author"
+- if @tukurepos.present?
+  - @tsukurepos.each do |tsukurepo|
+    .tsukurepo-wrapper
+      .tsukurepo
+        .tsukurepo-inner
+          .tsukurepo_info
+            %p.date
+              = simple_time(tsukurepo.created_at)
+          .image
+            = image_tag tsukurepo.image.to_s,class: "image_wh_130x130"
+          %p.message
+            = tsukurepo.text
+          %p.tsukurepo-author
+            = image_tag tsukurepo.user.avatar.to_s, class: "author_icon"
+            = link_to "#{tsukurepo.user.name}", class: "author"
