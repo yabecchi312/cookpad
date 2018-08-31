@@ -1,4 +1,5 @@
 class TsukureposController < ApplicationController
+  protect_from_forgery except: :create
 
   def create
     @tsukurepo = Tsukurepo.new(tsukurepo_params)

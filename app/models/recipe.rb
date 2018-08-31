@@ -13,7 +13,7 @@ class Recipe < ApplicationRecord
   belongs_to :user
 
   has_many :kondates, through: :recipe_kondates
-  has_many :recipe_kondates
+  has_many :recipe_kondates, dependent: :destroy
 
   has_many :tsukurepos, dependent: :destroy
 

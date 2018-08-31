@@ -1,5 +1,5 @@
-$(function($){
-  // コメントタブクリック時に起動
+$(document).on('turbolinks:load', function() {
+
   $("#comment_tab").click(function(e){
     e.preventDefault();
       $("#tsukurepo").hide();
@@ -15,7 +15,7 @@ $(function($){
       $("#comment_tab").removeClass("selected");
       $("#tsukurepo_tab").addClass("selected");
     });
-  });
+
 
 $(function(){
 
@@ -46,3 +46,52 @@ $(function(){
       $('#comment-list').html(data.comment_list_html);
     });
   });
+
+  $(function(){
+    function buildHTML(comment){
+      var html = `
+<div id="comment-list">
+  <div class="comment">
+    <div class="info">
+      <img class="author_icon" src="${ comment.avatar.url }" alt="Senchou" width="22" height="22">
+      <a href="/users/${ comment.user_id }">
+        ${ comment.name }
+      </a>
+      <span class="comment-update">
+        ${ comment.update }
+      </span>
+    </div>
+    <div class="comment-text">
+      ${ comment.text }
+    </div>
+  </div>
+  <div class="paging-paginate">
+  </div>
+</div>`
+      return html;
+    }
+    $('.user-comment-form').on('submit', function(e){
+      e.preventDefault();
+      var formData = new FormData(this);
+      var id = $(this).find('.form_recipeid').val() + '/comments'
+      $.ajax({
+        url: id,
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(data){
+        var html = buildHTML(data);
+        $('#comments-list').append(html)
+        $('#comment-field').val('')
+        $('.submit').prop('disabled', false);
+      })
+      .fail(function(){
+        alert('error');
+        $('.submit').prop('disabled', false);
+      })
+    })
+  });
+});

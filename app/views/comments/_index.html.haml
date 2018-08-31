@@ -1,0 +1,30 @@
+#comments-list
+  - @comments.each do |comment|
+    #comment-list
+      .comment
+        .info
+          - if comment.user.avatar.present?
+            = image_tag "#{comment.user.avatar}", size: "22x22", class: "author_icon"
+          - else
+            = image_tag "icon_default.png", size: "22x22"
+          = link_to user_path(comment.user.id) do
+            = comment.user.name
+          %span.comment-update
+            = comment.updated_at.to_s
+        .comment-text
+          = comment.text
+.paging-paginate
+#text-area
+  %span#comment_header
+  .login_user
+    #comment-count
+      .user
+        = current_user.name
+        %span> さん、あと
+        %span#comment-char-count 500
+        文字です
+  .comment-form
+    = form_for [@recipe,@comment],html: {class: "user-comment-form"} do |f|
+      = f.text_area :text, id: "comment-field"
+      = hidden_field_tag :recipe_id, @recipe.id, class: "form_recipeid"
+      = f.submit "コメントを書く", name: "commit", class: "submit", id: "new_comment"
