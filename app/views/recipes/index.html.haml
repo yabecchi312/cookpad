@@ -191,23 +191,24 @@
           .block.tsukurepo-index
             #tsukurepo-list.clearfix
               .tsukurepo-wrapper
-                -# - @tsukurepo.each do |tsukurepo|
-                -#   .tsukurepo
-                -#     .tsukurepo-inner
-                -#       .tsukurepo_info
-                -#         %p.date
-                -#           = simple_time(@recipe.created_at)
-                -#       .image
-                -#         = image_tag(tsukurepo.image.to_s, size: "130x130")
-                -#       = link_to "本格、濃厚、クレームブリュレ！", "", class: "recipe-title"
-                -#       %span.recipe-author
-                -#         by よし＊
-                -#       %p.message
-                -#         子どもたちもたくさん食べてくれて大満足です！
-                -#       %p.tsukurepo-author
-                -#         = link_to "" do
-                -#           = image_tag "https://img.cpcdn.com/users/15558723/16x16c/3544f673731e3b43e804b3af98f1fad3.jpg?u=15558723&p=1485267807", class: "author_icon", size: "16x16"
-                -#         = link_to "Bakn", "", class: "author"
-                -#       .clear
+                - @tsukurepos.each do |tsukurepo|
+                  .tsukurepo
+                    .tsukurepo-inner
+                      .tsukurepo_info
+                        %p.date
+                          = simple_time(tsukurepo.created_at)
+                      .image
+                        = image_tag(tsukurepo.image.to_s, size: "130x130")
+                      = link_to "#{tsukurepo.recipe.title}", "", class: "recipe-title"
+                      %span.recipe-author
+                        by
+                        = tsukurepo.recipe.user.name
+                      %p.message
+                        = tsukurepo.text
+                      %p.tsukurepo-author
+                        = link_to "" do
+                          = image_tag "#{tsukurepo.recipe.user.avatar.to_s}", class: "author_icon", size: "16x16"
+                        = link_to "#{tsukurepo.recipe.user.name}", "", class: "author"
+                      .clear
         .recipe_contests.box
       .side-bar

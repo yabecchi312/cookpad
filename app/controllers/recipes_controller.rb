@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all.order(created_at: "DESC").limit(8)
-    # @tsukurepos = Tsukurepo.all.order(created_at: "DESC").limit(8)
+    @tsukurepos = Tsukurepo.all.order(created_at: "DESC").limit(8)
   end
 
   def new
