@@ -169,7 +169,7 @@
             %ul.clearfix
               - @recipes.each do |recipe|
                 %li.recipe
-                  = link_to "", class: "focus_block" do
+                  = link_to recipe_path(id:recipe.id), class: "focus_block" do
                     - if recipe.image.present?
                       = image_tag(recipe.image.to_s, size: "148x148")
                       .text
@@ -210,19 +210,19 @@
                           = image_tag(tsukurepo.image.to_s, size: "130x130")
                         - else
                           = image_tag "blank_recipe.png", size: "130x130"
-                      = link_to "#{tsukurepo.recipe.title}", "", class: "recipe-title"
+                      = link_to "#{tsukurepo.recipe.title}", recipe_path(id: tsukurepo.recipe.id), class: "recipe-title"
                       %span.recipe-author
                         by
                         = tsukurepo.recipe.user.name
                       %p.message
                         = tsukurepo.text
                       %p.tsukurepo-author
-                        = link_to "" do
+                        = link_to user_path(id: tsukurepo.recipe.user.id) do
                           - if tsukurepo.recipe.user.avatar.present?
                             = image_tag "#{tsukurepo.recipe.user.avatar.to_s}", class: "author_icon", size: "16x16"
                           - else
                             = image_tag "blank_recipe.png", size: "16x16"
-                        = link_to "#{tsukurepo.recipe.user.name}", "", class: "author"
+                        = link_to "#{tsukurepo.recipe.user.name}",user_path(id: tsukurepo.recipe.user.id), class: "author"
                 .clear
         .recipe_contests.box
       .side-bar
