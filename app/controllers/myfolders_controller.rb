@@ -5,7 +5,6 @@ class MyfoldersController < ApplicationController
     @recipes = []
     current_user.myfolders.includes(recipe: :ingredients).each do |myfolder|
       @recipes.push(myfolder.recipe)
-    @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(5)
     end
     if params[:keyword].present?
       @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword]) & @recipes.map{|recipe| recipe.id})

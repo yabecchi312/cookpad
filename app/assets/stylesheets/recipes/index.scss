@@ -1,0 +1,213 @@
+.recipe-wrapper{
+  padding-right: 170px;
+  width: 970px;
+  min-width: 970px;
+  margin: 0px auto;
+  background: transparent;
+  #container{
+    text-align: left;
+    .recipes-index {
+      padding-bottom: 1px;
+      margin-bottom: 24px;
+      .main {
+        height: auto;
+        float: left;
+        width: 650px;
+        text-align: left;
+        .box {
+          margin-bottom: 10px;
+          border-radius: 5px;
+          background: #ffffff;
+          border: 1px solid #ded5c0;
+        }
+        .title_bar {
+          padding: 5px 3px 3px 10px;
+          margin: 0;
+          color: #4d2200;
+          background: #efe1be;
+          font-weight: bold;
+          font-size: 83%;
+        }
+        .block {
+          padding: 10px;
+          color: #845f4b;
+          height: auto;
+          ul {
+            list-style: none;
+            display: block;
+            li {
+              width: 202px;
+              float: left;
+              margin-right: 10px;
+            }
+            .keyword {
+              width: 100%;
+              line-height: 40px;
+              border-bottom: 1px solid #ebe6d0;
+            }
+            .rank {
+              font-size: 90%;
+              display: inline-block;
+              width: 36px;
+              text-align: center;
+              color: #666666;
+            }
+            .recipe {
+              width: 148px;
+              height: 235px;
+              overflow: hidden;
+              float: left;
+              margin-right: 8px;
+              margin-bottom: 15px;
+            }
+            .last {
+              margin-right: 0;
+            }
+            .focus_block {
+              margin-top: 5px;
+              .focus_text {
+                font-weight: bold;
+                display: block;
+              }
+              .by {
+                font-size: 70%;
+                color: #999999;
+              }
+              .user_name {
+                font-size: 75%;
+                color: #666666;
+                word-break: break-all;
+              }
+            }
+            .search_keyword {
+              font-weight: bold;
+              text-decoration: underline;
+              color: #330000;
+            }
+          }
+          .left {
+            text-align: left;
+            margin-right: 5px;
+            width: 308px;
+          }
+          .right {
+            margin-left: 5px;
+            text-align: left;
+            width: 308px;
+          }
+          .more_link {
+            text-align: right;
+            font-weight: bold;
+            color: #845f4b;
+            font-size: 88%;
+          }
+          .recipe_categories {
+            margin-top: 6px;
+          }
+          .trend_keywords {
+            clear: both;
+            padding-top: 5px;
+            display: block;
+          }
+          .recent_tsukurepos{
+            padding-left: 19px;
+            height: auto;
+          }
+          .image {
+            position: relative;
+            img {
+              border-radius: 4px;
+              vertical-align: middle;
+            }
+            .photo_user_name {
+              font-size: 70%;
+              position: absolute;
+              bottom: 4px;
+              right: 6px;
+              color: #ffffff;
+              text-shadow: 1px 1px 0 #000000;
+            }
+          }
+          .text {
+            margin-top: 6px;
+            .category_title{
+              font-size: 125%;
+              font-weight: bold;
+            }
+            .recipe_count {
+              font-size: 82%;
+              margin-top: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.tsukurepo-index {
+  .tsukurepo-wrapper {
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 12px;
+    width: 136px;
+    .tsukurepo {
+      border-radius: 3px;
+      border: 1px solid #e3dcca;
+      box-shadow: 0 1px 1px #cccccc;
+      width: 136px;
+      background: #fff;
+      color: #3c3c3c;
+      .tsukurepo-inner {
+        margin: 3px 5px 8px;
+        .tsukurepo_info {
+          position: relative;
+          width: 124px;
+          margin-bottom: 3px;
+          text-align: left;
+          .date {
+            color: #999999;
+            font-size: 10px;
+          }
+        }
+        .image {
+          width: 130px;
+          margin: 0 -2px 8px;
+        }
+        .recipe-title {
+          color: #889b00;
+          font-weight: bold;
+          text-decoration: underline;
+          font-size: 14px;
+        }
+        .recipe-author {
+          font-size: 12px;
+          color: #999999;
+          display: inline-block;
+          padding-left: 3px;
+        }
+        .message {
+          font-size: 12px;
+          line-height: 1.3em;
+          margin-bottom: 5px;
+          margin-top: 5px;
+          padding: 0;
+          word-wrap: break-word;
+          color: #49441e;
+        }
+        .tsukurepo-author {
+          font-size: 85%;
+          text-align: right;
+          word-break: break-all;
+          margin-bottom: 5px;
+          .author {
+            text-decoration: underline;
+            color: #330000;
+          }
+        }
+        .clear {
+          clear: both;
+        }
+      }
+    }
+  }
+}
