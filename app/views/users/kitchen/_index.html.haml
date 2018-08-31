@@ -11,16 +11,14 @@
               %li.kitchen_navi_recipe
                 = link_to 'レシピ', "/recipes/list/#{@user.id}"
               %li.kitchen_navi_tsukurepo
-                %a
-                  つくれぽ
+                = link_to 'つくれぽ', "/tsukurepos/list/#{@user.id}"
               %li.kitchen_navi_kondate
                 = link_to '献立', "/kondates/list/#{@user.id}"
               %li.kitchen_navi_blog
                 = link_to do
                   = fa_icon 'link', text: "ブログ"
               %li.kitchen_navi_diary
-                %a
-                  ごはん日記
+                = link_to 'ごはん日記', "/diaries"
           = render "users/kitchen/contents-top"
 
         = render "shares/sidebar"

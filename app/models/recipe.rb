@@ -14,13 +14,16 @@ class Recipe < ApplicationRecord
 
   has_many :kondates, through: :recipe_kondates
   has_many :recipe_kondates
+
+  has_many :tsukurepos, dependent: :destroy
+
   mount_uploader :image, ImageUploader
   is_impressionable counter_cache: true
 
   #各条件で検索し、かかったrecipeのidを重複排除して配列で返す
   def self.select_target_recipe_id(keywords,user_id=0)
     target_recipe_ids = []
-    keyword_arrays = keywords.gsub(/　/," ").split()
+    keyword_arrays = keywords.gsub(/ /," ").split()
     keyword_arrays.each do |keyword|
       if user_id == 0
         sql_string = self.make_sql_string(keyword)

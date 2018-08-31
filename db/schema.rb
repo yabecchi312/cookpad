@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824094314) do
+ActiveRecord::Schema.define(version: 20180830081847) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                  null: false
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20180824094314) do
     t.datetime "updated_at",               null: false
     t.index ["recipe_id"], name: "index_comments_on_recipe_id", using: :btree
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "diaries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "title",      limit: 65535
+    t.date     "date"
+    t.text     "image",      limit: 65535
+    t.text     "text",       limit: 65535
+    t.string   "type"
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_diaries_on_user_id", using: :btree
   end
 
   create_table "flows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -132,6 +144,18 @@ ActiveRecord::Schema.define(version: 20180824094314) do
     t.index ["user_id"], name: "index_recipes_on_user_id", using: :btree
   end
 
+  create_table "tsukurepos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                  null: false
+    t.integer  "recipe_id",                null: false
+    t.text     "image",      limit: 65535
+    t.text     "text",       limit: 65535
+    t.text     "reply",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["recipe_id"], name: "index_tsukurepos_on_recipe_id", using: :btree
+    t.index ["user_id"], name: "index_tsukurepos_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                              null: false
     t.text     "avatar",                 limit: 65535
@@ -155,6 +179,7 @@ ActiveRecord::Schema.define(version: 20180824094314) do
 
   add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
+  add_foreign_key "diaries", "users"
   add_foreign_key "flows", "recipes"
   add_foreign_key "histories", "recipes"
   add_foreign_key "histories", "users"
@@ -165,4 +190,6 @@ ActiveRecord::Schema.define(version: 20180824094314) do
   add_foreign_key "recipe_kondates", "kondates"
   add_foreign_key "recipe_kondates", "recipes"
   add_foreign_key "recipes", "users"
+  add_foreign_key "tsukurepos", "recipes"
+  add_foreign_key "tsukurepos", "users"
 end

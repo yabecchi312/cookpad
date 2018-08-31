@@ -1,5 +1,5 @@
-.container
-  #two_contents_wrapper
+#kitchen_container.kitchen_recipe_container
+  #two_contents_wrapper.clearfix
     #kitchen_side
       .kitchen_side_wrapper.archive
         %h3.content_title
@@ -21,63 +21,21 @@
               (20)
     #kitchen_main
       .recipe_list_header
-        = render "users/kitchen/search-box"
-        .separate_right
-          .paging-top
-            %span
-              1/100 ページ
-            = link_to '次へ »', '#'
       #tsukurepo_list
-        .tsukurepo_wrapper
-          .tsukurepo
-            .tsukurepo_inner
-              .tsukurepo_info
-                %p.date
-                  18/08/02
-              .image
-              = link_to 'つくれぽタイトルああああああああああああ','#',class: "recipe_title"
-              %span.recipe_author
-                by レシピの著者名
-              %p.message
-                とても美味しかったです。また作りたいです。
-              .clear-both
-        .tsukurepo_wrapper
-          .tsukurepo
-            .tsukurepo_inner
-              .tsukurepo_info
-                %p.date
-                  18/08/02
-              .image
-              = link_to 'つくれぽタイトル','#',class: "recipe_title"
-              %span.recipe_author
-                by レシピの著者名いいいいいいい
-              %p.message
-                とても美味しかったです。また作りたいです。
-              .clear-both
-        .tsukurepo_wrapper
-          .tsukurepo
-            .tsukurepo_inner
-              .tsukurepo_info
-                %p.date
-                  18/08/02
-              .image
-              = link_to 'つくれぽタイトル','#',class: "recipe_title"
-              %span.recipe_author
-                by レシピの著者名
-              %p.message
-                こんなに簡単に作れるなんてすごいです。とても美味しかったです。また作りたいです。
-              .clear-both
-        .tsukurepo_wrapper
-          .tsukurepo
-            .tsukurepo_inner
-              .tsukurepo_info
-                %p.date
-                  18/08/02
-              .image
-              = link_to 'つくれぽタイトル','#',class: "recipe_title"
-              %span.recipe_author
-                by レシピの著者名
-              %p.message
-                こんなに簡単に作れるなんてすごいです。とても美味しかったです。また作りたいです。あああああああああ
-              .clear-both
+        - @tsukurepos.each do |tsukurepo|
+          .tsukurepo_wrapper
+            .tsukurepo
+              .tsukurepo_inner
+                .tsukurepo_info
+                  %p.date
+                    = simple_time(tsukurepo.created_at)
+                    = link_to "[x]", tsukurepo_path(tsukurepo.id), method: :delete,class: "tsukurepo_delete", data: {confirm: 'この献立を削除してよろしいですか?'}
+                .image
+                  = image_tag tsukurepo.image,class: "image_wh_130x130"
+                = link_to "#{tsukurepo.recipe.title}",recipe_path(id:tsukurepo.recipe.id),class: "recipe_title"
+                %span.recipe_author
+                  by #{tsukurepo.recipe.user.name}
+                %p.message
+                  = tsukurepo.text
+                .clear-both
     .clear_both

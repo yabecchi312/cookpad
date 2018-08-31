@@ -3,22 +3,24 @@
     #container
       #contents.clearfix
         #main
-          = render "users/kitchen/header"
+          = render 'users/kitchen/header',locals: {user: @user}
           .kitchen_navi
             %ul.kitchen_navi_list
               %li.kitchen_navi_top
-                = link_to 'トップ', user_path
+                = link_to 'トップ'
               %li.kitchen_navi_recipe
                 = link_to 'レシピ', "/recipes/list/#{@user.id}"
               %li.kitchen_navi_tsukurepo
-                = link_to 'つくれぽ', "/tsukurepos/list/#{@user.id}"
-              %li.kitchen_navi_kondate.selected
-                = link_to '献立', "/kondates/list/#{@user.id}"
+                %a
+                  つくれぽ
+              %li.kitchen_navi_kondate
+                %a
+                  献立
               %li.kitchen_navi_blog
                 = link_to do
                   = fa_icon 'link', text: "ブログ"
               %li.kitchen_navi_diary
-                %a ごはん日記
-          = render "users/kitchen/contents-kondate"
+                = link_to 'ごはん日記', "/diaries"
+          = render "diaries/list-top"
 
         = render "shares/sidebar"

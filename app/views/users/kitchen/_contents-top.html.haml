@@ -97,27 +97,24 @@
     .title_row
       つくれぽ
       %span
-        (70件)
+        (#{@user.tsukurepos.count}件)
       .link_to_all.right
-        = link_to 'つくれぽ一覧 »','#'
+        = link_to 'つくれぽ一覧 »',"/tsukurepos/list/#{@user.id}"
     .tsukurepo_images
-      .tsukurepo_image
-      .tsukurepo_image
-      .tsukurepo_image
-      .tsukurepo_image
-      .tsukurepo_image
-      .tsukurepo_image
-      .tsukurepo_image
-      .tsukurepo_image
+      - @tsukurepos.each do|tsukurepo|
+        .tsukurepo_image
+          = image_tag tsukurepo.image.to_s,class: "image_wh_73x73"
   #diary_container.container_inner
     .title_row
       ごはん日記
       .link_to_all.right
-        = link_to 'ごはん日記一覧 »','#'
+        = link_to 'ごはん日記一覧 »','/diaries'
     .diary_title
       = link_to '☼焼きサバと野菜の甘酢炒め'
       %span
         2018/08/05
+    .blank_message
+      = link_to "ごはん日記を書く", new_diary_path
   #profile_container.box.container_inner
     .user_info
       .user_icon
@@ -128,7 +125,7 @@
       .user_name
         = @user.name
         のプロフィール
-    .profile_text
+    .user_profile_text
       = @user.profile
     .profile_text_edit{style: "display:none;"}
       = form_for(current_user, html: {class: "edit_user_profile"}) do |f|

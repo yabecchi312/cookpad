@@ -6,11 +6,8 @@
           -# contents__left内の削除、印刷のところ
           .recipe_author
             .recipe_author__link_author_kitchen
-              = link_to "クックGB5RQL☆のレシピ", "#"
+              = "#{current_user.name}のレシピ"
             .recipe_author__link_setting_delete
-              = link_to "印刷", "#"
-              |
-              = link_to "削除"
             -# recipe内の入力する部分(画像、材料、キャッチコピー)
           .recipe-main
             .recipe-title
@@ -18,9 +15,10 @@
               = f.text_field :title, required: true
               -# 画像
             .recipe-photo
-              = f.label :image do
-                = image_tag "image-upload.png"
-                = f.file_field :image, class: 'recipe-image'
+              #recipe-main-photo
+                = f.label :image do
+                  = image_tag "image-upload.png", id: "image_example", width: "280px"
+                  = f.file_field :image, class: 'recipe-image'
             -# キャッチコピーと材料
             .catchphrase_and_ingredients
               .catchphrase_recipe_author_top
@@ -30,8 +28,11 @@
                   = f.text_area :catch_copy
                 .recipe_author_top
                   .recipe_author_top__link
-                    = image_tag "profile.png", class: "author_icon"
-                    = link_to "クックGB5RQL☆", "#"
+                    - if current_user.avatar.present?
+                      = image_tag "#{current_user.avatar}", size: "22x22", class: "author_icon"
+                    - else
+                      = image_tag "icon_default.png", size: "22x22"
+                    = "#{current_user.name}のレシピ"
               .ingredients
                 = f.fields_for :ingredients do |i|
                   .ingredient

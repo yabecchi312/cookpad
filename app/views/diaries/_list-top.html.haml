@@ -1,0 +1,61 @@
+.diary_container
+  #one_col.diary
+    #kitchen_side
+      .cont-wrapper
+        %h3.content_title_with_line
+          カテゴリ
+        %ul
+          %li.font13.selected
+            %a
+              すべて
+            %span.item_count
+              (2)
+          %li.font13
+            %a
+              お弁当
+            %span.item_count
+              (1)
+          %li.font13
+            %a
+              おいしいもの
+            %span.item_count
+              (1)
+      .cont-wrapper.archive
+        %h3.content_title_with_line
+          アーカイブ
+        %ul
+          %li.all.font13.selected
+            %span.year
+              %a
+                すべて
+          %li.font13
+            %span.year
+              %a
+                2018年
+            %span.item_count
+              (2)
+            %ul
+              %li.last
+                %span.month
+                  %a.track_hakari
+                    8月
+                %span.item_count
+                  (2)
+    .main_cont.kitchen_cont
+      .blank_message
+        = link_to "ごはん日記を書く", new_diary_path
+      #diary.list
+        - @diaries.each do |diary|
+          .diary
+            .title
+              = diary.title
+              = link_to "削除", diary_path(id:diary.id), method: :delete, class: "diary_delete_btn pull-right", data: {confirm: 'この ごはん日記 を削除してよろしいですか?'}
+            .date
+              = diary.date
+            .diary_content
+              .diary-image
+                = image_tag diary.image.to_s
+              .diary-text
+                = diary.text
+            .links
+              = diary.type
