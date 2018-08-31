@@ -1,7 +1,7 @@
 class DiariesController < ApplicationController
   def index
     @user = User.find(current_user)
-    @diaries = current_user.diaries.order(id: :desc).page(params[:page]).per(5)
+    @diaries = current_user.diaries.order(id: :desc)
   end
 
   def new

@@ -46,7 +46,6 @@ class KondatesController < ApplicationController
   def list
     @user = User.find(params[:id])
     @kondates = @user.kondates.includes(:recipes)
-    @kondates = Kaminari.paginate_array(@kondates).page(params[:page]).per(5)
   end
 
 
