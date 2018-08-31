@@ -1,0 +1,214 @@
+.recipe-wrapper
+  #container
+    .recipes-index
+      .main
+        .pickup_recipes.box
+          %h2.title_bar
+            ピックアップレシピ
+          .block
+            %ul
+              %li.pickup_recipe
+                .focus_block
+                  = image_tag "https://img.cpcdn.com/recipes/3175374/200x200c/4dce0b87d1c2797385555e30d2c415d8.jpg?u=10034240&p=1431598134"
+                  .text
+                    %span.recipe_title.focus_text
+                      レンジで簡単！ナスの中華風揚げ浸し
+                    %span
+                      %span.by
+                        by
+                      %span.user_name
+                        ｎｏｒｉ＊
+              %li.pickup_recipe
+                .focus_block
+                  = image_tag "https://img.cpcdn.com/recipes/3754292/200x200c/26b2f98d1c96b86600b895680fca5202.jpg?u=11879828&p=1458170956"
+                  .text
+                    %span.recipe_title.focus_text
+                      極旨ソースde焼き肉乗っけおかずサラダ
+                    %span
+                      %span.by
+                        by
+                      %span.user_name
+                        優雨【ゆぅ】
+              %li.pickup_recipe.last
+                .focus_block
+                  = image_tag "https://img.cpcdn.com/recipes/3145717/200x200c/37d338d0dcfe68c64175caa0dea40b1a.jpg?u=6448663&p=1433898221"
+                  .text
+                    %span.recipe_title.focus_text
+                      簡単5分でおつまみ✿もやしとニラのナムル
+                    %span
+                      %span.by
+                        by
+                      %span.user_name
+                        ♫ちーちゃん♫
+            .more_link
+              %span
+                もっと見る
+        .recipe_categories.box
+          %h2.title_bar
+            レシピカテゴリ
+          .block
+            %ul.clearfix
+              %li.f_left
+                .category
+                  .image
+                    = image_tag "https://img.cpcdn.com/recipes/4126093/200x113c/ef303ce4d99ccd32e200fe2c051ce482.jpg?u=6133136&p=1529772923"
+                    %span.photo_user_name
+                      photo by
+                      こじまぽん助
+                  .text
+                    .category_title
+                      今日のご飯・おかず
+                    .recipe_count
+                      推薦レシピ
+                      141,146
+                      品
+              %li.f_left
+                .category
+                  .image
+                    = image_tag "https://img.cpcdn.com/recipes/4411998/200x113c/f9e54db5c5f6bdd982802751e8c7247f.jpg?u=10110093&p=1489408738"
+                    %span.photo_user_name
+                      photo by
+                      あ～るくん
+                  .text
+                    .category_title
+                      お菓子
+                    .recipe_count
+                      推薦レシピ
+                      30,382
+                      品
+              %li.f_left.last
+                .category
+                  .image
+                    = image_tag "https://img.cpcdn.com/recipes/4509646/200x113c/0dcd8ac3962e21fe8a8ffcf7b716812b.jpg?u=16804286&p=1494571934"
+                    %span.photo_user_name
+                      photo by
+                      広東麵
+                  .text
+                    .category_title
+                      パン
+                    .recipe_count
+                      推薦レシピ
+                      16,286
+                      品
+            .more_link.recipe_categories
+              %span
+                もっと見る
+        .trend_keywords.box
+          %h2.title_bar
+            人気の検索キーワード
+          .block.clearfix
+            %ul.f_left.left.clearfix
+              %li.keyword
+                %span.rank
+                  1位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "トースト", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  2位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "フレンチトースト", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  3位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "ホットケーキ", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  4位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "卵焼き", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  5位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "食パン", "", class: "search_keyword"
+            %ul.f_left.right.clearfix
+              %li.keyword
+                %span.rank
+                  6位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "ゆで卵", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  7位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "梨", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  8位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "ホットケーキミックス", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  9位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "ポトフ", "", class: "search_keyword"
+              %li.keyword
+                %span.rank
+                  10位
+                %span.arrow
+                  = image_tag "https://assets.cpcdn.com/assets/sara/arrow_up.png?4551b9ee29bac14cb04d9a832d1117fcf1910d748ffd4f25329da45c714e6f8e", size: "16x16"
+                  = link_to "しめじ", "", class: "search_keyword"
+            .more_link
+              %span
+                もっと見る
+        .recent_recipes.box
+          .title_bar
+            みんなの新着レシピ
+          .block
+            %ul.clearfix
+              - @recipes.each do |recipe|
+                %li.recipe
+                  = link_to "", class: "focus_block" do
+                    - if recipe.image.present?
+                      = image_tag(recipe.image.to_s, size: "148x148")
+                    - else
+                      = image_tag "blank_recipe.png", size: "148x148"
+                      .text
+                        %span.recipe_title.focus_text
+                          = recipe.title
+                        %span
+                          %span.by
+                            by
+                          %span.user_name
+                            = recipe.user.name
+            .more_link
+              %span
+                もっと見る
+        .recent_tsukurepos.box
+          %h2.title_bar
+            みんなの新着つくれぽ
+          .block.tsukurepo-index
+            #tsukurepo-list.clearfix
+              .tsukurepo-wrapper
+                - @tsukurepos.each do |tsukurepo|
+                  .tsukurepo
+                    .tsukurepo-inner
+                      .tsukurepo_info
+                        %p.date
+                          = simple_time(tsukurepo.created_at)
+                      .image
+                        = image_tag(tsukurepo.image.to_s, size: "130x130")
+                      = link_to "#{tsukurepo.recipe.title}", "", class: "recipe-title"
+                      %span.recipe-author
+                        by
+                        = tsukurepo.recipe.user.name
+                      %p.message
+                        = tsukurepo.text
+                      %p.tsukurepo-author
+                        = link_to "" do
+                          = image_tag "#{tsukurepo.recipe.user.avatar.to_s}", class: "author_icon", size: "16x16"
+                        = link_to "#{tsukurepo.recipe.user.name}", "", class: "author"
+                      .clear
+        .recipe_contests.box
+      .side-bar
