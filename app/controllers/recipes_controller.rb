@@ -36,6 +36,7 @@ class RecipesController < ApplicationController
 
     @comment = Comment.new
     @comments = @recipe.comments.includes(:user)
+    @tsukurepos = @recipe.tsukurepos.includes(:user)
 
     impressionist(@recipe, nil, unique: [:session_hash])
     @pv = @recipe.impressionist_count
