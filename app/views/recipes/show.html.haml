@@ -94,8 +94,12 @@
         %ul#menu_tab
           %li#tsukurepo_tab.selected
             = link_to "つくれぽ", "#"
-            %span.count
-              (#{@tsukurepos.count}件)
+            - if @tsukurepos.nil?
+              %span.count
+                (0件)
+            - else
+              %span.count
+                (#{@tsukurepos.count}件)
           %li#comment_tab
             = link_to "コメント", "#"
             %span.count
@@ -106,8 +110,12 @@
               %h2.title
                 みんなのつくりましたフォトレポート「つくれぽ」
               .matter_right
-                %span.tsukurepo_count
-                #{@tsukurepos.count}件
+                - if @tsukurepos.nil?
+                  %span.tsukurepo_count
+                    (0件)
+                - else
+                  %span.tsukurepo_count
+                    (#{@tsukurepos.count}件)
                 %span.tsukurepo_uu_count
             #tsukurepo-list.clearfix
               = render "tsukurepo"
