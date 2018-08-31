@@ -59,7 +59,7 @@
               #diary_content.diary_content
                 .diary_image
                   = f.label :image do
-                    = image_tag "image-upload.png"
+                    = image_tag "image-upload.png", class: "dairy-main-image"
                     = f.file_field :image, class: 'diary_id'
                 #diary_text.diary_text
                   #diary_content_2884342_in_place_editor.in_place_editor_field{style: "background-color: transparent;"}
@@ -83,4 +83,4 @@
                   レシピを引用する
                 .spinner.indicator.hidden
               #diary_recipes
-    = render "users/kitchen/sidebar"
+    = render "shares/sidebar"

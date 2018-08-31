@@ -11,8 +11,7 @@
               %li.kitchen_navi_recipe
                 = link_to 'レシピ', "/recipes/list/#{@user.id}"
               %li.kitchen_navi_tsukurepo
-                %a
-                  つくれぽ
+                = link_to 'つくれぽ', "/tsukurepos/list/#{@user.id}"
               %li.kitchen_navi_kondate
                 = link_to '献立', "/kondates/list/#{@user.id}"
               %li.kitchen_navi_blog

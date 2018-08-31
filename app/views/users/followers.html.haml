@@ -1,0 +1,30 @@
+#top-wrapper
+  #wrapper
+    #container
+      #contents.clearfix
+        #main
+          = render "users/kitchen/header"
+          .box.followings
+            %h2.title
+              フォローされている
+              %span<
+                = @follower_count
+            %ul.list_border.border_top
+              - @users.each do |user|
+                %li.following
+                  = link_to user_path(user) do
+                    - if user.avatar.present?
+                      = image_tag user.avatar, class: 'user-follow__avatar',width: "42", height: "42"
+                    - else
+                      %img.user-follow__avatar{ src: "/assets/icon_default.png",height: "42", width: "42"}
+                  = link_to user_path(user), class: "user-name_follow" do
+                    = user.name
+                  .user_follow_button{id: "user-#{user.id}"}
+                    - if current_user.following?(user)
+                      = link_to unfollow_user_path(user), remote: true do
+                        = fa_icon 'user-plus', text: "フォロー中"
+                    - elsif user.id == current_user.id
+                    - else
+                      = link_to follow_user_path(user),class: "unfollow_color", remote: true do
+                        = fa_icon 'user-plus', text: "フォローする"
+        = render "shares/sidebar"

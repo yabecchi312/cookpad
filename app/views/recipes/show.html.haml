@@ -12,15 +12,17 @@
         #photo-summary-ingredients.clearfix
           .main-photo
             = image_tag(@recipe.image.to_s, size: "280x280")
-            画像
           .desc-and-ingredients
             -# レシピのキャッチコピー
             .summary
               .description_text
                 = @recipe.catch_copy
               .recipe_author_info_link
-                = image_tag "#", size: "22x22", class: "author_icon"
-                = link_to "name", class: "recipe_author_name"
+                - if @recipe.user.avatar.present?
+                  = image_tag "#{@recipe.user.avatar}", size: "22x22", class: "author_icon"
+                - else
+                  = image_tag "icon_default.png", size: "22x22"
+                = link_to "#{@recipe.user.name}", class: "recipe_author_name"
             .ingredients_wrapper
               .ingredients-title
                 %h3.servings_title
@@ -89,56 +91,38 @@
               = link_to "レシピを共有", "#"
       -# つくれぽ、コメント
       #tsukurepo-and-comment
-        %ul#menu_tab.selected
-          %li#tsukurepo_tab
+        %ul#menu_tab
+          %li#tsukurepo_tab.selected
             = link_to "つくれぽ", "#"
             %span.count
-              (205件)
+              (#{@tsukurepos.count}件)
           %li#comment_tab
             = link_to "コメント", "#"
             %span.count
-              (1件)
+              (#{@comments.count}件)
         .tsukurepo_and_comment_wrapper
           #tsukurepo
             .tsukurepo_title
               %h2.title
                 みんなのつくりましたフォトレポート「つくれぽ」
               .matter_right
-                %span.tsukurepo_count 205
-                件
-                %span.tsukurepo_uu_count (189人)
+                %span.tsukurepo_count
+                #{@tsukurepos.count}件
+                %span.tsukurepo_uu_count
             #tsukurepo-list.clearfix
               = render "tsukurepo"
             #more_tsukurepos.center
-              = link_to "もっと見る(238件)"
             .tsukurepo-post
               .tsukurepo_content_for
-                = link_to "", class: "tsukurepo_button" do
+                = hidden_field_tag :user_id,current_user.id,class: "send_user_id"
+                = hidden_field_tag :user_name,current_user.name,class: "send_user_name"
+                = hidden_field_tag :recipe_title,@recipe.title,class: "send_recipe_title"
+                = hidden_field_tag :recipe_id,@recipe.id,class: "send_recipe_id"
+                = link_to "", class: "tsukurepo_button",id: "js_tsukurepo_modal_button" do
                   = fa_icon "edit"
                   つくれぽを送る
           #comments.show
-            #comment-list
-              .comment
-                .info
-                  =image_tag("https://assets.cpcdn.com/assets/themes/kitchen/profile.png?fc447fb6420741e008aa9c3e48c426d70c83bc8da7fb1ae949a7b09a446d7cd8", size: "20x20")
-                  = link_to "まいまいキッチン:Dさん","#"
-                  %span.comment-update
-                    2018年8月24日 21:00
-                .comment-text
-                  美味しそう
-              .paging-paginate
-            #text-area
-              %span#comment_header
-              .login_user
-                #comment-count
-                  .user
-                    まいまいキッチン:Dさん あと
-                    %span#comment-char-count 500
-                    文字です
-              .comment-form{:method => "post"}
-                %textarea#comment-field{"data-counter_id" => "comment-count", "data-form_id" => "comment-form", "data-limit" => "500", "data-submit_class" => "comment_submit", :name => "comment"}
-                .submit
-                  %input{:disabled => "disabled", :name => "commit", :type => "submit", :value => "コメントを書く"}/
+            = render "comments/index"
         #related_link_wrapper
           .related
             .user_kondates_wrapper

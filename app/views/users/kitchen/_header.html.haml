@@ -1,6 +1,33 @@
 #kitchen_header
-  #header_image_wrapper
-    ヘッダー画像（仮）
+  - if current_user.id == @user.id
+    #header_image_wrapper
+      = link_to '#colorbox_link2', class: "colorbox_link2" do
+        - if @user.background_image.present?
+          = image_tag @user.background_image, class: 'user-avater__image',width: "648", height: "200"
+        - else
+          %img{ src:"/assets/kitchen_header.png", class: 'user-avater__image',width: "648", height: "200"}
+        #colorbox_link2{style: "display:none;"}
+          #two-col-left.kitchen
+          %h1.page_title 写真を変更する
+          #change_user_name_form
+          %p
+            掲載したい写真を選んで、決定ボタンを押してください。
+            %span>
+              = hidden_field_tag :user_id, current_user.id, class: "form_userid"
+            .user-edit-form
+              = form_for(current_user,html: {class: "edit-user-background"}) do |f|
+                = f.file_field :background_image, class: "form__file"
+                %br
+                %br
+                = hidden_field_tag :user_id, current_user.id, class: "form_userid"
+                .actions
+                  = f.submit '決定', class: "btn"
+  - else
+    #header_user_image_wrapper
+      - if @user.background_image.present?
+        = image_tag @user.background_image, class: 'user-avater__image',width: "648", height: "200"
+      - else
+        %img{ src:"/assets/kitchen_header.png", class: 'user-avater__image',width: "648", height: "200"}
   .header_bottom
     .user_icon
       - if @user.avatar.present?
@@ -16,11 +43,11 @@
       = render partial: 'users/follow', local: { user: @user }
     %ul.follow_status
       %li
-        %a フォロー
+        = link_to "フォロー", followings_user_path(@user.id)
         %span
           |
       %li
-        %a フォロワー
+        = link_to "フォロワー", followers_user_path(@user.id)
     .header_profile
       .short
         = @user.profile

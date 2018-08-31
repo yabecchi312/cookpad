@@ -1,0 +1,57 @@
+.box.followings {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background: #ffffff;
+  border: 1px solid #ded5c0;
+  h2.title {
+    padding: 5px 15px 10px;
+    font-size: 123%;
+    margin-bottom: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+    position: relative;
+    color: #4d2200;
+    span {
+      color: #999999;
+      font-weight: normal;
+      font-size: 14px;
+      margin-left: 7px;
+    }
+  }
+  ul.list_border.border_top {
+    border-top: 1px solid #ebe6d0;
+    li.following {
+      padding: 10px 15px;
+      font-size: 16px;
+      border-bottom: 1px solid #ebe6d0;
+      img.user-follow__avatar {
+        border-radius: 5px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      a.user-name_follow:hover {
+        text-decoration: underline;
+      }
+      .user_follow_button {
+        float: right;
+        > a {
+          display: inline-block;
+          float: right;
+          background: #ff9933;
+          color: #ffffff;
+          border: 1px solid #ff9933;
+          border-radius: 3px;
+          font-size: 12px;
+          padding: 4px;
+          text-align: center;
+          display: inline-block;
+          width: 100px;
+        }
+        > a.unfollow_color {
+          background: transparent;
+          color: #ff9933;
+        }
+      }
+    }
+  }
+}
