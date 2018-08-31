@@ -52,7 +52,7 @@ class RecipesController < ApplicationController
 
   def list
     @user = User.find(params[:id])
-    @recipes = @user.recipes.includes(:ingredients)
+    @recipes = @user.recipes.includes(:ingredients).page(params[:page]).per(5)
     if params[:keyword].present?
       @recipes = Recipe.find(Recipe.select_target_recipe_id(params[:keyword],@user.id))
     end

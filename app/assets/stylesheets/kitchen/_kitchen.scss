@@ -17,9 +17,11 @@
   overflow: visible;
   #header_image_wrapper {
     height: 200px;
-    background-color: orange;
     border: none;
     border-radius: 5px 5px 0 0;
+    &:hover {
+      cursor:pointer;
+    }
   }
   .header_bottom {
     height: auto;
@@ -71,6 +73,10 @@
         text-align: center;
         text-decoration: none;
         width: 100px;
+      }
+      > a.following_color {
+        background: #ff9933;
+        color: #ffffff;
       }
     }
     .follow_status {

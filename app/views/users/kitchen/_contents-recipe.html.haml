@@ -40,11 +40,6 @@
     #kitchen_main
       .recipe_list_header
         = render "users/kitchen/search-box"
-        .separate_right
-          .paging-top
-            %span
-              1/100 ページ
-            = link_to '次へ »', '#'
       .recipe_list
         - @recipes.each do |recipe|
           .recipe_preview
@@ -66,3 +61,4 @@
                 %span 材料：
                 - recipe.ingredients.each do |ingredient|
                   = ingredient.name
+        = paginate @recipes

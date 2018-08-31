@@ -7,12 +7,18 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create]
   end
+  get '/recipes/list/:id', to: 'recipes#list'
+
+  resources :tsukurepos, only: [:create,:destroy]
+  get '/tsukurepos/list/:id', to: 'tsukurepos#list'
 
   resources :users, only: [:show, :edit, :update, :destroy] do
     member do
       get 'follow'
       get 'unfollow'
       delete 'avatar_destroy'
+      get 'followings'
+      get 'followers'
     end
   end
   resources :diaries, only: [:index, :new, :create, :destroy]

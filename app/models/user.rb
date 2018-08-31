@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, ImageUploader
-
+  mount_uploader :background_image, ImageUploader
   validates :name, length: {maximum: 10}
 
   has_many :recipes, dependent: :destroy
@@ -15,4 +15,5 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :histories, dependent: :destroy
   has_many :kondates
+  has_many :tsukurepos
 end
