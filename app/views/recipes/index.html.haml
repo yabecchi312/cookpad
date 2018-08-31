@@ -172,6 +172,14 @@
                   = link_to "", class: "focus_block" do
                     - if recipe.image.present?
                       = image_tag(recipe.image.to_s, size: "148x148")
+                      .text
+                        %span.recipe_title.focus_text
+                          = recipe.title
+                        %span
+                          %span.by
+                            by
+                          %span.user_name
+                            = recipe.user.name
                     - else
                       = image_tag "blank_recipe.png", size: "148x148"
                       .text
@@ -190,15 +198,18 @@
             みんなの新着つくれぽ
           .block.tsukurepo-index
             #tsukurepo-list.clearfix
-              .tsukurepo-wrapper
-                - @tsukurepos.each do |tsukurepo|
+              - @tsukurepos.each do |tsukurepo|
+                .tsukurepo-wrapper
                   .tsukurepo
                     .tsukurepo-inner
                       .tsukurepo_info
                         %p.date
                           = simple_time(tsukurepo.created_at)
                       .image
-                        = image_tag(tsukurepo.image.to_s, size: "130x130")
+                        - if tsukurepo.image.present?
+                          = image_tag(tsukurepo.image.to_s, size: "130x130")
+                        - else
+                          = image_tag "blank_recipe.png", size: "130x130"
                       = link_to "#{tsukurepo.recipe.title}", "", class: "recipe-title"
                       %span.recipe-author
                         by
@@ -207,8 +218,11 @@
                         = tsukurepo.text
                       %p.tsukurepo-author
                         = link_to "" do
-                          = image_tag "#{tsukurepo.recipe.user.avatar.to_s}", class: "author_icon", size: "16x16"
+                          - if tsukurepo.recipe.user.avatar.present?
+                            = image_tag "#{tsukurepo.recipe.user.avatar.to_s}", class: "author_icon", size: "16x16"
+                          - else
+                            = image_tag "blank_recipe.png", size: "16x16"
                         = link_to "#{tsukurepo.recipe.user.name}", "", class: "author"
-                      .clear
+                .clear
         .recipe_contests.box
       .side-bar
