@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/tcocca/acts_as_follower.git
-  revision: c5ac7b9601c4af01eb4d9112330b27be4d694ecc
-  branch: master
-  specs:
-    acts_as_follower (0.2.1)
-      activerecord (>= 4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,21 +38,25 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_follower (0.2.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     airbrussh (1.3.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
     ast (2.4.0)
-    autoprefixer-rails (9.0.0)
+    autoprefixer-rails (9.1.4)
       execjs
     bcrypt (3.1.12)
+    bcrypt (3.1.12-java)
+    bcrypt (3.1.12-x64-mingw32)
+    bcrypt (3.1.12-x86-mingw32)
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
-    bullet (5.7.5)
+    bullet (5.7.6)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11.0)
     byebug (10.0.2)
@@ -75,7 +71,7 @@ GEM
     capistrano-rails (1.4.0)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rbenv (2.1.3)
+    capistrano-rbenv (2.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
     capistrano3-unicorn (0.2.1)
@@ -102,25 +98,35 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    concurrent-ruby (1.0.5-java)
     crass (1.0.4)
-    devise (4.4.3)
+    devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
     excon (0.62.0)
     execjs (2.7.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
     ffi (1.9.25)
-    fog-aws (3.0.0)
+    ffi (1.9.25-java)
+    ffi (1.9.25-x64-mingw32)
+    ffi (1.9.25-x86-mingw32)
+    fog-aws (3.3.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-core (2.1.0)
+    fog-core (2.1.2)
       builder
       excon (~> 0.58)
       formatador (~> 0.2)
@@ -133,7 +139,7 @@ GEM
       nokogiri (>= 1.5.11, < 2.0.0)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
-    font_awesome5_rails (0.3.6)
+    font_awesome5_rails (0.4.0)
       railties (>= 4.2, < 5.3)
     formatador (0.2.5)
     globalid (0.4.1)
@@ -152,12 +158,13 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     impressionist (1.6.1)
       nokogiri (~> 1)
     ipaddress (0.8.3)
     jaro_winkler (1.5.1)
+    jaro_winkler (1.5.1-java)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -188,20 +195,29 @@ GEM
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
-    mime-types (3.1)
+    mime-types (3.2.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
-    mini_magick (4.8.0)
-    mini_mime (1.0.0)
+    mime-types-data (3.2018.0812)
+    mini_magick (4.9.2)
+    mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
     mysql2 (0.4.10)
+    mysql2 (0.4.10-x64-mingw32)
+    mysql2 (0.4.10-x86-mingw32)
+    mysql2 (0.4.10-x86-mswin32-60)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
     nio4r (2.3.1)
+    nio4r (2.3.1-java)
     nokogiri (1.8.4)
+      mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.4-java)
+    nokogiri (1.8.4-x64-mingw32)
+      mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.4-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     parallel (1.12.1)
@@ -211,10 +227,15 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry (0.11.3-java)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+      spoon (~> 0.0)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     puma (3.12.0)
+    puma (3.12.0-java)
     rack (2.0.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -230,11 +251,18 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.0.7)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.2)
+      actionpack (~> 5.x, >= 5.0.1)
+      actionview (~> 5.x, >= 5.0.1)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.1)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.0.7)
       actionpack (= 5.0.7)
       activesupport (= 5.0.7)
@@ -251,7 +279,24 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rubocop (0.58.2)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
+    rubocop (0.59.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -259,12 +304,12 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    ruby-progressbar (1.9.0)
+    ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
-    rubyzip (1.2.1)
-    sass (3.5.7)
+    rubyzip (1.2.2)
+    sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -279,6 +324,8 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sexp_processor (4.11.0)
+    spoon (0.0.6)
+      ffi
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -297,13 +344,16 @@ GEM
     temple (0.8.0)
     thor (0.20.0)
     thread_safe (0.3.6)
+    thread_safe (0.3.6-java)
     tilt (2.0.8)
-    turbolinks (5.1.1)
-      turbolinks-source (~> 5.1)
-    turbolinks-source (5.1.0)
+    turbolinks (5.2.0)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.17)
+    tzinfo-data (1.2018.5)
+      tzinfo (>= 1.0.0)
+    uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
     unicorn (5.4.1)
@@ -312,22 +362,28 @@ GEM
     uniform_notifier (1.11.0)
     warden (1.2.7)
       rack (>= 1.0)
-    web-console (3.6.2)
+    web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.6.5-java)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
     xpath (3.1.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
+  java
   ruby
+  x64-mingw32
+  x86-mingw32
+  x86-mswin32
 
 DEPENDENCIES
-  acts_as_follower!
+  acts_as_follower
   bootstrap-sass
   bullet
   byebug
@@ -341,6 +397,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   erb2haml
+  factory_girl_rails
   fog-aws
   font-awesome-rails
   font_awesome5_rails
@@ -355,7 +412,10 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.7)
   rails (~> 5.0.1)
+  rails-controller-testing
+  rails-i18n
   remotipart (~> 1.2)
+  rspec-rails
   rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
@@ -368,4 +428,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.3
+   1.16.5
