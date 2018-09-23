@@ -27,7 +27,6 @@ $(document).on('turbolinks:load', function() {
       if (data.length !== 0) {
         var back = buildBackground(data);
         $(".colorbox_link2").empty();
-           console.log(this);
         $(".colorbox_link2").append(back);
         $('.btn').prop('disabled', false);
       }
