@@ -55,5 +55,11 @@ describe User do
       user.valid?
       expect(user.errors[:password][0]).to include("は6文字以上で入力してください")
     end
+
+    it "is invalid a password that has more than 6 characters" do
+      user = build(:user, password: "000000", password_confirmation: "000000")
+      user.valid?
+      expect(user).to be_valid
+    end
   end
 end
